@@ -1,0 +1,149 @@
+{
+  "suite": "merchant-diagnosis-business-evals",
+  "total": 20,
+  "passed": 20,
+  "failed": 0,
+  "passRate": 100,
+  "results": [
+    {
+      "id": "E-01",
+      "group": "历史方法",
+      "description": "ROI 10 → ROI 18 小步挪移并同步计算毛利",
+      "pass": true,
+      "evidence": "{\"recommendation\":{\"mode\":\"reallocate\",\"sourceTool\":\"点金推广\",\"targetTool\":\"搜索推广\",\"amount\":400},\"calculation\":{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0}}"
+    },
+    {
+      "id": "E-02",
+      "group": "历史方法",
+      "description": "保留基本盘，不允许全量切换工具",
+      "pass": true,
+      "evidence": "{\"recommendation\":null,\"issues\":[{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"},{\"code\":\"BASIC_POOL\",\"title\":\"不能用全量切换替代基本盘\",\"value\":1000,\"detail\":\"保留基本盘，改为小步测试或只调整增量预算\"}]}"
+    },
+    {
+      "id": "E-03",
+      "group": "历史方法",
+      "description": "追加后毛利为负时不鼓励追加预算",
+      "pass": true,
+      "evidence": "{\"recommendation\":null,\"issues\":[{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"},{\"code\":\"PROFIT_RISK\",\"title\":\"追加后毛利不升反降\",\"value\":112,\"detail\":\"按当前假设毛利变化 -112 元，先优化预算结构\"}]}"
+    },
+    {
+      "id": "E-04",
+      "group": "测算",
+      "description": "追加预算与预算内挪移分开扣除消耗",
+      "pass": true,
+      "evidence": "{\"currentGmv\":60000,\"projectedGmv\":65760,\"deltaGmv\":5760,\"currentGrossProfit\":20600,\"projectedGrossProfit\":22792,\"deltaGrossProfit\":2192,\"spendDelta\":400}"
+    },
+    {
+      "id": "E-05",
+      "group": "测算",
+      "description": "边际 ROI 假设变化会改变测算而不是硬编码结果",
+      "pass": true,
+      "evidence": "{\"currentGmv\":60000,\"projectedGmv\":61600,\"deltaGmv\":1600,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21320,\"deltaGrossProfit\":720,\"spendDelta\":0}"
+    },
+    {
+      "id": "E-06",
+      "group": "数据质量",
+      "description": "不同归因窗口不做排名或预算测算",
+      "pass": true,
+      "evidence": "[{\"code\":\"ATTRIBUTION_MISMATCH\",\"title\":\"工具归因口径不同\",\"value\":2,\"detail\":\"先统一归因定义和窗口，再决定是否挪预算\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"}]"
+    },
+    {
+      "id": "E-07",
+      "group": "数据质量",
+      "description": "归因窗口未成熟时阻断预算动作",
+      "pass": true,
+      "evidence": "[{\"code\":\"ATTRIBUTION_IMMATURE\",\"title\":\"归因窗口尚未成熟\",\"value\":7,\"detail\":\"导出时间需覆盖最后一条记录的完整归因窗口\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"}]"
+    },
+    {
+      "id": "E-08",
+      "group": "数据质量",
+      "description": "门店整体 GMV 不与工具归因 GMV 混加",
+      "pass": true,
+      "evidence": "currentGmv=60000"
+    },
+    {
+      "id": "E-09",
+      "group": "数据质量",
+      "description": "负数消耗在导入时被拒绝",
+      "pass": true,
+      "evidence": "消耗 不能为负"
+    },
+    {
+      "id": "E-10",
+      "group": "数据质量",
+      "description": "重复工具不双倍计算",
+      "pass": true,
+      "evidence": "投放工具重复，请保留每个工具的一行周汇总"
+    },
+    {
+      "id": "E-11",
+      "group": "执行闭环",
+      "description": "每个行动都有负责人、复核指标、日期和停止条件",
+      "pass": true,
+      "evidence": "[{\"action\":\"从点金推广向搜索推广挪移 400 元\",\"owner\":\"商家外卖负责人\",\"metric\":\"搜索推广 ROI、净 GMV\",\"target\":\"保留本周原预算方案作对照，记录实际值并对比测算\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"目标工具 ROI 或毛利低于基线则回退\"},{\"action\":\"复核商家补贴与菜品让利\",\"owner\":\"门店经营负责人\",\"metric\":\"商家补贴占净 GMV 比例\",\"target\":\"不高于本周水平\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"补贴占比继续上升则暂停新增补贴\"},{\"action\":\"复盘并决定继续、调整或回退\",\"owner\":\"KA／运营\",\"metric\":\"净 GMV、毛利、执行完成度\",\"target\":\"形成下周决策记录\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"实际结果未达到测算下限则停止追加并复盘\"}]"
+    },
+    {
+      "id": "E-12",
+      "group": "执行闭环",
+      "description": "复核保留基线或对照，不只看单次结果",
+      "pass": true,
+      "evidence": "从点金推广向搜索推广挪移 400 元保留本周原预算方案作对照，记录实际值并对比测算 复核商家补贴与菜品让利不高于本周水平 复盘并决定继续、调整或回退形成下周决策记录"
+    },
+    {
+      "id": "E-13",
+      "group": "输出与角色",
+      "description": "服务商和 SaaS 客户成功使用不同话术",
+      "pass": true,
+      "evidence": "这份复盘可以直接变成你给客户的新增服务，不必每次都从零开始。 建议从点金推广挪 400 元到搜索推广，用一页方案让客户看清调整和执行动作。 下周带复核结果再沟通，作为签下新客户或扩大服务范围的证据。 | 客户当前的健康风险主要在低效消耗和补贴，需要本周完成干预。 建议从点金推广挪 400 元到搜索推广，把执行和复核记录留在客户健康档案里，降低续费风险。 下周重点看净 GMV 增加 2560 元、毛利增加 1152 元的测算是否兑现。"
+    },
+    {
+      "id": "E-14",
+      "group": "输出与角色",
+      "description": "公开信息阶段不提前输出 ROI 结论",
+      "pass": true,
+      "evidence": "当前公开评分 4.4，需要先确认近期评价是否集中反映份量、配送或价格问题。 公开菜单显示一人食套餐 3 款，招牌饭为主要成交商品，可以继续聊一人食场景的曝光和下单承接。 门店处于25—35 元价格带，下一步需要用周报判断补贴和投放是否正在侵蚀毛利。"
+    },
+    {
+      "id": "E-15",
+      "group": "输出与角色",
+      "description": "优先问题最多三个且每个都有数字",
+      "pass": true,
+      "evidence": "[{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"}]"
+    },
+    {
+      "id": "E-16",
+      "group": "输出与角色",
+      "description": "话术不包含保证收益或必然因果",
+      "pass": true,
+      "evidence": "未命中禁用表达"
+    },
+    {
+      "id": "E-17",
+      "group": "测算",
+      "description": "零调整金额不生成预算动作",
+      "pass": true,
+      "evidence": "null"
+    },
+    {
+      "id": "E-18",
+      "group": "数据质量",
+      "description": "合成案例与真实导入保持不同数据标识",
+      "pass": true,
+      "evidence": "main=true, imported=false"
+    },
+    {
+      "id": "E-19",
+      "group": "数据质量",
+      "description": "数据索取清单覆盖全部导入必需字段",
+      "pass": true,
+      "evidence": "必需字段齐全"
+    },
+    {
+      "id": "E-20",
+      "group": "数据质量",
+      "description": "消耗为 0 但归因 GMV 大于 0 时拒绝导入",
+      "pass": true,
+      "evidence": "消耗为 0 时归因净GMV 不能大于 0"
+    }
+  ]
+}
