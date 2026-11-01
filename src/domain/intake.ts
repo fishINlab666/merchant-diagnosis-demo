@@ -8,11 +8,23 @@ export interface DataRequest {
 }
 
 export function buildInitialObservations(store: StoreProfile): string[] {
-  return [
-    `当前公开评分 ${store.rating}，需要先确认近期评价是否集中反映份量、配送或价格问题。`,
-    `公开菜单显示${store.menuNote}，可以继续聊一人食场景的曝光和下单承接。`,
-    `门店处于${store.priceBand}价格带，下一步需要用周报判断补贴和投放是否正在侵蚀毛利。`,
-  ]
+  const observations: string[] = []
+  if (Number.isFinite(store.rating)) {
+    observations.push(`公开事实：当前评分 ${store.rating}；近期评价是否集中反映份量、配送或价格问题仍待验证。`)
+  } else {
+    observations.push('公开信息不足：缺少可确认评分，请人工补充平台、评分和采集日期。')
+  }
+  if (store.menuNote.trim()) {
+    observations.push(`公开事实：${store.menuNote}；一人食场景的曝光和下单承接需要周报验证。`)
+  } else {
+    observations.push('公开信息不足：请人工补充菜单、套餐和典型评价，不用店名推测菜品结构。')
+  }
+  if (store.priceBand.trim()) {
+    observations.push(`待验证：门店处于${store.priceBand}价格带，补贴和投放是否侵蚀毛利需要平台周报。`)
+  } else {
+    observations.push('公开信息不足：请人工补充价格带；上传周报后再判断经营、转化和利润。')
+  }
+  return observations
 }
 
 export function buildDataRequest(): DataRequest {

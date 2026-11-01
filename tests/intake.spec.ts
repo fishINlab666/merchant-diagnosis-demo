@@ -11,6 +11,20 @@ describe('public information intake', () => {
     expect(observations.join(' ')).toContain('一人食')
   })
 
+  it('marks missing public evidence instead of creating a diagnosis from a shop name alone', () => {
+    const observations = buildInitialObservations({
+      ...demoStore,
+      alias: '只有店名的门店',
+      rating: Number.NaN,
+      menuNote: '',
+      priceBand: '',
+    })
+
+    expect(observations.join(' ')).toContain('公开信息不足')
+    expect(observations.join(' ')).toContain('人工补充')
+    expect(observations.join(' ')).not.toContain('ROI')
+  })
+
   it('requests only one weekly report with the fields needed for budget decisions', () => {
     const request = buildDataRequest()
 
