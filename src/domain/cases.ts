@@ -1,4 +1,4 @@
-import type { StoreProfile, WeeklyReport } from './types'
+import type { ProductUsage, StoreProfile, WeeklyReport } from './types'
 
 export const demoStore: StoreProfile = {
   alias: '合成餐饮品牌 A',
@@ -30,6 +30,15 @@ export const mainCase: WeeklyReport = {
     { toolName: '搜索推广', spend: 800, attributedGmv: 14400, roi: 18, attributionWindowDays: 7, attributionDefinition: '点击归因' },
     { toolName: '品牌展示', spend: 600, attributedGmv: 7200, roi: 12, attributionWindowDays: 7, attributionDefinition: '点击归因' },
   ],
+}
+
+export const mainProductUsage: ProductUsage = {
+  synthetic: true,
+  activeOperators: 2,
+  reportImports: 1,
+  followUpCompletionRate: 0.33,
+  lastActiveAt: '2026-10-18',
+  renewalReviewDate: '2026-12-31',
 }
 
 export const controlCase: WeeklyReport = {
