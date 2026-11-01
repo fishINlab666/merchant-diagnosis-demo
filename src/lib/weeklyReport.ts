@@ -1,9 +1,10 @@
 import { readSheet, type CellValue } from 'read-excel-file/universal'
 import type { StoreProfile, WeeklyReport } from '../domain/types'
+import { STANDARD_REQUIRED, type HeaderMapping } from './reportMapping'
 
 type Cell = CellValue | null
 
-const REQUIRED = ['门店ID', '周开始', '订单', '净GMV', '商家补贴', '平台补贴', '投放工具', '消耗', '归因净GMV', '归因窗口', '归因定义', '导出时间']
+const REQUIRED = [...STANDARD_REQUIRED]
 const STORE_FIELDS = ['门店ID', '周开始', '订单', '净GMV', '商家补贴', '平台补贴', '导出时间']
 
 function parseCsvRows(input: string): string[][] {
@@ -64,8 +65,11 @@ function optionalRatio(record: Record<string, Cell>, field: string): number | un
   return value
 }
 
-function normalize(headers: string[], rows: Cell[][], store: StoreProfile): WeeklyReport {
-  const normalizedHeaders = headers.map((header, index) => index === 0 ? header.replace(/^\uFEFF/, '') : header)
+function normalize(headers: string[], rows: Cell[][], store: StoreProfile, mapping: HeaderMapping[]): WeeklyReport {
+  const normalizedHeaders = headers.map((header, index) => {
+    const cleaned = (index === 0 ? header.replace(/^\uFEFF/, '') : header).trim()
+    return mapping.find((item) => item.source === cleaned)?.standard ?? cleaned
+  })
   const missing = REQUIRED.filter((field) => !normalizedHeaders.includes(field))
   if (missing.length > 0) throw new Error(`周报缺少字段：${missing.join('、')}`)
   if (rows.length === 0) throw new Error('周报没有数据行')
@@ -107,13 +111,23 @@ function normalize(headers: string[], rows: Cell[][], store: StoreProfile): Week
   }
 }
 
-export function parseCsvWeeklyReport(input: string, store: StoreProfile): WeeklyReport {
-  const [headers, ...rows] = parseCsvRows(input)
-  return normalize(headers ?? [], rows, store)
+export function readCsvWeeklyReportHeaders(input: string): string[] {
+  const [headers] = parseCsvRows(input)
+  return (headers ?? []).map((header) => header.trim())
 }
 
-export async function parseXlsxWeeklyReport(file: Blob, store: StoreProfile): Promise<WeeklyReport> {
+export async function readXlsxWeeklyReportHeaders(file: Blob): Promise<string[]> {
+  const [headers] = await readSheet(file)
+  return (headers ?? []).map(text)
+}
+
+export function parseCsvWeeklyReport(input: string, store: StoreProfile, mapping: HeaderMapping[] = []): WeeklyReport {
+  const [headers, ...rows] = parseCsvRows(input)
+  return normalize(headers ?? [], rows, store, mapping)
+}
+
+export async function parseXlsxWeeklyReport(file: Blob, store: StoreProfile, mapping: HeaderMapping[] = []): Promise<WeeklyReport> {
   const rows = await readSheet(file)
   const [headers, ...dataRows] = rows
-  return normalize((headers ?? []).map(text), dataRows, store)
+  return normalize((headers ?? []).map(text), dataRows, store, mapping)
 }
