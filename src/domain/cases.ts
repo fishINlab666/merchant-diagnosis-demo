@@ -41,6 +41,30 @@ export const mainProductUsage: ProductUsage = {
   renewalReviewDate: '2026-12-31',
 }
 
+export const fineDiningCase: WeeklyReport = {
+  ...mainCase,
+  store: {
+    ...demoStore,
+    alias: '合成粤菜餐厅 C',
+    category: '粤式正餐',
+    priceBand: '80—120 元',
+    rating: 4.2,
+    menuNote: '双人套餐 2 款，单人工作日餐选择较少',
+  },
+  orders: 420,
+  netGmv: 56000,
+  merchantSubsidy: 9000,
+  platformSubsidy: 2000,
+  exposure: 50000,
+  visits: 4000,
+  repeatCustomerRate: 0.38,
+  memberShare: 0.41,
+  tools: [
+    { toolName: '斗金推广', spend: 1000, attributedGmv: 6000, roi: 6, attributionWindowDays: 7, attributionDefinition: '点击归因' },
+    { toolName: '品牌展位', spend: 500, attributedGmv: 5000, roi: 10, attributionWindowDays: 7, attributionDefinition: '点击归因' },
+  ],
+}
+
 export const controlCase: WeeklyReport = {
   ...mainCase,
   store: { ...demoStore, alias: '合成对照品牌 B' },

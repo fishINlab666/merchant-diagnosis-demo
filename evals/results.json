@@ -1,7 +1,7 @@
 {
   "suite": "merchant-diagnosis-business-evals",
-  "total": 24,
-  "passed": 24,
+  "total": 26,
+  "passed": 26,
   "failed": 0,
   "passRate": 100,
   "results": [
@@ -101,7 +101,7 @@
       "group": "输出与角色",
       "description": "公开信息阶段不提前输出 ROI 结论",
       "pass": true,
-      "evidence": "当前公开评分 4.4，需要先确认近期评价是否集中反映份量、配送或价格问题。 公开菜单显示一人食套餐 3 款，招牌饭为主要成交商品，可以继续聊一人食场景的曝光和下单承接。 门店处于25—35 元价格带，下一步需要用周报判断补贴和投放是否正在侵蚀毛利。"
+      "evidence": "公开事实：当前评分 4.4；近期评价是否集中反映份量、配送或价格问题仍待验证。 公开事实：一人食套餐 3 款，招牌饭为主要成交商品；一人食场景的曝光和下单承接需要周报验证。 待验证：门店处于25—35 元价格带，补贴和投放是否侵蚀毛利需要平台周报。"
     },
     {
       "id": "E-15",
@@ -172,6 +172,20 @@
       "description": "SaaS 使用数据缺失时不生成续费风险等级",
       "pass": true,
       "evidence": "{\"usage\":{\"status\":\"missing\",\"riskLevel\":null},\"metric\":{\"label\":\"产品使用深度\",\"value\":\"未提供\",\"detail\":\"不能从 GMV 或 ROI 推断产品使用\"}}"
+    },
+    {
+      "id": "E-25",
+      "group": "商家通用性",
+      "description": "不同品类商家得到不同问题、测算和动作",
+      "pass": true,
+      "evidence": "{\"fastFood\":{\"label\":\"钱漏在哪\",\"value\":\"点金推广 ROI 偏低\",\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},\"fineDining\":{\"label\":\"钱漏在哪\",\"value\":\"斗金推广 ROI 偏低\",\"detail\":\"当前 ROI 6，同口径 品牌展位 ROI 10\"}}"
+    },
+    {
+      "id": "E-26",
+      "group": "商家通用性",
+      "description": "归因异常商家只修复口径，不机械输出预算建议",
+      "pass": true,
+      "evidence": "{\"calculation\":null,\"action\":{\"label\":\"下周主动作\",\"value\":\"先统一数据口径\",\"detail\":\"负责人：商家运营\"},\"followUp\":{\"action\":\"统一各工具归因定义、窗口和成熟度\",\"owner\":\"商家运营\",\"metric\":\"归因口径\",\"target\":\"全部工具一致且已成熟\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"口径未对齐前不调整预算\"}}"
     }
   ]
 }

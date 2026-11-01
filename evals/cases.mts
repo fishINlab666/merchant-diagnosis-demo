@@ -1,8 +1,9 @@
-import { controlCase, demoStore, mainCase, mainProductUsage } from '../src/domain/cases'
+import { controlCase, demoStore, fineDiningCase, mainCase, mainProductUsage } from '../src/domain/cases'
 import { analyzeBusinessHealth } from '../src/domain/businessHealth'
 import { cityProfiles, syntheticPeers } from '../src/domain/benchmarkCases'
 import { buildDiagnosis, type Assumptions } from '../src/domain/diagnosis'
 import { buildDataRequest, buildInitialObservations } from '../src/domain/intake'
+import { buildMerchantPerspective } from '../src/domain/merchantPerspective'
 import { buildRolePerspective } from '../src/domain/rolePerspective'
 import { parseCsvWeeklyReport } from '../src/lib/weeklyReport'
 
@@ -248,6 +249,26 @@ export const evalCases: EvalCase[] = [
       const result = buildRolePerspective('cs', controlCase, health, diagnosis, null)
       const pass = result.usage.status === 'missing' && result.usage.riskLevel === null && result.metrics[1].value === '未提供'
       return { pass, evidence: JSON.stringify({ usage: result.usage, metric: result.metrics[1] }) }
+    },
+  },
+  {
+    id: 'E-25', group: '商家通用性', description: '不同品类商家得到不同问题、测算和动作',
+    check: () => {
+      const perspective = (report: typeof mainCase) => buildMerchantPerspective(report, analyzeBusinessHealth(report, syntheticPeers, cityProfiles), buildDiagnosis(report, assumptions, 'ka'))
+      const fastFood = perspective(mainCase)
+      const fineDining = perspective(fineDiningCase)
+      const pass = fastFood.module.cards[0].value !== fineDining.module.cards[0].value
+        && JSON.stringify(fastFood.calculation) !== JSON.stringify(fineDining.calculation)
+        && JSON.stringify(fastFood.followUps) !== JSON.stringify(fineDining.followUps)
+      return { pass, evidence: JSON.stringify({ fastFood: fastFood.module.cards[0], fineDining: fineDining.module.cards[0] }) }
+    },
+  },
+  {
+    id: 'E-26', group: '商家通用性', description: '归因异常商家只修复口径，不机械输出预算建议',
+    check: () => {
+      const result = buildMerchantPerspective(controlCase, analyzeBusinessHealth(controlCase, syntheticPeers, cityProfiles), buildDiagnosis(controlCase, assumptions, 'ka'))
+      const pass = result.calculation === null && result.module.cards[1].value === '先统一数据口径' && result.followUps[0].action.includes('统一')
+      return { pass, evidence: JSON.stringify({ calculation: result.calculation, action: result.module.cards[1], followUp: result.followUps[0] }) }
     },
   },
 ]
