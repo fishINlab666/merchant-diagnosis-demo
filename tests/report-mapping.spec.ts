@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildHeaderMapping } from '../src/lib/reportMapping'
+import { buildHeaderMapping, evaluateHeaderMappings } from '../src/lib/reportMapping'
 
 const requiredHeaders = ['门店ID', '周开始', '订单', '净GMV', '商家补贴', '平台补贴', '投放工具', '消耗', '归因净GMV', '归因窗口', '归因定义', '导出时间']
 
@@ -46,5 +46,33 @@ describe('weekly report header mapping', () => {
     expect(result.mappings.find((item) => item.source === '活动名称')).toMatchObject({ standard: null, match: 'unmapped' })
     expect(result.modules.find((item) => item.id === 'traffic')?.available).toBe(false)
     expect(result.modules.find((item) => item.id === 'users')?.available).toBe(false)
+  })
+
+  it('allows a manual mapping to resolve an unknown required column', () => {
+    const automatic = buildHeaderMapping(requiredHeaders.filter((header) => header !== '净GMV').concat('门店总GMV'))
+    const manual = evaluateHeaderMappings(automatic.mappings.map((item) => item.source === '门店总GMV' ? { ...item, standard: '净GMV', match: 'manual' } : item))
+
+    expect(automatic.canGenerate).toBe(false)
+    expect(manual.canGenerate).toBe(true)
+    expect(manual.missingRequired).toEqual([])
+    expect(manual.mappings.find((item) => item.source === '门店总GMV')?.match).toBe('manual')
+  })
+
+  it('blocks generation when a required field is manually excluded', () => {
+    const automatic = buildHeaderMapping(requiredHeaders)
+    const manual = evaluateHeaderMappings(automatic.mappings.map((item) => item.standard === '净GMV' ? { ...item, standard: null, match: 'manual' } : item))
+
+    expect(manual.canGenerate).toBe(false)
+    expect(manual.missingRequired).toEqual(['净GMV'])
+  })
+
+  it('blocks manual duplicate mappings until the user resolves them', () => {
+    const automatic = buildHeaderMapping(requiredHeaders)
+    const duplicated = evaluateHeaderMappings(automatic.mappings.map((item) => item.source === '净GMV' ? { ...item, standard: '订单', match: 'manual' } : item))
+    const resolved = evaluateHeaderMappings(duplicated.mappings.map((item) => item.source === '净GMV' ? { ...item, standard: '净GMV', match: 'manual' } : item))
+
+    expect(duplicated.canGenerate).toBe(false)
+    expect(duplicated.duplicateStandards).toEqual(['订单'])
+    expect(resolved.canGenerate).toBe(true)
   })
 })

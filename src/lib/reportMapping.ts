@@ -19,10 +19,12 @@ const FIELD_ALIASES: Record<string, string[]> = {
   会员占比: ['会员用户占比'],
 }
 
+export const STANDARD_FIELDS = Object.keys(FIELD_ALIASES)
+
 export interface HeaderMapping {
   source: string
   standard: string | null
-  match: 'exact' | 'alias' | 'unmapped'
+  match: 'exact' | 'alias' | 'unmapped' | 'manual'
 }
 
 export interface ModulePreview {
@@ -53,8 +55,7 @@ function standardFor(source: string): { standard: string | null; match: HeaderMa
   return { standard: null, match: 'unmapped' }
 }
 
-export function buildHeaderMapping(headers: string[]): HeaderMappingPreview {
-  const mappings = headers.filter((header) => header.trim()).map((source) => ({ source: source.trim(), ...standardFor(source) }))
+export function evaluateHeaderMappings(mappings: HeaderMapping[]): HeaderMappingPreview {
   const mapped = new Set(mappings.flatMap((item) => item.standard ? [item.standard] : []))
   const missingRequired = STANDARD_REQUIRED.filter((field) => !mapped.has(field))
   const duplicateStandards = [...new Set(mappings.flatMap((item) => item.standard ? [item.standard] : []))].filter((standard) => mappings.filter((item) => item.standard === standard).length > 1)
@@ -78,4 +79,9 @@ export function buildHeaderMapping(headers: string[]): HeaderMappingPreview {
       { id: 'users', label: '用户经营', available: canGenerate && ['复购率', '会员占比'].every((field) => mapped.has(field)), reason: optionalReason(['复购率', '会员占比']) },
     ],
   }
+}
+
+export function buildHeaderMapping(headers: string[]): HeaderMappingPreview {
+  const mappings = headers.filter((header) => header.trim()).map((source) => ({ source: source.trim(), ...standardFor(source) }))
+  return evaluateHeaderMappings(mappings)
 }
