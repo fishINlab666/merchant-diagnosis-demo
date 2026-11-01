@@ -57,6 +57,33 @@ describe('budget diagnosis', () => {
     expect(customerSuccess.talkTracks.join(' ')).toContain('续费')
   })
 
+  it('changes issue priorities and follow-up actions while preserving calculations across roles', () => {
+    const ka = buildDiagnosis(mainCase, assumptions, 'ka')
+    const agency = buildDiagnosis(mainCase, assumptions, 'agency')
+    const customerSuccess = buildDiagnosis(mainCase, assumptions, 'cs')
+
+    expect(ka.issues.map((issue) => issue.code)).toEqual(['LOW_ROI', 'SUBSIDY'])
+    expect(agency.issues.map((issue) => issue.code)).toEqual(['SUBSIDY', 'LOW_ROI'])
+    expect(customerSuccess.issues.map((issue) => issue.code)).toEqual(['SUBSIDY', 'LOW_ROI'])
+    expect(new Set([ka.followUps[0].action, agency.followUps[0].action, customerSuccess.followUps[0].action]).size).toBe(3)
+    expect(new Set([ka.followUps[0].owner, agency.followUps[0].owner, customerSuccess.followUps[0].owner]).size).toBe(3)
+    expect(ka.calculation).toEqual(agency.calculation)
+    expect(agency.calculation).toEqual(customerSuccess.calculation)
+  })
+
+  it('keeps role-specific outputs in attribution and profit-risk branches', () => {
+    const roles = ['ka', 'agency', 'cs'] as const
+    const attribution = roles.map((role) => buildDiagnosis(controlCase, assumptions, role))
+    const profitRisk = roles.map((role) => buildDiagnosis(mainCase, { ...assumptions, mode: 'add', grossMargin: 0.05 }, role))
+
+    expect(new Set(attribution.map((result) => result.followUps[0].action)).size).toBe(3)
+    expect(new Set(attribution.map((result) => result.talkTracks.join(' '))).size).toBe(3)
+    expect(attribution.every((result) => result.recommendation === null && result.calculation === null)).toBe(true)
+    expect(new Set(profitRisk.map((result) => result.followUps[0].action)).size).toBe(3)
+    expect(new Set(profitRisk.map((result) => result.talkTracks.join(' '))).size).toBe(3)
+    expect(profitRisk.every((result) => result.issues.some((issue) => issue.code === 'PROFIT_RISK'))).toBe(true)
+  })
+
   it('creates a follow-up table with owners, metrics and a review date', () => {
     const result = buildDiagnosis(mainCase, assumptions)
 

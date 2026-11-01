@@ -199,4 +199,24 @@ export const evalCases: EvalCase[] = [
       return { pass: message.includes('消耗为 0'), evidence: message || '未拒绝零消耗分母异常' }
     },
   },
+  {
+    id: 'E-21', group: '输出与角色', description: '角色改变问题优先级和跟进动作，不只改变话术',
+    check: () => {
+      const ka = buildDiagnosis(mainCase, assumptions, 'ka')
+      const agency = buildDiagnosis(mainCase, assumptions, 'agency')
+      const cs = buildDiagnosis(mainCase, assumptions, 'cs')
+      const actions = new Set([ka.followUps[0].action, agency.followUps[0].action, cs.followUps[0].action])
+      const pass = agency.issues[0].code === 'SUBSIDY' && ka.issues[0].code === 'LOW_ROI' && actions.size === 3
+      return { pass, evidence: JSON.stringify({ ka: ka.issues, agency: agency.issues, actions: [...actions] }) }
+    },
+  },
+  {
+    id: 'E-22', group: '输出与角色', description: '角色化输出不修改共享预算测算',
+    check: () => {
+      const roles = ['ka', 'agency', 'cs'] as const
+      const results = roles.map((role) => buildDiagnosis(mainCase, assumptions, role))
+      const pass = results.every((result) => JSON.stringify(result.calculation) === JSON.stringify(results[0].calculation))
+      return { pass, evidence: JSON.stringify(results.map((result) => result.calculation)) }
+    },
+  },
 ]

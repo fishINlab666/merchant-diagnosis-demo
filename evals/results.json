@@ -1,7 +1,7 @@
 {
   "suite": "merchant-diagnosis-business-evals",
-  "total": 20,
-  "passed": 20,
+  "total": 22,
+  "passed": 22,
   "failed": 0,
   "passRate": 100,
   "results": [
@@ -17,14 +17,14 @@
       "group": "历史方法",
       "description": "保留基本盘，不允许全量切换工具",
       "pass": true,
-      "evidence": "{\"recommendation\":null,\"issues\":[{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"},{\"code\":\"BASIC_POOL\",\"title\":\"不能用全量切换替代基本盘\",\"value\":1000,\"detail\":\"保留基本盘，改为小步测试或只调整增量预算\"}]}"
+      "evidence": "{\"recommendation\":null,\"issues\":[{\"code\":\"BASIC_POOL\",\"title\":\"不能用全量切换替代基本盘\",\"value\":1000,\"detail\":\"保留基本盘，改为小步测试或只调整增量预算\"},{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"}]}"
     },
     {
       "id": "E-03",
       "group": "历史方法",
       "description": "追加后毛利为负时不鼓励追加预算",
       "pass": true,
-      "evidence": "{\"recommendation\":null,\"issues\":[{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"},{\"code\":\"PROFIT_RISK\",\"title\":\"追加后毛利不升反降\",\"value\":112,\"detail\":\"按当前假设毛利变化 -112 元，先优化预算结构\"}]}"
+      "evidence": "{\"recommendation\":null,\"issues\":[{\"code\":\"PROFIT_RISK\",\"title\":\"追加后毛利不升反降\",\"value\":112,\"detail\":\"按当前假设毛利变化 -112 元，先优化预算结构\"},{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"}]}"
     },
     {
       "id": "E-04",
@@ -144,6 +144,20 @@
       "description": "消耗为 0 但归因 GMV 大于 0 时拒绝导入",
       "pass": true,
       "evidence": "消耗为 0 时归因净GMV 不能大于 0"
+    },
+    {
+      "id": "E-21",
+      "group": "输出与角色",
+      "description": "角色改变问题优先级和跟进动作，不只改变话术",
+      "pass": true,
+      "evidence": "{\"ka\":[{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"}],\"agency\":[{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"},{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"}],\"actions\":[\"从点金推广向搜索推广挪移 400 元\",\"用公开初诊与客户确认首要经营问题\",\"完成经营风险干预并记录客户确认\"]}"
+    },
+    {
+      "id": "E-22",
+      "group": "输出与角色",
+      "description": "角色化输出不修改共享预算测算",
+      "pass": true,
+      "evidence": "[{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0},{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0},{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0}]"
     }
   ]
 }

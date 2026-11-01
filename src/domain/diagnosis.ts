@@ -72,9 +72,67 @@ function makeFollowUps(
   report: WeeklyReport,
   recommendation: Recommendation | null,
   issues: DiagnosisIssue[],
+  role: Role,
 ): DiagnosisResult['followUps'] {
   const reviewDate = addDays(report.weekStart, 7)
   const codes = new Set(issues.map((issue) => issue.code))
+  if (role === 'agency') {
+    const blocked = codes.has('ATTRIBUTION_MISMATCH') || codes.has('ATTRIBUTION_IMMATURE')
+    return [
+      {
+        action: blocked ? '与客户确认周报口径并补齐授权数据' : '用公开初诊与客户确认首要经营问题',
+        owner: blocked ? '服务商交付负责人' : '服务商 BD',
+        metric: blocked ? '周报完整度／归因口径' : '客户确认的主要问题',
+        target: blocked ? '客户确认一份可用周报' : `确认 1 个优先问题：${issues[0]?.title ?? '经营承接'}`,
+        stopCondition: '客户未认可或口径未确认前，不承诺调整收益',
+        reviewDate,
+      },
+      {
+        action: '交付本周运营动作包并记录执行',
+        owner: '代运营负责人',
+        metric: '交付动作完成率',
+        target: recommendation ? '完成预算动作、补贴复核与执行留痕' : '完成数据补齐与门店承接复核',
+        stopCondition: '未实际执行不得包装成客户案例',
+        reviewDate,
+      },
+      {
+        action: '带前后数据复核并推进续约或扩服',
+        owner: '服务商客户负责人',
+        metric: '净 GMV、毛利、复核完成度',
+        target: `${reviewDate} 前形成同口径复核记录`,
+        stopCondition: '未留下执行与前后数据时，不作为签客成果',
+        reviewDate,
+      },
+    ]
+  }
+  if (role === 'cs') {
+    return [
+      {
+        action: '完成经营风险干预并记录客户确认',
+        owner: '客户成功经理',
+        metric: '经营风险信号、客户确认',
+        target: `优先处理：${issues[0]?.title ?? '主要经营风险'}`,
+        stopCondition: '客户未确认或数据异常时先补证据',
+        reviewDate,
+      },
+      {
+        action: '检查周报导入与跟进回填，补齐使用数据',
+        owner: '客户成功经理／客户管理员',
+        metric: '周报导入次数、跟进回填率',
+        target: '建立可用使用基线并完成本周回填',
+        stopCondition: '使用数据缺失时不生成续费风险等级',
+        reviewDate,
+      },
+      {
+        action: '复核干预结果并更新续费风险',
+        owner: '客户成功主管',
+        metric: '风险信号解除、净 GMV、毛利',
+        target: `${reviewDate} 完成干预复核`,
+        stopCondition: '风险未解除则升级客户成功与运营联合介入',
+        reviewDate,
+      },
+    ]
+  }
   if (codes.has('PROFIT_RISK')) {
     return [
       { action: '暂停追加预算', owner: 'KA／运营', metric: '毛利变化', target: '先保留当前预算作对照', reviewDate, stopCondition: '毛利测算未转正前不追加' },
@@ -113,38 +171,27 @@ function makeTalkTracks(
   issues: DiagnosisIssue[],
 ): string[] {
   const codes = new Set(issues.map((issue) => issue.code))
-  if (codes.has('PROFIT_RISK')) {
-    return [
-      '按当前假设，追加后毛利不升反降，本周先不加预算。',
-      '先优化预算结构和商家补贴，保留当前方案作对照。',
-      '等毛利测算转正并有基线证据后，再讨论追加。',
-    ]
-  }
-  if (codes.has('BASIC_POOL')) {
-    return [
-      '保留现有工具基本盘，不做全量切换。',
-      '只调整增量预算或小步测试，并保留本周方案作对照。',
-      '实际 ROI 和毛利优于基线后，再决定是否扩大调整。',
-    ]
-  }
-  if (codes.has('ATTRIBUTION_IMMATURE')) {
-    return [
-      '当前归因窗口尚未成熟，先不根据 ROI 排名调预算。',
-      '等导出时间覆盖最后一条记录的完整归因窗口再复盘。',
-      '本周只跟进已知消耗和过程事实，不做收益预测。',
-    ]
-  }
-  if (!recommendation || !calculation) {
-    return [
-      '目前工具归因窗口不同，先统一归因定义和窗口再比较。',
-      '本周先补齐同口径周报，不急着调整预算。',
-      '数据对齐后再评估追加或挪移，避免看错投入回报。',
-    ]
-  }
-  const action = recommendation.mode === 'reallocate'
-    ? `从${recommendation.sourceTool}挪 ${recommendation.amount} 元到${recommendation.targetTool}`
-    : `向${recommendation.targetTool}追加 ${recommendation.amount} 元`
+  const action = recommendation
+    ? recommendation.mode === 'reallocate'
+      ? `从${recommendation.sourceTool}挪 ${recommendation.amount} 元到${recommendation.targetTool}`
+      : `向${recommendation.targetTool}追加 ${recommendation.amount} 元`
+    : ''
   if (role === 'agency') {
+    if (codes.has('PROFIT_RISK')) return [
+      '这份复盘应先作为毛利修复服务，而不是追加预算方案。',
+      '与客户确认补贴和低效消耗，交付一周毛利修复动作。',
+      '留下执行与前后数据，再作为续约或新客沟通证据。',
+    ]
+    if (codes.has('BASIC_POOL')) return [
+      '把全量切换风险转成客户交付规则，保留原工具基本盘。',
+      '只交付增量测试与补贴复核，不把单次 ROI 当成签客承诺。',
+      '下周用执行记录和同口径结果复核服务价值。',
+    ]
+    if (!recommendation || !calculation) return [
+      '先把周报口径对齐作为本周的数据交付，不急着向客户承诺收益。',
+      '帮助客户补齐归因定义、窗口和导出时间，再确认运营动作。',
+      '数据对齐后交付预算方案，并保留新客户复核证据。',
+    ]
     return [
       '这份复盘可以直接变成你给客户的新增服务，不必每次都从零开始。',
       `建议${action}，用一页方案让客户看清调整和执行动作。`,
@@ -152,17 +199,66 @@ function makeTalkTracks(
     ]
   }
   if (role === 'cs') {
+    if (codes.has('PROFIT_RISK')) return [
+      '客户当前存在追加后毛利下滑风险，应列为高优先级健康干预。',
+      '先推动补贴和低效消耗整改，并检查周报导入与结果回填。',
+      '复核风险是否解除，再更新续费风险和下一步客户计划。',
+    ]
+    if (codes.has('BASIC_POOL')) return [
+      '客户当前方案有破坏投放基本盘的风险，需要客户成功及时干预。',
+      '把动作改为增量测试，并跟进客户是否完成执行与结果回填。',
+      '实际 ROI 和毛利恢复后，再下调健康风险并复核续费状态。',
+    ]
+    if (!recommendation || !calculation) return [
+      '客户周报口径尚未对齐，先完成数据干预，不生成收益预测。',
+      '本周推动补齐归因定义、窗口和成熟周期，同时检查产品使用记录。',
+      '数据可用后再评估经营健康，并安排续费风险复核。',
+    ]
     return [
       '客户当前的健康风险主要在低效消耗和补贴，需要本周完成干预。',
       `建议${action}，把执行和复核记录留在客户健康档案里，降低续费风险。`,
       `下周重点看净 GMV 增加 ${calculation.deltaGmv} 元、毛利增加 ${calculation.deltaGrossProfit} 元的测算是否兑现。`,
     ]
   }
+  if (codes.has('PROFIT_RISK')) return [
+    '按当前假设，追加后毛利不升反降，本周先不加预算。',
+    '先优化预算结构和商家补贴，保留当前方案作对照。',
+    '等毛利测算转正并有基线证据后，再讨论追加。',
+  ]
+  if (codes.has('BASIC_POOL')) return [
+    '保留现有工具基本盘，不做全量切换。',
+    '只调整增量预算或小步测试，并保留本周方案作对照。',
+    '实际 ROI 和毛利优于基线后，再决定是否扩大调整。',
+  ]
+  if (codes.has('ATTRIBUTION_IMMATURE')) return [
+    '当前归因窗口尚未成熟，先不根据 ROI 排名调预算。',
+    '等导出时间覆盖最后一条记录的完整归因窗口再复盘。',
+    '本周只跟进已知消耗和过程事实，不做收益预测。',
+  ]
+  if (!recommendation || !calculation) return [
+    '目前工具归因窗口不同，先统一归因定义和窗口再比较。',
+    '本周先补齐同口径周报，不急着调整预算。',
+    '数据对齐后再评估追加或挪移，避免看错投入回报。',
+  ]
   return [
     `这周建议${action}，先把低效预算转到同口径高 ROI 工具。`,
     `按当前假设，净 GMV 预计增加 ${calculation.deltaGmv} 元，毛利预计增加 ${calculation.deltaGrossProfit} 元。`,
     '先执行一周并复核实际 ROI 和毛利，达到目标后再讨论是否继续加预算。',
   ]
+}
+
+function orderIssues(issues: DiagnosisIssue[], role: Role): DiagnosisIssue[] {
+  const roleRank: Record<Role, Partial<Record<DiagnosisIssue['code'], number>>> = {
+    ka: { BASIC_POOL: 1, LOW_ROI: 2, SUBSIDY: 3 },
+    agency: { SUBSIDY: 1, LOW_ROI: 2, BASIC_POOL: 3 },
+    cs: { SUBSIDY: 1, LOW_ROI: 2, BASIC_POOL: 3 },
+  }
+  return [...issues].sort((a, b) => {
+    const aBlocked = a.code === 'ATTRIBUTION_MISMATCH' || a.code === 'ATTRIBUTION_IMMATURE' || a.code === 'PROFIT_RISK'
+    const bBlocked = b.code === 'ATTRIBUTION_MISMATCH' || b.code === 'ATTRIBUTION_IMMATURE' || b.code === 'PROFIT_RISK'
+    if (aBlocked !== bBlocked) return aBlocked ? -1 : 1
+    return (roleRank[role][a.code] ?? 10) - (roleRank[role][b.code] ?? 10)
+  })
 }
 
 export function buildDiagnosis(
@@ -242,11 +338,12 @@ export function buildDiagnosis(
     }
   }
 
+  const orderedIssues = orderIssues(issues, role)
   return {
-    issues: issues.slice(0, 3),
+    issues: orderedIssues.slice(0, 3),
     recommendation,
     calculation,
-    talkTracks: makeTalkTracks(recommendation, calculation, role, issues),
-    followUps: makeFollowUps(report, recommendation, issues),
+    talkTracks: makeTalkTracks(recommendation, calculation, role, orderedIssues),
+    followUps: makeFollowUps(report, recommendation, orderedIssues, role),
   }
 }
