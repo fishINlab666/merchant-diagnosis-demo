@@ -40,7 +40,7 @@ test('merchant self service falls back to manual intake and still generates a fu
   await expect(page.getByText('公开事实：当前评分 4.5', { exact: false })).toBeVisible()
 
   await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/main-weekly.csv'))
-  await page.getByRole('button', { name: '生成完整诊断' }).click()
+  await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
   await expect(page.getByRole('heading', { name: '我的经营诊断' })).toBeVisible()
   await expect(page.locator('[data-decision-module="merchant-action"]')).toBeVisible()
   await expect(page.getByText('我的测试门店', { exact: true }).first()).toBeVisible()
@@ -63,4 +63,23 @@ test('different demo stores produce different diagnoses instead of only changing
   await expect(page.locator('[data-decision-module="merchant-action"]')).toContainText('先统一数据口径')
   await page.getByRole('tab', { name: '行动方案' }).click()
   await expect(page.locator('.delta-row')).toHaveCount(0)
+})
+
+test('header mapping requires confirmation before diagnosis and blocks missing required fields', async ({ page }) => {
+  await page.route('https://r.jina.ai/**', (route) => route.fulfill({ status: 503, body: 'unavailable' }))
+  await page.goto('/')
+  await page.getByLabel('店铺名称').fill('映射预览门店')
+  await page.getByRole('button', { name: '开始经营诊断' }).click()
+  await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/main-weekly.csv'))
+
+  await expect(page.getByRole('heading', { name: '表头映射预览' })).toBeVisible()
+  await expect(page.locator('.mapping-table')).toContainText('门店ID')
+  await expect(page.locator('.mapping-modules')).toContainText('经营与投放')
+  await expect(page.locator('article.report')).toHaveCount(0)
+  await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
+  await expect(page.getByRole('heading', { name: '我的经营诊断' })).toBeVisible()
+
+  await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/invalid-weekly.csv'))
+  await expect(page.locator('.mapping-missing')).toContainText('缺少必需字段')
+  await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeDisabled()
 })

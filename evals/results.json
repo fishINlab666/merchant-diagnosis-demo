@@ -1,7 +1,7 @@
 {
   "suite": "merchant-diagnosis-business-evals",
-  "total": 22,
-  "passed": 22,
+  "total": 24,
+  "passed": 24,
   "failed": 0,
   "passRate": 100,
   "results": [
@@ -158,6 +158,20 @@
       "description": "归因异常商家只修复口径，不机械输出预算建议",
       "pass": true,
       "evidence": "{\"calculation\":null,\"action\":{\"label\":\"下周主动作\",\"value\":\"先统一数据口径\",\"detail\":\"负责人：商家运营\"},\"followUp\":{\"action\":\"统一各工具归因定义、窗口和成熟度\",\"owner\":\"商家运营\",\"metric\":\"归因口径\",\"target\":\"全部工具一致且已成熟\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"口径未对齐前不调整预算\"}}"
+    },
+    {
+      "id": "E-27",
+      "group": "数据质量",
+      "description": "表头预览在必需字段缺失时阻止生成",
+      "pass": true,
+      "evidence": "{\"canGenerate\":false,\"missing\":[\"净GMV\"],\"operations\":{\"id\":\"operations\",\"label\":\"经营与投放\",\"available\":false,\"reason\":\"缺少：净GMV\"}}"
+    },
+    {
+      "id": "E-28",
+      "group": "数据质量",
+      "description": "重复映射同一标准字段时不静默选择权威列",
+      "pass": true,
+      "evidence": "{\"canGenerate\":false,\"duplicates\":[\"订单\"]}"
     }
   ]
 }

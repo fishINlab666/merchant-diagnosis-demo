@@ -28,7 +28,7 @@ test('imports one CSV weekly report and generates the same budget recommendation
   await page.getByLabel('店铺名称').fill('周报测试门店')
   await page.getByRole('button', { name: '开始经营诊断' }).click()
   await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/main-weekly.csv'))
-  await page.getByRole('button', { name: '生成完整诊断' }).click()
+  await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
   await page.getByRole('tab', { name: '行动方案' }).click()
   await expect(page.getByRole('heading', { name: '我的下周行动方案' })).toBeVisible()
   await expect(page.locator('.issue-grid').getByText('点金推广 ROI 偏低', { exact: true })).toBeVisible()

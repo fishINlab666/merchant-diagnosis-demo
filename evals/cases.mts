@@ -4,6 +4,7 @@ import { cityProfiles, syntheticPeers } from '../src/domain/benchmarkCases'
 import { buildDiagnosis, type Assumptions } from '../src/domain/diagnosis'
 import { buildDataRequest, buildInitialObservations } from '../src/domain/intake'
 import { buildMerchantPerspective } from '../src/domain/merchantPerspective'
+import { buildHeaderMapping } from '../src/lib/reportMapping'
 import { parseCsvWeeklyReport } from '../src/lib/weeklyReport'
 
 export interface EvalCase {
@@ -220,6 +221,23 @@ export const evalCases: EvalCase[] = [
       const result = buildMerchantPerspective(controlCase, analyzeBusinessHealth(controlCase, syntheticPeers, cityProfiles), buildDiagnosis(controlCase, assumptions, 'ka'))
       const pass = result.calculation === null && result.module.cards[1].value === '先统一数据口径' && result.followUps[0].action.includes('统一')
       return { pass, evidence: JSON.stringify({ calculation: result.calculation, action: result.module.cards[1], followUp: result.followUps[0] }) }
+    },
+  },
+  {
+    id: 'E-27', group: '数据质量', description: '表头预览在必需字段缺失时阻止生成',
+    check: () => {
+      const headers = csvHeader.split(',').filter((field) => field !== '净GMV')
+      const result = buildHeaderMapping(headers)
+      const pass = !result.canGenerate && result.missingRequired.includes('净GMV') && !result.modules[0].available
+      return { pass, evidence: JSON.stringify({ canGenerate: result.canGenerate, missing: result.missingRequired, operations: result.modules[0] }) }
+    },
+  },
+  {
+    id: 'E-28', group: '数据质量', description: '重复映射同一标准字段时不静默选择权威列',
+    check: () => {
+      const result = buildHeaderMapping([...csvHeader.split(','), '订单量'])
+      const pass = !result.canGenerate && result.duplicateStandards.includes('订单')
+      return { pass, evidence: JSON.stringify({ canGenerate: result.canGenerate, duplicates: result.duplicateStandards }) }
     },
   },
 ]

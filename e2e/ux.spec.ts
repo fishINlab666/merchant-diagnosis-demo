@@ -27,14 +27,13 @@ test('shows selected filename, success and recoverable upload failure', async ({
   await page.getByLabel('店铺名称').fill('上传测试门店')
   await page.getByRole('button', { name: '开始经营诊断' }).click()
   await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/main-weekly.csv'))
-  await expect(page.getByText(/已选择 main-weekly\.csv/)).toBeVisible()
-  await page.getByRole('button', { name: '生成完整诊断' }).click()
+  await expect(page.getByText(/表头已读取/)).toBeVisible()
+  await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
   await expect(page.getByText(/周报解析成功/)).toBeVisible()
 
   await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/invalid-weekly.csv'))
-  await page.getByRole('button', { name: '生成完整诊断' }).click()
-  await expect(page.getByText(/解析失败/).first()).toBeVisible()
-  await expect(page.getByText(/请检查字段后重试/)).toBeVisible()
+  await expect(page.locator('.mapping-missing')).toContainText('缺少必需字段')
+  await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeDisabled()
 })
 
 test('keeps mobile report content before process controls and does not overflow', async ({ page }) => {

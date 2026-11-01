@@ -6,11 +6,13 @@ import { buildInitialObservations } from './domain/intake'
 import { buildMerchantPerspective } from './domain/merchantPerspective'
 import { searchPublicMerchant, type PublicSearchResult } from './domain/publicSearch'
 import type { StoreProfile, WeeklyReport } from './domain/types'
-import { parseCsvWeeklyReport, parseXlsxWeeklyReport } from './lib/weeklyReport'
+import { parseCsvWeeklyReport, parseXlsxWeeklyReport, readCsvWeeklyReportHeaders, readXlsxWeeklyReportHeaders } from './lib/weeklyReport'
+import { buildHeaderMapping, type HeaderMappingPreview } from './lib/reportMapping'
 import { analyzeBusinessHealth } from './domain/businessHealth'
 import { cityProfiles, syntheticPeers } from './domain/benchmarkCases'
 import { AssumptionsPanel } from './components/AssumptionsPanel'
 import { BusinessHealthView } from './components/BusinessHealthView'
+import { HeaderMappingPreview as HeaderMappingPreviewView } from './components/HeaderMappingPreview'
 import { MerchantIntake } from './components/MerchantIntake'
 import { ReportView } from './components/ReportView'
 
@@ -48,6 +50,7 @@ function App() {
   const [searching, setSearching] = useState(false)
   const [assumptions, setAssumptions] = useState<Assumptions>(initialAssumptions)
   const [file, setFile] = useState<File | null>(null)
+  const [mappingPreview, setMappingPreview] = useState<HeaderMappingPreview | null>(null)
   const [uploadState, setUploadState] = useState<UploadState>({ status: 'idle', message: '' })
   const [validationError, setValidationError] = useState('')
   const [recalcMessage, setRecalcMessage] = useState('')
@@ -112,9 +115,28 @@ function App() {
     setStage('public')
   }
 
-  function changeFile(selected: File | null) {
+  async function changeFile(selected: File | null) {
     setFile(selected)
-    setUploadState(selected ? { status: 'ready', message: `已选择 ${selected.name}，可以生成完整诊断。` } : { status: 'idle', message: '' })
+    setMappingPreview(null)
+    if (!selected) {
+      setUploadState({ status: 'idle', message: '' })
+      return
+    }
+    setUploadState({ status: 'parsing', message: `正在读取 ${selected.name} 的表头…` })
+    try {
+      const headers = selected.name.toLowerCase().endsWith('.csv')
+        ? readCsvWeeklyReportHeaders(await selected.text())
+        : await readXlsxWeeklyReportHeaders(selected)
+      const preview = buildHeaderMapping(headers)
+      setMappingPreview(preview)
+      setUploadState({
+        status: preview.canGenerate ? 'ready' : 'error',
+        message: preview.canGenerate ? '表头已读取，请确认映射后生成诊断。' : '存在缺失字段或重复映射，请修正文件后重新上传。',
+      })
+    } catch (cause) {
+      const reason = cause instanceof Error ? cause.message : String(cause)
+      setUploadState({ status: 'error', message: `表头读取失败：${reason}` })
+    }
   }
 
   function loadCase(selected: WeeklyReport) {
@@ -126,6 +148,7 @@ function App() {
     setValidationError('')
     setRecalcMessage('')
     setFile(null)
+    setMappingPreview(null)
     setUploadState({ status: 'idle', message: '' })
   }
 
@@ -135,16 +158,21 @@ function App() {
     setStage('intake')
     setPublicResult(null)
     setFile(null)
+    setMappingPreview(null)
     setUploadState({ status: 'idle', message: '' })
   }
 
   async function generateFromFile() {
-    if (!file) return
-    setUploadState({ status: 'parsing', message: `正在解析 ${file.name}…` })
+    if (!file || !mappingPreview) return
+    if (!mappingPreview.canGenerate) {
+      setUploadState({ status: 'error', message: '请先修正缺失字段或重复映射，再生成诊断。' })
+      return
+    }
+    setUploadState({ status: 'parsing', message: `正在按确认映射解析 ${file.name}…` })
     try {
       const parsed = file.name.toLowerCase().endsWith('.csv')
-        ? parseCsvWeeklyReport(await file.text(), store)
-        : await parseXlsxWeeklyReport(file, store)
+        ? parseCsvWeeklyReport(await file.text(), store, mappingPreview.mappings)
+        : await parseXlsxWeeklyReport(file, store, mappingPreview.mappings)
       setReport(parsed)
       setStage('full')
       setView('health')
@@ -206,6 +234,7 @@ function App() {
             publicResult={publicResult}
             observations={observations}
             uploadState={uploadState}
+            mappingPreview={mappingPreview}
             onStoreChange={updateStore}
             onStart={() => void startDiagnosis()}
             onManual={generatePublicIntake}
@@ -236,8 +265,9 @@ function App() {
             </div>
             <div className="report-loader">
               <p className="loader-title">换一份周报</p>
-              <label className="file-label">上传周报<input name="weeklyReport" autoComplete="off" type="file" accept=".csv,.xlsx" onChange={(event) => changeFile(event.target.files?.[0] ?? null)} /></label>
-              <button type="button" className="primary-action" disabled={!file || uploadState.status === 'parsing'} onClick={() => void generateFromFile()}>{uploadState.status === 'parsing' ? '正在解析…' : '生成完整诊断'}</button>
+              <label className="file-label">上传周报<input name="weeklyReport" autoComplete="off" type="file" accept=".csv,.xlsx" onChange={(event) => void changeFile(event.target.files?.[0] ?? null)} /></label>
+              {mappingPreview && <HeaderMappingPreviewView preview={mappingPreview} />}
+              <button type="button" className="primary-action" disabled={!mappingPreview?.canGenerate || uploadState.status === 'parsing'} onClick={() => void generateFromFile()}>{uploadState.status === 'parsing' ? '正在解析…' : '确认映射并生成诊断'}</button>
               {uploadState.message && <p className={`upload-status ${uploadState.status}`} role={uploadState.status === 'error' ? 'alert' : 'status'}>{uploadState.message}</p>}
               <p className="loader-title">试用其他合成示例</p>
               <div className="case-buttons">

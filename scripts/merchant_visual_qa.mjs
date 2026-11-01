@@ -37,7 +37,22 @@ try {
   await page.getByRole('heading', { name: '公开信息初诊' }).waitFor()
   await inspect(page, 'desktop-public')
   await page.screenshot({ path: resolve(out, 'desktop-public.jpg'), fullPage: true, type: 'jpeg', quality: 85 })
+  await page.getByLabel('上传周报').setInputFiles(resolve(root, 'public/fixtures/main-weekly.csv'))
+  await page.getByRole('heading', { name: '表头映射预览' }).waitFor()
+  await inspect(page, 'desktop-mapping')
+  await page.screenshot({ path: resolve(out, 'desktop-mapping.jpg'), fullPage: true, type: 'jpeg', quality: 85 })
   await page.close()
+
+  const mobileMapping = await browser.newPage({ viewport: { width: 390, height: 844 } })
+  await mobileMapping.route('https://r.jina.ai/**', (route) => route.fulfill({ status: 503, body: 'unavailable' }))
+  await mobileMapping.goto('http://127.0.0.1:7100', { waitUntil: 'networkidle' })
+  await mobileMapping.getByLabel('店铺名称').fill('移动映射门店')
+  await mobileMapping.getByRole('button', { name: '开始经营诊断' }).click()
+  await mobileMapping.getByLabel('上传周报').setInputFiles(resolve(root, 'public/fixtures/main-weekly.csv'))
+  await mobileMapping.getByRole('heading', { name: '表头映射预览' }).waitFor()
+  await inspect(mobileMapping, 'mobile-mapping')
+  await mobileMapping.screenshot({ path: resolve(out, 'mobile-mapping.jpg'), fullPage: true, type: 'jpeg', quality: 85 })
+  await mobileMapping.close()
 
   for (const [key, label] of [['fast', '快餐示例'], ['fine', '正餐示例'], ['control', '归因异常示例']]) {
     const desktop = await browser.newPage({ viewport: { width: 1440, height: 1000 } })
