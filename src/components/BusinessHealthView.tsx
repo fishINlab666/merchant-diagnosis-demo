@@ -1,8 +1,8 @@
 import type { BusinessHealthResult, CityStrategy, PeerSample } from '../domain/businessHealth'
 import { eligiblePeers } from '../domain/businessHealth'
-import type { RolePerspective } from '../domain/rolePerspective'
-import type { FollowUp, WeeklyReport } from '../domain/types'
-import { RoleDecisionPanel } from './RoleDecisionPanel'
+import type { MerchantPerspective } from '../domain/merchantPerspective'
+import type { WeeklyReport } from '../domain/types'
+import { MerchantDecisionPanel } from './MerchantDecisionPanel'
 
 const strategyNames: Record<CityStrategy, string> = {
   scale: '优先加码',
@@ -11,10 +11,11 @@ const strategyNames: Record<CityStrategy, string> = {
   'fix-basics': '先修基建',
 }
 
-const actionTitles = {
-  ka: '下周 JBP 与预算动作',
-  agency: '本周客户交付动作',
-  cs: '本周客户干预动作',
+const cityActions: Record<CityStrategy, string> = {
+  scale: '保持基本盘并测试增量',
+  'fix-funnel': '先修门店承接与转化',
+  'fix-profit': '先修补贴、客单和毛利',
+  'fix-basics': '先修基建并停止无效投入',
 }
 
 function percent(value: number): string {
@@ -25,32 +26,31 @@ interface BusinessHealthViewProps {
   report: WeeklyReport
   analysis: BusinessHealthResult
   peers: PeerSample[]
-  perspective: RolePerspective
-  followUps: FollowUp[]
+  perspective: MerchantPerspective
 }
 
-export function BusinessHealthView({ report, analysis, peers, perspective, followUps }: BusinessHealthViewProps) {
+export function BusinessHealthView({ report, analysis, peers, perspective }: BusinessHealthViewProps) {
   const eligible = eligiblePeers(report, peers)
   const excluded = peers.filter((peer) => !eligible.includes(peer))
   return (
-    <article className={`business-health role-${perspective.role}`} aria-label={perspective.pageTitle}>
+    <article className="business-health merchant-health" aria-label={perspective.pageTitle}>
       <header className="health-header">
         <div>
-          <p className="eyebrow">MERCHANT HEALTH · 合成样本</p>
+          <p className="eyebrow">MERCHANT HEALTH · {perspective.report.synthetic ? '合成示例' : '商家授权数据'}</p>
           <h1>{perspective.pageTitle}</h1>
-          <p className="report-subtitle">{analysis.scope}</p>
+          <p className="report-subtitle">{perspective.report.store.alias} · {analysis.scope}</p>
         </div>
         <div className="health-position">
-          <span>本店位置 · 共用经营事实</span>
+          <span>本店位置 · 经营事实</span>
           <strong>{analysis.headline}</strong>
         </div>
       </header>
 
-      <RoleDecisionPanel perspective={perspective} context="health" />
+      <MerchantDecisionPanel perspective={perspective} context="health" />
 
       <section className="health-section">
         <div className="section-heading">
-          <div><h2>六维经营分析 · 角色优先级</h2><p>原始事实一致，分析顺序和决策含义随角色变化。</p></div>
+          <div><h2>六维经营分析</h2><p>按门店、流量、投放、补贴、用户和分层下钻，缺数据就关闭对应模块。</p></div>
         </div>
         <div className="dimension-grid">
           {perspective.dimensions.map((item, index) => (
@@ -61,7 +61,7 @@ export function BusinessHealthView({ report, analysis, peers, perspective, follo
                 <p>{item.comparison}</p>
                 <small>{item.evidence}</small>
               </div>
-              <div className="dimension-lens">{item.roleInsight}</div>
+              <div className="dimension-lens">{item.decisionInsight}</div>
             </div>
           ))}
         </div>
@@ -69,7 +69,7 @@ export function BusinessHealthView({ report, analysis, peers, perspective, follo
 
       <section className="health-section">
         <div className="section-heading">
-          <div><h2>{perspective.peerHeading}</h2><p>{perspective.peerDescription} 同平台、同商圈、同品类、同价格带、同周期；不是行业均值。</p></div>
+          <div><h2>竞店样本｜找经营差距</h2><p>同平台、同商圈、同品类、同价格带、同周期；不是行业均值。</p></div>
         </div>
         <p className="sample-summary">{analysis.sampleSize} 家合格样本{analysis.peerMedian && ` · 净 GMV 中位数 ${analysis.peerMedian.netGmv.toLocaleString('zh-CN')} 元 · 评分中位数 ${analysis.peerMedian.rating}`}</p>
         {analysis.peerMedian && <p className="sample-median">P1 {percent(analysis.peerMedian.p1)} · P2 {percent(analysis.peerMedian.p2)} · 补贴率 {percent(analysis.peerMedian.subsidyRate)} · 复购 {percent(analysis.peerMedian.repeatCustomerRate)} · 会员 {percent(analysis.peerMedian.memberShare)}</p>}
@@ -89,7 +89,7 @@ export function BusinessHealthView({ report, analysis, peers, perspective, follo
 
       <section className="health-section">
         <div className="section-heading">
-          <div><h2>{perspective.cityHeading}</h2><p>{perspective.cityDescription}</p></div>
+          <div><h2>城市分层｜决定投入与退出</h2><p>UE 与增速同时看；合成样本只用于展示分层方法，不代表真实城市排名。</p></div>
         </div>
         <div className="city-grid">
           {analysis.cities.map((city) => (
@@ -102,7 +102,7 @@ export function BusinessHealthView({ report, analysis, peers, perspective, follo
                 <div><dt>P2／ROI 中位数</dt><dd>{percent(city.p2Median)}／{city.roiMedian}</dd></div>
                 <div><dt>补贴率中位数</dt><dd>{percent(city.subsidyRateMedian)}</dd></div>
               </dl>
-              <p className="city-action">{perspective.cityActions[city.strategy]}</p>
+              <p className="city-action">{cityActions[city.strategy]}</p>
               <small>合成城市样本，仅用于展示分层方法。</small>
             </div>
           ))}
@@ -111,10 +111,10 @@ export function BusinessHealthView({ report, analysis, peers, perspective, follo
 
       <section className="health-section role-next-actions">
         <div className="section-heading">
-          <div><h2>{actionTitles[perspective.role]}</h2><p>动作、负责人、复核指标和停止条件随角色决策变化。</p></div>
+          <div><h2>下周经营动作</h2><p>每项都有负责人、复核指标、目标和停止条件。</p></div>
         </div>
         <div className="role-action-list">
-          {followUps.map((item, index) => (
+          {perspective.followUps.map((item, index) => (
             <div className="role-action" key={item.action}>
               <span>0{index + 1}</span>
               <div><strong>{item.action}</strong><p>{item.owner} · {item.metric}</p><small>{item.target}；停止：{item.stopCondition}</small></div>

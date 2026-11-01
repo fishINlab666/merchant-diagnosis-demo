@@ -1,7 +1,7 @@
 {
   "suite": "merchant-diagnosis-business-evals",
-  "total": 26,
-  "passed": 26,
+  "total": 22,
+  "passed": 22,
   "failed": 0,
   "passRate": 100,
   "results": [
@@ -144,34 +144,6 @@
       "description": "消耗为 0 但归因 GMV 大于 0 时拒绝导入",
       "pass": true,
       "evidence": "消耗为 0 时归因净GMV 不能大于 0"
-    },
-    {
-      "id": "E-21",
-      "group": "输出与角色",
-      "description": "角色改变问题优先级和跟进动作，不只改变话术",
-      "pass": true,
-      "evidence": "{\"ka\":[{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"},{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"}],\"agency\":[{\"code\":\"SUBSIDY\",\"title\":\"商家补贴需要复核\",\"value\":4000,\"detail\":\"占门店净 GMV 6.7%\"},{\"code\":\"LOW_ROI\",\"title\":\"点金推广 ROI 偏低\",\"value\":1000,\"detail\":\"当前 ROI 10，同口径 搜索推广 ROI 18\"}],\"actions\":[\"从点金推广向搜索推广挪移 400 元\",\"用公开初诊与客户确认首要经营问题\",\"完成经营风险干预并记录客户确认\"]}"
-    },
-    {
-      "id": "E-22",
-      "group": "输出与角色",
-      "description": "角色化输出不修改共享预算测算",
-      "pass": true,
-      "evidence": "[{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0},{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0},{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0}]"
-    },
-    {
-      "id": "E-23",
-      "group": "输出与角色",
-      "description": "角色决策模块与六维优先级不同且共享事实不变",
-      "pass": true,
-      "evidence": "{\"modules\":[\"jbp-budget\",\"acquisition-delivery\",\"health-renewal\"],\"first\":[\"commercial\",\"storefront\",\"users\"]}"
-    },
-    {
-      "id": "E-24",
-      "group": "输出与角色",
-      "description": "SaaS 使用数据缺失时不生成续费风险等级",
-      "pass": true,
-      "evidence": "{\"usage\":{\"status\":\"missing\",\"riskLevel\":null},\"metric\":{\"label\":\"产品使用深度\",\"value\":\"未提供\",\"detail\":\"不能从 GMV 或 ROI 推断产品使用\"}}"
     },
     {
       "id": "E-25",

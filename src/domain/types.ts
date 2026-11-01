@@ -78,12 +78,3 @@ export interface DiagnosisResult {
   talkTracks: string[]
   followUps: FollowUp[]
 }
-
-export interface ProductUsage {
-  synthetic: boolean
-  activeOperators: number
-  reportImports: number
-  followUpCompletionRate: number
-  lastActiveAt: string
-  renewalReviewDate: string
-}

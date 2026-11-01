@@ -67,6 +67,28 @@ textarea { resize: vertical; }
 .error-message { margin: 10px 0 0; color: var(--red); font-size: 12px; line-height: 1.5; }
 
 .main-canvas { min-width: 0; background: var(--white); }
+.intake-main { width: 100%; }
+.merchant-intake { max-width: 1120px; margin: 0 auto; padding: 48px 42px 56px; }
+.intake-hero { max-width: 800px; margin-bottom: 28px; }
+.intake-hero h1 { margin: 10px 0 14px; font-size: clamp(34px, 4vw, 52px); line-height: 1.12; letter-spacing: -0.04em; }
+.intake-hero > p:last-child { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
+.intake-card, .public-intake-result { margin-bottom: 18px; padding: 22px; border: 1px solid var(--beige); background: var(--paper); }
+.intake-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
+.field-wide { grid-column: 1 / -1; }
+.intake-start { max-width: 320px; margin-top: 20px; }
+.public-fields { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--beige); }
+.public-fields summary { min-height: 44px; color: var(--ink); font-size: 12px; font-weight: 650; cursor: pointer; }
+.public-fields .intake-form-grid { margin-top: 12px; }
+.public-sources { margin: 16px 0; padding-top: 12px; border-top: 1px solid var(--beige); }
+.public-sources > strong { font-size: 12px; }
+.public-sources details { margin-top: 10px; }
+.public-sources summary { cursor: pointer; font-size: 12px; font-weight: 650; }
+.public-sources p { color: var(--muted); font-size: 11px; line-height: 1.55; }
+.public-sources a { color: var(--red); font-size: 11px; }
+.weekly-upload .primary-action { max-width: 320px; }
+.demo-cases { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; color: var(--muted); font-size: 12px; }
+.demo-cases .case-buttons { display: flex; flex-wrap: wrap; margin: 0; }
+.demo-cases .case-buttons button { background: var(--white); white-space: nowrap; }
 .empty-workspace { max-width: 780px; margin: 0 auto; padding: 80px 56px; }
 .empty-workspace h1 { max-width: 650px; margin: 12px 0 20px; font-size: clamp(36px, 4.4vw, 62px); line-height: 1.08; letter-spacing: -0.045em; }
 .empty-workspace > p:not(.eyebrow) { max-width: 600px; color: var(--muted); font-size: 16px; line-height: 1.75; }
@@ -145,6 +167,12 @@ textarea { resize: vertical; }
   .assumptions-sidebar > label { margin-top: 14px; }
   .empty-workspace { padding: 52px 26px; }
   .empty-flow { gap: 10px; font-size: 11px; }
+  .merchant-intake { padding: 28px 20px 40px; }
+  .intake-form-grid { grid-template-columns: 1fr; }
+  .intake-card, .public-intake-result { padding: 17px; }
+  .intake-start { max-width: none; }
+  .demo-cases { align-items: flex-start; flex-direction: column; }
+  .demo-cases .case-buttons { display: grid; grid-template-columns: 1fr; width: 100%; }
   .report { padding: 26px 20px 36px; }
   .kpi-strip { grid-template-columns: repeat(2, 1fr); }
   .kpi-strip div:nth-child(2) { border-right: 0; }

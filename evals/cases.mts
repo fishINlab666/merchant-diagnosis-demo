@@ -1,10 +1,9 @@
-import { controlCase, demoStore, fineDiningCase, mainCase, mainProductUsage } from '../src/domain/cases'
+import { controlCase, demoStore, fineDiningCase, mainCase } from '../src/domain/cases'
 import { analyzeBusinessHealth } from '../src/domain/businessHealth'
 import { cityProfiles, syntheticPeers } from '../src/domain/benchmarkCases'
 import { buildDiagnosis, type Assumptions } from '../src/domain/diagnosis'
 import { buildDataRequest, buildInitialObservations } from '../src/domain/intake'
 import { buildMerchantPerspective } from '../src/domain/merchantPerspective'
-import { buildRolePerspective } from '../src/domain/rolePerspective'
 import { parseCsvWeeklyReport } from '../src/lib/weeklyReport'
 
 export interface EvalCase {
@@ -201,54 +200,6 @@ export const evalCases: EvalCase[] = [
         message = error instanceof Error ? error.message : String(error)
       }
       return { pass: message.includes('消耗为 0'), evidence: message || '未拒绝零消耗分母异常' }
-    },
-  },
-  {
-    id: 'E-21', group: '输出与角色', description: '角色改变问题优先级和跟进动作，不只改变话术',
-    check: () => {
-      const ka = buildDiagnosis(mainCase, assumptions, 'ka')
-      const agency = buildDiagnosis(mainCase, assumptions, 'agency')
-      const cs = buildDiagnosis(mainCase, assumptions, 'cs')
-      const actions = new Set([ka.followUps[0].action, agency.followUps[0].action, cs.followUps[0].action])
-      const pass = agency.issues[0].code === 'SUBSIDY' && ka.issues[0].code === 'LOW_ROI' && actions.size === 3
-      return { pass, evidence: JSON.stringify({ ka: ka.issues, agency: agency.issues, actions: [...actions] }) }
-    },
-  },
-  {
-    id: 'E-22', group: '输出与角色', description: '角色化输出不修改共享预算测算',
-    check: () => {
-      const roles = ['ka', 'agency', 'cs'] as const
-      const results = roles.map((role) => buildDiagnosis(mainCase, assumptions, role))
-      const pass = results.every((result) => JSON.stringify(result.calculation) === JSON.stringify(results[0].calculation))
-      return { pass, evidence: JSON.stringify(results.map((result) => result.calculation)) }
-    },
-  },
-  {
-    id: 'E-23', group: '输出与角色', description: '角色决策模块与六维优先级不同且共享事实不变',
-    check: () => {
-      const health = analyzeBusinessHealth(mainCase, syntheticPeers, cityProfiles)
-      const diagnosis = buildDiagnosis(mainCase, assumptions, 'ka')
-      const ka = buildRolePerspective('ka', mainCase, health, diagnosis, null)
-      const agency = buildRolePerspective('agency', mainCase, health, diagnosis, null)
-      const cs = buildRolePerspective('cs', mainCase, health, diagnosis, mainProductUsage)
-      const facts = (perspective: typeof ka) => Object.fromEntries(perspective.dimensions.map((item) => [item.id, `${item.merchant}|${item.comparison}|${item.evidence}`]).sort(([a], [b]) => a.localeCompare(b)))
-      const pass = new Set([ka.module.id, agency.module.id, cs.module.id]).size === 3
-        && ka.dimensions[0].id !== agency.dimensions[0].id
-        && ka.dimensions[0].id !== cs.dimensions[0].id
-        && agency.dimensions[0].id !== cs.dimensions[0].id
-        && JSON.stringify(facts(ka)) === JSON.stringify(facts(agency))
-        && JSON.stringify(facts(ka)) === JSON.stringify(facts(cs))
-      return { pass, evidence: JSON.stringify({ modules: [ka.module.id, agency.module.id, cs.module.id], first: [ka.dimensions[0].id, agency.dimensions[0].id, cs.dimensions[0].id] }) }
-    },
-  },
-  {
-    id: 'E-24', group: '输出与角色', description: 'SaaS 使用数据缺失时不生成续费风险等级',
-    check: () => {
-      const health = analyzeBusinessHealth(controlCase, syntheticPeers, cityProfiles)
-      const diagnosis = buildDiagnosis(controlCase, assumptions, 'cs')
-      const result = buildRolePerspective('cs', controlCase, health, diagnosis, null)
-      const pass = result.usage.status === 'missing' && result.usage.riskLevel === null && result.metrics[1].value === '未提供'
-      return { pass, evidence: JSON.stringify({ usage: result.usage, metric: result.metrics[1] }) }
     },
   },
   {

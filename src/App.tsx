@@ -1,19 +1,19 @@
 import { useMemo, useState } from 'react'
 import './App.css'
-import { controlCase, demoStore, mainCase, mainProductUsage } from './domain/cases'
+import { controlCase, demoStore, fineDiningCase, mainCase } from './domain/cases'
 import { buildDiagnosis, type Assumptions } from './domain/diagnosis'
-import { buildDataRequest, buildInitialObservations } from './domain/intake'
-import type { ProductUsage, Role, StoreProfile, WeeklyReport } from './domain/types'
+import { buildInitialObservations } from './domain/intake'
+import { buildMerchantPerspective } from './domain/merchantPerspective'
+import { searchPublicMerchant, type PublicSearchResult } from './domain/publicSearch'
+import type { StoreProfile, WeeklyReport } from './domain/types'
 import { parseCsvWeeklyReport, parseXlsxWeeklyReport } from './lib/weeklyReport'
 import { analyzeBusinessHealth } from './domain/businessHealth'
-import { buildRolePerspective } from './domain/rolePerspective'
 import { cityProfiles, syntheticPeers } from './domain/benchmarkCases'
 import { AssumptionsPanel } from './components/AssumptionsPanel'
 import { BusinessHealthView } from './components/BusinessHealthView'
+import { MerchantIntake } from './components/MerchantIntake'
 import { ReportView } from './components/ReportView'
 
-const dataRequest = buildDataRequest()
-const roleNames: Record<Role, string> = { ka: '平台 KA', agency: '服务商', cs: 'SaaS 客户成功' }
 const initialAssumptions: Assumptions = {
   mode: 'reallocate',
   amount: 400,
@@ -22,31 +22,40 @@ const initialAssumptions: Assumptions = {
   merchantSubsidyDelta: 0,
 }
 
+const blankStore: StoreProfile = {
+  ...demoStore,
+  alias: '',
+  platform: '',
+  city: '',
+  district: '',
+  category: '',
+  priceBand: '',
+  rating: Number.NaN,
+  menuNote: '',
+}
+
 type UploadState = {
   status: 'idle' | 'ready' | 'parsing' | 'success' | 'error'
   message: string
 }
 
 function App() {
-  const [store, setStore] = useState<StoreProfile>(demoStore)
-  const [report, setReport] = useState<WeeklyReport | null>(mainCase)
-  const [productUsage, setProductUsage] = useState<ProductUsage | null>(mainProductUsage)
+  const [store, setStore] = useState<StoreProfile>(blankStore)
+  const [report, setReport] = useState<WeeklyReport | null>(null)
+  const [stage, setStage] = useState<'intake' | 'public' | 'full'>('intake')
   const [view, setView] = useState<'health' | 'budget'>('health')
+  const [publicResult, setPublicResult] = useState<PublicSearchResult | null>(null)
+  const [searching, setSearching] = useState(false)
   const [assumptions, setAssumptions] = useState<Assumptions>(initialAssumptions)
-  const [role, setRole] = useState<Role>('ka')
-  const [roleMessage, setRoleMessage] = useState('')
-  const [activeStep, setActiveStep] = useState(3)
   const [file, setFile] = useState<File | null>(null)
   const [uploadState, setUploadState] = useState<UploadState>({ status: 'idle', message: '' })
   const [validationError, setValidationError] = useState('')
   const [recalcMessage, setRecalcMessage] = useState('')
-  const result = useMemo(() => report ? buildDiagnosis(report, assumptions, role) : null, [report, assumptions, role])
+
+  const result = useMemo(() => report ? buildDiagnosis(report, assumptions, 'ka') : null, [report, assumptions])
   const healthAnalysis = useMemo(() => report ? analyzeBusinessHealth(report, syntheticPeers, cityProfiles) : null, [report])
-  const rolePerspective = useMemo(() => {
-    if (!report || !result || !healthAnalysis) return null
-    return buildRolePerspective(role, report, healthAnalysis, result, productUsage)
-  }, [report, result, healthAnalysis, role, productUsage])
-  const observations = useMemo(() => buildInitialObservations(store), [store])
+  const perspective = useMemo(() => report && result && healthAnalysis ? buildMerchantPerspective(report, healthAnalysis, result) : null, [report, result, healthAnalysis])
+  const observations = useMemo(() => publicResult ? [...publicResult.observations, ...buildInitialObservations(store)] : [], [publicResult, store])
   const sourceSpend = useMemo(() => report ? Math.min(...report.tools.map((tool) => tool.spend)) : 0, [report])
 
   function updateStore<K extends keyof StoreProfile>(key: K, value: StoreProfile[K]) {
@@ -88,18 +97,44 @@ function App() {
     setRecalcMessage('假设已更新，报告已重算')
   }
 
-  function changeRole(nextRole: Role) {
-    setRole(nextRole)
-    setRoleMessage(`已切换为 ${roleNames[nextRole]}版`)
+  async function startDiagnosis() {
+    if (!store.alias.trim() || searching) return
+    setSearching(true)
+    setUploadState({ status: 'idle', message: '' })
+    const result = await searchPublicMerchant(store, fetch)
+    setPublicResult(result)
+    setStage('public')
+    setSearching(false)
+  }
+
+  function generatePublicIntake() {
+    setPublicResult({ status: 'manual', sources: [], observations: ['已根据人工补充信息生成公开初诊；以下仍需周报验证。'] })
+    setStage('public')
+  }
+
+  function changeFile(selected: File | null) {
+    setFile(selected)
+    setUploadState(selected ? { status: 'ready', message: `已选择 ${selected.name}，可以生成完整诊断。` } : { status: 'idle', message: '' })
   }
 
   function loadCase(selected: WeeklyReport) {
-    setReport({ ...selected, store })
-    setProductUsage(selected === mainCase ? mainProductUsage : null)
+    setStore({ ...selected.store })
+    setReport({ ...selected })
+    setStage('full')
     setView('health')
-    setActiveStep(3)
+    setPublicResult(null)
     setValidationError('')
     setRecalcMessage('')
+    setFile(null)
+    setUploadState({ status: 'idle', message: '' })
+  }
+
+  function resetTool() {
+    setStore(blankStore)
+    setReport(null)
+    setStage('intake')
+    setPublicResult(null)
+    setFile(null)
     setUploadState({ status: 'idle', message: '' })
   }
 
@@ -111,34 +146,32 @@ function App() {
         ? parseCsvWeeklyReport(await file.text(), store)
         : await parseXlsxWeeklyReport(file, store)
       setReport(parsed)
-      setProductUsage(null)
+      setStage('full')
       setView('health')
-      setActiveStep(3)
       setValidationError('')
       setRecalcMessage('')
-      setUploadState({ status: 'success', message: `周报解析成功：${parsed.tools.length} 个投放工具，已生成方案。` })
+      setUploadState({ status: 'success', message: `周报解析成功：${parsed.tools.length} 个投放工具，已生成完整诊断。` })
     } catch (cause) {
       const reason = cause instanceof Error ? cause.message : String(cause)
       setUploadState({ status: 'error', message: `解析失败：${reason}。请检查字段后重试。` })
     }
   }
 
-  const canvas = report && result && healthAnalysis && rolePerspective ? (
+  const canvas = report && result && healthAnalysis && perspective ? (
     <>
       <div className="view-tabs" role="tablist" aria-label="诊断视图">
-        <button type="button" role="tab" id="health-tab" aria-controls="view-panel" aria-selected={view === 'health'} className={view === 'health' ? 'active' : ''} onClick={() => setView('health')}>经营全景</button>
-        <button type="button" role="tab" id="budget-tab" aria-controls="view-panel" aria-selected={view === 'budget'} className={view === 'budget' ? 'active' : ''} onClick={() => setView('budget')}>预算方案</button>
+        <button type="button" role="tab" id="health-tab" aria-controls="view-panel" aria-selected={view === 'health'} className={view === 'health' ? 'active' : ''} onClick={() => setView('health')}>经营诊断</button>
+        <button type="button" role="tab" id="budget-tab" aria-controls="view-panel" aria-selected={view === 'budget'} className={view === 'budget' ? 'active' : ''} onClick={() => setView('budget')}>行动方案</button>
       </div>
       <div id="view-panel" role="tabpanel" aria-labelledby={view === 'health' ? 'health-tab' : 'budget-tab'}>
         {view === 'health' ? (
-          <BusinessHealthView report={report} analysis={healthAnalysis} peers={syntheticPeers} perspective={rolePerspective} followUps={result.followUps} />
+          <BusinessHealthView report={report} analysis={healthAnalysis} peers={syntheticPeers} perspective={perspective} />
         ) : (
           <ReportView
             report={report}
             result={result}
             assumptions={assumptions}
-            perspective={rolePerspective}
-            roleMessage={roleMessage}
+            perspective={perspective}
             assumptionsPanel={<AssumptionsPanel
               assumptions={assumptions}
               blocked={!result.calculation}
@@ -158,103 +191,64 @@ function App() {
       <header className="app-header">
         <div className="brand">
           <span className="brand-mark">M</span>
-          <div><strong>Merchant OS</strong><span>商户预算诊断</span></div>
+          <div><strong>Merchant OS</strong><span>商家经营诊断</span></div>
         </div>
         <div className="header-actions">
-          {report && <>
-            <div className="role-switch" aria-label="报告角色">
-              {(Object.keys(roleNames) as Role[]).map((item) => (
-                <button type="button" key={item} aria-pressed={role === item} className={role === item ? 'active' : ''} onClick={() => changeRole(item)}>{roleNames[item]}</button>
-              ))}
-            </div>
-            <button type="button" className="print-button" onClick={() => window.print()}>打印／保存 PDF</button>
-          </>}
+          {report && <button type="button" className="print-button" onClick={() => window.print()}>打印／保存 PDF</button>}
         </div>
       </header>
 
-      <div className={`workspace ${report ? 'has-report' : ''}`}>
-        {report && <main id="main-content" className="main-canvas">{canvas}</main>}
-        <aside className="intake-sidebar">
-          <div className="sidebar-heading">
-            <p className="eyebrow">WORKFLOW</p>
-            <h2>从信息到预算动作</h2>
-          </div>
-          <nav className="step-nav" aria-label="诊断步骤">
-            {[['01', '公开信息'], ['02', '数据清单'], ['03', '预算方案']].map(([number, label], index) => (
-              <button
-                type="button"
-                key={number}
-                className={activeStep === index + 1 ? 'active' : ''}
-                disabled={index === 2 && !report}
-                title={index === 2 && !report ? '先加载主案例或上传周报，再打开预算方案' : `打开${label}`}
-                aria-current={activeStep === index + 1 ? 'step' : undefined}
-                onClick={() => index < 2 || report ? setActiveStep(index + 1) : undefined}
-              >
-                <span>{number}</span>{label}
-              </button>
-            ))}
-          </nav>
-          {!report && <p className="step-hint">第 3 步将在主案例或周报就绪后开放。</p>}
-
-          <div className="intake-content">
-            {activeStep === 1 && <>
-              <div className="section-title"><span>STEP 01</span><h3>公开信息初诊</h3></div>
-              <div className="form-grid">
-                <label>商户别名<input name="merchantAlias" autoComplete="off" value={store.alias} onChange={(event) => updateStore('alias', event.target.value)} /></label>
-                <label>平台<input name="platform" autoComplete="off" value={store.platform} onChange={(event) => updateStore('platform', event.target.value)} /></label>
-                <label>城市／商圈<input name="city" autoComplete="off" value={store.city} onChange={(event) => updateStore('city', event.target.value)} /></label>
-                <label>商圈<input name="district" autoComplete="off" value={store.district} onChange={(event) => updateStore('district', event.target.value)} /></label>
-                <label>品类<input name="category" autoComplete="off" value={store.category} onChange={(event) => updateStore('category', event.target.value)} /></label>
-                <label>价格带<input name="priceBand" autoComplete="off" value={store.priceBand} onChange={(event) => updateStore('priceBand', event.target.value)} /></label>
-                <label>经营阶段<input name="stage" autoComplete="off" value={store.stage} onChange={(event) => updateStore('stage', event.target.value)} /></label>
-                <label>公开评分<input name="rating" autoComplete="off" inputMode="decimal" type="number" min="0" max="5" step="0.1" value={store.rating} onChange={(event) => updateStore('rating', Number(event.target.value))} /></label>
-                <label>公开菜品观察<textarea name="menuNote" autoComplete="off" rows={3} value={store.menuNote} onChange={(event) => updateStore('menuNote', event.target.value)} /></label>
-              </div>
-              <div className="observation-list">
-                {observations.map((item) => <p key={item}>{item}</p>)}
-              </div>
-              <button type="button" className="primary-action" onClick={() => setActiveStep(2)}>生成数据清单</button>
-            </>}
-
-            {activeStep === 2 && <>
-              <div className="section-title"><span>STEP 02</span><h3>只要一份周报</h3></div>
-              <p className="request-file">{dataRequest.files[0]}</p>
-              <div className="field-list">{dataRequest.fields.map((field) => <span key={field}>{field}</span>)}</div>
-              <p className="optional-fields">可选经营字段：{dataRequest.optionalFields.join('、')}。缺省时对应分析显示“未提供”。</p>
-              <ol className="export-steps">{dataRequest.exportSteps.map((step) => <li key={step}>{step}</li>)}</ol>
-              <button type="button" className="text-action" onClick={() => setActiveStep(1)}>返回修改公开信息</button>
-            </>}
-
-            {activeStep === 3 && report && <>
+      {stage !== 'full' ? (
+        <main id="main-content" className="main-canvas intake-main">
+          <MerchantIntake
+            store={store}
+            searching={searching}
+            publicResult={publicResult}
+            observations={observations}
+            uploadState={uploadState}
+            onStoreChange={updateStore}
+            onStart={() => void startDiagnosis()}
+            onManual={generatePublicIntake}
+            onFileChange={changeFile}
+            onGenerate={() => void generateFromFile()}
+            onLoadCase={loadCase}
+          />
+        </main>
+      ) : (
+        <div className="workspace has-report">
+          <main id="main-content" className="main-canvas">{canvas}</main>
+          <aside className="intake-sidebar">
+            <div className="sidebar-heading"><p className="eyebrow">WORKFLOW</p><h2>从店名到经营动作</h2></div>
+            <nav className="step-nav" aria-label="诊断步骤">
+              {[['01', '店名与公开信息'], ['02', '授权周报'], ['03', '经营诊断']].map(([number, label], index) => (
+                <button type="button" key={number} className={index === 2 ? 'active' : ''} aria-current={index === 2 ? 'step' : undefined}><span>{number}</span>{label}</button>
+              ))}
+            </nav>
+            <div className="intake-content">
               <div className="section-title"><span>STEP 03</span><h3>周报已就绪</h3></div>
               <dl className="report-meta">
-                <div><dt>门店</dt><dd>{report.store.alias}</dd></div>
-                <div><dt>周开始</dt><dd>{report.weekStart}</dd></div>
-                <div><dt>投放工具</dt><dd>{report.tools.length} 个</dd></div>
+                <div><dt>门店</dt><dd>{report?.store.alias}</dd></div>
+                <div><dt>品类</dt><dd>{report?.store.category || '未提供'}</dd></div>
+                <div><dt>周开始</dt><dd>{report?.weekStart}</dd></div>
+                <div><dt>投放工具</dt><dd>{report?.tools.length} 个</dd></div>
               </dl>
-              <button type="button" className="text-action" onClick={() => setActiveStep(1)}>返回修改门店信息</button>
-            </>}
-          </div>
-
-          <div className="report-loader">
-            <p className="loader-title">快速演示</p>
-            <div className="case-buttons">
-              <button type="button" onClick={() => loadCase(mainCase)}>加载主案例</button>
-              <button type="button" onClick={() => loadCase(controlCase)}>加载对照案例</button>
+              <button type="button" className="text-action" onClick={resetTool}>诊断另一家门店</button>
             </div>
-            <label className="file-label">上传周报<input name="weeklyReport" autoComplete="off" type="file" accept=".csv,.xlsx" onChange={(event) => {
-              const selected = event.target.files?.[0] ?? null
-              setFile(selected)
-              setUploadState(selected ? { status: 'ready', message: `已选择 ${selected.name}，可以生成方案。` } : { status: 'idle', message: '' })
-            }} /></label>
-            <button type="button" className="primary-action" disabled={!file || uploadState.status === 'parsing'} onClick={() => void generateFromFile()}>
-              {uploadState.status === 'parsing' ? '正在解析…' : '生成一页方案'}
-            </button>
-            {uploadState.message && <p className={`upload-status ${uploadState.status}`} role={uploadState.status === 'error' ? 'alert' : 'status'}>{uploadState.message}</p>}
-          </div>
-        </aside>
-        {!report && <main id="main-content" className="main-canvas">{canvas}</main>}
-      </div>
+            <div className="report-loader">
+              <p className="loader-title">换一份周报</p>
+              <label className="file-label">上传周报<input name="weeklyReport" autoComplete="off" type="file" accept=".csv,.xlsx" onChange={(event) => changeFile(event.target.files?.[0] ?? null)} /></label>
+              <button type="button" className="primary-action" disabled={!file || uploadState.status === 'parsing'} onClick={() => void generateFromFile()}>{uploadState.status === 'parsing' ? '正在解析…' : '生成完整诊断'}</button>
+              {uploadState.message && <p className={`upload-status ${uploadState.status}`} role={uploadState.status === 'error' ? 'alert' : 'status'}>{uploadState.message}</p>}
+              <p className="loader-title">试用其他合成示例</p>
+              <div className="case-buttons">
+                <button type="button" onClick={() => loadCase(mainCase)}>快餐示例</button>
+                <button type="button" onClick={() => loadCase(fineDiningCase)}>正餐示例</button>
+                <button type="button" onClick={() => loadCase(controlCase)}>归因异常示例</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      )}
     </div>
   )
 }
