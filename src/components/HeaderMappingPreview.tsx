@@ -1,12 +1,18 @@
-import type { HeaderMappingPreview as HeaderMappingPreviewModel } from '../lib/reportMapping'
+import { STANDARD_FIELDS, STANDARD_REQUIRED, type HeaderMappingPreview as HeaderMappingPreviewModel } from '../lib/reportMapping'
 
 const matchLabels = {
   exact: '精确匹配',
   alias: '规则别名 · 待确认',
   unmapped: '未映射',
+  manual: '手动校正',
 }
 
-export function HeaderMappingPreview({ preview }: { preview: HeaderMappingPreviewModel }) {
+interface HeaderMappingPreviewProps {
+  preview: HeaderMappingPreviewModel
+  onMappingChange?: (index: number, standard: string | null) => void
+}
+
+export function HeaderMappingPreview({ preview, onMappingChange }: HeaderMappingPreviewProps) {
   return (
     <section className="mapping-preview" aria-labelledby="mapping-preview-title">
       <div className="mapping-heading">
@@ -34,7 +40,13 @@ export function HeaderMappingPreview({ preview }: { preview: HeaderMappingPrevie
           <tbody>{preview.mappings.map((item, index) => (
             <tr key={`${item.source}-${index}`} className={item.match === 'unmapped' ? 'unmapped' : ''}>
               <td data-label="原字段">{item.source}</td>
-              <td data-label="标准字段">{item.standard ?? '不纳入诊断'}</td>
+              <td data-label="标准字段">
+                <select aria-label={`${item.source}映射到标准字段`} value={item.standard ?? ''} onChange={(event) => onMappingChange?.(index, event.target.value || null)}>
+                  <option value="">不纳入诊断</option>
+                  <optgroup label="必需字段">{STANDARD_REQUIRED.map((field) => <option key={field} value={field}>{field}</option>)}</optgroup>
+                  <optgroup label="可选字段">{STANDARD_FIELDS.filter((field) => !STANDARD_REQUIRED.includes(field as typeof STANDARD_REQUIRED[number])).map((field) => <option key={field} value={field}>{field}</option>)}</optgroup>
+                </select>
+              </td>
               <td data-label="匹配方式">{matchLabels[item.match]}</td>
             </tr>
           ))}</tbody>

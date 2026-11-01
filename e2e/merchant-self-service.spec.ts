@@ -83,3 +83,26 @@ test('header mapping requires confirmation before diagnosis and blocks missing r
   await expect(page.locator('.mapping-missing')).toContainText('缺少必需字段')
   await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeDisabled()
 })
+
+test('manual header mapping resolves unknown fields and recalculates conflicts', async ({ page }) => {
+  await page.route('https://r.jina.ai/**', (route) => route.fulfill({ status: 503, body: 'unavailable' }))
+  await page.goto('/')
+  await page.getByLabel('店铺名称').fill('手动映射门店')
+  await page.getByRole('button', { name: '开始经营诊断' }).click()
+  await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/manual-weekly.csv'))
+
+  await expect(page.locator('.mapping-missing')).toContainText('净GMV')
+  await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeDisabled()
+  await page.getByLabel('门店总GMV映射到标准字段').selectOption('净GMV')
+  await expect(page.locator('.upload-status.ready')).toContainText('映射已更新')
+  await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeEnabled()
+  await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
+  await expect(page.getByRole('heading', { name: '我的经营诊断' })).toBeVisible()
+  await expect(page.locator('.role-decision-metrics')).toContainText('60,000')
+
+  await page.getByLabel('门店总GMV映射到标准字段').selectOption('订单')
+  await expect(page.locator('.mapping-missing')).toContainText('重复映射：订单')
+  await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeDisabled()
+  await page.getByLabel('门店总GMV映射到标准字段').selectOption('净GMV')
+  await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeEnabled()
+})

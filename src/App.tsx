@@ -7,7 +7,7 @@ import { buildMerchantPerspective } from './domain/merchantPerspective'
 import { searchPublicMerchant, type PublicSearchResult } from './domain/publicSearch'
 import type { StoreProfile, WeeklyReport } from './domain/types'
 import { parseCsvWeeklyReport, parseXlsxWeeklyReport, readCsvWeeklyReportHeaders, readXlsxWeeklyReportHeaders } from './lib/weeklyReport'
-import { buildHeaderMapping, type HeaderMappingPreview } from './lib/reportMapping'
+import { buildHeaderMapping, evaluateHeaderMappings, type HeaderMappingPreview } from './lib/reportMapping'
 import { analyzeBusinessHealth } from './domain/businessHealth'
 import { cityProfiles, syntheticPeers } from './domain/benchmarkCases'
 import { AssumptionsPanel } from './components/AssumptionsPanel'
@@ -139,6 +139,18 @@ function App() {
     }
   }
 
+  function changeMapping(index: number, standard: string | null) {
+    setMappingPreview((current) => {
+      if (!current) return current
+      const next = evaluateHeaderMappings(current.mappings.map((item, itemIndex) => itemIndex === index ? { ...item, standard, match: 'manual' } : item))
+      setUploadState({
+        status: next.canGenerate ? 'ready' : 'error',
+        message: next.canGenerate ? '映射已更新，请确认后生成诊断。' : '存在缺失字段或重复映射，请继续修正。',
+      })
+      return next
+    })
+  }
+
   function loadCase(selected: WeeklyReport) {
     setStore({ ...selected.store })
     setReport({ ...selected })
@@ -235,6 +247,7 @@ function App() {
             observations={observations}
             uploadState={uploadState}
             mappingPreview={mappingPreview}
+            onMappingChange={changeMapping}
             onStoreChange={updateStore}
             onStart={() => void startDiagnosis()}
             onManual={generatePublicIntake}
@@ -266,7 +279,7 @@ function App() {
             <div className="report-loader">
               <p className="loader-title">换一份周报</p>
               <label className="file-label">上传周报<input name="weeklyReport" autoComplete="off" type="file" accept=".csv,.xlsx" onChange={(event) => void changeFile(event.target.files?.[0] ?? null)} /></label>
-              {mappingPreview && <HeaderMappingPreviewView preview={mappingPreview} />}
+              {mappingPreview && <HeaderMappingPreviewView preview={mappingPreview} onMappingChange={changeMapping} />}
               <button type="button" className="primary-action" disabled={!mappingPreview?.canGenerate || uploadState.status === 'parsing'} onClick={() => void generateFromFile()}>{uploadState.status === 'parsing' ? '正在解析…' : '确认映射并生成诊断'}</button>
               {uploadState.message && <p className={`upload-status ${uploadState.status}`} role={uploadState.status === 'error' ? 'alert' : 'status'}>{uploadState.message}</p>}
               <p className="loader-title">试用其他合成示例</p>

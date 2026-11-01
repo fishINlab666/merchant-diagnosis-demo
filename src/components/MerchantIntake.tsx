@@ -16,6 +16,7 @@ interface MerchantIntakeProps {
   observations: string[]
   uploadState: UploadState
   mappingPreview: HeaderMappingPreviewModel | null
+  onMappingChange: (index: number, standard: string | null) => void
   onStoreChange: <K extends keyof StoreProfile>(key: K, value: StoreProfile[K]) => void
   onStart: () => void
   onManual: () => void
@@ -31,6 +32,7 @@ export function MerchantIntake({
   observations,
   uploadState,
   mappingPreview,
+  onMappingChange,
   onStoreChange,
   onStart,
   onManual,
@@ -95,7 +97,7 @@ export function MerchantIntake({
           <div><h2>上传一份周报，生成完整诊断</h2><p>CSV／XLSX 只在本机解析，不发送给公开检索服务。</p></div>
         </div>
         <label className="file-label">上传周报<input name="weeklyReport" autoComplete="off" type="file" accept=".csv,.xlsx" onChange={(event) => onFileChange(event.target.files?.[0] ?? null)} /></label>
-        {mappingPreview && <HeaderMappingPreview preview={mappingPreview} />}
+        {mappingPreview && <HeaderMappingPreview preview={mappingPreview} onMappingChange={onMappingChange} />}
         <button type="button" className="primary-action" disabled={!mappingPreview?.canGenerate || uploadState.status === 'parsing'} onClick={onGenerate}>
           {uploadState.status === 'parsing' ? '正在解析…' : '确认映射并生成诊断'}
         </button>
