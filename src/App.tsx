@@ -57,7 +57,7 @@ function App() {
   const [recalcMessage, setRecalcMessage] = useState('')
 
   const result = useMemo(() => report ? buildDiagnosis(report, assumptions, 'ka') : null, [report, assumptions])
-  const healthAnalysis = useMemo(() => report ? analyzeBusinessHealth(report, syntheticPeers, cityProfiles) : null, [report])
+  const healthAnalysis = useMemo(() => report ? analyzeBusinessHealth(report, report.synthetic ? syntheticPeers : [], report.synthetic ? cityProfiles : []) : null, [report])
   const perspective = useMemo(() => report && result && healthAnalysis ? buildMerchantPerspective(report, healthAnalysis, result) : null, [report, result, healthAnalysis])
   const observations = useMemo(() => publicResult ? [...publicResult.observations, ...buildInitialObservations(store)] : [], [publicResult, store])
   const sourceSpend = useMemo(() => report ? Math.min(...report.tools.map((tool) => tool.spend)) : 0, [report])

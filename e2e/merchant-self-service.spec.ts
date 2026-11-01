@@ -123,3 +123,20 @@ test('store identity binds on confirmation and blocks a different store file', a
   await expect(page.locator('.mapping-identity')).toContainText('不一致')
   await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeDisabled()
 })
+
+test('real uploads never inherit synthetic benchmarks while demos keep them', async ({ page }) => {
+  await page.route('https://r.jina.ai/**', (route) => route.fulfill({ status: 503, body: 'unavailable' }))
+  await page.goto('/')
+  await page.getByLabel('店铺名称').fill('真实上传门店')
+  await page.getByRole('button', { name: '开始经营诊断' }).click()
+  await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/main-weekly.csv'))
+  await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
+
+  await expect(page.getByRole('heading', { name: '我的经营诊断' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /竞店样本/ })).toHaveCount(0)
+  await expect(page.getByRole('heading', { name: /城市分层/ })).toHaveCount(0)
+
+  await page.getByRole('button', { name: '快餐示例' }).click()
+  await expect(page.getByRole('heading', { name: /竞店样本/ })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /城市分层/ })).toBeVisible()
+})

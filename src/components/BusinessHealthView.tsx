@@ -67,7 +67,7 @@ export function BusinessHealthView({ report, analysis, peers, perspective }: Bus
         </div>
       </section>
 
-      <section className="health-section">
+      {report.synthetic && <section className="health-section">
         <div className="section-heading">
           <div><h2>竞店样本｜找经营差距</h2><p>同平台、同商圈、同品类、同价格带、同周期；不是行业均值。</p></div>
         </div>
@@ -85,9 +85,9 @@ export function BusinessHealthView({ report, analysis, peers, perspective }: Bus
           <strong>剔除样本</strong>
           {excluded.map((peer) => <p key={peer.peerId}>{peer.alias}：城市／商圈不一致，不纳入本店对比。</p>)}
         </div>}
-      </section>
+      </section>}
 
-      <section className="health-section">
+      {report.synthetic && <section className="health-section">
         <div className="section-heading">
           <div><h2>城市分层｜决定投入与退出</h2><p>UE 与增速同时看；合成样本只用于展示分层方法，不代表真实城市排名。</p></div>
         </div>
@@ -107,7 +107,7 @@ export function BusinessHealthView({ report, analysis, peers, perspective }: Bus
             </div>
           ))}
         </div>
-      </section>
+      </section>}
 
       <section className="health-section role-next-actions">
         <div className="section-heading">
