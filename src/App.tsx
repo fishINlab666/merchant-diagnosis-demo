@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react'
 import './App.css'
-import { controlCase, demoStore, mainCase } from './domain/cases'
+import { controlCase, demoStore, mainCase, mainProductUsage } from './domain/cases'
 import { buildDiagnosis, type Assumptions } from './domain/diagnosis'
 import { buildDataRequest, buildInitialObservations } from './domain/intake'
-import type { Role, StoreProfile, WeeklyReport } from './domain/types'
+import type { ProductUsage, Role, StoreProfile, WeeklyReport } from './domain/types'
 import { parseCsvWeeklyReport, parseXlsxWeeklyReport } from './lib/weeklyReport'
 import { analyzeBusinessHealth } from './domain/businessHealth'
+import { buildRolePerspective } from './domain/rolePerspective'
 import { cityProfiles, syntheticPeers } from './domain/benchmarkCases'
 import { AssumptionsPanel } from './components/AssumptionsPanel'
 import { BusinessHealthView } from './components/BusinessHealthView'
@@ -29,6 +30,7 @@ type UploadState = {
 function App() {
   const [store, setStore] = useState<StoreProfile>(demoStore)
   const [report, setReport] = useState<WeeklyReport | null>(mainCase)
+  const [productUsage, setProductUsage] = useState<ProductUsage | null>(mainProductUsage)
   const [view, setView] = useState<'health' | 'budget'>('health')
   const [assumptions, setAssumptions] = useState<Assumptions>(initialAssumptions)
   const [role, setRole] = useState<Role>('ka')
@@ -40,6 +42,10 @@ function App() {
   const [recalcMessage, setRecalcMessage] = useState('')
   const result = useMemo(() => report ? buildDiagnosis(report, assumptions, role) : null, [report, assumptions, role])
   const healthAnalysis = useMemo(() => report ? analyzeBusinessHealth(report, syntheticPeers, cityProfiles) : null, [report])
+  const rolePerspective = useMemo(() => {
+    if (!report || !result || !healthAnalysis) return null
+    return buildRolePerspective(role, report, healthAnalysis, result, productUsage)
+  }, [report, result, healthAnalysis, role, productUsage])
   const observations = useMemo(() => buildInitialObservations(store), [store])
   const sourceSpend = useMemo(() => report ? Math.min(...report.tools.map((tool) => tool.spend)) : 0, [report])
 
@@ -89,6 +95,7 @@ function App() {
 
   function loadCase(selected: WeeklyReport) {
     setReport({ ...selected, store })
+    setProductUsage(selected === mainCase ? mainProductUsage : null)
     setView('health')
     setActiveStep(3)
     setValidationError('')
@@ -104,6 +111,7 @@ function App() {
         ? parseCsvWeeklyReport(await file.text(), store)
         : await parseXlsxWeeklyReport(file, store)
       setReport(parsed)
+      setProductUsage(null)
       setView('health')
       setActiveStep(3)
       setValidationError('')
@@ -115,7 +123,7 @@ function App() {
     }
   }
 
-  const canvas = report && result && healthAnalysis ? (
+  const canvas = report && result && healthAnalysis && rolePerspective ? (
     <>
       <div className="view-tabs" role="tablist" aria-label="诊断视图">
         <button type="button" role="tab" id="health-tab" aria-controls="view-panel" aria-selected={view === 'health'} className={view === 'health' ? 'active' : ''} onClick={() => setView('health')}>经营全景</button>
@@ -123,13 +131,13 @@ function App() {
       </div>
       <div id="view-panel" role="tabpanel" aria-labelledby={view === 'health' ? 'health-tab' : 'budget-tab'}>
         {view === 'health' ? (
-          <BusinessHealthView report={report} analysis={healthAnalysis} peers={syntheticPeers} role={role} />
+          <BusinessHealthView report={report} analysis={healthAnalysis} peers={syntheticPeers} perspective={rolePerspective} followUps={result.followUps} />
         ) : (
           <ReportView
             report={report}
             result={result}
             assumptions={assumptions}
-            role={role}
+            perspective={rolePerspective}
             roleMessage={roleMessage}
             assumptionsPanel={<AssumptionsPanel
               assumptions={assumptions}

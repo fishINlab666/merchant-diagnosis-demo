@@ -1,7 +1,7 @@
 {
   "suite": "merchant-diagnosis-business-evals",
-  "total": 22,
-  "passed": 22,
+  "total": 24,
+  "passed": 24,
   "failed": 0,
   "passRate": 100,
   "results": [
@@ -158,6 +158,20 @@
       "description": "角色化输出不修改共享预算测算",
       "pass": true,
       "evidence": "[{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0},{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0},{\"currentGmv\":60000,\"projectedGmv\":62560,\"deltaGmv\":2560,\"currentGrossProfit\":20600,\"projectedGrossProfit\":21752,\"deltaGrossProfit\":1152,\"spendDelta\":0}]"
+    },
+    {
+      "id": "E-23",
+      "group": "输出与角色",
+      "description": "角色决策模块与六维优先级不同且共享事实不变",
+      "pass": true,
+      "evidence": "{\"modules\":[\"jbp-budget\",\"acquisition-delivery\",\"health-renewal\"],\"first\":[\"commercial\",\"storefront\",\"users\"]}"
+    },
+    {
+      "id": "E-24",
+      "group": "输出与角色",
+      "description": "SaaS 使用数据缺失时不生成续费风险等级",
+      "pass": true,
+      "evidence": "{\"usage\":{\"status\":\"missing\",\"riskLevel\":null},\"metric\":{\"label\":\"产品使用深度\",\"value\":\"未提供\",\"detail\":\"不能从 GMV 或 ROI 推断产品使用\"}}"
     }
   ]
 }

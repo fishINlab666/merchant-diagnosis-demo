@@ -209,6 +209,38 @@ textarea { resize: vertical; }
 .city-card dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
 .city-card small { display: block; margin-top: 10px; color: var(--muted); font-size: 10px; }
 
+/* Role-specific decision views */
+.role-decision-panel { margin: 0 0 28px; border: 1px solid var(--ink); background: var(--white); }
+.role-decision-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding: 20px; background: var(--ink); color: var(--paper); }
+.role-decision-heading .eyebrow { color: #d9c8bd; }
+.role-decision-heading h2 { margin: 6px 0; font-size: 23px; line-height: 1.3; }
+.role-decision-heading p:last-child { margin: 0; color: #e8e1da; font-size: 12px; line-height: 1.55; }
+.role-decision-heading > span { flex-shrink: 0; padding: 6px 9px; border: 1px solid #8f857c; font-size: 12px; font-weight: 700; }
+.role-decision-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--beige); border-bottom: 1px solid var(--beige); }
+.role-decision-metric { min-width: 0; padding: 16px 18px; background: var(--paper); }
+.role-decision-metric > span { display: block; margin-bottom: 7px; color: var(--muted); font-size: 12px; }
+.role-decision-metric strong { display: block; margin-bottom: 7px; font-size: 19px; line-height: 1.35; }
+.role-decision-metric small { display: block; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.role-module-body { padding: 20px; }
+.role-module-title { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 15px; }
+.role-module-title h3 { margin: 0; font-size: 16px; }
+.role-module-title p { max-width: 620px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; text-align: right; }
+.role-module-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.role-module-card { min-width: 0; padding: 14px; border: 1px solid var(--beige); border-top: 2px solid var(--red); background: var(--paper); break-inside: avoid; }
+.role-module-card > span { display: block; margin-bottom: 8px; color: var(--red); font-size: 11px; font-weight: 700; }
+.role-module-card strong { display: block; margin-bottom: 8px; font-size: 15px; line-height: 1.45; }
+.role-module-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.dimension-top h3::before { content: attr(data-rank); margin-right: 8px; color: var(--muted); font-size: 10px; }
+.dimension-lens { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--beige); color: var(--ink); font-size: 12px; font-weight: 650; line-height: 1.5; }
+.city-action { margin: 12px 0 0; color: var(--red); font-size: 12px; font-weight: 700; }
+.role-action-list { display: grid; gap: 10px; }
+.role-action { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 15px; border: 1px solid var(--beige); background: var(--paper); break-inside: avoid; }
+.role-action > span { color: var(--red); font-size: 12px; font-weight: 700; }
+.role-action strong { display: block; margin-bottom: 6px; font-size: 14px; }
+.role-action p { margin: 0 0 5px; color: var(--ink); font-size: 12px; }
+.role-action small { display: block; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.role-action time { color: var(--muted); font-size: 12px; white-space: nowrap; }
+
 .health-position span,
 .dimension small,
 .health-section .section-heading p,
@@ -229,6 +261,13 @@ textarea { resize: vertical; }
   .health-header h1 { font-size: 36px; }
   .health-position { max-width: none; }
   .dimension-grid, .city-grid { grid-template-columns: 1fr; }
+  .role-decision-heading { flex-direction: column; gap: 12px; }
+  .role-decision-heading > span { flex-shrink: 1; }
+  .role-decision-metrics, .role-module-grid { grid-template-columns: 1fr; }
+  .role-module-title { align-items: flex-start; flex-direction: column; gap: 6px; }
+  .role-module-title p { text-align: left; }
+  .role-action { grid-template-columns: 28px minmax(0, 1fr); }
+  .role-action time { grid-column: 2; }
   .peer-table, .peer-table tbody, .peer-table tr, .peer-table td { display: block; width: 100%; }
   .peer-table thead { display: none; }
   .peer-table tr { margin-bottom: 12px; padding: 10px; border: 1px solid var(--beige); background: var(--paper); }
@@ -355,6 +394,28 @@ input[aria-invalid="true"]:focus-visible { outline-color: var(--red); }
   .followup-table td::before { content: none; }
   .followup-table input { min-height: 0; }
   .view-tabs { display: none; }
+  .role-decision-panel { margin-bottom: 10px; break-inside: avoid; }
+  .role-context-budget .role-module-body { display: none; }
+  .role-decision-heading { flex-direction: row; padding: 10px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .role-decision-metrics, .role-module-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .role-module-title { flex-direction: row; }
+  .role-module-title p { text-align: right; }
+  .role-decision-heading h2 { font-size: 16px; }
+  .role-decision-heading p:last-child, .role-decision-heading > span { font-size: 8px; }
+  .role-decision-metric { padding: 8px; }
+  .role-decision-metric > span, .role-decision-metric small { font-size: 8px; }
+  .role-decision-metric strong { font-size: 13px; }
+  .role-module-body { padding: 10px; }
+  .role-module-title { margin-bottom: 8px; }
+  .role-module-title h3 { font-size: 12px; }
+  .role-module-title p, .role-module-card p { font-size: 8px; }
+  .role-module-card { padding: 8px; }
+  .role-module-card > span, .role-module-card strong { font-size: 9px; }
+  .dimension-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .dimension { padding: 10px; break-inside: avoid; }
+  .city-card, .peer-table { break-inside: avoid; }
+  .dimension-lens, .city-action, .role-action p, .role-action small, .role-action time { font-size: 8px; }
+  .role-action { padding: 8px; }
   .business-health { max-width: none; padding: 0; }
   .peer-table, .peer-table tbody, .peer-table tr, .peer-table td { display: table; width: auto; }
   .peer-table tbody { display: table-row-group; }

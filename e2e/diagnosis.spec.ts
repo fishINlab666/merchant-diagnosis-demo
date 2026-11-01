@@ -17,7 +17,7 @@ test('walks from public intake to the main case, role talk tracks and print', as
   await page.getByRole('button', { name: '加载主案例' }).click()
   await page.getByRole('tab', { name: '预算方案' }).click()
   await expect(page.getByRole('heading', { name: '一页预算方案' })).toBeVisible()
-  await expect(page.getByText('点金推广 ROI 偏低', { exact: true })).toBeVisible()
+  await expect(page.locator('.issue-grid').getByText('点金推广 ROI 偏低', { exact: true })).toBeVisible()
   await expect(page.getByText(/2,560/).first()).toBeVisible()
   await expect(page.getByText(/1,152/).first()).toBeVisible()
 
@@ -35,7 +35,7 @@ test('imports one CSV weekly report and generates the same budget recommendation
   await page.getByRole('button', { name: '生成一页方案' }).click()
   await page.getByRole('tab', { name: '预算方案' }).click()
   await expect(page.getByRole('heading', { name: '一页预算方案' })).toBeVisible()
-  await expect(page.getByText('点金推广 ROI 偏低', { exact: true })).toBeVisible()
+  await expect(page.locator('.issue-grid').getByText('点金推广 ROI 偏低', { exact: true })).toBeVisible()
   await expect(page.getByText(/2,560/).first()).toBeVisible()
 })
 
@@ -43,7 +43,7 @@ test('blocks ROI ranking when the control case has different attribution windows
   await page.goto('/')
   await page.getByRole('button', { name: '加载对照案例' }).click()
   await page.getByRole('tab', { name: '预算方案' }).click()
-  await expect(page.getByText('工具归因口径不同', { exact: true })).toBeVisible()
+  await expect(page.locator('.issue-grid').getByText('工具归因口径不同', { exact: true })).toBeVisible()
   await expect(page.getByText('先统一归因口径，再谈预算', { exact: true })).toBeVisible()
   await expect(page.getByRole('heading', { name: '调整前后算账' })).toHaveCount(0)
 })
