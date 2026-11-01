@@ -16,6 +16,8 @@ interface MerchantIntakeProps {
   observations: string[]
   uploadState: UploadState
   mappingPreview: HeaderMappingPreviewModel | null
+  sourceStoreId: string
+  identityMismatch: boolean
   onMappingChange: (index: number, standard: string | null) => void
   onStoreChange: <K extends keyof StoreProfile>(key: K, value: StoreProfile[K]) => void
   onStart: () => void
@@ -32,6 +34,8 @@ export function MerchantIntake({
   observations,
   uploadState,
   mappingPreview,
+  sourceStoreId,
+  identityMismatch,
   onMappingChange,
   onStoreChange,
   onStart,
@@ -51,6 +55,7 @@ export function MerchantIntake({
       <section className="intake-card" aria-label="门店档案">
         <div className="intake-form-grid">
           <label>店铺名称<input name="shopName" autoComplete="off" required value={store.alias} placeholder="例如：张记煲仔饭（城西店）" onChange={(event) => onStoreChange('alias', event.target.value)} /></label>
+          <label>门店ID（可选，用于与周报核对）<input name="storeId" autoComplete="off" value={store.storeId ?? ''} placeholder="例如：S1；不知道可在预览中确认" onChange={(event) => onStoreChange('storeId', event.target.value)} /></label>
           <label>平台<input name="platform" autoComplete="off" value={store.platform} placeholder="例如：美团／饿了么" onChange={(event) => onStoreChange('platform', event.target.value)} /></label>
           <label>城市<input name="city" autoComplete="off" value={store.city} placeholder="用于缩小公开检索范围" onChange={(event) => onStoreChange('city', event.target.value)} /></label>
           <label>商圈<input name="district" autoComplete="off" value={store.district} placeholder="例如：城西科创商圈" onChange={(event) => onStoreChange('district', event.target.value)} /></label>
@@ -97,8 +102,8 @@ export function MerchantIntake({
           <div><h2>上传一份周报，生成完整诊断</h2><p>CSV／XLSX 只在本机解析，不发送给公开检索服务。</p></div>
         </div>
         <label className="file-label">上传周报<input name="weeklyReport" autoComplete="off" type="file" accept=".csv,.xlsx" onChange={(event) => onFileChange(event.target.files?.[0] ?? null)} /></label>
-        {mappingPreview && <HeaderMappingPreview preview={mappingPreview} onMappingChange={onMappingChange} />}
-        <button type="button" className="primary-action" disabled={!mappingPreview?.canGenerate || uploadState.status === 'parsing'} onClick={onGenerate}>
+        {mappingPreview && <HeaderMappingPreview preview={mappingPreview} sourceStoreId={sourceStoreId} profileStoreId={store.storeId} identityMismatch={identityMismatch} onMappingChange={onMappingChange} />}
+        <button type="button" className="primary-action" disabled={!mappingPreview?.canGenerate || identityMismatch || uploadState.status === 'parsing'} onClick={onGenerate}>
           {uploadState.status === 'parsing' ? '正在解析…' : '确认映射并生成诊断'}
         </button>
         {uploadState.message && <p className={`upload-status ${uploadState.status}`} role={uploadState.status === 'error' ? 'alert' : 'status'}>{uploadState.message}</p>}

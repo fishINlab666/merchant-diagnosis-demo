@@ -2,6 +2,7 @@ export type Role = 'ka' | 'agency' | 'cs'
 export type BudgetMode = 'reallocate' | 'add'
 
 export interface StoreProfile {
+  storeId?: string
   alias: string
   platform: string
   city: string
@@ -24,6 +25,7 @@ export interface ToolMetric {
 
 export interface WeeklyReport {
   synthetic: boolean
+  sourceStoreId: string
   store: StoreProfile
   weekStart: string
   exportedAt: string

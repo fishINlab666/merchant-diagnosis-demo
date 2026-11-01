@@ -106,3 +106,20 @@ test('manual header mapping resolves unknown fields and recalculates conflicts',
   await page.getByLabel('门店总GMV映射到标准字段').selectOption('净GMV')
   await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeEnabled()
 })
+
+test('store identity binds on confirmation and blocks a different store file', async ({ page }) => {
+  await page.route('https://r.jina.ai/**', (route) => route.fulfill({ status: 503, body: 'unavailable' }))
+  await page.goto('/')
+  await page.getByLabel('店铺名称').fill('身份确认门店')
+  await page.getByRole('button', { name: '开始经营诊断' }).click()
+  await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/main-weekly.csv'))
+
+  await expect(page.locator('.mapping-identity')).toContainText('文件门店ID：S1')
+  await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
+  await expect(page.getByRole('heading', { name: '我的经营诊断' })).toBeVisible()
+  await expect(page.locator('.report-meta')).toContainText('S1')
+
+  await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/other-store-weekly.csv'))
+  await expect(page.locator('.mapping-identity')).toContainText('不一致')
+  await expect(page.getByRole('button', { name: '确认映射并生成诊断' })).toBeDisabled()
+})

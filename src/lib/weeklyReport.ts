@@ -82,8 +82,11 @@ function normalize(headers: string[], rows: Cell[][], store: StoreProfile, mappi
   }
   const toolNames = records.map((record) => text(record['投放工具']))
   if (new Set(toolNames).size !== toolNames.length) throw new Error('投放工具重复，请保留每个工具的一行周汇总')
+  const sourceStoreId = text(first['门店ID'])
+  if (!sourceStoreId) throw new Error('门店ID不能为空')
   return {
     synthetic: false,
+    sourceStoreId,
     store,
     weekStart: text(first['周开始']),
     exportedAt: text(first['导出时间']),
@@ -119,6 +122,20 @@ export function readCsvWeeklyReportHeaders(input: string): string[] {
 export async function readXlsxWeeklyReportHeaders(file: Blob): Promise<string[]> {
   const [headers] = await readSheet(file)
   return (headers ?? []).map(text)
+}
+
+export function readCsvWeeklyReportStoreId(input: string, mapping: HeaderMapping[]): string {
+  const [headers, ...rows] = parseCsvRows(input)
+  const source = mapping.find((item) => item.standard === '门店ID')?.source ?? '门店ID'
+  const index = (headers ?? []).findIndex((header) => header.trim() === source)
+  return index >= 0 ? text(rows[0]?.[index] ?? null) : ''
+}
+
+export async function readXlsxWeeklyReportStoreId(file: Blob, mapping: HeaderMapping[]): Promise<string> {
+  const [headers, ...rows] = await readSheet(file)
+  const source = mapping.find((item) => item.standard === '门店ID')?.source ?? '门店ID'
+  const index = (headers ?? []).findIndex((header) => text(header) === source)
+  return index >= 0 ? text(rows[0]?.[index] ?? null) : ''
 }
 
 export function parseCsvWeeklyReport(input: string, store: StoreProfile, mapping: HeaderMapping[] = []): WeeklyReport {

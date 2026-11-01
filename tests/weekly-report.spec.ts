@@ -61,6 +61,11 @@ describe('weekly report import', () => {
     expect(report.netGmv).toBe(60000)
   })
 
+  it('preserves the source store ID and rejects an empty store identity', () => {
+    expect(parseCsvWeeklyReport(csv, demoStore).sourceStoreId).toBe('S1')
+    expect(() => parseCsvWeeklyReport(csv.replace(/S1/g, ''), demoStore)).toThrow('门店ID不能为空')
+  })
+
   it('reads XLSX headers without generating a report', async () => {
     const file = new File([readFileSync(resolve('tests/fixtures/main-report.xlsx'))], 'main-report.xlsx')
     const headers = await readXlsxWeeklyReportHeaders(file)

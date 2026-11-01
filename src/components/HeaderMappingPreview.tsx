@@ -9,10 +9,13 @@ const matchLabels = {
 
 interface HeaderMappingPreviewProps {
   preview: HeaderMappingPreviewModel
+  sourceStoreId?: string
+  profileStoreId?: string
+  identityMismatch?: boolean
   onMappingChange?: (index: number, standard: string | null) => void
 }
 
-export function HeaderMappingPreview({ preview, onMappingChange }: HeaderMappingPreviewProps) {
+export function HeaderMappingPreview({ preview, sourceStoreId, profileStoreId, identityMismatch, onMappingChange }: HeaderMappingPreviewProps) {
   return (
     <section className="mapping-preview" aria-labelledby="mapping-preview-title">
       <div className="mapping-heading">
@@ -23,6 +26,16 @@ export function HeaderMappingPreview({ preview, onMappingChange }: HeaderMapping
       {(preview.missingRequired.length > 0 || preview.duplicateStandards.length > 0) && <div className="mapping-missing" role="alert">
         {preview.missingRequired.length > 0 && <p>缺少必需字段：{preview.missingRequired.join('、')}</p>}
         {preview.duplicateStandards.length > 0 && <p>重复映射：{preview.duplicateStandards.join('、')}，请保留唯一权威列。</p>}
+      </div>}
+
+      {sourceStoreId && <div className={`mapping-identity ${identityMismatch ? 'identity-error' : ''}`} role={identityMismatch ? 'alert' : 'status'}>
+        <strong>门店身份确认</strong>
+        <p>文件门店ID：{sourceStoreId}；档案门店ID：{profileStoreId || '未填写'}</p>
+        {identityMismatch
+          ? <p>档案与文件门店ID不一致，不能生成诊断。</p>
+          : !profileStoreId
+            ? <p>确认生成即认可该文件属于当前店铺，并在生成后绑定此 ID。</p>
+            : <p>档案与文件门店ID一致。</p>}
       </div>}
 
       <div className="mapping-modules" aria-label="可开放模块">

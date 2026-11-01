@@ -6,7 +6,7 @@ import { buildInitialObservations } from './domain/intake'
 import { buildMerchantPerspective } from './domain/merchantPerspective'
 import { searchPublicMerchant, type PublicSearchResult } from './domain/publicSearch'
 import type { StoreProfile, WeeklyReport } from './domain/types'
-import { parseCsvWeeklyReport, parseXlsxWeeklyReport, readCsvWeeklyReportHeaders, readXlsxWeeklyReportHeaders } from './lib/weeklyReport'
+import { parseCsvWeeklyReport, parseXlsxWeeklyReport, readCsvWeeklyReportHeaders, readXlsxWeeklyReportHeaders, readCsvWeeklyReportStoreId, readXlsxWeeklyReportStoreId } from './lib/weeklyReport'
 import { buildHeaderMapping, evaluateHeaderMappings, type HeaderMappingPreview } from './lib/reportMapping'
 import { analyzeBusinessHealth } from './domain/businessHealth'
 import { cityProfiles, syntheticPeers } from './domain/benchmarkCases'
@@ -51,6 +51,7 @@ function App() {
   const [assumptions, setAssumptions] = useState<Assumptions>(initialAssumptions)
   const [file, setFile] = useState<File | null>(null)
   const [mappingPreview, setMappingPreview] = useState<HeaderMappingPreview | null>(null)
+  const [sourceStoreId, setSourceStoreId] = useState('')
   const [uploadState, setUploadState] = useState<UploadState>({ status: 'idle', message: '' })
   const [validationError, setValidationError] = useState('')
   const [recalcMessage, setRecalcMessage] = useState('')
@@ -60,6 +61,7 @@ function App() {
   const perspective = useMemo(() => report && result && healthAnalysis ? buildMerchantPerspective(report, healthAnalysis, result) : null, [report, result, healthAnalysis])
   const observations = useMemo(() => publicResult ? [...publicResult.observations, ...buildInitialObservations(store)] : [], [publicResult, store])
   const sourceSpend = useMemo(() => report ? Math.min(...report.tools.map((tool) => tool.spend)) : 0, [report])
+  const identityMismatch = Boolean(sourceStoreId && store.storeId?.trim() && sourceStoreId !== store.storeId.trim())
 
   function updateStore<K extends keyof StoreProfile>(key: K, value: StoreProfile[K]) {
     setStore((current) => ({ ...current, [key]: value }))
@@ -118,6 +120,7 @@ function App() {
   async function changeFile(selected: File | null) {
     setFile(selected)
     setMappingPreview(null)
+    setSourceStoreId('')
     if (!selected) {
       setUploadState({ status: 'idle', message: '' })
       return
@@ -128,6 +131,10 @@ function App() {
         ? readCsvWeeklyReportHeaders(await selected.text())
         : await readXlsxWeeklyReportHeaders(selected)
       const preview = buildHeaderMapping(headers)
+      const fileStoreId = selected.name.toLowerCase().endsWith('.csv')
+        ? readCsvWeeklyReportStoreId(await selected.text(), preview.mappings)
+        : await readXlsxWeeklyReportStoreId(selected, preview.mappings)
+      setSourceStoreId(fileStoreId)
       setMappingPreview(preview)
       setUploadState({
         status: preview.canGenerate ? 'ready' : 'error',
@@ -161,6 +168,7 @@ function App() {
     setRecalcMessage('')
     setFile(null)
     setMappingPreview(null)
+    setSourceStoreId('')
     setUploadState({ status: 'idle', message: '' })
   }
 
@@ -171,11 +179,16 @@ function App() {
     setPublicResult(null)
     setFile(null)
     setMappingPreview(null)
+    setSourceStoreId('')
     setUploadState({ status: 'idle', message: '' })
   }
 
   async function generateFromFile() {
     if (!file || !mappingPreview) return
+    if (identityMismatch) {
+      setUploadState({ status: 'error', message: `门店身份不一致：档案 ${store.storeId}，文件 ${sourceStoreId}。` })
+      return
+    }
     if (!mappingPreview.canGenerate) {
       setUploadState({ status: 'error', message: '请先修正缺失字段或重复映射，再生成诊断。' })
       return
@@ -185,6 +198,9 @@ function App() {
       const parsed = file.name.toLowerCase().endsWith('.csv')
         ? parseCsvWeeklyReport(await file.text(), store, mappingPreview.mappings)
         : await parseXlsxWeeklyReport(file, store, mappingPreview.mappings)
+      if (!store.storeId?.trim() && parsed.sourceStoreId) {
+        setStore((current) => ({ ...current, storeId: parsed.sourceStoreId }))
+      }
       setReport(parsed)
       setStage('full')
       setView('health')
@@ -247,6 +263,8 @@ function App() {
             observations={observations}
             uploadState={uploadState}
             mappingPreview={mappingPreview}
+            sourceStoreId={sourceStoreId}
+            identityMismatch={identityMismatch}
             onMappingChange={changeMapping}
             onStoreChange={updateStore}
             onStart={() => void startDiagnosis()}
@@ -270,6 +288,7 @@ function App() {
               <div className="section-title"><span>STEP 03</span><h3>周报已就绪</h3></div>
               <dl className="report-meta">
                 <div><dt>门店</dt><dd>{report?.store.alias}</dd></div>
+                <div><dt>门店ID</dt><dd>{report?.sourceStoreId}</dd></div>
                 <div><dt>品类</dt><dd>{report?.store.category || '未提供'}</dd></div>
                 <div><dt>周开始</dt><dd>{report?.weekStart}</dd></div>
                 <div><dt>投放工具</dt><dd>{report?.tools.length} 个</dd></div>
@@ -279,8 +298,8 @@ function App() {
             <div className="report-loader">
               <p className="loader-title">换一份周报</p>
               <label className="file-label">上传周报<input name="weeklyReport" autoComplete="off" type="file" accept=".csv,.xlsx" onChange={(event) => void changeFile(event.target.files?.[0] ?? null)} /></label>
-              {mappingPreview && <HeaderMappingPreviewView preview={mappingPreview} onMappingChange={changeMapping} />}
-              <button type="button" className="primary-action" disabled={!mappingPreview?.canGenerate || uploadState.status === 'parsing'} onClick={() => void generateFromFile()}>{uploadState.status === 'parsing' ? '正在解析…' : '确认映射并生成诊断'}</button>
+              {mappingPreview && <HeaderMappingPreviewView preview={mappingPreview} sourceStoreId={sourceStoreId} profileStoreId={store.storeId} identityMismatch={identityMismatch} onMappingChange={changeMapping} />}
+              <button type="button" className="primary-action" disabled={!mappingPreview?.canGenerate || identityMismatch || uploadState.status === 'parsing'} onClick={() => void generateFromFile()}>{uploadState.status === 'parsing' ? '正在解析…' : '确认映射并生成诊断'}</button>
               {uploadState.message && <p className={`upload-status ${uploadState.status}`} role={uploadState.status === 'error' ? 'alert' : 'status'}>{uploadState.message}</p>}
               <p className="loader-title">试用其他合成示例</p>
               <div className="case-buttons">

@@ -1,6 +1,7 @@
 import type { StoreProfile, WeeklyReport } from './types'
 
 export const demoStore: StoreProfile = {
+  storeId: 'S1',
   alias: '合成餐饮品牌 A',
   platform: '示例平台',
   city: '杭州',
@@ -14,6 +15,7 @@ export const demoStore: StoreProfile = {
 
 export const mainCase: WeeklyReport = {
   synthetic: true,
+  sourceStoreId: 'S1',
   store: demoStore,
   weekStart: '2026-10-12',
   exportedAt: '2026-10-26T00:00:00+08:00',

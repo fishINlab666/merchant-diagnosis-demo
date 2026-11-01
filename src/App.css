@@ -96,6 +96,11 @@ textarea { resize: vertical; }
 .mapping-missing { padding: 10px 14px; border-bottom: 1px solid var(--beige); background: #fff4f2; color: var(--red); font-size: 12px; }
 .mapping-missing p { margin: 0; }
 .mapping-missing p + p { margin-top: 5px; }
+.mapping-identity { padding: 12px 14px; border-bottom: 1px solid var(--beige); background: #f2f6ef; font-size: 11px; line-height: 1.55; }
+.mapping-identity strong { display: block; margin-bottom: 4px; }
+.mapping-identity p { margin: 0; }
+.mapping-identity p + p { margin-top: 4px; }
+.mapping-identity.identity-error { background: #fff4f2; color: var(--red); }
 .mapping-modules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--beige); border-bottom: 1px solid var(--beige); }
 .mapping-module { padding: 11px; background: var(--paper); }
 .mapping-module strong { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; }
