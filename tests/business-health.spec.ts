@@ -21,6 +21,15 @@ describe('business health', () => {
     expect(result.dimensions.find((item) => item.id === 'users')?.status).toBe('missing')
   })
 
+  it('shows a missing rating instead of NaN', () => {
+    const result = analyzeBusinessHealth({
+      ...mainCase,
+      store: { ...mainCase.store, rating: Number.NaN },
+    }, syntheticPeers, cityProfiles)
+
+    expect(result.dimensions.find((item) => item.id === 'storefront')?.merchant).toBe('公开评分未提供')
+  })
+
   it('does not output a median below two eligible peers', () => {
     const result = analyzeBusinessHealth(mainCase, syntheticPeers.slice(0, 1), cityProfiles)
     expect(result.peerMedian).toBeNull()

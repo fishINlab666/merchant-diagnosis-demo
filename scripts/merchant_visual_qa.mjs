@@ -42,6 +42,10 @@ try {
   await page.getByLabel('门店总GMV映射到标准字段').selectOption('净GMV')
   await inspect(page, 'desktop-mapping')
   await page.screenshot({ path: resolve(out, 'desktop-mapping.jpg'), fullPage: true, type: 'jpeg', quality: 85 })
+  await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
+  await page.getByRole('heading', { name: '我的经营诊断' }).waitFor()
+  await inspect(page, 'desktop-real-upload')
+  await page.screenshot({ path: resolve(out, 'desktop-real-upload.jpg'), fullPage: true, type: 'jpeg', quality: 85 })
   await page.close()
 
   const mobileMapping = await browser.newPage({ viewport: { width: 390, height: 844 } })
@@ -54,6 +58,10 @@ try {
   await mobileMapping.getByLabel('门店总GMV映射到标准字段').selectOption('净GMV')
   await inspect(mobileMapping, 'mobile-mapping')
   await mobileMapping.screenshot({ path: resolve(out, 'mobile-mapping.jpg'), fullPage: true, type: 'jpeg', quality: 85 })
+  await mobileMapping.getByRole('button', { name: '确认映射并生成诊断' }).click()
+  await mobileMapping.getByRole('heading', { name: '我的经营诊断' }).waitFor()
+  await inspect(mobileMapping, 'mobile-real-upload')
+  await mobileMapping.screenshot({ path: resolve(out, 'mobile-real-upload.jpg'), fullPage: true, type: 'jpeg', quality: 85 })
   await mobileMapping.close()
 
   for (const [key, label] of [['fast', '快餐示例'], ['fine', '正餐示例'], ['control', '归因异常示例']]) {

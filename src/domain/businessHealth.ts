@@ -103,8 +103,8 @@ export function analyzeBusinessHealth(
   const hasUsers = report.repeatCustomerRate !== undefined && report.memberShare !== undefined
   const dimensions: BusinessDimension[] = [
     {
-      id: 'storefront', title: '门店基建', status: peerMedian && report.store.rating < peerMedian.rating ? 'watch' : 'strong',
-      merchant: `公开评分 ${report.store.rating}`,
+      id: 'storefront', title: '门店基建', status: !Number.isFinite(report.store.rating) ? 'missing' : peerMedian && report.store.rating < peerMedian.rating ? 'watch' : 'strong',
+      merchant: Number.isFinite(report.store.rating) ? `公开评分 ${report.store.rating}` : '公开评分未提供',
       comparison: peerMedian ? `样本中位数 ${peerMedian.rating}` : '合格样本不足',
       evidence: report.store.menuNote,
     },
