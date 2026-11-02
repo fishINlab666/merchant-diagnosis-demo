@@ -54,7 +54,7 @@ export function HeaderMappingPreview({ preview, sourceStoreId, profileStoreId, i
             <tr key={`${item.source}-${index}`} className={item.match === 'unmapped' ? 'unmapped' : ''}>
               <td data-label="原字段">{item.source}</td>
               <td data-label="标准字段">
-                <select aria-label={`${item.source}映射到标准字段`} value={item.standard ?? ''} onChange={(event) => onMappingChange?.(index, event.target.value || null)}>
+                <select aria-label={`${item.source}映射到标准字段`} disabled={!onMappingChange} value={item.standard ?? ''} onChange={(event) => onMappingChange?.(index, event.target.value || null)}>
                   <option value="">不纳入诊断</option>
                   <optgroup label="必需字段">{STANDARD_REQUIRED.map((field) => <option key={field} value={field}>{field}</option>)}</optgroup>
                   <optgroup label="可选字段">{STANDARD_FIELDS.filter((field) => !STANDARD_REQUIRED.includes(field as typeof STANDARD_REQUIRED[number])).map((field) => <option key={field} value={field}>{field}</option>)}</optgroup>

@@ -12,6 +12,7 @@ import { analyzeBusinessHealth } from './domain/businessHealth'
 import { cityProfiles, syntheticPeers } from './domain/benchmarkCases'
 import { AssumptionsPanel } from './components/AssumptionsPanel'
 import { BusinessHealthView } from './components/BusinessHealthView'
+import { DemoWalkthrough } from './components/DemoWalkthrough'
 import { HeaderMappingPreview as HeaderMappingPreviewView } from './components/HeaderMappingPreview'
 import { MerchantIntake } from './components/MerchantIntake'
 import { ReportView } from './components/ReportView'
@@ -45,6 +46,7 @@ function App() {
   const [store, setStore] = useState<StoreProfile>(blankStore)
   const [report, setReport] = useState<WeeklyReport | null>(null)
   const [stage, setStage] = useState<'intake' | 'public' | 'full'>('intake')
+  const [demoMode, setDemoMode] = useState(false)
   const [view, setView] = useState<'health' | 'budget'>('health')
   const [publicResult, setPublicResult] = useState<PublicSearchResult | null>(null)
   const [searching, setSearching] = useState(false)
@@ -162,6 +164,7 @@ function App() {
     setStore({ ...selected.store })
     setReport({ ...selected })
     setStage('full')
+    setDemoMode(false)
     setView('health')
     setPublicResult(null)
     setValidationError('')
@@ -176,6 +179,7 @@ function App() {
     setStore(blankStore)
     setReport(null)
     setStage('intake')
+    setDemoMode(false)
     setPublicResult(null)
     setFile(null)
     setMappingPreview(null)
@@ -254,7 +258,11 @@ function App() {
         </div>
       </header>
 
-      {stage !== 'full' ? (
+      {stage !== 'full' ? (demoMode ? (
+        <main id="main-content" className="main-canvas intake-main">
+          <DemoWalkthrough report={mainCase} onComplete={() => loadCase(mainCase)} onExit={() => setDemoMode(false)} />
+        </main>
+      ) : (
         <main id="main-content" className="main-canvas intake-main">
           <MerchantIntake
             store={store}
@@ -271,10 +279,11 @@ function App() {
             onManual={generatePublicIntake}
             onFileChange={changeFile}
             onGenerate={() => void generateFromFile()}
+            onStartDemo={() => setDemoMode(true)}
             onLoadCase={loadCase}
           />
         </main>
-      ) : (
+      )) : (
         <div className="workspace has-report">
           <main id="main-content" className="main-canvas">{canvas}</main>
           <aside className="intake-sidebar">
