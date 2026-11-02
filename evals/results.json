@@ -1,7 +1,7 @@
 {
   "suite": "merchant-diagnosis-business-evals",
-  "total": 24,
-  "passed": 24,
+  "total": 27,
+  "passed": 27,
   "failed": 0,
   "passRate": 100,
   "results": [
@@ -172,6 +172,27 @@
       "description": "重复映射同一标准字段时不静默选择权威列",
       "pass": true,
       "evidence": "{\"canGenerate\":false,\"duplicates\":[\"订单\"]}"
+    },
+    {
+      "id": "E-29",
+      "group": "门店身份",
+      "description": "保留文件门店 ID 并拒绝空身份",
+      "pass": true,
+      "evidence": "{\"sourceStoreId\":\"S1\",\"error\":\"门店ID不能为空\"}"
+    },
+    {
+      "id": "E-30",
+      "group": "公开检索与 AI",
+      "description": "首个来源失败后切换来源并限制 AI 输出方向",
+      "pass": true,
+      "evidence": "{\"calls\":2,\"sources\":[{\"title\":\"公开搜索：合成餐饮品牌 A\",\"url\":\"https://duckduckgo.com/html/?q=%E5%90%88%E6%88%90%E9%A4%90%E9%A5%AE%E5%93%81%E7%89%8C%20A%20%E6%9D%AD%E5%B7%9E%20%E5%9F%8E%E8%A5%BF%E7%A7%91%E5%88%9B%E5%95%86%E5%9C%88%20%E4%B8%AD%E5%BC%8F%E5%BF%AB%E9%A4%90%20%E9%97%A8%E5%BA%97%20%E8%AF%84%E5%88%86%20%E4%BA%BA%E5%9D%87\",\"capturedAt\":\"2026-11-02T02:17:31.498Z\",\"snippet\":\"# 示例门店 评分：4.6 人均 ¥35 这是一段足够长的公开网页摘要，用于验证来源切换与 AI 白名单。\"}],\"ai\":{\"status\":\"used\",\"hypothesisId\":\"menu_structure\",\"reason\":\"AI 仅选择待验证方向，解释与计算由本地规则完成。\"}}"
+    },
+    {
+      "id": "E-31",
+      "group": "公开检索与 AI",
+      "description": "AI 输出未知方向时回退本地规则",
+      "pass": true,
+      "evidence": "{\"ai\":{\"status\":\"fallback\",\"hypothesisId\":\"rating_reviews\",\"reason\":\"AI 不可用或输出未通过白名单校验，已按本地规则选择。\"},\"observations\":[\"检索到与“合成餐饮品牌 A”相关的公开网页摘要，以下内容均为待确认信息，不作为已核实门店事实。\",\"摘要出现评分 4.6，请确认是否属于该门店。\",\"摘要出现人均 35 元，请确认采集日期和平台口径。\",\"本地规则选择的待验证方向：评分与评价问题。AI 不可用或输出未通过白名单校验，已按本地规则选择。\",\"公开信息只用于门店基建初诊；曝光、转化、投放和利润需要商家授权周报。\"]}"
     }
   ]
 }

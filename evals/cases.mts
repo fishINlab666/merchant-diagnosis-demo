@@ -4,6 +4,7 @@ import { cityProfiles, syntheticPeers } from '../src/domain/benchmarkCases'
 import { buildDiagnosis, type Assumptions } from '../src/domain/diagnosis'
 import { buildDataRequest, buildInitialObservations } from '../src/domain/intake'
 import { buildMerchantPerspective } from '../src/domain/merchantPerspective'
+import { searchPublicMerchant } from '../src/domain/publicSearch'
 import { buildHeaderMapping } from '../src/lib/reportMapping'
 import { parseCsvWeeklyReport } from '../src/lib/weeklyReport'
 
@@ -11,7 +12,7 @@ export interface EvalCase {
   id: string
   group: string
   description: string
-  check: () => { pass: boolean; evidence: string }
+  check: () => { pass: boolean; evidence: string } | Promise<{ pass: boolean; evidence: string }>
 }
 
 const assumptions: Assumptions = {
@@ -238,6 +239,44 @@ export const evalCases: EvalCase[] = [
       const result = buildHeaderMapping([...csvHeader.split(','), '订单量'])
       const pass = !result.canGenerate && result.duplicateStandards.includes('订单')
       return { pass, evidence: JSON.stringify({ canGenerate: result.canGenerate, duplicates: result.duplicateStandards }) }
+    },
+  },
+  {
+    id: 'E-29', group: '门店身份', description: '保留文件门店 ID 并拒绝空身份',
+    check: () => {
+      const parsed = parseCsvWeeklyReport(`${csvHeader}\n${validRow}`, demoStore)
+      let message = ''
+      try {
+        parseCsvWeeklyReport(`${csvHeader}\n${validRow.replace('S1', '')}`, demoStore)
+      } catch (error) {
+        message = error instanceof Error ? error.message : String(error)
+      }
+      const pass = parsed.sourceStoreId === 'S1' && message.includes('门店ID不能为空')
+      return { pass, evidence: JSON.stringify({ sourceStoreId: parsed.sourceStoreId, error: message }) }
+    },
+  },
+  {
+    id: 'E-30', group: '公开检索与 AI', description: '首个来源失败后切换来源并限制 AI 输出方向',
+    check: async () => {
+      let calls = 0
+      const result = await searchPublicMerchant(demoStore, async (url) => {
+        if (url.includes('pollinations.ai')) return new Response(JSON.stringify({ hypothesisId: 'menu_structure' }))
+        calls += 1
+        if (calls === 1) return new Response('unavailable', { status: 503 })
+        return new Response('# 示例门店\n评分：4.6\n人均 ¥35\n这是一段足够长的公开网页摘要，用于验证来源切换与 AI 白名单。')
+      })
+      const pass = calls === 2 && result.status === 'review' && result.sources[0].url.includes('duckduckgo.com') && result.ai?.status === 'used'
+      return { pass, evidence: JSON.stringify({ calls, sources: result.sources, ai: result.ai }) }
+    },
+  },
+  {
+    id: 'E-31', group: '公开检索与 AI', description: 'AI 输出未知方向时回退本地规则',
+    check: async () => {
+      const result = await searchPublicMerchant(demoStore, async (url) => url.includes('pollinations.ai')
+        ? new Response(JSON.stringify({ hypothesisId: 'invented_growth' }))
+        : new Response('# 示例门店\n评分：4.6\n人均 ¥35\n这是一段足够长的公开网页摘要，用于验证 AI 非法输出回退。'))
+      const pass = result.status === 'review' && result.ai?.status === 'fallback' && !result.observations.join(' ').includes('invented_growth')
+      return { pass, evidence: JSON.stringify({ ai: result.ai, observations: result.observations }) }
     },
   },
 ]

@@ -2,20 +2,21 @@ import { writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { evalCases } from './cases.mts'
 
-const results = evalCases.map((testCase) => {
+const results = []
+for (const testCase of evalCases) {
   try {
-    const result = testCase.check()
-    return { id: testCase.id, group: testCase.group, description: testCase.description, ...result }
+    const result = await testCase.check()
+    results.push({ id: testCase.id, group: testCase.group, description: testCase.description, ...result })
   } catch (error) {
-    return {
+    results.push({
       id: testCase.id,
       group: testCase.group,
       description: testCase.description,
       pass: false,
       evidence: error instanceof Error ? error.message : String(error),
-    }
+    })
   }
-})
+}
 const passed = results.filter((result) => result.pass).length
 const failed = results.length - passed
 const report = {

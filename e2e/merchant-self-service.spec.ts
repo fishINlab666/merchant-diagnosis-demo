@@ -5,6 +5,9 @@ test('merchant self service starts with a shop name and produces reviewable publ
   await page.route('https://r.jina.ai/**', async (route) => {
     await route.fulfill({ status: 200, contentType: 'text/plain', body: '# 测试煲仔饭\n评分：4.7\n人均 ¥28\n这是一段足够长的公开门店摘要，用来验证店名检索后需要人工确认来源和公开信息。' })
   })
+  await page.route('https://text.pollinations.ai/', async (route) => {
+    await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ hypothesisId: 'menu_structure' }) })
+  })
   await page.goto('/')
 
   await expect(page.getByLabel('店铺名称')).toBeVisible()
@@ -129,8 +132,11 @@ test('real uploads never inherit synthetic benchmarks while demos keep them', as
   await page.goto('/')
   await page.getByLabel('店铺名称').fill('真实上传门店')
   await page.getByRole('button', { name: '开始经营诊断' }).click()
+  const aiRequests: string[] = []
+  page.on('request', (request) => { if (request.url().includes('pollinations.ai')) aiRequests.push(request.url()) })
   await page.getByLabel('上传周报').setInputFiles(resolve('public/fixtures/main-weekly.csv'))
   await page.getByRole('button', { name: '确认映射并生成诊断' }).click()
+  expect(aiRequests).toEqual([])
 
   await expect(page.getByRole('heading', { name: '我的经营诊断' })).toBeVisible()
   await expect(page.getByRole('heading', { name: /竞店样本/ })).toHaveCount(0)
