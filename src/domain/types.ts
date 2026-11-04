@@ -1,4 +1,4 @@
-export type Role = 'ka' | 'agency' | 'cs'
+export type Role = 'merchant' | 'ka' | 'agency' | 'cs'
 export type BudgetMode = 'reallocate' | 'add'
 
 export interface StoreProfile {

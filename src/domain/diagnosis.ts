@@ -147,6 +147,25 @@ function makeFollowUps(
       },
     ]
   }
+  if (role === 'ka') {
+    const blocked = codes.has('ATTRIBUTION_MISMATCH') || codes.has('ATTRIBUTION_IMMATURE')
+    const firstAction = blocked
+      ? '与商家统一归因口径并重新导出周报'
+      : codes.has('PROFIT_RISK')
+        ? '暂缓 JBP 追加，先修复毛利结构'
+        : codes.has('BASIC_POOL')
+          ? '保留投放基本盘，改为小步增量测试'
+          : recommendation
+            ? recommendation.mode === 'reallocate'
+              ? `推动商家从${recommendation.sourceTool}向${recommendation.targetTool}挪移 ${recommendation.amount} 元`
+              : `与商家确认向${recommendation.targetTool}追加 ${recommendation.amount} 元`
+            : '先补齐预算决策所需数据'
+    return [
+      { action: firstAction, owner: '平台 KA／商家外卖对接人', metric: blocked ? '归因口径与字段完整度' : '预算执行、实际 ROI', target: blocked ? '形成同口径周报后再谈 JBP' : '完成一周小步执行并保留基线', reviewDate, stopCondition: '口径未通过或实际 ROI 低于基线时停止追加' },
+      { action: '按增长与 UE 复核城市／门店资源分层', owner: '平台 KA／商家运营', metric: '城市增长、UE、净 GMV', target: '形成加码、稳住、调结构和收缩清单', reviewDate, stopCondition: '缺少同口径样本时不做城市排名或资源承诺' },
+      { action: '用实际经营结果复核并确定下一步 JBP', owner: '平台 KA', metric: '净 GMV、毛利、预算执行完成度', target: `${reviewDate} 形成继续、调整或暂停的 JBP 记录`, reviewDate, stopCondition: '实际结果未达基线时不扩大投入' },
+    ]
+  }
   if (codes.has('PROFIT_RISK')) {
     return [
       { action: '暂停追加预算', owner: 'KA／运营', metric: '毛利变化', target: '先保留当前预算作对照', reviewDate, stopCondition: '毛利测算未转正前不追加' },
@@ -234,6 +253,28 @@ function makeTalkTracks(
       `下周重点看净 GMV 增加 ${calculation.deltaGmv} 元、毛利增加 ${calculation.deltaGrossProfit} 元的测算是否兑现。`,
     ]
   }
+  if (role === 'ka') {
+    if (codes.has('PROFIT_RISK')) return [
+      '按当前假设追加后毛利下滑，本轮 JBP 先不谈追加预算。',
+      '先推动商家修复低效消耗和补贴结构，并保留当前方案作对照。',
+      '毛利测算和执行结果转正后，再讨论扩大投入。',
+    ]
+    if (codes.has('BASIC_POOL')) return [
+      '本轮 JBP 不接受全量切换，先保留商家投放基本盘。',
+      '把动作改为小步增量测试，并按城市和门店分层配置资源。',
+      '实际 ROI 与毛利优于基线后，再决定下一季度投入。',
+    ]
+    if (!recommendation || !calculation) return [
+      '当前归因口径尚未统一，先完成商家数据治理，再进入 JBP 预算沟通。',
+      '与商家补齐归因定义、窗口和成熟周期，不用不同口径 ROI 做资源决策。',
+      '同口径数据就绪后，再复核预算动作与城市分层。',
+    ]
+    return [
+      `建议${action}，先用预算内结构调整验证经营改善，再进入下一轮 JBP 沟通。`,
+      `按当前假设净 GMV 变化 ${calculation.deltaGmv} 元、毛利变化 ${calculation.deltaGrossProfit} 元，用一周实际结果核验，不把测算当承诺。`,
+      '同步按增长与 UE 复核城市和门店分层，决定哪些加码、哪些先修。',
+    ]
+  }
   if (codes.has('PROFIT_RISK')) return [
     '按当前假设，追加后毛利不升反降，本周先不加预算。',
     '先优化预算结构和商家补贴，保留当前方案作对照。',
@@ -263,6 +304,7 @@ function makeTalkTracks(
 
 function orderIssues(issues: DiagnosisIssue[], role: Role): DiagnosisIssue[] {
   const roleRank: Record<Role, Partial<Record<DiagnosisIssue['code'], number>>> = {
+    merchant: { BASIC_POOL: 1, LOW_ROI: 2, SUBSIDY: 3 },
     ka: { BASIC_POOL: 1, LOW_ROI: 2, SUBSIDY: 3 },
     agency: { SUBSIDY: 1, LOW_ROI: 2, BASIC_POOL: 3 },
     cs: { SUBSIDY: 1, LOW_ROI: 2, BASIC_POOL: 3 },

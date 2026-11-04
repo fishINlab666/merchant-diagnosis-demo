@@ -18,6 +18,7 @@ export interface MerchantDecisionCard {
 }
 
 export interface MerchantPerspective {
+  role?: 'merchant' | 'ka' | 'cs'
   report: WeeklyReport
   pageTitle: string
   reportTitle: string
@@ -26,7 +27,7 @@ export interface MerchantPerspective {
   metrics: MerchantMetric[]
   dimensions: MerchantDimension[]
   module: {
-    id: 'merchant-action'
+    id: string
     title: string
     description: string
     cards: MerchantDecisionCard[]
