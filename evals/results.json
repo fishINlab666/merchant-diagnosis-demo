@@ -185,7 +185,7 @@
       "group": "公开检索与 AI",
       "description": "首个来源失败后切换来源并限制 AI 输出方向",
       "pass": true,
-      "evidence": "{\"calls\":2,\"sources\":[{\"title\":\"公开搜索：合成餐饮品牌 A\",\"url\":\"https://duckduckgo.com/html/?q=%E5%90%88%E6%88%90%E9%A4%90%E9%A5%AE%E5%93%81%E7%89%8C%20A%20%E6%9D%AD%E5%B7%9E%20%E5%9F%8E%E8%A5%BF%E7%A7%91%E5%88%9B%E5%95%86%E5%9C%88%20%E4%B8%AD%E5%BC%8F%E5%BF%AB%E9%A4%90%20%E9%97%A8%E5%BA%97%20%E8%AF%84%E5%88%86%20%E4%BA%BA%E5%9D%87\",\"capturedAt\":\"2026-11-04T11:15:06.502Z\",\"snippet\":\"# 示例门店 评分：4.6 人均 ¥35 这是一段足够长的公开网页摘要，用于验证来源切换与 AI 白名单。\"}],\"ai\":{\"status\":\"used\",\"hypothesisId\":\"menu_structure\",\"reason\":\"AI 仅选择待验证方向，解释与计算由本地规则完成。\"}}"
+      "evidence": "{\"calls\":2,\"sources\":[{\"title\":\"公开搜索：合成餐饮品牌 A\",\"url\":\"https://duckduckgo.com/html/?q=%E5%90%88%E6%88%90%E9%A4%90%E9%A5%AE%E5%93%81%E7%89%8C%20A%20%E6%9D%AD%E5%B7%9E%20%E5%9F%8E%E8%A5%BF%E7%A7%91%E5%88%9B%E5%95%86%E5%9C%88%20%E4%B8%AD%E5%BC%8F%E5%BF%AB%E9%A4%90%20%E9%97%A8%E5%BA%97%20%E8%AF%84%E5%88%86%20%E4%BA%BA%E5%9D%87\",\"capturedAt\":\"2026-11-04T11:45:45.704Z\",\"snippet\":\"# 示例门店 评分：4.6 人均 ¥35 这是一段足够长的公开网页摘要，用于验证来源切换与 AI 白名单。\"}],\"ai\":{\"status\":\"used\",\"hypothesisId\":\"menu_structure\",\"reason\":\"AI 仅选择待验证方向，解释与计算由本地规则完成。\"}}"
     },
     {
       "id": "E-31",

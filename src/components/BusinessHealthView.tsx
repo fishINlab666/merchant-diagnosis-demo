@@ -1,3 +1,4 @@
+import { syntheticStoreCohort } from '../domain/benchmarkCases'
 import type { BusinessHealthResult, CityStrategy, PeerSample } from '../domain/businessHealth'
 import { eligiblePeers } from '../domain/businessHealth'
 import { buildDemoSeries } from '../domain/demoSeries'
@@ -5,6 +6,7 @@ import type { MerchantPerspective } from '../domain/merchantPerspective'
 import type { WeeklyReport } from '../domain/types'
 import { ToolEfficiencyBars, WeeklyTrend } from './Charts'
 import { MerchantDecisionPanel } from './MerchantDecisionPanel'
+import { StoreSegmentation } from './StoreSegmentation'
 
 const strategyNames: Record<CityStrategy, string> = {
   scale: '优先加码',
@@ -89,6 +91,8 @@ export function BusinessHealthView({ report, analysis, peers, perspective }: Bus
           ))}
         </div>
       </section>
+
+      {perspective.role === 'ka' && <StoreSegmentation stores={report.synthetic ? syntheticStoreCohort : []} synthetic={report.synthetic} />}
 
       {report.synthetic && <section className="health-section">
         <div className="section-heading">

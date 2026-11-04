@@ -15,6 +15,18 @@ test('shows 186 store points and four action groups in the KA action plan', asyn
   await expect(page.locator('.trend-issue')).toContainText('38.9%')
 })
 
+test('shows the store scatter directly in KA health before switching tabs', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: '快餐示例' }).click()
+  await page.getByRole('button', { name: '平台 KA', exact: true }).click()
+
+  await expect(page.getByRole('heading', { name: '平台 KA 经营诊断' })).toBeVisible()
+  await expect(page.getByRole('tab', { name: '经营诊断' })).toHaveAttribute('aria-selected', 'true')
+  await expect(page.locator('.store-segmentation')).toBeVisible()
+  await expect(page.locator('.store-segmentation')).toContainText('186 家合成门店')
+  await expect(page.locator('circle.store-point')).toHaveCount(186)
+})
+
 test('does not show synthetic store points or a trend card for real uploads', async ({ page }) => {
   await page.route('https://r.jina.ai/**', (route) => route.fulfill({ status: 503, body: 'unavailable' }))
   await page.goto('/')
