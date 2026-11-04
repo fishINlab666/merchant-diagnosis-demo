@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import './App.css'
 import { controlCase, demoStore, fineDiningCase, mainCase } from './domain/cases'
 import { buildDiagnosis, type Assumptions } from './domain/diagnosis'
-import { buildInitialObservations } from './domain/intake'
+import { buildInitialObservations, parsePublicIntake, PUBLIC_INTAKE_SAMPLE, type PublicIntakeAnalysis } from './domain/intake'
 import { buildMerchantPerspective } from './domain/merchantPerspective'
 import { searchPublicMerchant, type PublicSearchResult } from './domain/publicSearch'
 import type { StoreProfile, WeeklyReport } from './domain/types'
@@ -49,6 +49,8 @@ function App() {
   const [demoMode, setDemoMode] = useState(false)
   const [view, setView] = useState<'health' | 'budget'>('health')
   const [publicResult, setPublicResult] = useState<PublicSearchResult | null>(null)
+  const [publicText, setPublicText] = useState('')
+  const [publicAnalysis, setPublicAnalysis] = useState<PublicIntakeAnalysis | null>(null)
   const [searching, setSearching] = useState(false)
   const [assumptions, setAssumptions] = useState<Assumptions>(initialAssumptions)
   const [file, setFile] = useState<File | null>(null)
@@ -107,6 +109,7 @@ function App() {
   async function startDiagnosis() {
     if (!store.alias.trim() || searching) return
     setSearching(true)
+    setPublicAnalysis(null)
     setUploadState({ status: 'idle', message: '' })
     const result = await searchPublicMerchant(store, fetch)
     setPublicResult(result)
@@ -115,7 +118,23 @@ function App() {
   }
 
   function generatePublicIntake() {
+    setPublicAnalysis(null)
     setPublicResult({ status: 'manual', sources: [], observations: ['已根据人工补充信息生成公开初诊；以下仍需周报验证。'] })
+    setStage('public')
+  }
+
+  function analyzePublicText() {
+    if (!publicText.trim()) return
+    const analysis = parsePublicIntake(publicText)
+    setPublicAnalysis(analysis)
+    setStore((current) => ({
+      ...current,
+      alias: analysis.facts.name || current.alias,
+      rating: analysis.facts.rating ?? current.rating,
+      priceBand: analysis.facts.averagePrice !== null ? `约 ${analysis.facts.averagePrice} 元/人` : current.priceBand,
+      menuNote: analysis.facts.menuItems.slice(0, 3).join('；') || current.menuNote,
+    }))
+    setPublicResult({ status: 'manual', sources: [], observations: ['已从粘贴文本提取公开事实；候选问题仍需人工确认和周报验证。'] })
     setStage('public')
   }
 
@@ -167,6 +186,8 @@ function App() {
     setDemoMode(false)
     setView('health')
     setPublicResult(null)
+    setPublicAnalysis(null)
+    setPublicText('')
     setValidationError('')
     setRecalcMessage('')
     setFile(null)
@@ -181,6 +202,8 @@ function App() {
     setStage('intake')
     setDemoMode(false)
     setPublicResult(null)
+    setPublicAnalysis(null)
+    setPublicText('')
     setFile(null)
     setMappingPreview(null)
     setSourceStoreId('')
@@ -268,6 +291,8 @@ function App() {
             store={store}
             searching={searching}
             publicResult={publicResult}
+            publicAnalysis={publicAnalysis}
+            publicText={publicText}
             observations={observations}
             uploadState={uploadState}
             mappingPreview={mappingPreview}
@@ -277,6 +302,9 @@ function App() {
             onStoreChange={updateStore}
             onStart={() => void startDiagnosis()}
             onManual={generatePublicIntake}
+            onPublicTextChange={setPublicText}
+            onAnalyzePublic={analyzePublicText}
+            onFillPublicSample={() => setPublicText(PUBLIC_INTAKE_SAMPLE)}
             onFileChange={changeFile}
             onGenerate={() => void generateFromFile()}
             onStartDemo={() => setDemoMode(true)}

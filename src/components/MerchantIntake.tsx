@@ -1,8 +1,10 @@
 import type { PublicSearchResult } from '../domain/publicSearch'
+import type { PublicIntakeAnalysis } from '../domain/intake'
 import type { StoreProfile, WeeklyReport } from '../domain/types'
 import type { HeaderMappingPreview as HeaderMappingPreviewModel } from '../lib/reportMapping'
 import { controlCase, fineDiningCase, mainCase } from '../domain/cases'
 import { HeaderMappingPreview } from './HeaderMappingPreview'
+import { PublicIntakeView } from './PublicIntakeView'
 
 interface UploadState {
   status: 'idle' | 'ready' | 'parsing' | 'success' | 'error'
@@ -13,6 +15,8 @@ interface MerchantIntakeProps {
   store: StoreProfile
   searching: boolean
   publicResult: PublicSearchResult | null
+  publicAnalysis: PublicIntakeAnalysis | null
+  publicText: string
   observations: string[]
   uploadState: UploadState
   mappingPreview: HeaderMappingPreviewModel | null
@@ -22,6 +26,9 @@ interface MerchantIntakeProps {
   onStoreChange: <K extends keyof StoreProfile>(key: K, value: StoreProfile[K]) => void
   onStart: () => void
   onManual: () => void
+  onPublicTextChange: (text: string) => void
+  onAnalyzePublic: () => void
+  onFillPublicSample: () => void
   onFileChange: (file: File | null) => void
   onGenerate: () => void
   onStartDemo: () => void
@@ -32,6 +39,8 @@ export function MerchantIntake({
   store,
   searching,
   publicResult,
+  publicAnalysis,
+  publicText,
   observations,
   uploadState,
   mappingPreview,
@@ -41,6 +50,9 @@ export function MerchantIntake({
   onStoreChange,
   onStart,
   onManual,
+  onPublicTextChange,
+  onAnalyzePublic,
+  onFillPublicSample,
   onFileChange,
   onGenerate,
   onStartDemo,
@@ -79,7 +91,15 @@ export function MerchantIntake({
         </button>
       </section>
 
-      {publicResult && <section className="public-intake-result" aria-labelledby="public-intake-title">
+      <PublicIntakeView
+        text={publicText}
+        analysis={publicAnalysis}
+        onTextChange={onPublicTextChange}
+        onAnalyze={onAnalyzePublic}
+        onFillSample={onFillPublicSample}
+      />
+
+      {publicResult && !publicAnalysis && <section className="public-intake-result" aria-labelledby="public-intake-title">
         <div className="section-heading">
           <div><h2 id="public-intake-title">公开信息初诊</h2><p>事实、待确认信息和下一步数据边界分开呈现。</p></div>
         </div>
@@ -99,7 +119,7 @@ export function MerchantIntake({
         <button type="button" className="text-action" onClick={onManual}>生成公开初诊</button>
       </section>}
 
-      {publicResult && <section className="intake-card weekly-upload">
+      {publicResult && <section id="weekly-upload" className="intake-card weekly-upload">
         <div className="section-heading">
           <div><h2>上传一份周报，生成完整诊断</h2><p>CSV／XLSX 只在本机解析，不发送给公开检索服务。</p></div>
         </div>
