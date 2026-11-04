@@ -32,3 +32,29 @@ test('shows eight-week trends, tool efficiency and one shared scenario breakdown
   await expect(page.locator('.profit-waterfall')).toContainText('订单流失影响')
   await expect(page.locator('.delta-row')).toContainText('9,288')
 })
+
+test('runs the complete guided demo automatically with reduced motion', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await page.goto('/')
+  await page.getByRole('button', { name: '面试演示：预填并下一步' }).click()
+  await expect(page.getByRole('button', { name: '一键完整演示' })).toBeEnabled()
+  await page.getByRole('button', { name: '一键完整演示' }).click()
+
+  await expect(page.getByRole('heading', { name: '我的经营诊断' })).toBeVisible()
+  await expect(page.locator('.weekly-trend')).toBeVisible()
+})
+
+test('answers boss questions offline and offers manual copy when clipboard is unavailable', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(navigator, 'clipboard', { value: undefined }))
+  await page.route('https://text.pollinations.ai/**', (route) => route.abort())
+  await page.goto('/')
+  await page.getByRole('button', { name: '快餐示例' }).click()
+  await page.getByRole('tab', { name: '行动方案' }).click()
+
+  await page.getByRole('button', { name: '为什么不直接加预算？' }).click()
+  await expect(page.locator('.boss-answer')).toContainText('点金推广')
+  await expect(page.locator('.boss-answer-source')).toHaveText('离线预置回答')
+  await page.getByRole('button', { name: '复制三句话' }).click()
+  await expect(page.getByLabel('手动复制三句话')).toBeVisible()
+  await expect(page.getByLabel('手动复制三句话')).toContainText('点金推广')
+})

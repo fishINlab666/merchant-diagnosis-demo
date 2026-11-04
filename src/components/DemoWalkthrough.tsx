@@ -31,6 +31,8 @@ export function DemoWalkthrough({ report, onComplete, onExit }: DemoWalkthroughP
   const [mapping, setMapping] = useState<HeaderMappingPreviewModel | null>(null)
   const [mappingError, setMappingError] = useState('')
   const [running, setRunning] = useState(false)
+  const [autoRunning, setAutoRunning] = useState(false)
+  const [narrating, setNarrating] = useState(false)
   const [current, setCurrent] = useState(-1)
   const [completed, setCompleted] = useState(0)
   const [done, setDone] = useState(false)
@@ -69,6 +71,30 @@ export function DemoWalkthrough({ report, onComplete, onExit }: DemoWalkthroughP
     setDone(true)
   }
 
+  async function runFullDemo() {
+    if (running || autoRunning || !mapping?.canGenerate) return
+    setAutoRunning(true)
+    setNarrating(true)
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    setStep(1)
+    await delay(reduced ? 0 : 900)
+    setStep(2)
+    await delay(reduced ? 0 : 1100)
+    setStep(3)
+    await runAnalysis()
+    await delay(reduced ? 0 : 800)
+    setAutoRunning(false)
+    onComplete()
+  }
+
+  const narration = step === 1
+    ? '拜访前只有店铺页和公开档案，先确认门店身份，不用店名猜经营结果。'
+    : step === 2
+      ? '拿到周报先映射字段、核对门店 ID 和归因口径，数据不合格就不进入预算建议。'
+      : current >= 0 && stages[current]
+        ? `正在执行“${stages[current].title}”：${stages[current].description} 这一步展示的是本地规则计算，不是虚构的云端 AI 过程。`
+        : '六个阶段会依次给出证据，最后汇总成经营诊断和下周动作。'
+
   return (
     <div className="demo-walkthrough">
       <nav className="demo-step-nav" aria-label="演示步骤">
@@ -76,6 +102,11 @@ export function DemoWalkthrough({ report, onComplete, onExit }: DemoWalkthroughP
           <span className={step > index + 1 || (index === 3 && done) ? 'done' : step === index + 1 ? 'active' : ''} key={label}>0{index + 1} {label}</span>
         ))}
       </nav>
+      <div className="demo-mode-bar">
+        <button type="button" className="secondary-action" aria-pressed={narrating} onClick={() => setNarrating((value) => !value)}>{narrating ? '关闭面试讲解' : '面试讲解模式'}</button>
+        {autoRunning && <span role="status">自动演示进行中…</span>}
+      </div>
+      {narrating && <aside className="demo-narration" aria-live="polite"><strong>面试这样讲</strong><p>{narration}</p></aside>}
 
       {step === 1 && <section className="demo-panel">
         <p className="eyebrow">STEP 01 · 合成演示数据</p>
@@ -91,7 +122,11 @@ export function DemoWalkthrough({ report, onComplete, onExit }: DemoWalkthroughP
           <div><dt>公开评分</dt><dd>{report.store.rating}</dd></div>
           <div><dt>菜单观察</dt><dd>{report.store.menuNote}</dd></div>
         </dl>
-        <div className="demo-actions"><button type="button" className="text-action" onClick={onExit}>返回商家工具</button><button type="button" className="primary-action" onClick={() => setStep(2)}>下一步</button></div>
+        <div className="demo-actions demo-start-actions">
+          <button type="button" className="text-action" disabled={autoRunning} onClick={onExit}>返回商家工具</button>
+          <button type="button" className="secondary-action" disabled={autoRunning} onClick={() => setStep(2)}>下一步</button>
+          <button type="button" className="primary-action" disabled={!mapping?.canGenerate || autoRunning} onClick={() => void runFullDemo()}>{autoRunning ? '正在自动演示…' : '一键完整演示'}</button>
+        </div>
       </section>}
 
       {step === 2 && <section className="demo-panel">

@@ -1,7 +1,8 @@
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import type { Assumptions } from '../domain/diagnosis'
 import type { MerchantPerspective } from '../domain/merchantPerspective'
 import type { DiagnosisResult, WeeklyReport } from '../domain/types'
+import { BossQuestions } from './BossQuestions'
 import { BudgetMix, ProfitWaterfall } from './Charts'
 import { MerchantDecisionPanel } from './MerchantDecisionPanel'
 
@@ -25,8 +26,21 @@ interface ReportViewProps {
 }
 
 export function ReportView({ report, result, assumptions, perspective, assumptionsPanel }: ReportViewProps) {
+  const [copyState, setCopyState] = useState<'idle' | 'copied' | 'manual'>('idle')
   const totalSpend = report.tools.reduce((sum, tool) => sum + tool.spend, 0)
   const { calculation } = result
+  const talkText = perspective.talkTracks.map((track, index) => `${index + 1}. ${track}`).join('\n')
+
+  async function copyTalkTracks() {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable')
+      await navigator.clipboard.writeText(talkText)
+      setCopyState('copied')
+    } catch {
+      setCopyState('manual')
+    }
+  }
+
   return (
     <article className="report merchant-report" aria-label={perspective.reportTitle}>
       <header className="report-header">
@@ -108,14 +122,19 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
 
       {assumptionsPanel}
 
-      <section className="report-section">
+      <section className="report-section talk-section">
         <div className="section-heading">
           <span className="section-number">{calculation ? '03' : '02'}</span>
           <div><h2>给店里的三句话</h2><p>为什么调、怎么调、下周看什么。</p></div>
+          <button type="button" className="secondary-action copy-talk-button" onClick={() => void copyTalkTracks()}>复制三句话</button>
         </div>
         <ol className="talk-list">
           {perspective.talkTracks.map((track, index) => <li key={track}><span>0{index + 1}</span><p>{track}</p></li>)}
         </ol>
+        {copyState === 'copied' && <p className="copy-feedback" role="status">已复制，可以直接发给门店负责人。</p>}
+        {copyState === 'manual' && <label className="manual-copy">手动复制三句话
+          <textarea aria-label="手动复制三句话" readOnly rows={5} value={talkText} onFocus={(event) => event.currentTarget.select()} />
+        </label>}
       </section>
 
       <section className="report-section followup-section">
@@ -138,6 +157,8 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
           </table>
         </div>
       </section>
+
+      <BossQuestions key={`${report.sourceStoreId}-${report.weekStart}-${report.exportedAt}-${JSON.stringify(assumptions)}`} report={report} result={result} assumptions={assumptions} />
     </article>
   )
 }
