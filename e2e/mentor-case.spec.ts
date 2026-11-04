@@ -38,7 +38,7 @@ test('shows eight-week trends, tool efficiency and one shared scenario breakdown
 test('runs the complete guided demo automatically with reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
-  await page.getByRole('button', { name: '面试演示：预填并下一步' }).click()
+  await page.getByRole('button', { name: '产品演示：预填并下一步' }).click()
   await expect(page.getByRole('button', { name: '一键完整演示' })).toBeEnabled()
   await page.getByRole('button', { name: '一键完整演示' }).click()
 

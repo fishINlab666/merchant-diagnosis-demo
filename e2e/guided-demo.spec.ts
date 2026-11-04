@@ -3,9 +3,12 @@ import { expect, test } from '@playwright/test'
 test('guided demo walks from prefilled data through six analysis stages to results', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
-  await page.getByRole('button', { name: '面试演示：预填并下一步' }).click()
+  await page.getByRole('button', { name: '产品演示：预填并下一步' }).click()
 
   await expect(page.getByRole('heading', { name: '演示门店信息' })).toBeVisible()
+  await page.getByRole('button', { name: '产品讲解模式' }).click()
+  await expect(page.locator('.demo-narration strong')).toHaveText('产品讲解')
+  await expect(page.getByRole('button', { name: '关闭产品讲解' })).toBeVisible()
   await expect(page.getByText('合成餐饮品牌 A', { exact: true })).toBeVisible()
   await expect(page.getByText('合成演示数据', { exact: false }).first()).toBeVisible()
   await page.getByRole('button', { name: '下一步' }).click()

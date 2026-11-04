@@ -134,7 +134,7 @@ export function MerchantIntake({
       <section className="demo-cases" aria-label="试用示例">
         <span>没有现成周报？试用合成示例</span>
         <div className="case-buttons">
-          <button type="button" className="demo-guide-button" onClick={onStartDemo}>面试演示：预填并下一步</button>
+          <button type="button" className="demo-guide-button" onClick={onStartDemo}>产品演示：预填并下一步</button>
           <button type="button" onClick={() => onLoadCase(mainCase)}>快餐示例</button>
           <button type="button" onClick={() => onLoadCase(fineDiningCase)}>正餐示例</button>
           <button type="button" onClick={() => onLoadCase(controlCase)}>归因异常示例</button>

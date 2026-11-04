@@ -103,10 +103,10 @@ export function DemoWalkthrough({ report, onComplete, onExit }: DemoWalkthroughP
         ))}
       </nav>
       <div className="demo-mode-bar">
-        <button type="button" className="secondary-action" aria-pressed={narrating} onClick={() => setNarrating((value) => !value)}>{narrating ? '关闭面试讲解' : '面试讲解模式'}</button>
+        <button type="button" className="secondary-action" aria-pressed={narrating} onClick={() => setNarrating((value) => !value)}>{narrating ? '关闭产品讲解' : '产品讲解模式'}</button>
         {autoRunning && <span role="status">自动演示进行中…</span>}
       </div>
-      {narrating && <aside className="demo-narration" aria-live="polite"><strong>面试这样讲</strong><p>{narration}</p></aside>}
+      {narrating && <aside className="demo-narration" aria-live="polite"><strong>产品讲解</strong><p>{narration}</p></aside>}
 
       {step === 1 && <section className="demo-panel">
         <p className="eyebrow">STEP 01 · 合成演示数据</p>
