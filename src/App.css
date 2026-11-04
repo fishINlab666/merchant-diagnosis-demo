@@ -838,3 +838,27 @@ input[aria-invalid="true"]:focus-visible { outline-color: var(--red); }
   .health-level { font-size: 8px; }
   .health-formula { display: none; }
 }
+
+/* Store-level KA segmentation */
+.store-segmentation-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, 1fr); gap: 18px; align-items: start; }
+.store-quadrant-chart { min-width: 0; padding: 10px; border: 1px solid var(--beige); border-radius: 10px; background: var(--white); }
+.store-quadrant-chart svg { display: block; width: 100%; height: auto; }
+.store-segment-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.store-segment-table th, .store-segment-table td { padding: 11px 9px; border-bottom: 1px solid var(--beige); text-align: left; vertical-align: top; line-height: 1.5; }
+.store-segment-table thead { color: var(--muted); font-size: 11px; }
+.store-segment-table-wrap { min-width: 0; }
+.store-point { pointer-events: all; }
+.store-point:hover { stroke: var(--ink); stroke-width: 2px; opacity: 1; }
+@media (max-width: 1100px) {
+  .store-segmentation-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  .store-segment-table { font-size: 11px; }
+  .store-segment-table th, .store-segment-table td { padding: 9px 6px; }
+}
+@media print {
+  .store-segmentation-layout { grid-template-columns: 1.1fr 1fr; gap: 8px; }
+  .store-quadrant-chart { padding: 4px; }
+  .store-quadrant-chart svg { max-height: 100px; }
+  .store-segment-table th, .store-segment-table td { padding: 3px 5px; font-size: 8px; }
+}

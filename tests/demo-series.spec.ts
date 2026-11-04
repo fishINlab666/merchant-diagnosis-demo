@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { mainCase } from '../src/domain/cases'
-import { buildDemoSeries } from '../src/domain/demoSeries'
+import { buildDemoSeries, buildTrendEvidence } from '../src/domain/demoSeries'
 
 describe('synthetic weekly trend', () => {
   it('creates eight deterministic weeks that reconcile to the current report', () => {
@@ -20,5 +20,15 @@ describe('synthetic weekly trend', () => {
 
   it('never fabricates history for an uploaded real report', () => {
     expect(buildDemoSeries({ ...mainCase, synthetic: false })).toEqual([])
+  })
+
+  it('turns eight-week spend growth and ROI decline into evidence', () => {
+    expect(buildTrendEvidence(mainCase)).toMatchObject({
+      spendGrowth: 0.3889,
+      roiChange: -0.1071,
+      firstRoi: 14.75,
+      currentRoi: 13.17,
+    })
+    expect(buildTrendEvidence({ ...mainCase, synthetic: false })).toBeNull()
   })
 })

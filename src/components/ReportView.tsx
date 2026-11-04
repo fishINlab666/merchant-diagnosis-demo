@@ -1,13 +1,15 @@
 import { useState, type ReactNode } from 'react'
+import { syntheticStoreCohort } from '../domain/benchmarkCases'
 import type { BusinessHealthResult } from '../domain/businessHealth'
+import { buildTrendEvidence } from '../domain/demoSeries'
 import type { Assumptions } from '../domain/diagnosis'
 import type { MerchantPerspective } from '../domain/merchantPerspective'
 import type { DecisionRole } from '../domain/rolePerspectives'
 import type { DiagnosisResult, WeeklyReport } from '../domain/types'
 import { BossQuestions } from './BossQuestions'
 import { BudgetMix, ProfitWaterfall } from './Charts'
-import { CitySegmentation } from './CitySegmentation'
 import { CustomerHealth } from './CustomerHealth'
+import { StoreSegmentation } from './StoreSegmentation'
 
 function money(value: number, signed = false): string {
   const formatted = new Intl.NumberFormat('zh-CN', {
@@ -34,6 +36,7 @@ export function ReportView({ report, result, assumptions, perspective, health, r
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'manual'>('idle')
   const totalSpend = report.tools.reduce((sum, tool) => sum + tool.spend, 0)
   const { calculation } = result
+  const trendEvidence = buildTrendEvidence(report)
   const talkText = perspective.talkTracks.map((track, index) => `${index + 1}. ${track}`).join('\n')
   const specialModule = role !== 'merchant'
   const talkNumber = calculation ? specialModule ? '04' : '03' : specialModule ? '03' : '02'
@@ -92,6 +95,11 @@ export function ReportView({ report, result, assumptions, perspective, health, r
               <p className="issue-detail">{issue.detail}</p>
             </div>
           ))}
+          {trendEvidence && result.issues.length < 3 && <div className="issue trend-issue">
+            <p className="issue-title">推广费连续 8 周上涨，整体 ROI 下滑</p>
+            <p className="issue-value">{(trendEvidence.roiChange * 100).toFixed(1)}%</p>
+            <p className="issue-detail">消耗增长 {(trendEvidence.spendGrowth * 100).toFixed(1)}%，整体 ROI 从 {trendEvidence.firstRoi} 降至 {trendEvidence.currentRoi}；先复核新增预算效率。</p>
+          </div>}
         </div>
       </section>
 
@@ -129,7 +137,7 @@ export function ReportView({ report, result, assumptions, perspective, health, r
 
       {assumptionsPanel}
 
-      {role === 'ka' && <CitySegmentation cities={health.cities} synthetic={report.synthetic} />}
+      {role === 'ka' && <StoreSegmentation stores={report.synthetic ? syntheticStoreCohort : []} synthetic={report.synthetic} />}
       {role === 'cs' && <CustomerHealth report={report} health={health} usage={report.productUsage} />}
 
       <section className="report-section talk-section">

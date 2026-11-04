@@ -1,4 +1,5 @@
 import type { CityProfile, PeerSample } from './businessHealth'
+import type { StoreSegmentSample } from './storeSegments'
 
 export { mainCase } from './cases'
 
@@ -26,3 +27,21 @@ export const cityProfiles: CityProfile[] = [
   { city: '武汉', synthetic: true, platform: '示例平台', category: '中式快餐', priceBand: '25—35 元', capturedAt: '2026-10-12', ue: -0.02, growth: 0.09, netGmvMedian: 71000, p2Median: 0.12, roiMedian: 11, subsidyRateMedian: 0.065 },
   { city: '成都', synthetic: true, platform: '示例平台', category: '中式快餐', priceBand: '25—35 元', capturedAt: '2026-10-12', ue: -0.03, growth: 0.01, netGmvMedian: 52000, p2Median: 0.08, roiMedian: 8, subsidyRateMedian: 0.07 },
 ]
+
+const cohortCities = ['杭州', '上海', '武汉', '成都']
+
+export const syntheticStoreCohort: StoreSegmentSample[] = Array.from({ length: 186 }, (_, index) => {
+  const cityIndex = index % cohortCities.length
+  const growth = Math.round((Math.sin(index * 1.37) * 0.09 + 0.03 + (cityIndex - 1.5) * 0.004) * 10000) / 10000
+  const ue = Math.round((Math.cos(index * 1.91) * 0.06 + (growth >= 0.05 ? 0.012 : -0.012)) * 10000) / 10000
+  return {
+    storeId: `D${String(index + 1).padStart(3, '0')}`,
+    alias: `合成门店 ${String(index + 1).padStart(3, '0')}`,
+    city: cohortCities[cityIndex],
+    synthetic: true,
+    growth,
+    ue,
+    netGmv: 45000 + (index * 7919) % 60000,
+    capturedAt: '2026-10-12',
+  }
+})

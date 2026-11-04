@@ -33,3 +33,26 @@ export function buildDemoSeries(report: WeeklyReport): DemoWeek[] {
     roi: round(currentRoi * ROI_FACTORS[index]),
   }))
 }
+
+export interface TrendEvidence {
+  spendGrowth: number
+  roiChange: number
+  firstRoi: number
+  currentRoi: number
+}
+
+export function buildTrendEvidence(report: WeeklyReport): TrendEvidence | null {
+  const weeks = buildDemoSeries(report)
+  const first = weeks[0]
+  const current = weeks.at(-1)
+  if (weeks.length !== 8 || !first || !current || first.spend <= 0 || first.roi <= 0) return null
+  const spendGrowth = current.spend / first.spend - 1
+  const roiChange = current.roi / first.roi - 1
+  if (spendGrowth <= 0 || roiChange >= 0) return null
+  return {
+    spendGrowth: Math.round(spendGrowth * 10000) / 10000,
+    roiChange: Math.round(roiChange * 10000) / 10000,
+    firstRoi: first.roi,
+    currentRoi: current.roi,
+  }
+}
