@@ -1,9 +1,13 @@
 import { useState, type ReactNode } from 'react'
+import type { BusinessHealthResult } from '../domain/businessHealth'
 import type { Assumptions } from '../domain/diagnosis'
 import type { MerchantPerspective } from '../domain/merchantPerspective'
+import type { DecisionRole } from '../domain/rolePerspectives'
 import type { DiagnosisResult, WeeklyReport } from '../domain/types'
 import { BossQuestions } from './BossQuestions'
 import { BudgetMix, ProfitWaterfall } from './Charts'
+import { CitySegmentation } from './CitySegmentation'
+import { CustomerHealth } from './CustomerHealth'
 
 function money(value: number, signed = false): string {
   const formatted = new Intl.NumberFormat('zh-CN', {
@@ -21,14 +25,20 @@ interface ReportViewProps {
   result: DiagnosisResult
   assumptions: Assumptions
   perspective: MerchantPerspective
+  health: BusinessHealthResult
+  role: DecisionRole
   assumptionsPanel: ReactNode
 }
 
-export function ReportView({ report, result, assumptions, perspective, assumptionsPanel }: ReportViewProps) {
+export function ReportView({ report, result, assumptions, perspective, health, role, assumptionsPanel }: ReportViewProps) {
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'manual'>('idle')
   const totalSpend = report.tools.reduce((sum, tool) => sum + tool.spend, 0)
   const { calculation } = result
   const talkText = perspective.talkTracks.map((track, index) => `${index + 1}. ${track}`).join('\n')
+  const specialModule = role !== 'merchant'
+  const talkNumber = calculation ? specialModule ? '04' : '03' : specialModule ? '03' : '02'
+  const followUpNumber = calculation ? specialModule ? '05' : '04' : specialModule ? '04' : '03'
+  const talkTitle = role === 'ka' ? '给品牌方的三句话' : role === 'cs' ? '给客户的三句话' : '给老板的三句话'
 
   async function copyTalkTracks() {
     try {
@@ -46,7 +56,7 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
         <div>
           <p className="eyebrow">{report.synthetic ? '合成演示数据' : '门店授权周报'} · {report.weekStart}</p>
           <h1>{perspective.reportTitle}</h1>
-          <p className="report-subtitle">{report.store.alias} · {report.store.category} · 商家经营版</p>
+          <p className="report-subtitle">{report.store.alias} · {report.store.category} · {role === 'ka' ? '平台 KA 版' : role === 'cs' ? 'SaaS 客户成功版' : '商家老板版'}</p>
         </div>
         <div className="report-stamp"><span className="status-dot" aria-hidden="true" />本周可执行</div>
       </header>
@@ -62,7 +72,7 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
         <div>
           <span>本周建议 · {result.recommendation.mode === 'reallocate' ? '总预算不变' : '小步追加'}</span>
           <h2>{result.recommendation.mode === 'reallocate' ? `从${result.recommendation.sourceTool}挪 ${result.recommendation.amount} 元到${result.recommendation.targetTool}` : `向${result.recommendation.targetTool}追加 ${result.recommendation.amount} 元`}</h2>
-          <p>先执行一周并保留原方案作对照，实际 ROI 或毛利低于基线就回退。</p>
+          <p>{role === 'ka' ? '用一周实际结果复核后，再决定下一步 JBP 与城市资源。' : role === 'cs' ? '把执行和回填留在客户健康档案，下周复核风险是否解除。' : '先执行一周并保留原方案作对照，实际 ROI 或毛利低于基线就回退。'}</p>
         </div>
         <div className="decision-profit"><span>{assumptions.period === 'month' ? '每月' : '每周'}预计净增毛利</span><strong>{money(calculation.deltaGrossProfit, true)}</strong><small>按当前假设测算，不是收益承诺</small></div>
       </section>}
@@ -119,10 +129,13 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
 
       {assumptionsPanel}
 
+      {role === 'ka' && <CitySegmentation cities={health.cities} synthetic={report.synthetic} />}
+      {role === 'cs' && <CustomerHealth report={report} health={health} usage={report.productUsage} />}
+
       <section className="report-section talk-section">
         <div className="section-heading">
-          <span className="section-number">{calculation ? '03' : '02'}</span>
-          <div><h2>给店里的三句话</h2><p>为什么调、怎么调、下周看什么。</p></div>
+          <span className="section-number">{talkNumber}</span>
+          <div><h2>{talkTitle}</h2><p>{role === 'ka' ? '预算证据、JBP 沟通和城市资源动作。' : role === 'cs' ? '经营干预、使用回填和续费复核。' : '为什么调、怎么调、下周看什么。'}</p></div>
           <button type="button" className="secondary-action copy-talk-button" onClick={() => void copyTalkTracks()}>复制三句话</button>
         </div>
         <ol className="talk-list">
@@ -136,7 +149,7 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
 
       <section className="report-section followup-section">
         <div className="section-heading">
-          <span className="section-number">{calculation ? '04' : '03'}</span>
+          <span className="section-number">{followUpNumber}</span>
           <div><h2>下周跟进表</h2><p>动作、负责人、复核指标和停止条件放在同一行。</p></div>
         </div>
         <div className="table-scroll">
@@ -155,7 +168,7 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
         </div>
       </section>
 
-      <BossQuestions key={`${report.sourceStoreId}-${report.weekStart}-${report.exportedAt}-${JSON.stringify(assumptions)}`} report={report} result={result} assumptions={assumptions} />
+      <BossQuestions key={`${role}-${report.sourceStoreId}-${report.weekStart}-${report.exportedAt}-${JSON.stringify(assumptions)}`} report={report} result={result} assumptions={assumptions} />
     </article>
   )
 }

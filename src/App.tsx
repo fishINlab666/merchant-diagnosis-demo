@@ -3,7 +3,7 @@ import './App.css'
 import { controlCase, demoStore, fineDiningCase, mainCase } from './domain/cases'
 import { buildDiagnosis, type Assumptions } from './domain/diagnosis'
 import { buildInitialObservations, parsePublicIntake, PUBLIC_INTAKE_SAMPLE, type PublicIntakeAnalysis } from './domain/intake'
-import { buildMerchantPerspective } from './domain/merchantPerspective'
+import { buildRolePerspective, type DecisionRole } from './domain/rolePerspectives'
 import { searchPublicMerchant, type PublicSearchResult } from './domain/publicSearch'
 import type { StoreProfile, WeeklyReport } from './domain/types'
 import { parseCsvWeeklyReport, parseXlsxWeeklyReport, readCsvWeeklyReportHeaders, readXlsxWeeklyReportHeaders, readCsvWeeklyReportStoreId, readXlsxWeeklyReportStoreId } from './lib/weeklyReport'
@@ -50,6 +50,7 @@ function App() {
   const [stage, setStage] = useState<'intake' | 'public' | 'full'>('intake')
   const [demoMode, setDemoMode] = useState(false)
   const [view, setView] = useState<'health' | 'budget'>('health')
+  const [role, setRole] = useState<DecisionRole>('merchant')
   const [publicResult, setPublicResult] = useState<PublicSearchResult | null>(null)
   const [publicText, setPublicText] = useState('')
   const [publicAnalysis, setPublicAnalysis] = useState<PublicIntakeAnalysis | null>(null)
@@ -62,9 +63,9 @@ function App() {
   const [validationError, setValidationError] = useState('')
   const [recalcMessage, setRecalcMessage] = useState('')
 
-  const result = useMemo(() => report ? buildDiagnosis(report, assumptions, 'ka') : null, [report, assumptions])
+  const result = useMemo(() => report ? buildDiagnosis(report, assumptions, role) : null, [report, assumptions, role])
   const healthAnalysis = useMemo(() => report ? analyzeBusinessHealth(report, report.synthetic ? syntheticPeers : [], report.synthetic ? cityProfiles : []) : null, [report])
-  const perspective = useMemo(() => report && result && healthAnalysis ? buildMerchantPerspective(report, healthAnalysis, result) : null, [report, result, healthAnalysis])
+  const perspective = useMemo(() => report && result && healthAnalysis ? buildRolePerspective(role, report, healthAnalysis, result) : null, [report, result, healthAnalysis, role])
   const observations = useMemo(() => publicResult ? [...publicResult.observations, ...buildInitialObservations(store)] : [], [publicResult, store])
   const sourceSpend = useMemo(() => report ? Math.min(...report.tools.map((tool) => tool.spend)) : 0, [report])
   const identityMismatch = Boolean(sourceStoreId && store.storeId?.trim() && sourceStoreId !== store.storeId.trim())
@@ -261,6 +262,8 @@ function App() {
             result={result}
             assumptions={assumptions}
             perspective={perspective}
+            health={healthAnalysis}
+            role={role}
             assumptionsPanel={<AssumptionsPanel
               assumptions={assumptions}
               blocked={!result.calculation}
@@ -283,6 +286,11 @@ function App() {
           <div><strong>Merchant OS</strong><span>商家经营诊断</span></div>
         </div>
         <div className="header-actions">
+          {report && <div className="role-switch" role="group" aria-label="决策视角">
+            {([['merchant', '商家老板'], ['ka', '平台 KA'], ['cs', 'SaaS 客户成功']] as const).map(([value, label]) => (
+              <button type="button" key={value} aria-pressed={role === value} className={role === value ? 'active' : ''} onClick={() => setRole(value)}>{label}</button>
+            ))}
+          </div>}
           {report && <button type="button" className="print-button" onClick={() => window.print()}>打印／保存 PDF</button>}
         </div>
       </header>

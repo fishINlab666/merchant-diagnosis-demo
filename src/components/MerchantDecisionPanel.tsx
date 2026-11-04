@@ -6,11 +6,13 @@ interface MerchantDecisionPanelProps {
 }
 
 export function MerchantDecisionPanel({ perspective, context }: MerchantDecisionPanelProps) {
+  const role = perspective.role ?? 'merchant'
+  const roleLabel = role === 'ka' ? 'PLATFORM KA · 平台预算决策' : role === 'cs' ? 'CUSTOMER SUCCESS · 客户健康决策' : 'MERCHANT DECISION · 商家经营决策'
   return (
-    <section className={`role-decision-panel merchant-decision-panel role-context-${context}`} data-decision-module={perspective.module.id} aria-label={perspective.module.title}>
+    <section className={`role-decision-panel merchant-decision-panel role-context-${context}`} data-decision-module={perspective.module.id} data-role={role} aria-label={perspective.module.title}>
       <div className="role-decision-heading">
         <div>
-          <p className="eyebrow">MERCHANT DECISION · 商家经营决策</p>
+          <p className="eyebrow">{roleLabel}</p>
           <h2>{perspective.decisionQuestion}</h2>
           <p>{perspective.decisionSummary}</p>
         </div>

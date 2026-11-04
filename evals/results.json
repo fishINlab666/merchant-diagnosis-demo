@@ -80,14 +80,14 @@
       "group": "执行闭环",
       "description": "每个行动都有负责人、复核指标、日期和停止条件",
       "pass": true,
-      "evidence": "[{\"action\":\"从点金推广向搜索推广挪移 400 元\",\"owner\":\"商家外卖负责人\",\"metric\":\"搜索推广 ROI、净 GMV\",\"target\":\"保留本周原预算方案作对照，记录实际值并对比测算\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"目标工具 ROI 或毛利低于基线则回退\"},{\"action\":\"复核商家补贴与菜品让利\",\"owner\":\"门店经营负责人\",\"metric\":\"商家补贴占净 GMV 比例\",\"target\":\"不高于本周水平\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"补贴占比继续上升则暂停新增补贴\"},{\"action\":\"复盘并决定继续、调整或回退\",\"owner\":\"KA／运营\",\"metric\":\"净 GMV、毛利、执行完成度\",\"target\":\"形成下周决策记录\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"实际结果未达到测算下限则停止追加并复盘\"}]"
+      "evidence": "[{\"action\":\"推动商家从点金推广向搜索推广挪移 400 元\",\"owner\":\"平台 KA／商家外卖对接人\",\"metric\":\"预算执行、实际 ROI\",\"target\":\"完成一周小步执行并保留基线\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"口径未通过或实际 ROI 低于基线时停止追加\"},{\"action\":\"按增长与 UE 复核城市／门店资源分层\",\"owner\":\"平台 KA／商家运营\",\"metric\":\"城市增长、UE、净 GMV\",\"target\":\"形成加码、稳住、调结构和收缩清单\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"缺少同口径样本时不做城市排名或资源承诺\"},{\"action\":\"用实际经营结果复核并确定下一步 JBP\",\"owner\":\"平台 KA\",\"metric\":\"净 GMV、毛利、预算执行完成度\",\"target\":\"2026-10-19 形成继续、调整或暂停的 JBP 记录\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"实际结果未达基线时不扩大投入\"}]"
     },
     {
       "id": "E-12",
       "group": "执行闭环",
       "description": "复核保留基线或对照，不只看单次结果",
       "pass": true,
-      "evidence": "从点金推广向搜索推广挪移 400 元保留本周原预算方案作对照，记录实际值并对比测算 复核商家补贴与菜品让利不高于本周水平 复盘并决定继续、调整或回退形成下周决策记录"
+      "evidence": "推动商家从点金推广向搜索推广挪移 400 元完成一周小步执行并保留基线 按增长与 UE 复核城市／门店资源分层形成加码、稳住、调结构和收缩清单 用实际经营结果复核并确定下一步 JBP2026-10-19 形成继续、调整或暂停的 JBP 记录"
     },
     {
       "id": "E-13",
@@ -157,7 +157,7 @@
       "group": "商家通用性",
       "description": "归因异常商家只修复口径，不机械输出预算建议",
       "pass": true,
-      "evidence": "{\"calculation\":null,\"action\":{\"label\":\"下周主动作\",\"value\":\"先统一数据口径\",\"detail\":\"负责人：商家运营\"},\"followUp\":{\"action\":\"统一各工具归因定义、窗口和成熟度\",\"owner\":\"商家运营\",\"metric\":\"归因口径\",\"target\":\"全部工具一致且已成熟\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"口径未对齐前不调整预算\"}}"
+      "evidence": "{\"calculation\":null,\"action\":{\"label\":\"下周主动作\",\"value\":\"先统一数据口径\",\"detail\":\"负责人：平台 KA／商家外卖对接人\"},\"followUp\":{\"action\":\"与商家统一归因口径并重新导出周报\",\"owner\":\"平台 KA／商家外卖对接人\",\"metric\":\"归因口径与字段完整度\",\"target\":\"形成同口径周报后再谈 JBP\",\"reviewDate\":\"2026-10-19\",\"stopCondition\":\"口径未通过或实际 ROI 低于基线时停止追加\"}}"
     },
     {
       "id": "E-27",
@@ -185,7 +185,7 @@
       "group": "公开检索与 AI",
       "description": "首个来源失败后切换来源并限制 AI 输出方向",
       "pass": true,
-      "evidence": "{\"calls\":2,\"sources\":[{\"title\":\"公开搜索：合成餐饮品牌 A\",\"url\":\"https://duckduckgo.com/html/?q=%E5%90%88%E6%88%90%E9%A4%90%E9%A5%AE%E5%93%81%E7%89%8C%20A%20%E6%9D%AD%E5%B7%9E%20%E5%9F%8E%E8%A5%BF%E7%A7%91%E5%88%9B%E5%95%86%E5%9C%88%20%E4%B8%AD%E5%BC%8F%E5%BF%AB%E9%A4%90%20%E9%97%A8%E5%BA%97%20%E8%AF%84%E5%88%86%20%E4%BA%BA%E5%9D%87\",\"capturedAt\":\"2026-11-04T05:11:24.585Z\",\"snippet\":\"# 示例门店 评分：4.6 人均 ¥35 这是一段足够长的公开网页摘要，用于验证来源切换与 AI 白名单。\"}],\"ai\":{\"status\":\"used\",\"hypothesisId\":\"menu_structure\",\"reason\":\"AI 仅选择待验证方向，解释与计算由本地规则完成。\"}}"
+      "evidence": "{\"calls\":2,\"sources\":[{\"title\":\"公开搜索：合成餐饮品牌 A\",\"url\":\"https://duckduckgo.com/html/?q=%E5%90%88%E6%88%90%E9%A4%90%E9%A5%AE%E5%93%81%E7%89%8C%20A%20%E6%9D%AD%E5%B7%9E%20%E5%9F%8E%E8%A5%BF%E7%A7%91%E5%88%9B%E5%95%86%E5%9C%88%20%E4%B8%AD%E5%BC%8F%E5%BF%AB%E9%A4%90%20%E9%97%A8%E5%BA%97%20%E8%AF%84%E5%88%86%20%E4%BA%BA%E5%9D%87\",\"capturedAt\":\"2026-11-04T06:13:43.721Z\",\"snippet\":\"# 示例门店 评分：4.6 人均 ¥35 这是一段足够长的公开网页摘要，用于验证来源切换与 AI 白名单。\"}],\"ai\":{\"status\":\"used\",\"hypothesisId\":\"menu_structure\",\"reason\":\"AI 仅选择待验证方向，解释与计算由本地规则完成。\"}}"
     },
     {
       "id": "E-31",
