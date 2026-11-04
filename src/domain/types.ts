@@ -23,6 +23,14 @@ export interface ToolMetric {
   attributionDefinition: string
 }
 
+export interface ProductUsage {
+  activeOperators: number
+  weeklyImports: number
+  followupCompletionRate: number
+  lastActiveDate: string
+  renewalReviewDate?: string
+}
+
 export interface WeeklyReport {
   synthetic: boolean
   sourceStoreId: string
@@ -37,6 +45,7 @@ export interface WeeklyReport {
   visits?: number
   repeatCustomerRate?: number
   memberShare?: number
+  productUsage?: ProductUsage
   tools: ToolMetric[]
 }
 

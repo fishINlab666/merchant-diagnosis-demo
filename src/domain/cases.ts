@@ -27,6 +27,13 @@ export const mainCase: WeeklyReport = {
   visits: 12000,
   repeatCustomerRate: 0.28,
   memberShare: 0.24,
+  productUsage: {
+    activeOperators: 3,
+    weeklyImports: 1,
+    followupCompletionRate: 0.35,
+    lastActiveDate: '2026-10-26',
+    renewalReviewDate: '2026-12-10',
+  },
   tools: [
     { toolName: '点金推广', spend: 1000, attributedGmv: 10000, roi: 10, attributionWindowDays: 7, attributionDefinition: '点击归因' },
     { toolName: '搜索推广', spend: 800, attributedGmv: 14400, roi: 18, attributionWindowDays: 7, attributionDefinition: '点击归因' },

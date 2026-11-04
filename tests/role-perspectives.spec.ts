@@ -55,5 +55,8 @@ describe('three role decision perspectives', () => {
     expect(cs.reportTitle).toContain('续费')
     expect(ka.metrics.map((metric) => metric.label)).toContain('城市样本')
     expect(cs.metrics.map((metric) => metric.label)).toContain('产品使用')
+    expect(cs.metrics.find((metric) => metric.label === '产品使用')?.value).toContain('3 人')
+    expect(cs.metrics.find((metric) => metric.label === '续费复核')?.value).toBe('2026-12-10')
+    expect(cs.module.cards.find((card) => card.label === '使用深度')?.value).toContain('35.0%')
   })
 })

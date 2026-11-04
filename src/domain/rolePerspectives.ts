@@ -77,6 +77,7 @@ export function buildRolePerspective(
       talkTracks: diagnosis.talkTracks,
     }
   }
+  const usage = report.productUsage
   return {
     ...base,
     role,
@@ -86,8 +87,8 @@ export function buildRolePerspective(
     decisionSummary: '经营风险与产品使用信号分开核验；健康度只表示干预优先级，不是续费概率。',
     metrics: [
       { label: '经营风险', value: `${diagnosis.issues.length} 项`, detail: diagnosis.issues[0]?.title ?? '当前未发现明确异常' },
-      { label: '产品使用', value: '未提供', detail: '使用行为独立输入，不从 GMV 或 ROI 推断' },
-      { label: '续费复核', value: '未提供', detail: '没有合同或复核日期时不生成续费窗口' },
+      { label: '产品使用', value: usage ? `${usage.activeOperators} 人 · 导入 ${usage.weeklyImports} 次` : '未提供', detail: '使用行为独立输入，不从 GMV 或 ROI 推断' },
+      { label: '续费复核', value: usage?.renewalReviewDate ?? '未提供', detail: '没有合同或复核日期时不生成续费窗口' },
     ],
     dimensions: reorder(base.dimensions, csOrder, csInsights),
     module: {
@@ -96,7 +97,7 @@ export function buildRolePerspective(
       description: '同时呈现经营风险、产品使用深度和复核动作；缺数据就关闭评分，不做续费预测。',
       cards: [
         { label: '经营风险', value: diagnosis.issues[0]?.title ?? '未发现明确异常', detail: diagnosis.issues[0]?.detail ?? '按当前证据保持复核' },
-        { label: '使用深度', value: '使用数据未提供', detail: '需要周报导入、跟进回填、活跃操作员和最近活跃日期。' },
+        { label: '使用深度', value: usage ? `回填 ${(usage.followupCompletionRate * 100).toFixed(1)}% · ${usage.activeOperators} 人活跃` : '使用数据未提供', detail: usage ? `最近活跃 ${usage.lastActiveDate} · 周报导入 ${usage.weeklyImports} 次` : '需要周报导入、跟进回填、活跃操作员和最近活跃日期。' },
         { label: '干预复核', value: diagnosis.followUps[0]?.reviewDate ?? '待确认', detail: diagnosis.followUps[0]?.stopCondition ?? '客户确认前先补齐证据' },
       ],
     },
