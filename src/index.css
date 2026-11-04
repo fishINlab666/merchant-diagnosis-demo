@@ -1,16 +1,23 @@
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
-  color: #1a1a1a;
-  background: #f8f7f4;
+  font-family: "Google Sans", "Roboto", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  color: #202124;
+  background: #f8fafc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --paper: #f8f7f4;
-  --ink: #1a1a1a;
-  --red: #a11f2e;
-  --yellow: #f7cf56;
-  --beige: #e0dbd1;
-  --muted: #706b64;
+  --brand: #4285f4;
+  --brand-dark: #1769d2;
+  --blue-soft: #e8f0fe;
+  --paper: #f8fafc;
+  --ink: #202124;
+  --red: #ea4335;
+  --red-soft: #fce8e6;
+  --yellow: #fbbc04;
+  --yellow-soft: #fef7e0;
+  --green: #34a853;
+  --green-soft: #e6f4ea;
+  --beige: #e0e3e8;
+  --muted: #5f6368;
   --white: #ffffff;
 }
 
@@ -18,14 +25,14 @@
 body { margin: 0; min-width: 320px; }
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
-button:disabled { cursor: not-allowed; opacity: 0.45; }
+button:disabled { cursor: not-allowed; opacity: 0.48; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
-button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid var(--red);
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible, a:focus-visible {
+  outline: 3px solid var(--brand);
   outline-offset: 2px;
 }
 ::selection { background: var(--yellow); color: var(--ink); }
 html { color-scheme: light; }
 body { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
-input, textarea, select { caret-color: var(--red); }
+input, textarea, select { caret-color: var(--brand); }
 @media (pointer: fine) { html { overscroll-behavior: none; } }

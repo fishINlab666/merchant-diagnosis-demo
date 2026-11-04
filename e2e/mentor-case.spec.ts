@@ -22,6 +22,8 @@ test('shows eight-week trends, tool efficiency and one shared scenario breakdown
   await expect(page.locator('.weekly-trend')).toContainText('W8')
   await expect(page.locator('.tool-efficiency')).toContainText('ROI 18')
   await page.getByRole('tab', { name: '行动方案' }).click()
+  await expect(page.locator('.decision-summary')).toBeVisible()
+  await expect(page.locator('.merchant-report .role-decision-panel')).toHaveCount(0)
   await expect(page.locator('.budget-mix')).toContainText('现在')
   await expect(page.locator('.budget-mix')).toContainText('建议')
   await expect(page.locator('.profit-waterfall')).toContainText('预算结构贡献')
@@ -57,4 +59,29 @@ test('answers boss questions offline and offers manual copy when clipboard is un
   await page.getByRole('button', { name: '复制三句话' }).click()
   await expect(page.getByLabel('手动复制三句话')).toBeVisible()
   await expect(page.getByLabel('手动复制三句话')).toContainText('点金推广')
+})
+
+test('applies the Google flat visual system without losing error semantics', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.locator('.app-shell')).toHaveClass(/google-theme/)
+  await page.getByLabel('店铺名称').fill('主题测试门店')
+  await expect(page.locator('.intake-start')).toBeEnabled()
+  await expect(page.locator('.intake-start')).toHaveCSS('background-color', 'rgb(66, 133, 244)')
+  const tokens = await page.evaluate(() => {
+    const style = getComputedStyle(document.documentElement)
+    return {
+      brand: style.getPropertyValue('--brand').trim().toUpperCase(),
+      error: style.getPropertyValue('--red').trim().toUpperCase(),
+      success: style.getPropertyValue('--green').trim().toUpperCase(),
+      primaryBackground: getComputedStyle(document.querySelector('.intake-start')!).backgroundColor,
+      primaryImage: getComputedStyle(document.querySelector('.intake-start')!).backgroundImage,
+    }
+  })
+  expect(tokens).toEqual({
+    brand: '#4285F4',
+    error: '#EA4335',
+    success: '#34A853',
+    primaryBackground: 'rgb(66, 133, 244)',
+    primaryImage: 'none',
+  })
 })

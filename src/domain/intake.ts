@@ -106,6 +106,8 @@ function parseCompetitor(line: string): PublicCompetitor {
 export function parsePublicIntake(text: string): PublicIntakeAnalysis {
   const normalized = text.replace(/\r/g, '').trim()
   const lines = normalized.split('\n').map((line) => line.trim()).filter(Boolean)
+  const shopLines = lines.filter((line) => !/^竞店\s*[：:]?/.test(line))
+  const shopText = shopLines.join('\n')
   const competitors = lines.filter((line) => /^竞店\s*[：:]?/.test(line)).map(parseCompetitor)
   const ratingMedian = median(competitors.map((item) => item.rating))
   const deliveryMinutesMedian = median(competitors.map((item) => item.deliveryMinutes))
@@ -127,13 +129,13 @@ export function parsePublicIntake(text: string): PublicIntakeAnalysis {
   const menuItems = lines.filter((line) => /[¥￥]/.test(line) && !/评分|月售|人均|起送|配送费|^竞店/.test(line))
     .flatMap((line) => line.split(/[｜|]/).map((item) => item.trim()).filter(Boolean))
   const facts = {
-    name: lines[0]?.replace(/^店名\s*[：:]\s*/, '') ?? '',
-    rating: numberFrom(normalized, /评分\s*[：:]?\s*([0-5](?:\.\d+)?)/),
-    monthlySales: numberFrom(normalized, /月售\s*[：:]?\s*(\d+(?:\.\d+)?)/),
-    averagePrice: numberFrom(normalized, /人均\s*[¥￥]?\s*(\d+(?:\.\d+)?)/),
-    minimumOrder: numberFrom(normalized, /起送\s*[¥￥]?\s*(\d+(?:\.\d+)?)/),
-    deliveryFee: numberFrom(normalized, /配送费\s*[¥￥]?\s*(\d+(?:\.\d+)?)/),
-    deliveryMinutes: numberFrom(normalized, /配送约\s*[：:]?\s*(\d+(?:\.\d+)?)\s*分钟/),
+    name: shopLines[0]?.replace(/^店名\s*[：:]\s*/, '') ?? '',
+    rating: numberFrom(shopText, /评分\s*[：:]?\s*([0-5](?:\.\d+)?)/),
+    monthlySales: numberFrom(shopText, /月售\s*[：:]?\s*(\d+(?:\.\d+)?)/),
+    averagePrice: numberFrom(shopText, /人均\s*[¥￥]?\s*(\d+(?:\.\d+)?)/),
+    minimumOrder: numberFrom(shopText, /起送\s*[¥￥]?\s*(\d+(?:\.\d+)?)/),
+    deliveryFee: numberFrom(shopText, /配送费\s*[¥￥]?\s*(\d+(?:\.\d+)?)/),
+    deliveryMinutes: numberFrom(shopText, /配送约\s*[：:]?\s*(\d+(?:\.\d+)?)\s*分钟/),
     menuItems,
   }
   const candidates: PublicIntakeAnalysis['candidates'] = []

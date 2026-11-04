@@ -48,4 +48,15 @@ describe('public shop-page intake', () => {
     expect(result.competitors).toEqual([])
     expect(result.candidates).toEqual([])
   })
+
+  it('never borrows competitor fields when shop facts are missing', () => {
+    const result = parsePublicIntake(`只有店名的门店\n竞店：隔壁餐厅｜评分 4.9｜月售 9000｜人均 ¥88｜配送约 18 分钟`)
+
+    expect(result.facts.name).toBe('只有店名的门店')
+    expect(result.facts.rating).toBeNull()
+    expect(result.facts.monthlySales).toBeNull()
+    expect(result.facts.averagePrice).toBeNull()
+    expect(result.facts.deliveryMinutes).toBeNull()
+    expect(result.competitors[0]).toMatchObject({ rating: 4.9, monthlySales: 9000, averagePrice: 88, deliveryMinutes: 18 })
+  })
 })

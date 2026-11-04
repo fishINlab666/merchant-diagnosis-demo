@@ -275,7 +275,7 @@ function App() {
   ) : null
 
   return (
-    <div className="app-shell">
+    <div className="app-shell google-theme">
       <a className="skip-link" href="#main-content">跳到主要内容</a>
       <header className="app-header">
         <div className="brand">

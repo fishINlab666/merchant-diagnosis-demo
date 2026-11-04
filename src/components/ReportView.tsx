@@ -4,7 +4,6 @@ import type { MerchantPerspective } from '../domain/merchantPerspective'
 import type { DiagnosisResult, WeeklyReport } from '../domain/types'
 import { BossQuestions } from './BossQuestions'
 import { BudgetMix, ProfitWaterfall } from './Charts'
-import { MerchantDecisionPanel } from './MerchantDecisionPanel'
 
 function money(value: number, signed = false): string {
   const formatted = new Intl.NumberFormat('zh-CN', {
@@ -67,8 +66,6 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
         </div>
         <div className="decision-profit"><span>{assumptions.period === 'month' ? '每月' : '每周'}预计净增毛利</span><strong>{money(calculation.deltaGrossProfit, true)}</strong><small>按当前假设测算，不是收益承诺</small></div>
       </section>}
-
-      <MerchantDecisionPanel perspective={perspective} context="budget" />
 
       <section className="report-section">
         <div className="section-heading">
