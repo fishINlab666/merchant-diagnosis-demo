@@ -55,6 +55,9 @@ export interface Calculation {
   projectedGrossProfit: number
   deltaGrossProfit: number
   spendDelta: number
+  budgetContribution?: number
+  subsidyContribution?: number
+  orderLossContribution?: number
 }
 
 export interface DiagnosisIssue {

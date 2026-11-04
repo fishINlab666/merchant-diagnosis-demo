@@ -1,7 +1,9 @@
 import type { BusinessHealthResult, CityStrategy, PeerSample } from '../domain/businessHealth'
 import { eligiblePeers } from '../domain/businessHealth'
+import { buildDemoSeries } from '../domain/demoSeries'
 import type { MerchantPerspective } from '../domain/merchantPerspective'
 import type { WeeklyReport } from '../domain/types'
+import { ToolEfficiencyBars, WeeklyTrend } from './Charts'
 import { MerchantDecisionPanel } from './MerchantDecisionPanel'
 
 const strategyNames: Record<CityStrategy, string> = {
@@ -32,6 +34,8 @@ interface BusinessHealthViewProps {
 export function BusinessHealthView({ report, analysis, peers, perspective }: BusinessHealthViewProps) {
   const eligible = eligiblePeers(report, peers)
   const excluded = peers.filter((peer) => !eligible.includes(peer))
+  const weeks = buildDemoSeries(report)
+  const sameAttribution = new Set(report.tools.map((tool) => `${tool.attributionDefinition}|${tool.attributionWindowDays}`)).size <= 1
   return (
     <article className="business-health merchant-health" aria-label={perspective.pageTitle}>
       <header className="health-header">
@@ -47,6 +51,25 @@ export function BusinessHealthView({ report, analysis, peers, perspective }: Bus
       </header>
 
       <MerchantDecisionPanel perspective={perspective} context="health" />
+
+      <section className="health-section evidence-trend-section">
+        <div className="section-heading">
+          <div><h2>周报校验与投入趋势</h2><p>先确认数据可用，再看 GMV、推广费和工具效率；真实周报不补造历史。</p></div>
+        </div>
+        <div className="validation-chips" aria-label="数据校验摘要">
+          <span>✓ 必需字段已映射</span><span>✓ {report.tools.length} 个投放工具</span><span className={sameAttribution ? '' : 'warning'}>{sameAttribution ? '✓ 归因口径一致' : '! 归因口径待统一'}</span><span>✓ 门店 ID：{report.sourceStoreId}</span>
+        </div>
+        <div className={`health-chart-grid ${report.synthetic ? '' : 'single'}`}>
+          {report.synthetic && <section className="chart-panel">
+            <div className="chart-panel-heading"><h3>近 8 周净 GMV 与推广费</h3><p>看增长是否依赖越来越高的投入。</p></div>
+            <WeeklyTrend weeks={weeks} />
+          </section>}
+          <section className="chart-panel">
+            <div className="chart-panel-heading"><h3>推广费花在哪</h3><p>同一份周报中的消耗占比和工具 ROI。</p></div>
+            <ToolEfficiencyBars tools={report.tools} />
+          </section>
+        </div>
+      </section>
 
       <section className="health-section">
         <div className="section-heading">

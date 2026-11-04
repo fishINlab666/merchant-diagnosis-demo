@@ -95,4 +95,44 @@ describe('budget diagnosis', () => {
       expect(item.stopCondition).not.toBe('')
     }
   })
+
+  it('keeps the default weekly result unchanged and exposes zero subsidy-loss contribution', () => {
+    const result = buildDiagnosis(mainCase, assumptions)
+
+    expect(result.calculation).toMatchObject({
+      deltaGmv: 2560,
+      deltaGrossProfit: 1152,
+      budgetContribution: 1152,
+      subsidyContribution: 0,
+      orderLossContribution: 0,
+    })
+  })
+
+  it('scales current and projected values by 4.3 weeks for the monthly view', () => {
+    const result = buildDiagnosis(mainCase, { ...assumptions, period: 'month' })
+
+    expect(result.calculation).toMatchObject({
+      currentGmv: 258000,
+      deltaGmv: 11008,
+      currentGrossProfit: 88580,
+      deltaGrossProfit: 4953.6,
+      budgetContribution: 4953.6,
+    })
+  })
+
+  it('deducts GMV and margin loss only when merchant subsidy is reduced', () => {
+    const result = buildDiagnosis(mainCase, {
+      ...assumptions,
+      merchantSubsidyDelta: -1000,
+      subsidyOrderLossRate: 0.4,
+    })
+
+    expect(result.calculation).toMatchObject({
+      deltaGmv: 2160,
+      deltaGrossProfit: 1972,
+      budgetContribution: 1152,
+      subsidyContribution: 1000,
+      orderLossContribution: -180,
+    })
+  })
 })

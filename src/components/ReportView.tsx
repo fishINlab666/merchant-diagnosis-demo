@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import type { Assumptions } from '../domain/diagnosis'
 import type { MerchantPerspective } from '../domain/merchantPerspective'
 import type { DiagnosisResult, WeeklyReport } from '../domain/types'
+import { BudgetMix, ProfitWaterfall } from './Charts'
 import { MerchantDecisionPanel } from './MerchantDecisionPanel'
 
 function money(value: number, signed = false): string {
@@ -44,6 +45,15 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
         <div><dt>商家补贴</dt><dd>{money(report.merchantSubsidy)}</dd></div>
       </dl>
 
+      {calculation && result.recommendation && <section className="decision-summary" aria-label="本周预算决策">
+        <div>
+          <span>本周建议 · {result.recommendation.mode === 'reallocate' ? '总预算不变' : '小步追加'}</span>
+          <h2>{result.recommendation.mode === 'reallocate' ? `从${result.recommendation.sourceTool}挪 ${result.recommendation.amount} 元到${result.recommendation.targetTool}` : `向${result.recommendation.targetTool}追加 ${result.recommendation.amount} 元`}</h2>
+          <p>先执行一周并保留原方案作对照，实际 ROI 或毛利低于基线就回退。</p>
+        </div>
+        <div className="decision-profit"><span>{assumptions.period === 'month' ? '每月' : '每周'}预计净增毛利</span><strong>{money(calculation.deltaGrossProfit, true)}</strong><small>按当前假设测算，不是收益承诺</small></div>
+      </section>}
+
       <MerchantDecisionPanel perspective={perspective} context="budget" />
 
       <section className="report-section">
@@ -82,7 +92,17 @@ export function ReportView({ report, result, assumptions, perspective, assumptio
               <tr><th>经营毛利</th><td>{money(calculation.currentGrossProfit)}</td><td>{money(calculation.projectedGrossProfit)}</td></tr>
             </tbody>
           </table>
-          <p className="assumption-note">测算假设：毛利率 {(assumptions.grossMargin * 100).toFixed(0)}% · 边际 ROI 折算 {(assumptions.marginalFactor * 100).toFixed(0)}% · 商家补贴变化 {money(assumptions.merchantSubsidyDelta)}</p>
+          <div className="scenario-visual-grid">
+            {result.recommendation && <section>
+              <div className="chart-panel-heading"><h3>预算怎么调</h3><p>对比现在与建议的工具预算结构。</p></div>
+              <BudgetMix report={report} recommendation={result.recommendation} />
+            </section>}
+            <section>
+              <div className="chart-panel-heading"><h3>调完能多赚多少</h3><p>毛利变化按贡献来源拆开。</p></div>
+              <ProfitWaterfall calculation={calculation} />
+            </section>
+          </div>
+          <p className="assumption-note">测算假设：{assumptions.period === 'month' ? '每月按 4.3 周' : '按单周'} · 毛利率 {(assumptions.grossMargin * 100).toFixed(0)}% · 边际 ROI 折算 {(assumptions.marginalFactor * 100).toFixed(0)}% · 商家补贴变化 {money(assumptions.merchantSubsidyDelta)} · 补贴收紧 GMV 流失折算 {((assumptions.subsidyOrderLossRate ?? 0.4) * 100).toFixed(0)}%</p>
         </section>
       )}
 

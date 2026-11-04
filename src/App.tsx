@@ -23,6 +23,8 @@ const initialAssumptions: Assumptions = {
   grossMargin: 0.45,
   marginalFactor: 0.8,
   merchantSubsidyDelta: 0,
+  period: 'week',
+  subsidyOrderLossRate: 0.4,
 }
 
 const blankStore: StoreProfile = {
@@ -73,8 +75,12 @@ function App() {
 
   function updateAssumptions<K extends keyof Assumptions>(key: K, value: Assumptions[K]) {
     const numericValue = Number(value)
-    if (['amount', 'grossMargin', 'marginalFactor', 'merchantSubsidyDelta'].includes(key) && !Number.isFinite(numericValue)) {
+    if (['amount', 'grossMargin', 'marginalFactor', 'merchantSubsidyDelta', 'subsidyOrderLossRate'].includes(key) && !Number.isFinite(numericValue)) {
       setValidationError('请输入有效数字，当前值未应用。')
+      return
+    }
+    if (key === 'subsidyOrderLossRate' && (numericValue < 0 || numericValue > 1)) {
+      setValidationError('补贴收紧 GMV 流失折算须为 0—100%，当前值未应用。')
       return
     }
     if (key === 'amount' && (numericValue < 1 || numericValue > 1000000)) {

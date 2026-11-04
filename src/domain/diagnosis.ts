@@ -15,10 +15,13 @@ export interface Assumptions {
   grossMargin: number
   marginalFactor: number
   merchantSubsidyDelta: number
+  period?: 'week' | 'month'
+  subsidyOrderLossRate?: number
 }
 
 function round(value: number): number {
-  return Math.round(value * 100) / 100
+  const rounded = Math.round(value * 100) / 100
+  return rounded === 0 ? 0 : rounded
 }
 
 function addDays(date: string, days: number): string {
@@ -46,25 +49,36 @@ function makeCalculation(
   source: ToolMetric | null,
   target: ToolMetric,
 ): Calculation {
-  const totalSpend = report.tools.reduce((sum, tool) => sum + tool.spend, 0)
+  const periodMultiplier = assumptions.period === 'month' ? 4.3 : 1
+  const totalSpend = report.tools.reduce((sum, tool) => sum + tool.spend, 0) * periodMultiplier
   const isReallocate = recommendation.mode === 'reallocate'
-  const spendDelta = isReallocate ? 0 : recommendation.amount
-  const deltaGmv = isReallocate && source
+  const spendDelta = (isReallocate ? 0 : recommendation.amount) * periodMultiplier
+  const weeklyBudgetGmvDelta = isReallocate && source
     ? recommendation.amount * (target.roi - source.roi) * assumptions.marginalFactor
     : recommendation.amount * target.roi * assumptions.marginalFactor
-  const currentGrossProfit = report.netGmv * assumptions.grossMargin - report.merchantSubsidy - totalSpend
-  const projectedGmv = report.netGmv + deltaGmv
+  const budgetGmvDelta = weeklyBudgetGmvDelta * periodMultiplier
+  const subsidyDelta = assumptions.merchantSubsidyDelta * periodMultiplier
+  const subsidyOrderLossRate = Math.min(1, Math.max(0, assumptions.subsidyOrderLossRate ?? 0.4))
+  const orderLossGmv = Math.max(0, -subsidyDelta) * subsidyOrderLossRate
+  const deltaGmv = budgetGmvDelta - orderLossGmv
+  const currentGmv = report.netGmv * periodMultiplier
+  const currentGrossProfit = currentGmv * assumptions.grossMargin
+    - report.merchantSubsidy * periodMultiplier - totalSpend
+  const projectedGmv = currentGmv + deltaGmv
   const projectedGrossProfit = projectedGmv * assumptions.grossMargin
-    - (report.merchantSubsidy + assumptions.merchantSubsidyDelta)
+    - (report.merchantSubsidy * periodMultiplier + subsidyDelta)
     - (totalSpend + spendDelta)
   return {
-    currentGmv: report.netGmv,
+    currentGmv: round(currentGmv),
     projectedGmv: round(projectedGmv),
     deltaGmv: round(deltaGmv),
     currentGrossProfit: round(currentGrossProfit),
     projectedGrossProfit: round(projectedGrossProfit),
     deltaGrossProfit: round(projectedGrossProfit - currentGrossProfit),
-    spendDelta,
+    spendDelta: round(spendDelta),
+    budgetContribution: round(budgetGmvDelta * assumptions.grossMargin - spendDelta),
+    subsidyContribution: round(-subsidyDelta),
+    orderLossContribution: round(-orderLossGmv * assumptions.grossMargin),
   }
 }
 

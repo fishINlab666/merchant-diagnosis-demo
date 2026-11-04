@@ -13,3 +13,22 @@ test('builds a public intake from pasted facts, review themes and explicit compe
   await expect(page.locator('.public-candidate').first()).toContainText('待验证')
   await expect(page.getByRole('heading', { name: '上传一份周报，生成完整诊断' })).toBeVisible()
 })
+
+test('shows eight-week trends, tool efficiency and one shared scenario breakdown', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: '快餐示例' }).click()
+
+  await expect(page.locator('.weekly-trend')).toBeVisible()
+  await expect(page.locator('.weekly-trend')).toContainText('W8')
+  await expect(page.locator('.tool-efficiency')).toContainText('ROI 18')
+  await page.getByRole('tab', { name: '行动方案' }).click()
+  await expect(page.locator('.budget-mix')).toContainText('现在')
+  await expect(page.locator('.budget-mix')).toContainText('建议')
+  await expect(page.locator('.profit-waterfall')).toContainText('预算结构贡献')
+
+  await page.getByLabel('测算周期').selectOption('month')
+  await expect(page.locator('.delta-row')).toContainText('11,008')
+  await page.getByLabel('商家补贴变化（元）').fill('-1000')
+  await expect(page.locator('.profit-waterfall')).toContainText('订单流失影响')
+  await expect(page.locator('.delta-row')).toContainText('9,288')
+})
