@@ -19,6 +19,7 @@ test-results/
 playwright-report/
 coverage/
 tmp/
+__pycache__/
 
 # Editor directories and files
 .vscode/*

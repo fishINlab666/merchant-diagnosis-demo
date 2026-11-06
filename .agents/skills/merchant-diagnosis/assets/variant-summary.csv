@@ -1,0 +1,2 @@
+store,period,orders,net_sales,merchant_discount,platform_discount,exposure,visits,repeat_rate,member_rate
+S1,2026-10-12,1200,60000,4000,1500,120000,12000,0.28,0.24
