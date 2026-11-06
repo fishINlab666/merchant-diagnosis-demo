@@ -1,0 +1,141 @@
+{
+  "export_kind": "merchant-diagnosis-report-export",
+  "schema_version": "1.0",
+  "exported_at": "2026-11-06T17:04:38.732018+00:00",
+  "inference_executed": false,
+  "validation_scope": "展现数据类型、内容转换与文件指纹；未自动验证业务语义、原始计算或商家执行效果",
+  "inputs": [
+    {
+      "source": "catalog.json",
+      "sha256": "8454fd9d64d624a5cd22b78e89ff6329574cc72e27d16d3101f2796121990411"
+    },
+    {
+      "source": "chain/original/S1/report.md",
+      "sha256": "e404b3d47bd2716c2b0534472c74ae80c6428a9eeca6f003c84c0df411473db0"
+    },
+    {
+      "source": "chain/original/S1/materials.json",
+      "sha256": "5b97633f55ef2d88a716f928db13201eb6c1933e20969df31efb7860eae5934d"
+    },
+    {
+      "source": "chain/original/S2/report.md",
+      "sha256": "526ba6300cd9b40b2f99d26c2a627b69f0a115c805c77b73e7e141b8bc21ffe6"
+    },
+    {
+      "source": "chain/original/S2/materials.json",
+      "sha256": "5b97633f55ef2d88a716f928db13201eb6c1933e20969df31efb7860eae5934d"
+    },
+    {
+      "source": "chain/original/S3/report.md",
+      "sha256": "4efb9ab7fc39a6acb20c725c6cad79ade0220da994e54ff5e8e6c234e34f1439"
+    },
+    {
+      "source": "chain/original/S3/materials.json",
+      "sha256": "12413076b5edd236339cd77eaec6dec3c52562e08c998a2b49d2b47a005880a9"
+    },
+    {
+      "source": "chain/original/S4/report.md",
+      "sha256": "86005629ea19c2db62206b9721ccbe14f02ac1f9ba8ade80434f48f90b019558"
+    },
+    {
+      "source": "chain/original/S4/materials.json",
+      "sha256": "12413076b5edd236339cd77eaec6dec3c52562e08c998a2b49d2b47a005880a9"
+    },
+    {
+      "source": "chain/original/S5/report.md",
+      "sha256": "e729f555221a0b26262ea3c381e5261279d414790a81a7e1df0d62c5ac2a05e3"
+    },
+    {
+      "source": "chain/original/S5/materials.json",
+      "sha256": "12413076b5edd236339cd77eaec6dec3c52562e08c998a2b49d2b47a005880a9"
+    },
+    {
+      "source": "chain/original/execution.json",
+      "sha256": "4d5be2669d135d1d91dc427bb7d78aef09b477528c777ecd08b5686839adc3f2"
+    },
+    {
+      "source": "chain/original/visuals.json",
+      "sha256": "fb494bba75c685b423633e4de21e605c4afdf1baca163b07a9a314958150ca02"
+    },
+    {
+      "source": "chain/revised/S3/report.md",
+      "sha256": "4f4c9d5792e0b2aa13440995df09c5cccb3b489c41835666440f14d97a8a5648"
+    },
+    {
+      "source": "chain/revised/S3/materials.json",
+      "sha256": "a96a39878cfe7e772023f2a88ee7f18ca4d6702170056895b22a45a982a909e2"
+    },
+    {
+      "source": "chain/revised/S4/report.md",
+      "sha256": "6f1412498ebce757520ff490774fab47199bd00e3ea99a249559319ae4c303b5"
+    },
+    {
+      "source": "chain/revised/S4/materials.json",
+      "sha256": "a96a39878cfe7e772023f2a88ee7f18ca4d6702170056895b22a45a982a909e2"
+    },
+    {
+      "source": "chain/revised/S5/report.md",
+      "sha256": "31d599e8ff1487cf360bf4a7668174dd010553e1c5a40b27cb72cfaae69069e3"
+    },
+    {
+      "source": "chain/revised/S5/materials.json",
+      "sha256": "a96a39878cfe7e772023f2a88ee7f18ca4d6702170056895b22a45a982a909e2"
+    },
+    {
+      "source": "chain/revised/execution.json",
+      "sha256": "141706c7d4973f2708d0110555791d8b1ecd14389b6800d6c18609fc58bfb632"
+    },
+    {
+      "source": "chain/revised/visuals.json",
+      "sha256": "e2241c6ff3c6125168a9bc76e730c56ab2553a90819a9fd12fb5f35b06bef323"
+    },
+    {
+      "source": "messy/current/S3/report.md",
+      "sha256": "7d2cda9db310cdf4a0d9e92aa00da277d704f4f804a62cfad4c2dfc577455ab9"
+    },
+    {
+      "source": "messy/current/S3/materials.json",
+      "sha256": "88af0c93763b5507b38e2ed224493158e3ee2dce2ec302c0f7517c8401f454e0"
+    },
+    {
+      "source": "messy/current/S4/report.md",
+      "sha256": "f31485f210fcfe6372f8b49c13cca6e7447b5f769410415e46c4842a734b1bb2"
+    },
+    {
+      "source": "messy/current/S4/materials.json",
+      "sha256": "88af0c93763b5507b38e2ed224493158e3ee2dce2ec302c0f7517c8401f454e0"
+    },
+    {
+      "source": "messy/current/S5/report.md",
+      "sha256": "cbb1cce4e342fc210f670ca8f02c2129b45e79b4aeee4dc41bf1916d6d606903"
+    },
+    {
+      "source": "messy/current/S5/materials.json",
+      "sha256": "88af0c93763b5507b38e2ed224493158e3ee2dce2ec302c0f7517c8401f454e0"
+    },
+    {
+      "source": "messy/current/execution.json",
+      "sha256": "c4b22161b51b9c15b424f3f718abd15359839057d46e0fd053090b28e042ecfe"
+    },
+    {
+      "source": "messy/current/visuals.json",
+      "sha256": "cb13eb0007ae4cec87ea15ccab449f95ad084e86cfa65661cc1a2fc3cccbc8b2"
+    },
+    {
+      "source": "assets/report.html",
+      "sha256": "acbd0caaea701aa471361fab818441639d85256330c75764721a75f9ad48ba31"
+    },
+    {
+      "source": "assets/report.css",
+      "sha256": "4d4bbd8af6c6b0ff53a25e9f211b3ea4ca77a741366a48de0ec618b99e8ada77"
+    },
+    {
+      "source": "assets/report.js",
+      "sha256": "d8e2f6a7664b98d1c4af9b3505e9696ae9f618cd6ff28b2352141bfb12f593e5"
+    }
+  ],
+  "outputs": {
+    "merchant-diagnosis-v1.4.html": "155ed33f9641aa1cb9d479199282bc2ff692f71b955815b2c9e74d0fddf04f97",
+    "merchant-diagnosis-v1.4.json": "2e06471c068ce9654df62afe89852d83587d663d32ba86d7871aaaa444d5acfc"
+  }
+}
