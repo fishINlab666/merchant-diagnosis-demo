@@ -1,0 +1,7 @@
+{
+  "executor": "Codex /root/merchant_codex_run",
+  "model_id": "未暴露",
+  "snapshot_only": true,
+  "source_record_sha256": "858d7fdbdf374bedee3476ce8fe58d19bba8e193fc48eb914166de9b970e335f",
+  "note": "历史实际执行记录的脱路径展示副本；复制与导出不是新推理。完整报告原字节未改。"
+}

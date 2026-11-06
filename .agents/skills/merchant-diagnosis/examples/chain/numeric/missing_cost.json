@@ -1,0 +1,11 @@
+{
+  "case_id": "chain-synthetic-missing-cost-v1.2",
+  "synthetic": true,
+  "scope": {"brand_stores": 200, "included_stores": 30, "planning_days": 30},
+  "baseline": {"net_merchant_receipts": 2400000, "order_variable_costs": null, "tool_a_budget": 270000, "tool_b_budget": 30000},
+  "reallocation": {"monthly_transfer": 60000, "transfer_cap": 60000},
+  "scenarios": [
+    {"name": "cost_unknown", "added_b_receipts_per_budget": 3.0, "lost_a_receipts_per_budget": 1.4, "added_order_cost_ratio": null, "avoided_order_cost_ratio": null, "extra_execution_cost": null}
+  ],
+  "sources": {"override": "counterinputs/missing_cost.md：成本字段全部未提供，不沿用60%或6000元", "other_inputs": "收入及预算口径保持不变"}
+}

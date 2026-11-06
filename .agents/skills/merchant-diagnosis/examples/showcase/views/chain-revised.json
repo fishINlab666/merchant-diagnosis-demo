@@ -1,0 +1,136 @@
+{
+  "highlights": [
+    {
+      "label": "30 天规划广告总额",
+      "value": 300000.0,
+      "unit": "元",
+      "note": "暂保持原配置；只涉及 30 店",
+      "evidence": "经营周报.xlsx／sheet:周报!D4:F7；S3/calculations.json／monthly_30_day_baseline；S5/report.md／预期改善。"
+    },
+    {
+      "label": "A 渠道历史费用占比",
+      "value": 90,
+      "unit": "%",
+      "note": "历史占比未变，决策依据已变",
+      "evidence": "经营周报.xlsx／sheet:渠道!E4:J5；S3/calculations.json／channel；definitions.md／DEF03。"
+    },
+    {
+      "label": "继续旧方案的月度差额",
+      "value": -18000.0,
+      "unit": "元",
+      "note": "条件情景；并非已发生损失",
+      "evidence": "negative_trial.csv／N01–N03／row:2-4；S3/calculations.json／continued_reallocation_scenarios；S5/report.md／预期改善。"
+    },
+    {
+      "label": "本次新启动调拨",
+      "value": 0,
+      "unit": "元",
+      "note": "撤回待启动计划；已发生费用待核",
+      "evidence": "S5/report.md／现在／建议／A1。"
+    }
+  ],
+  "charts": [
+    {
+      "id": "marginal",
+      "type": "bars",
+      "title": "新材料改变了调拨依据",
+      "unit": "元/元",
+      "caption": "新表替换旧观察。减 A 的收入损失高于增 B 的收入增加，继续旧调拨已不符合贡献目标。两动作可加及成本率稳定仍是假设。",
+      "series": [
+        {
+          "label": "减 A：旧观察",
+          "value": 1.4,
+          "group": "原始观察"
+        },
+        {
+          "label": "减 A：更正后",
+          "value": 2.0,
+          "group": "更正观察"
+        },
+        {
+          "label": "增 B：旧观察",
+          "value": 3.0,
+          "group": "原始观察"
+        },
+        {
+          "label": "增 B：更正后",
+          "value": 1.5,
+          "group": "更正观察"
+        }
+      ],
+      "evidence": "negative_trial.csv／N01–N03／row:2-4；S3/calculations.json／continued_reallocation_scenarios；S5/report.md／预期改善。"
+    },
+    {
+      "id": "scenario",
+      "type": "bars",
+      "title": "继续旧方案，贡献情景转负",
+      "unit": "元",
+      "caption": "30 店、30 天相对规划基线的固定成本前贡献差额，已扣执行费。旧正向预测已撤回；-18,000 元不等于实亏或已节省。",
+      "series": [
+        {
+          "label": "原基准（失效）",
+          "value": 32400.0,
+          "group": "历史版本"
+        },
+        {
+          "label": "更正后情景",
+          "value": -18000.0,
+          "group": "当前版本"
+        }
+      ],
+      "evidence": "S3/calculations.json／monthly_scenarios、first_7_day_scenario；S5/report.md／预期改善；definitions.md／DEF05–DEF06。negative_trial.csv／N01–N03／row:2-4；S3/calculations.json／continued_reallocation_scenarios；S5/report.md／预期改善。"
+    },
+    {
+      "id": "budget",
+      "type": "stacked",
+      "title": "当前动作：保留配置，核清执行",
+      "unit": "元",
+      "caption": "30 天规划仍为 A 270,000 元、B 30,000 元。若旧计划已执行，先停追加，由预算负责人核清剩余额度和费用。",
+      "series": [
+        {
+          "label": "A",
+          "value": 270000.0,
+          "group": "当前规划配置"
+        },
+        {
+          "label": "B",
+          "value": 30000.0,
+          "group": "当前规划配置"
+        }
+      ],
+      "evidence": "S5/report.md／现在／建议／A1；执行状态待补 D4。"
+    },
+    {
+      "id": "bridge",
+      "type": "waterfall",
+      "title": "若仍执行旧方案，贡献如何变化",
+      "unit": "元",
+      "caption": "仅是继续原月度调拨的条件情景，固定成本前；成本率 60%、历史非随机、两动作可加的限制保留。",
+      "series": [
+        {
+          "label": "规划基线",
+          "value": 660000.0,
+          "role": "total"
+        },
+        {
+          "label": "收入变化",
+          "value": -30000.0
+        },
+        {
+          "label": "成本少发生",
+          "value": 18000.0
+        },
+        {
+          "label": "执行费",
+          "value": -6000.0
+        },
+        {
+          "label": "条件结果",
+          "value": 642000.0,
+          "role": "total"
+        }
+      ],
+      "evidence": "negative_trial.csv／N01–N03／row:2-4；S3/calculations.json／continued_reallocation_scenarios；S5/report.md／预期改善。"
+    }
+  ]
+}

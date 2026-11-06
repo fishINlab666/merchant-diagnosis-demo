@@ -1,0 +1,278 @@
+{
+  "executed_at": "2026-11-06T13:49:17.283690+00:00",
+  "inputs": [
+    {
+      "path": "skills/merchant-diagnosis/examples/chain/raw/经营周报.xlsx",
+      "sha256": "5e8f84c514f0c581da8302c7206a9f11bfc65e6f75c22aa92278088045e668ae"
+    }
+  ],
+  "raw_records": {
+    "周报": [
+      {
+        "台账号": "W01",
+        "周别": "2026-10-05至2026-10-11",
+        "纳入口径": "演示城30家成熟直营店",
+        "结算入账(万元)": 54,
+        "餐材包材及按单工时(元)": 324000,
+        "推广账单(万元)": 7,
+        "完成单量": 21600,
+        "当周备注": "无新增门店"
+      },
+      {
+        "台账号": "W02",
+        "周别": "2026-10-12至2026-10-18",
+        "纳入口径": "演示城30家成熟直营店",
+        "结算入账(万元)": 55,
+        "餐材包材及按单工时(元)": 330000,
+        "推广账单(万元)": 7,
+        "完成单量": 22000,
+        "当周备注": "营业时长一致"
+      },
+      {
+        "台账号": "W03",
+        "周别": "2026-10-19至2026-10-25",
+        "纳入口径": "演示城30家成熟直营店",
+        "结算入账(万元)": 57,
+        "餐材包材及按单工时(元)": 342000,
+        "推广账单(万元)": 7,
+        "完成单量": 22800,
+        "当周备注": "无统一价格变更"
+      },
+      {
+        "台账号": "W04",
+        "周别": "2026-10-26至2026-11-01",
+        "纳入口径": "演示城30家成熟直营店",
+        "结算入账(万元)": 58,
+        "餐材包材及按单工时(元)": 348000,
+        "推广账单(万元)": 7,
+        "完成单量": 23200,
+        "当周备注": "已过退款结算窗口"
+      }
+    ],
+    "渠道": [
+      {
+        "凭证": "C01",
+        "期间": "2026-10-05至2026-11-01",
+        "覆盖": "演示城30家成熟直营店",
+        "工具": "工具A",
+        "花费元": 252000,
+        "后台归因入账元": 756000,
+        "界面写的ROI": 3,
+        "业务目标": "已完成订单结算入账",
+        "归因口径": "点击后7日末次归因已成熟去重",
+        "触达人群": "广泛兴趣及新客为主"
+      },
+      {
+        "凭证": "C02",
+        "期间": "2026-10-05至2026-11-01",
+        "覆盖": "演示城30家成熟直营店",
+        "工具": "工具B",
+        "花费元": 28000,
+        "后台归因入账元": 140000,
+        "界面写的ROI": 5,
+        "业务目标": "已完成订单结算入账",
+        "归因口径": "点击后7日末次归因已成熟去重",
+        "触达人群": "近期浏览和已购客为主"
+      }
+    ],
+    "边际试行": [
+      {
+        "实验记录": "T01",
+        "组别": "保持预算组",
+        "门店数": 10,
+        "前窗入账元": 360000,
+        "后窗入账元": 378000,
+        "前窗A元": 42000,
+        "前窗B元": 4666.67,
+        "后窗A元": 42000,
+        "后窗B元": 4666.67,
+        "前窗订单变动成本元": 216000,
+        "后窗订单变动成本元": 226800,
+        "观察窗与备注": "前后各14天按成熟订单结算；同期入账增加5%；门店事先匹配非随机"
+      },
+      {
+        "实验记录": "T02",
+        "组别": "只减A组",
+        "门店数": 10,
+        "前窗入账元": 360000,
+        "后窗入账元": 358400,
+        "前窗A元": 42000,
+        "前窗B元": 4666.67,
+        "后窗A元": 28000,
+        "后窗B元": 4666.67,
+        "前窗订单变动成本元": 216000,
+        "后窗订单变动成本元": 215040,
+        "观察窗与备注": "前后各14天按成熟订单结算；仅减A14000；按单变动成本口径同周表"
+      },
+      {
+        "实验记录": "T03",
+        "组别": "只增B组",
+        "门店数": 10,
+        "前窗入账元": 360000,
+        "后窗入账元": 420000,
+        "前窗A元": 42000,
+        "前窗B元": 4666.67,
+        "后窗A元": 42000,
+        "后窗B元": 18666.67,
+        "前窗订单变动成本元": 216000,
+        "后窗订单变动成本元": 252000,
+        "观察窗与备注": "前后各14天按成熟订单结算；仅增B14000；未叠加新券或改商品页"
+      }
+    ]
+  },
+  "record_counts": {
+    "周报": 4,
+    "渠道": 2,
+    "边际试行": 3
+  },
+  "unit_conversion": "周报 D、F 列万元 × 10000 = 元；其余金额列为元。",
+  "definitions": {
+    "source": "definitions.md",
+    "locations": [
+      "line:11",
+      "line:15",
+      "line:19",
+      "line:23-25",
+      "line:29",
+      "line:33"
+    ]
+  },
+  "checks": {
+    "unique_record_ids": true,
+    "weekly_and_channel_scope_equal": true,
+    "weekly_spend_equals_channel_spend": true,
+    "trial_cost_ratios_equal_weekly_cost_ratio": true
+  },
+  "weekly_28_days": {
+    "revenue": "2240000",
+    "variable_cost": "1344000",
+    "ads": "280000",
+    "completed_orders": 89600,
+    "contribution": "616000"
+  },
+  "channel": [
+    {
+      "id": "C01",
+      "spend_share": "0.9",
+      "attribution_return_ratio": "3"
+    },
+    {
+      "id": "C02",
+      "spend_share": "0.1",
+      "attribution_return_ratio": "5"
+    }
+  ],
+  "trial_control_growth_factor": "1.05",
+  "trial_adjusted": [
+    {
+      "record": "T01",
+      "expected_revenue": "378000.00",
+      "actual_revenue": "378000",
+      "revenue_difference": "0.00",
+      "expected_cost": "226800.00",
+      "cost_difference": "0.00",
+      "A_change": "0",
+      "B_change": "0.00"
+    },
+    {
+      "record": "T02",
+      "expected_revenue": "378000.00",
+      "actual_revenue": "358400",
+      "revenue_difference": "-19600.00",
+      "expected_cost": "226800.00",
+      "cost_difference": "-11760.00",
+      "A_change": "-14000",
+      "B_change": "0.00"
+    },
+    {
+      "record": "T03",
+      "expected_revenue": "378000.00",
+      "actual_revenue": "420000",
+      "revenue_difference": "42000.00",
+      "expected_cost": "226800.00",
+      "cost_difference": "25200.00",
+      "A_change": "0",
+      "B_change": "14000.00"
+    }
+  ],
+  "marginal_estimates": {
+    "A_loss": "1.40",
+    "B_gain": "3",
+    "cost_ratio_A": "0.6",
+    "cost_ratio_B": "0.6"
+  },
+  "monthly_30_day_baseline": {
+    "revenue": "2400000",
+    "variable_cost": "1440000",
+    "ads": "300000",
+    "contribution": "660000"
+  },
+  "monthly_scenarios": [
+    {
+      "name": "基准",
+      "B_revenue_per_added_yuan": "3",
+      "A_revenue_lost_per_removed_yuan": "1.40",
+      "shift": "60000",
+      "revenue_difference": "96000.00",
+      "variable_cost_difference": "57600.000",
+      "execution_fee": "6000",
+      "adjusted_revenue": "2496000.00",
+      "adjusted_variable_cost": "1497600.000",
+      "adjusted_contribution": "692400.000",
+      "contribution_difference": "32400.000"
+    },
+    {
+      "name": "审慎",
+      "B_revenue_per_added_yuan": "2.50",
+      "A_revenue_lost_per_removed_yuan": "1.50",
+      "shift": "60000",
+      "revenue_difference": "60000.00",
+      "variable_cost_difference": "36000.000",
+      "execution_fee": "6000",
+      "adjusted_revenue": "2460000.00",
+      "adjusted_variable_cost": "1476000.000",
+      "adjusted_contribution": "678000.000",
+      "contribution_difference": "18000.000"
+    },
+    {
+      "name": "负面",
+      "B_revenue_per_added_yuan": "1.50",
+      "A_revenue_lost_per_removed_yuan": "2.00",
+      "shift": "60000",
+      "revenue_difference": "-30000.00",
+      "variable_cost_difference": "-18000.000",
+      "execution_fee": "6000",
+      "adjusted_revenue": "2370000.00",
+      "adjusted_variable_cost": "1422000.000",
+      "adjusted_contribution": "642000.000",
+      "contribution_difference": "-18000.000"
+    }
+  ],
+  "first_7_day_scenario": {
+    "baseline_revenue": "560000",
+    "baseline_variable_cost": "336000",
+    "baseline_ads": "70000",
+    "baseline_contribution": "154000",
+    "shift": "14000",
+    "execution_fee": "1400",
+    "base_difference": "7560.000",
+    "base_adjusted_contribution": "161560.000",
+    "negative_difference": "-4200.00"
+  },
+  "formulas": [
+    "贡献 = 净结算收入 - 订单变动成本 - 推广费 - 额外执行费（如发生）",
+    "对照预期后窗 = 本组前窗 × T01后窗 / T01前窗；成本同样调整",
+    "A损失参数 = (T02对照预期收入-T02实际收入)/(T02前A-T02后A)",
+    "B增加参数 = (T03实际收入-T03对照预期收入)/(T03后B-T03前B)",
+    "规划月基线 = 28天合计 / 28 × 30",
+    "情景差额 = 调拨额 × (B增加参数-A损失参数) × (1-变动成本率) - 额外执行费"
+  ],
+  "assumptions": [
+    "全部为合成场景；不是实际商家结果。",
+    "匹配非随机分组，差额只是观察估计。",
+    "月度假设边际关系及60%成本率稳定，A减投和B加投可相加；尚未证实。",
+    "28天数据换为30天规划基线，不称自然月实绩。",
+    "4666.67为账单舍入，组内差额相消；不把三组舍入误差算作收入或费用变化。",
+    "固定成本未收集，禁止称净利润。"
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "highlights": [
+    {
+      "label": "四店本周完成订单",
+      "value": 10300,
+      "unit": "单",
+      "note": "W1 对比 W0：增加 200 单",
+      "evidence": "拾味饭堂_模拟原始周报.xlsx／sheet:财务横表!B3:I5、sheet:营运拼表!A5:G15；calculations.json／stores、totals；S4/report.md／事实与计算。"
+    },
+    {
+      "label": "四店本周净结算",
+      "value": 310000.0,
+      "unit": "元",
+      "note": "W1 对比 W0：减少 10,000 元",
+      "evidence": "拾味饭堂_模拟原始周报.xlsx／sheet:财务横表!B3:I5、sheet:营运拼表!A5:G15；calculations.json／stores、totals；S4/report.md／事实与计算。"
+    },
+    {
+      "label": "已知三店本周贡献",
+      "value": 81000.0,
+      "unit": "元",
+      "note": "固定成本前；W0 为 100,000 元",
+      "evidence": "拾味饭堂_模拟原始周报.xlsx／sheet:财务横表!B3:I5、sheet:营运拼表!A5:G15；calculations.json／stores、totals；S4/report.md／事实与计算。"
+    },
+    {
+      "label": "园区店本周贡献",
+      "value": null,
+      "unit": "元",
+      "note": "成本缺失；不纳入三店合计",
+      "evidence": "拾味饭堂_模拟原始周报.xlsx／sheet:财务横表!B3:I5、sheet:营运拼表!A5:G15；calculations.json／stores、totals；S4/report.md／事实与计算。"
+    }
+  ],
+  "charts": [
+    {
+      "id": "stores",
+      "type": "bars",
+      "title": "贡献下滑集中在大学城",
+      "unit": "元",
+      "caption": "W0：10/12–10/18；W1：10/19–10/25。各店固定成本前周贡献；园区两期均缺成本。",
+      "series": [
+        {
+          "label": "国贸 W0",
+          "value": 35000.0,
+          "group": "W0"
+        },
+        {
+          "label": "国贸 W1",
+          "value": 40000.0,
+          "group": "W1"
+        },
+        {
+          "label": "大学城 W0",
+          "value": 35000.0,
+          "group": "W0"
+        },
+        {
+          "label": "大学城 W1",
+          "value": 14000.0,
+          "group": "W1"
+        },
+        {
+          "label": "社区 W0",
+          "value": 30000.0,
+          "group": "W0"
+        },
+        {
+          "label": "社区 W1",
+          "value": 27000.0,
+          "group": "W1"
+        },
+        {
+          "label": "园区 W0",
+          "value": null,
+          "group": "W0"
+        },
+        {
+          "label": "园区 W1",
+          "value": null,
+          "group": "W1"
+        }
+      ],
+      "evidence": "拾味饭堂_模拟原始周报.xlsx／sheet:财务横表!B3:I5、sheet:营运拼表!A5:G15；calculations.json／stores、totals；S4/report.md／事实与计算。"
+    },
+    {
+      "id": "volume",
+      "type": "bars",
+      "title": "增单未必增贡献，先分店处理",
+      "unit": "单",
+      "caption": "同店 W0→W1 完成单变化。社区多 500 单却少贡献 3,000 元；国贸改善，园区尚不能判断贡献。",
+      "series": [
+        {
+          "label": "国贸",
+          "value": 200.0
+        },
+        {
+          "label": "大学城",
+          "value": -600.0
+        },
+        {
+          "label": "社区",
+          "value": 500.0
+        },
+        {
+          "label": "园区",
+          "value": 100.0
+        }
+      ],
+      "evidence": "拾味饭堂_模拟原始周报.xlsx／sheet:财务横表!B3:I5、sheet:营运拼表!A5:G15；calculations.json／stores、totals；S4/report.md／事实与计算。"
+    },
+    {
+      "id": "mix",
+      "type": "waterfall",
+      "title": "社区：销量增加，被单位收益吞没",
+      "unit": "元",
+      "caption": "W0→W1 固定成本前周贡献的顺序分解：销量、结构、单位收益。广告不变；这是会计分解，不是对原因的因果证明。",
+      "series": [
+        {
+          "label": "W0 贡献",
+          "value": 30000.0,
+          "role": "total"
+        },
+        {
+          "label": "销量",
+          "value": 8000.0
+        },
+        {
+          "label": "商品结构",
+          "value": -1100.0
+        },
+        {
+          "label": "单位收益",
+          "value": -9900.0
+        },
+        {
+          "label": "W1 贡献",
+          "value": 27000.0,
+          "role": "total"
+        }
+      ],
+      "evidence": "拾味饭堂_模拟原始周报.xlsx／sheet:菜品菜单!D3:F9；calculations.json／M03_contribution_bridge。"
+    },
+    {
+      "id": "sku",
+      "type": "bars",
+      "title": "社区：先核商品收益，再改展示",
+      "unit": "元/单",
+      "caption": "各 SKU 广告前单位贡献＝净入账－变动成本；未分摊广告及固定成本。鸡腿占比提升同时单位收益下降，双拼是否可售须先核。",
+      "series": [
+        {
+          "label": "鸡腿饭 W0",
+          "value": 15.0,
+          "group": "W0"
+        },
+        {
+          "label": "双拼饭 W0",
+          "value": 17.0,
+          "group": "W0"
+        },
+        {
+          "label": "素食饭 W0",
+          "value": 19.5,
+          "group": "W0"
+        },
+        {
+          "label": "鸡腿饭 W1",
+          "value": 10.0,
+          "group": "W1"
+        },
+        {
+          "label": "双拼饭 W1",
+          "value": 22.0,
+          "group": "W1"
+        },
+        {
+          "label": "素食饭 W1",
+          "value": 15.0,
+          "group": "W1"
+        }
+      ],
+      "evidence": "拾味饭堂_模拟原始周报.xlsx／sheet:菜品菜单!D3:F9；calculations.json／menu。"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "case_id": "chain-synthetic-negative-v1.2",
+  "synthetic": true,
+  "scope": {"brand_stores": 200, "included_stores": 30, "planning_days": 30},
+  "baseline": {"net_merchant_receipts": 2400000, "order_variable_costs": 1440000, "tool_a_budget": 270000, "tool_b_budget": 30000},
+  "reallocation": {"monthly_transfer": 60000, "transfer_cap": 60000},
+  "scenarios": [
+    {"name": "negative", "added_b_receipts_per_budget": 1.5, "lost_a_receipts_per_budget": 2.0, "added_order_cost_ratio": 0.6, "avoided_order_cost_ratio": 0.6, "extra_execution_cost": 6000}
+  ],
+  "sources": {"trial": "counterinputs/negative_trial.csv/N01–N03覆盖T01–T03；B=(399000-378000)/14000；A=(378000-350000)/14000", "other_inputs": "scenario.json的其余基线、预算及成本输入保持相同"}
+}

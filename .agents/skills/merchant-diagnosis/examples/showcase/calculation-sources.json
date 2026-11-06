@@ -1,0 +1,67 @@
+{
+  "presentation_only": true,
+  "sources": [
+    {
+      "source": "runs/merchant-diagnosis-v1.2/S3/calculations.json",
+      "snapshot": "calculations/chain-original.json",
+      "sha256": "28dd1a669d2fc6603d0fd3eb3b16e1edc8b28486a970a8f47223076cbd90184c"
+    },
+    {
+      "source": "runs/merchant-diagnosis-v1.2/revised/S3/calculations.json",
+      "snapshot": "calculations/chain-revised.json",
+      "sha256": "30a597243133b56f237ca5b6dadd5fc9d5a7ae3af93ba4d72ba385faf5580dca"
+    },
+    {
+      "source": "runs/merchant-messy-weekly-2026-11-06/calculations.json",
+      "snapshot": "calculations/messy-weekly.json",
+      "sha256": "ba9a187a879643ae21cd9fcd0e07c55bb6ffd9dc4b4481e02069427a42b8f378"
+    }
+  ],
+  "reports": [
+    {
+      "snapshot": "runs/chain-original/S1/report.md",
+      "sha256": "e404b3d47bd2716c2b0534472c74ae80c6428a9eeca6f003c84c0df411473db0"
+    },
+    {
+      "snapshot": "runs/chain-original/S2/report.md",
+      "sha256": "526ba6300cd9b40b2f99d26c2a627b69f0a115c805c77b73e7e141b8bc21ffe6"
+    },
+    {
+      "snapshot": "runs/chain-original/S3/report.md",
+      "sha256": "4efb9ab7fc39a6acb20c725c6cad79ade0220da994e54ff5e8e6c234e34f1439"
+    },
+    {
+      "snapshot": "runs/chain-original/S4/report.md",
+      "sha256": "86005629ea19c2db62206b9721ccbe14f02ac1f9ba8ade80434f48f90b019558"
+    },
+    {
+      "snapshot": "runs/chain-original/S5/report.md",
+      "sha256": "e729f555221a0b26262ea3c381e5261279d414790a81a7e1df0d62c5ac2a05e3"
+    },
+    {
+      "snapshot": "runs/chain-revised/S3/report.md",
+      "sha256": "4f4c9d5792e0b2aa13440995df09c5cccb3b489c41835666440f14d97a8a5648"
+    },
+    {
+      "snapshot": "runs/chain-revised/S4/report.md",
+      "sha256": "6f1412498ebce757520ff490774fab47199bd00e3ea99a249559319ae4c303b5"
+    },
+    {
+      "snapshot": "runs/chain-revised/S5/report.md",
+      "sha256": "31d599e8ff1487cf360bf4a7668174dd010553e1c5a40b27cb72cfaae69069e3"
+    },
+    {
+      "snapshot": "runs/messy-weekly/S3/report.md",
+      "sha256": "7d2cda9db310cdf4a0d9e92aa00da277d704f4f804a62cfad4c2dfc577455ab9"
+    },
+    {
+      "snapshot": "runs/messy-weekly/S4/report.md",
+      "sha256": "f31485f210fcfe6372f8b49c13cca6e7447b5f769410415e46c4842a734b1bb2"
+    },
+    {
+      "snapshot": "runs/messy-weekly/S5/report.md",
+      "sha256": "cbb1cce4e342fc210f670ca8f02c2129b45e79b4aeee4dc41bf1916d6d606903"
+    }
+  ],
+  "note": "图表取自上述既有计算与阶段报告，build.py 只组装展示，不调用模型。"
+}

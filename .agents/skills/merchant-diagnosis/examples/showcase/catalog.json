@@ -1,0 +1,42 @@
+{
+  "title": "商户经营诊断 · 经营看板",
+  "cases": [
+    {
+      "id": "chain",
+      "title": "榕味小馆 · 30 店预算决策",
+      "label": "30 店 · 预算决策",
+      "synthetic": true,
+      "active_version": "revised",
+      "versions": [
+        {
+          "id": "original",
+          "label": "原始分析 · 已更正",
+          "run_dir": "runs/chain-original",
+          "view_file": "views/chain-original.json",
+          "superseded": true
+        },
+        {
+          "id": "revised",
+          "label": "补数更新 · 当前结论",
+          "run_dir": "runs/chain-revised",
+          "view_file": "views/chain-revised.json"
+        }
+      ]
+    },
+    {
+      "id": "messy",
+      "title": "拾味饭堂 · 四店经营复盘",
+      "label": "四店 · 乱格式周报",
+      "synthetic": true,
+      "active_version": "current",
+      "versions": [
+        {
+          "id": "current",
+          "label": "周报诊断 · 待补成本",
+          "run_dir": "runs/messy-weekly",
+          "view_file": "views/messy-weekly.json"
+        }
+      ]
+    }
+  ]
+}

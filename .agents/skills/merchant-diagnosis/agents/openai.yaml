@@ -1,0 +1,4 @@
+interface:
+  display_name: "商户经营诊断"
+  short_description: "从店铺公开资料与原始周报出发，完成定向补数、经营诊断和行动方案"
+  default_prompt: "使用 $merchant-diagnosis 分析我提供的店铺信息和周报，先给发现，再补会改变决定的数据，并生成行动方案。"

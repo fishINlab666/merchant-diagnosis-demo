@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>商户经营诊断 · 经营看板</title>
+  <style>__REPORT_CSS__</style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到报告内容</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true">诊</span><span>商户经营诊断<small>看清问题，推进经营</small></span></a>
+    <label class="sidebar-label" for="case-select">诊断案例</label>
+    <select id="case-select"></select>
+    <nav aria-label="报告导航">
+      <a href="#overview" class="active"><span>01</span>经营总览</a>
+      <a href="#findings"><span>02</span>关键判断</a>
+      <a href="#actions"><span>03</span>行动与补数</a>
+      <a href="#reports"><span>04</span>完整分析</a>
+    </nav>
+    <div class="side-note"><span class="status-dot"></span> 离线报告<small>分析在 Agent 中完成<br>本页呈现已生成的结果</small></div>
+  </aside>
+  <div class="workspace">
+    <header class="toolbar"><span class="toolbar-title">经营看板</span><div class="tools"><button id="copy" type="button">复制老板摘要</button><button id="print" class="primary" type="button">打印 / 存为 PDF</button></div></header>
+    <main id="main">
+      <section id="overview" aria-labelledby="case-title">
+        <div class="page-heading"><div><h1 id="case-title"></h1><p id="merchant" class="muted"></p></div><div class="version-control"><label for="version-select">报告版本</label><select id="version-select"></select></div></div>
+        <div class="meta-row"><span id="data-badge" class="badge"></span><span id="report-status" class="badge"></span></div>
+        <div id="version-warning" class="version-warning" hidden>此为历史方案，已被后续材料更正。当前决策请查看最新版本。</div>
+        <div class="summary-panel"><h2 id="summary"></h2><details class="scope"><summary>查看数据范围</summary><p id="scope"></p></details></div>
+        <div id="metrics" class="metrics"></div>
+        <div id="charts" class="charts"></div>
+      </section>
+      <section id="findings" aria-labelledby="findings-title"><div class="section-heading"><h2 id="findings-title">关键判断</h2><span>事实 → 原因 → 处理方向</span></div><div id="findings-content"></div></section>
+      <section id="actions" aria-labelledby="actions-title"><div class="section-heading"><h2 id="actions-title">行动与补数</h2><span>明确负责人、投入和复盘条件</span></div><div id="actions-content"></div><div id="gaps"></div></section>
+      <section id="reports" aria-labelledby="reports-title"><div class="section-heading"><h2 id="reports-title">完整分析</h2><span>保留逐阶段的口径、公式和依据</span></div><div id="stage-path" class="stage-path"></div><div id="reports-content"></div><details id="sources" class="source-list"><summary>材料索引与报告指纹</summary><div id="sources-content"></div></details></section>
+      <footer><span id="footer-status"></span><span>商户经营诊断 · 结果展示</span></footer>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="copy-fallback" class="copy-fallback" hidden><label for="copy-text">浏览器未开放剪贴板，请选中后复制：</label><textarea id="copy-text" readonly></textarea><button id="close-copy" type="button">关闭</button></div>
+  <noscript><p>请启用 JavaScript 查看交互报告。旁边的 JSON 文件保留完整报告数据。</p></noscript>
+  <script id="report-data" type="application/json">__REPORT_DATA__</script>
+  <script>__REPORT_JS__</script>
+</body>
+</html>

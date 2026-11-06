@@ -1,0 +1,20 @@
+{
+  "materials": [
+    {
+      "name": "public.md",
+      "sha256": "918e9c21d2774b137dc49de937e13731f8c79c4cb358253e75035c929a5420c8"
+    },
+    {
+      "name": "经营周报.xlsx",
+      "sha256": "5e8f84c514f0c581da8302c7206a9f11bfc65e6f75c22aa92278088045e668ae"
+    },
+    {
+      "name": "definitions.md",
+      "sha256": "ddbc4541c821b8c3cfcb6dceb416a26daefafbd1cbe7350c8d6410722577d028"
+    },
+    {
+      "name": "negative_trial.csv",
+      "sha256": "e37cc12c2e6f386d5e0697fb27229a78c24244b649575dd8118ed99e54474316"
+    }
+  ]
+}

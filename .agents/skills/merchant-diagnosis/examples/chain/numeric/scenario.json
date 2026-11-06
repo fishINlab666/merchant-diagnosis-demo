@@ -1,0 +1,25 @@
+{
+  "case_id": "chain-synthetic-v1.2",
+  "synthetic": true,
+  "scope": {"brand_stores": 200, "included_stores": 30, "planning_days": 30},
+  "baseline": {
+    "net_merchant_receipts": 2400000,
+    "order_variable_costs": 1440000,
+    "tool_a_budget": 270000,
+    "tool_b_budget": 30000
+  },
+  "reallocation": {"monthly_transfer": 60000, "transfer_cap": 60000},
+  "scenarios": [
+    {"name": "conservative", "added_b_receipts_per_budget": 2.5, "lost_a_receipts_per_budget": 1.5, "added_order_cost_ratio": 0.6, "avoided_order_cost_ratio": 0.6, "extra_execution_cost": 6000},
+    {"name": "base", "added_b_receipts_per_budget": 3.0, "lost_a_receipts_per_budget": 1.4, "added_order_cost_ratio": 0.6, "avoided_order_cost_ratio": 0.6, "extra_execution_cost": 6000},
+    {"name": "negative", "added_b_receipts_per_budget": 1.5, "lost_a_receipts_per_budget": 2.0, "added_order_cost_ratio": 0.6, "avoided_order_cost_ratio": 0.6, "extra_execution_cost": 6000}
+  ],
+  "sources": {
+    "baseline": "internal_weekly.csv/W01–W04：净入账2240000、变动成本1344000、推广280000，均按30/28规划月归一",
+    "budget_mix": "channel_mix.csv/C01–C02；definitions.md/DEF05",
+    "base_marginal_receipts": "trial_observations.csv/T01–T03；definitions.md/DEF04；B=(420000-360000*378000/360000)/14000；A=(360000*378000/360000-358400)/14000",
+    "costs": "definitions.md/DEF02、DEF06；试行成本与入账均为60%；执行费是报价假设",
+    "scenario_bounds": "definitions.md/DEF06：审慎与负例为负责人设置的压力假设，不是置信区间",
+    "limitations": "未随机分组；组合可加性、人群蚕食和跨月稳定性未验证；仅30店；固定成本前经营贡献，非净利润"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "executor": "Codex",
+  "model_id": "未暴露",
+  "snapshot_only": true,
+  "source_record_sha256": "5c1bfefc2800bd1edde7589933ae797b787483c7f5582a64d685e22d3298ec5a",
+  "note": "历史实际执行记录的脱路径展示副本；复制与导出不是新推理。完整报告原字节未改。"
+}
