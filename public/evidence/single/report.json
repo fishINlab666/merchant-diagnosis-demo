@@ -1,0 +1,914 @@
+{
+  "merchant": {
+    "name": "暖禾热饭·望江店",
+    "scope": "单店、单SKU快餐外卖",
+    "period": "历史9月28日—10月25日；同窗对照10月26日—11月1日；冻结11月6日",
+    "synthetic": true
+  },
+  "headline": "薄盒保温变差是退款上升的主要可控原因，先恢复保温款7天",
+  "money": {
+    "label": "审慎月度经营贡献改善",
+    "unit": "元",
+    "period": "下一规划月：30个营业日",
+    "note": "按每天300单、退款率从薄盒组8%降至老板指定5%测算；是规划情景，未来效果以成熟售后回传为准。",
+    "basis": "少冲减退款9,450元 − 全量订单包材增支7,200元 − 额外复核600元 = 1,650元。每单餐材人工18.20元照常消耗，订单量不变故差额为0；广告、退货及其他新增费为0。结算已扣平台费、配送费和优惠，不重复扣。指标为固定成本前经营贡献改善。",
+    "calc_id": "conservative_month",
+    "value": 1650,
+    "evidence": [
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!E6"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!E8"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!E10"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!E12"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!E14"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!E16"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!E18"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!D6"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!D8"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!D10"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!D12"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!D14"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!D16"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:同窗试行!D18"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C10"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C11"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C12"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C5"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C6"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C8"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C9"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C7"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C13"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:17"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:21"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "换薄盒后，退款翻倍且增量集中在凉餐",
+      "detail": "10月12日全量换薄盒。前后各4,200单，退款由168单（4%）升至336单（8%）；凉餐退款从84单升至252单，其他原因均84单。订单量、价格、份量、人员及派单规则未变。",
+      "basis": "按每日明细累计，剔除小计与重复表头。换包时间先于问题变化，公开评价中的“盒子薄、送得差不多快却不热”与此一致，但不据评价推全店发生率。",
+      "evidence": [
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!A5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!A22"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G22"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:13"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:21"
+        }
+      ]
+    },
+    {
+      "title": "同周对照支持先改包装，无需先改配送",
+      "detail": "同周两组各1,050单，保温款退款42单（4%），薄盒84单（8%）；其他原因各21单，凉餐分别21单和63单。各抽查140份，到手均温为63.0℃和52.3℃。",
+      "basis": "午晚、近远四个区组内预洗牌均衡分配，执行无偏离。两组出餐温度、对应制作/待取/在途时间、距离及环境条件一致，支持包装散热这一机制；温度用于体验判断。",
+      "evidence": [
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F6"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:25"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:29"
+        }
+      ]
+    },
+    {
+      "title": "省包材却损失经营贡献，恢复时要把复核费也扣掉",
+      "detail": "按明细换算元，历史前后14天到账分别141,120元、135,240元；扣餐材人工、包材与广告后经营贡献为58,800元、56,280元。使用同周保温组4%退款率作规划基准时，月度改善为4,800元。",
+      "basis": "菜单39元不是每单可恢复收入；每退款单实际少到账35元。退款单已制作送达，不能退回餐材人工或包装成本。采用老板确认的含税运报价，薄盒可原价退回。",
+      "evidence": [
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K22"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:成本横排!B6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:成本横排!B11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C7"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:17"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:37"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "11月9日起，全单恢复保温款7天",
+      "owner": "店长主责；采购补货及原价退薄盒；财务核到账与全部成本",
+      "timing": "2026年11月9日—15日，覆盖全店同SKU订单；11月16日查执行，11月21日查成熟退款。",
+      "budget": "按300单/天：保温包装420元/天，额外复核20元/天；7天包装及复核总支出3,080元，相对薄盒新增1,820元。广告不增加；采购日供，退货无额外费用。",
+      "success": "执行目标（建议试点设置）：每日核对包装、数量及0.5小时复核，记录偏离；按午晚/近远同结构及相同5天售后窗比较。全口径退款率争取≤5%，但继续以扣全费用的可比经营贡献差额>0为准。",
+      "stop": "首周相对可比薄盒基线累计贡献损失达到500元即停并复核。销量与费用不变时退款率须低于5.524%才有正改善；若仍为8%，月度将减少7,800元，应撤回恢复方案并查其他原因，不以绝对贡献仍盈利作为继续理由。"
+    }
+  ],
+  "followup": {
+    "when": "11月16日核执行；11月21日按订单所属日及5天完整售后窗口复盘。",
+    "decision": "先核执行，再看成熟退款及全费用差额；正改善才继续。费用或结构变化则重算，亏损触及500元即停止。若缺成熟退款或成本，暂停改善金额判定，不把未结案单记为无退款。",
+    "collect": [
+      "实际逐日履约量、包装种类/实耗、采购退货单、复核工时与付款、未按方案执行的订单：核对动作和费用，决定修正执行还是评估效果。",
+      "订单所属日、午晚/近远分层、退款原因及实际冲减、到账、餐材人工、平台费/优惠/补助变化：与同结构薄盒基线核算贡献差额，决定继续、调整或停止。",
+      "按原方法的到手温度抽样和制作/待取/在途、环境温度、距离及同期菜单人员变动：若改善不出现，区分包装执行偏差与其他原因。"
+    ]
+  },
+  "charts": [
+    {
+      "type": "bar",
+      "title": "同一周包装对照：全口径退款率",
+      "unit": "%",
+      "caption": "两组各1,050单；同SKU、同窗、区组内均衡分配。",
+      "series": [
+        {
+          "label": "保温款",
+          "calc_id": "warm_rate",
+          "value": 4,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E15"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E17"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D15"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D17"
+            }
+          ]
+        },
+        {
+          "label": "薄盒款",
+          "calc_id": "thin_rate",
+          "value": 8,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "同窗抽查：到手温度",
+      "unit": "℃",
+      "caption": "两组各抽查140份，使用相同方法；等量日样本均值。",
+      "series": [
+        {
+          "label": "保温款",
+          "calc_id": "warm_temperature",
+          "value": 63,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F15"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F17"
+            }
+          ]
+        },
+        {
+          "label": "薄盒款",
+          "calc_id": "thin_temperature",
+          "value": 52.285714285714285,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:温度抽查!F18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "waterfall",
+      "title": "审慎月度改善：费用扣全后再看钱",
+      "unit": "元",
+      "caption": "退款少冲减抵减全部新增支出；餐材人工差额为0。",
+      "series": [
+        {
+          "label": "退款少冲减",
+          "calc_id": "income_recovery",
+          "value": 9450,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C13"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:21"
+            }
+          ],
+          "role": "increase"
+        },
+        {
+          "label": "新增包材",
+          "calc_id": "pack_increment",
+          "value": 7200,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C13"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:21"
+            }
+          ],
+          "role": "decrease"
+        },
+        {
+          "label": "额外复核",
+          "calc_id": "review_fee",
+          "value": 600,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C13"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:21"
+            }
+          ],
+          "role": "decrease"
+        },
+        {
+          "label": "经营贡献改善",
+          "calc_id": "conservative_month",
+          "value": 1650,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C13"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:21"
+            }
+          ],
+          "role": "total"
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "解释退款上升主要可控原因，采用老板成本口径，选择扣全费用后正改善的首行动。",
+    "chosen_strategy": "恢复保温包装7天；先后、机制、结果及同期分组对照一致，支持主要可控原因判断。以同窗薄盒组8%作可比基线、老板指定5%作审慎规划。",
+    "execution": "当前Codex宿主分析；只读取三份原始输入及quick执行规则，无独立模型API、网络或凭证访问。prepare、calculate已实际运行；历史分组对照不是本Skill带来的执行结果；本轮商家执行回执尚未收到。",
+    "alternatives": [
+      "维持薄盒仅靠客服补偿：不能解决到手散热，同窗证据显示退款损失超过包材节省，不选。",
+      "先优化配送或改价格份量：同周配送样本条件相同且其他规则稳定，证据不足以优先改变；若恢复包装后未改善，再按分层履约记录改判。",
+      "按保温组4%推算月改善4,800元：保存基准，但采用较审慎5%情景作为主金额。"
+    ],
+    "assumptions": [
+      "下一规划月30营业日、每天300单，退款率5%为老板规划，不是统计置信界。",
+      "金额按元；历史结算逐日万元乘10000，小计显示精度不足，未用小计代替每日明细。H/T分开，只计一次，横向成本依编号连接。",
+      "全量订单均计餐材人工和包材；退款前结算已包含原平台优惠费用，仅恢复退款冲减差额；不按39元菜单价算恢复收入。",
+      "包材报价含税运，退货0、广告0、其他一次新增费0有明示来源，非将空白当0。新增复核单列；固定租金薪资不变，报告为固定成本前贡献差额。",
+      "相反情景退款仍8%：月贡献差额-7,800元，应撤回而非称改善。缺成熟售后或成本则暂停该金额判断，保留执行核验。"
+    ]
+  },
+  "gaps": []
+}

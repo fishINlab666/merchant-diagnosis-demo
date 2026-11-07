@@ -1,0 +1,330 @@
+{
+  "merchant": {
+    "name": "榕味小馆30店",
+    "scope": "演示城30家成熟直营店",
+    "period": "30天规划月；首轮7天试行",
+    "synthetic": true
+  },
+  "headline": "先做7天预算调拨，验证从A转B能否多留钱",
+  "money": {
+    "label": "月度审慎贡献改善",
+    "unit": "元",
+    "period": "30店 · 30天规划月",
+    "note": "按负责人审慎参数、60%变动成本及6000元执行费测算。须先验证两轮；未计固定成本，不能视为已实现净利润。",
+    "basis": "月调拨6万元，净结算差额6万元，扣订单变动成本3.6万元、执行费6000元；推广总额不增。",
+    "calc_id": "month_prudent",
+    "value": 18000,
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:29"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:33"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "边际试行支持先做小额调拨",
+      "detail": "同期对照调整后，增B每元对应入账增加3元，减A每元对应入账损失1.4元；先验证组合能否保留这项差异。",
+      "basis": "前后各14天，三组各10店，以保持预算组的同期变化调整。分组非随机，两个动作的组合效果尚未实测；历史平均回收比仅作背景。",
+      "evidence": [
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:边际试行!C4:K6"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:25"
+        }
+      ]
+    },
+    {
+      "title": "月推广总额保持30万元",
+      "detail": "原预算A27万、B3万。若两轮试行支持整月持续，最多调拨6万，改为A21万、B9万；先不扩到其他城市。",
+      "basis": "首轮只安排7天调拨1.4万元，不直接执行整月方案。每店新增B与B总消耗分别管理。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:29"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:39"
+        }
+      ]
+    },
+    {
+      "title": "套餐信息另组核对",
+      "detail": "公开样本中，中央店和南站店有份量理解反馈。先核真实组成与适用人数；准确标注保留，商品页调整与预算试点分开。",
+      "basis": "公开页仅观察3店、5条独立方便样本，重复评价不加计。两份米饭不足以直接认定两人份，也不能据此推全店发生率。",
+      "evidence": [
+        {
+          "material": "public.md",
+          "locator": "line:13"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:15"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:23"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:26"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:30"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:37"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "30店先试7天调拨，推广总额不增",
+      "owner": "总部预算负责人确认；区域运营执行；财务核账；门店联络人记异常",
+      "timing": "11月9日前冻结可比基线与成熟订单窗；9日至15日试行，16日查执行，23日复盘",
+      "budget": "调拨额14000元：A49000元、B21000元；执行费1400元另计。B每日总额≤3000元；每店每日新增≤66.67元，均匀分配时总额100元。",
+      "success": "先核实际执行与同期变更，再看相对可比基线的成熟经营贡献差额。差额>0、执行完整且费用齐全，才同强度再观察一周；至少两轮方向一致再讨论整月持续。",
+      "stop": "成熟贡献差额低于−5000元，或B任一天超3000元，停止追加并查因；差额≤0但未触线也不扩量。负例7日差额为−4200元，仍需查因。"
+    }
+  ],
+  "followup": {
+    "when": "11月16日查执行；11月23日按成熟订单复盘首轮",
+    "decision": "先确认执行和比较口径有效。首轮差额为正且费用齐全，只支持同强度再观察；非正先查因，触线停止追加。至少两轮方向一致再讨论30店整月持续，其他城市另开试验。",
+    "collect": [
+      "实际覆盖门店、起止日、每日A/B消耗与单店新增额；核是否按计划执行及是否超限。",
+      "上线前冻结的可比基线及同门店同星期结构的成熟订单窗；记录换券、价格、缺货和出餐负荷等同期变化。",
+      "同口径全店净结算、订单变动成本与实际执行费；按可比基线计算贡献差额，不只看渠道归因收入。",
+      "B触达频次、自然单变化及各店差异；用于判断饱和或自然成交被归因替代，决定继续同强度、调整还是停止。"
+    ]
+  },
+  "charts": [
+    {
+      "type": "stacked",
+      "title": "推广预算：总额不变，分步验证",
+      "unit": "元",
+      "caption": "右侧为两轮通过后的整月情景；当前只执行7天小额试行。",
+      "series": [
+        {
+          "label": "渠道A",
+          "value": 270000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "group": "当前月预算"
+        },
+        {
+          "label": "渠道B",
+          "value": 30000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "group": "当前月预算"
+        },
+        {
+          "label": "渠道A",
+          "calc_id": "month_a_after",
+          "value": 210000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "group": "验证后月情景"
+        },
+        {
+          "label": "渠道B",
+          "calc_id": "month_b_after",
+          "value": 90000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "group": "验证后月情景"
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "每元预算对应的边际入账变化",
+      "unit": "元/元",
+      "caption": "保持预算组同期变化已调整；两项来自分开观察，不能当作组合已成功。",
+      "series": [
+        {
+          "label": "减A每元：入账损失",
+          "calc_id": "a_income_loss_per_yuan",
+          "value": 1.4,
+          "evidence": [
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D5"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E5"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!F5"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!H5"
+            }
+          ]
+        },
+        {
+          "label": "增B每元：入账增加",
+          "calc_id": "b_income_gain_per_yuan",
+          "value": 3,
+          "evidence": [
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D6"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E6"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!G6"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!I6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "waterfall",
+      "title": "月度审慎贡献如何得到",
+      "unit": "元",
+      "caption": "净结算已扣退款、平台及配送等费用；此处另扣订单变动成本与执行费。",
+      "series": [
+        {
+          "label": "净结算差额",
+          "calc_id": "month_income_delta",
+          "value": 60000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "total"
+        },
+        {
+          "label": "订单变动成本",
+          "calc_id": "month_variable_cost",
+          "value": -36000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "decrease"
+        },
+        {
+          "label": "执行费",
+          "calc_id": "month_execution_cost",
+          "value": -6000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "decrease"
+        },
+        {
+          "label": "贡献差额",
+          "calc_id": "month_prudent",
+          "value": 18000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "total"
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "在演示城30家成熟直营店、推广总额不增加的约束下，提高现有推广预算的经营贡献；200店仅为品牌背景。",
+    "chosen_strategy": "选7天小额调拨：原始边际试行提供比平均回收比更直接的依据；首轮调拨14000元，审慎贡献差额4200元。月度18000元用于判断经济空间，需两轮支持后才讨论持续，不把月度方案一次性执行。",
+    "execution": "预算负责人确认调拨和基线，区域运营逐日记实耗，财务核成熟全店净结算、成本和执行费，门店联络人记缺货与负荷。同期尽量不换券，商品页改动另选店；先检查执行，再决定继续、调整或停止。尚无本次商家执行回执。",
+    "alternatives": [
+      "保持原A/B预算，仅在预算试点之外核对套餐信息：执行扰动较小，但解决不了本轮预算分配问题；商品页真实组成仍应核实，修改成本未知，不预估其收益或声称零成本。",
+      "直接整月调拨60000元：同一审慎参数下有正向贡献空间，但B饱和、自然单蚕食和组合可加性尚未验证，故暂不采用；先完成两轮同强度观察。"
+    ],
+    "assumptions": [
+      "净结算已扣退款、商家优惠、平台服务及承担配送费用，不再重复扣；变动成本含餐材、包材与按单工时，推广及额外执行费另列。",
+      "审慎入账系数B2.50/A1.50、负例B1.50/A2.00及60%成本比例均直接采用老板材料；百分比除100和对照调整均在实际公式执行，未预填派生变量。",
+      "30天为规划月，不把28天周报当自然月；固定成本未收集，计算的是固定成本前贡献差额。",
+      "原分组非随机，且只增B与只减A分开观察；不声称严格因果，组合及后续饱和需复盘。5000元是负责人承受损失上限，不是显著性阈值。"
+    ]
+  },
+  "gaps": [
+    {
+      "item": "材料未提供首轮已冻结的可比基线和实际执行记录",
+      "why": "开跑前固定门店、同星期结构与成熟订单窗，执行后先查偏离；否则不能据正贡献扩大。"
+    },
+    {
+      "item": "B持续投放的触达频次与自然单变化",
+      "why": "用于区分新增收入、饱和与自然成交被归因替代，决定是否继续同强度；不阻断先做受限试行。"
+    }
+  ]
+}

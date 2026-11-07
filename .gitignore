@@ -31,3 +31,11 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
+
+# Local Skill runs and private configuration
+.venv/
+**/runs/
+tools/recorded-runs/
+credentials.json
+.env
+.env.*

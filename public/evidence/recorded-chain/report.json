@@ -1,0 +1,313 @@
+{
+  "merchant": {
+    "name": "榕味小馆30店",
+    "scope": "演示城30家成熟直营店",
+    "period": "30天规划月；首轮2026-11-09至11-15",
+    "synthetic": true
+  },
+  "headline": "先从A调拨至B做7天试点，总推广预算不增加",
+  "money": {
+    "label": "审慎月度经营贡献改善",
+    "unit": "元",
+    "period": "30天规划月",
+    "note": "按月调拨6万元、B入账系数2.50、A损失系数1.50，订单成本60%、执行费6000元；两轮验证后再议整月持续。",
+    "basis": "相对保持原预算组合的可比基线：新增B收入减去减A损失，扣订单变动成本；广告总额不变，再扣执行费。为固定成本前贡献差额。",
+    "calc_id": "cautious_month_checked",
+    "value": 18000,
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:33"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:15"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:29"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "边际观察支持小步调拨",
+      "detail": "对照同期变化后，每减A一元对应入账损失1.40元，每增B一元对应入账增加3.00元。匹配组非随机，两个动作能否叠加仍需验证。",
+      "basis": "前后各14天成熟订单，分别调整保持预算组的同期变化；平均归因回收比不作增量。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:25"
+        }
+      ]
+    },
+    {
+      "title": "基准与审慎分开看",
+      "detail": "基准用B=3.00、A=1.40，月度改善32,400元；审慎用B=2.50、A=1.50，结果见主卡。两者均扣60%订单成本及6000元执行费。",
+      "basis": "参数是入账系数，不含订单成本；30天规划月，非自然月实绩。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:33"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "30店先调拨14,000元，保持7天强度",
+      "owner": "总部预算负责人确认；区域运营记消耗；门店联络人记履约；财务核贡献",
+      "timing": "11-09至11-15；11-16检查执行；11-23成熟复盘",
+      "budget": "7天A总额49,000元、B总额21,000元；执行费另计1,400元。每天A总额7,000元、B总额3,000元。每店B每日新增上限66.67元，均分后B每日总额100元；按精确分配控制总额，不因舍入超支。月调拨上限60,000元，月推广总额300,000元。",
+      "success": "先核执行完整、可比基线、费用齐全，再看7天成熟订单的经营贡献差额严格大于0，才继续同强度下一轮。",
+      "stop": "B任一天总消耗超过3,000元，或成熟贡献差额低于-5,000元，立即停止追加并核原因。差额小于等于0但未触线也不继续追加或扩量，先查自然单、组间差异及费用。负例B=1.50、A=2.00时首轮差额-4,200元，不能因未触线继续。"
+    }
+  ],
+  "followup": {
+    "when": "首轮11-16查执行、11-23查成熟结果；仅首轮达标后安排第二轮7天，结束后再等待7日成熟并复盘。",
+    "decision": "两轮分别相对可比基线贡献差额均为正，执行完整、费用齐全且无饱和及履约恶化，才讨论30店整月持续；任一轮非正则暂停追加核因，触线立即停止。其他城市另开试验。未收到本轮执行回执。",
+    "collect": [
+      "每日门店与渠道实际消耗、调拨范围和偏离；频次、自然单与可比基线变化",
+      "成熟订单净结算、订单变动成本、额外执行费；缺货、出餐负荷及换券等同期变化",
+      "第二轮同口径贡献差额及执行完整性"
+    ]
+  },
+  "charts": [
+    {
+      "type": "stacked",
+      "title": "30天预算分配：总额保持30万元",
+      "unit": "元",
+      "caption": "原预算A 27万元、B 3万元；通过两轮后才讨论整月使用。",
+      "series": [
+        {
+          "label": "原A",
+          "value": 270000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "group": "原预算"
+        },
+        {
+          "label": "原B",
+          "value": 30000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "group": "原预算"
+        },
+        {
+          "label": "调拨后A",
+          "calc_id": "a_budget_checked",
+          "value": 210000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "group": "调拨后"
+        },
+        {
+          "label": "调拨后B",
+          "calc_id": "b_budget_checked",
+          "value": 90000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "group": "调拨后"
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "对照调整后的边际入账观察",
+      "unit": "元/元",
+      "caption": "A是减投损失，B是增投收入；均未扣成本，非随机观察估计。",
+      "series": [
+        {
+          "label": "减A的入账损失",
+          "calc_id": "a_marginal_checked",
+          "value": 1.4,
+          "evidence": [
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D5"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E5"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!H5"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!F5"
+            }
+          ]
+        },
+        {
+          "label": "增B的入账增加",
+          "calc_id": "b_marginal_checked",
+          "value": 3,
+          "evidence": [
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E6"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D6"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!G6"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!I6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "waterfall",
+      "title": "审慎月度贡献改善拆解",
+      "unit": "元",
+      "caption": "收入变化已净去减A损失；成本包含餐材、包材及按单工时。",
+      "series": [
+        {
+          "label": "净结算增加",
+          "calc_id": "cautious_income_checked",
+          "value": 60000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "role": "increase"
+        },
+        {
+          "label": "订单成本影响",
+          "calc_id": "cautious_cost_checked",
+          "value": -36000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:15"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "role": "decrease"
+        },
+        {
+          "label": "推广费用影响",
+          "calc_id": "ad_change_checked",
+          "value": 0,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ]
+        },
+        {
+          "label": "执行费影响",
+          "value": -6000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "decrease"
+        },
+        {
+          "label": "贡献改善",
+          "calc_id": "cautious_month_checked",
+          "value": 18000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:15"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            }
+          ],
+          "role": "total"
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "仅做30店预算调拨，回答审慎月度多留多少钱",
+    "chosen_strategy": "先7天调拨14000元，不直接整月铺开；月度60000元调拨仅为情景规划。",
+    "execution": "prepare与实际calculate完成；商家尚未执行。只读本轮原件，不调用外部模型或网络。",
+    "alternatives": [
+      "保持A/B预算原分配：无验证成本，但放弃可能的边际改善；作为可比基线。",
+      "立即按历史平均归因ROI全量转投：人群不同且平均非边际，拒绝。",
+      "只减A并节省预算：可降低支出，但本轮选择验证同额转至B的组合贡献。"
+    ],
+    "assumptions": [
+      "两侧60%成本率暂用，商品结构变化须重估。",
+      "组合可加与月度延续尚未证明；非随机分组不能声称严格因果。",
+      "净结算已扣退款、优惠、平台及配送，不再扣；成本含包材不重复扣。",
+      "28天周报与渠道表不是新增独立收入，不与边际窗相加；仅30店可用。"
+    ]
+  },
+  "gaps": [
+    {
+      "item": "试点每日实际消耗、成熟结算与全部成本回执",
+      "why": "决定第二轮继续、暂停或触发止损。"
+    },
+    {
+      "item": "公开页相关商品浏览、转化及选择困难售后明细",
+      "why": "仅留待补数，判断是否值得另立页面试验；本轮不承诺改页、零投入或适用人数标注。"
+    }
+  ]
+}

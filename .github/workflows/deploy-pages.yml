@@ -19,17 +19,22 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          node-version: 22
-          cache: npm
+          python-version: '3.12'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install Skill dependencies
+        run: python -m pip install -r .agents/skills/merchant-diagnosis/requirements.txt
 
-      - name: Build site
-        run: npm run build
+      - name: Test Skill
+        run: python -m unittest discover -s .agents/skills/merchant-diagnosis/tests -q
+
+      - name: Test recording entry
+        run: python -m unittest discover -s tools/tests -q
+
+      - name: Build static showcase
+        run: python scripts/build-showcase.py
 
       - name: Publish main site
         uses: peaceiris/actions-gh-pages@v4

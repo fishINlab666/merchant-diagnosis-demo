@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "mode": "host",
+  "runtime": "Codex 隔离子会话",
+  "draft_count": 1,
+  "calculation_batches": [
+    {
+      "requests": "calculation-001.requests.json",
+      "results": "calculation-001.results.json"
+    }
+  ],
+  "calculations_sha256": "fd57898c7fa3e600e6f8a55fcd723f7207e5993e6cfff42debb6e3e4671e5928",
+  "model_calls": 0,
+  "corrections": 0,
+  "inference_executed": false,
+  "model_id": "未暴露",
+  "semantic_review": "未确认",
+  "created_at": "2026-11-07T13:33:57.035227+00:00",
+  "business_review": {
+    "status": "not_independently_reviewed",
+    "required": "host_self_check"
+  },
+  "business_reviews": [],
+  "business_revisions": 0,
+  "completed_at": "2026-11-07T13:36:24.773314+00:00",
+  "report": "report.html",
+  "report_sha256": "e268929acb4d5ca22794a6d2d7e8aae2a2ebb48c35325bad426d7193b727b093"
+}

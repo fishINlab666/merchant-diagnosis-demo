@@ -150,6 +150,20 @@ class RuntimeTests(unittest.TestCase):
             evidence = "public.md／line:13-15" + separator + "public.md／line:23"
             self.assertEqual([], validate("S1", S1.replace("public.md／line:1", evidence), self.materials))
 
+    def test_known_filename_in_chinese_prose_and_repeated_mentions(self):
+        validate = self.validator()
+        for evidence in ('定义见public.md／line:1',
+                         'public.md含评价，依据为public.md／line:1'):
+            self.assertEqual([], validate('S1', S1.replace('public.md／line:1', evidence), self.materials))
+        for evidence in ('unknown_public.md／line:1', 'public.md含评价',
+                         'public.md／line:999；public.md／line:1'):
+            self.assertTrue(validate('S1', S1.replace('public.md／line:1', evidence), self.materials))
+
+    def test_currency_after_channel_name_is_not_an_action_id(self):
+        validator = module('validate')
+        self.assertEqual([], validator.business_ids('工具A270000元，A27万元，A27.5万元'))
+        self.assertEqual(['A27', 'F4', 'D7'], validator.business_ids('执行 A27；依据F4；待补充（D7）'))
+
     def test_limits_missing_data_and_empty_table(self):
         validate = self.validator()
         row = "| F1 | 顾客提及变凉 | public.md／line:1 | 可能影响体验 | 记录交接时点 |"
@@ -270,6 +284,16 @@ S1 文件无法读取。
             self.assertEqual("prepared", saved["execution_status"])
             self.assertFalse(saved["inference_executed"])
             self.assertEqual("previous.md", saved["history"][0]["original_name"])
+
+    def test_prepare_keeps_stage_guidance_outside_markdown_fence(self):
+        prepare = module('prepare')
+        with tempfile.TemporaryDirectory() as folder:
+            source = Path(folder) / 'data.txt'
+            source.write_text('合成材料')
+            output = Path(folder) / 'S3'
+            prepare.prepare_stage('S3', [source], output)
+            prompt = (output / 'prompt.md').read_text()
+            self.assertIn('“结果”只取“通过／待确认／不适用”', prompt)
 
     def test_prepare_cli_accepts_runtime(self):
         with tempfile.TemporaryDirectory() as folder:

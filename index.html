@@ -1,15 +1,80 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#f8f7f4" />
-    <meta name="description" content="把一份门店周报变成一页能谈预算的方案" />
-    <title>商户预算诊断｜Merchant OS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="商户经营诊断 Skill：从公开初诊、补数定方案，到执行后复盘的服务流程与案例导航。">
+  <title>从一份周报，到下一步经营决定</title>
+  <style>
+    :root{--ink:#173b32;--muted:#53695f;--green:#17654e;--deep:#163e32;--paper:#fff;--canvas:#f4f6f1;--line:#d5dfd5;--soft:#e7eee2;--font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--canvas);color:var(--ink);font:15px/1.8 var(--font);font-variant-numeric:tabular-nums}::selection{background:#cce1b5;color:var(--ink)}a{color:inherit;text-underline-offset:4px}h1,h2,h3,p{margin:0}a:focus-visible,video:focus-visible{outline:3px solid #ae7428;outline-offset:5px}.skip{position:fixed;top:-80px;left:20px;z-index:20;background:white;padding:10px}.skip:focus{top:10px}.topbar{border-bottom:1px solid var(--line);background:#fbfcf8}.topbar-inner{max-width:1160px;margin:auto;padding:18px 30px;display:flex;align-items:center;justify-content:space-between;gap:30px}.brand{font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap}nav{display:flex;gap:25px;font-size:12px;color:var(--muted)}nav a{text-decoration:none;min-height:32px;display:flex;align-items:center}nav a:hover{text-decoration:underline;color:var(--green)}main{max-width:1160px;margin:auto;padding:0 30px}.hero{padding:65px 0 49px;border-bottom:1px solid var(--line)}h1{font-size:46px;line-height:1.35;font-weight:650;letter-spacing:-.025em;max-width:20em;text-wrap:balance}.hero-description{max-width:49em;margin-top:23px;color:var(--muted);font-size:17px;line-height:1.9}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:10px 19px;border:1px solid var(--line);border-radius:7px;text-decoration:none;font-size:13px;font-weight:650;background:white}.button:hover{background:var(--soft)}.button:active{background:#d8e5d2}.button.primary{background:var(--green);border-color:var(--green);color:white}.button.primary:hover{background:#104e3c}.input-line{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:31px;color:var(--muted);font-size:12px}.input-line strong{font-weight:600;color:var(--ink)}.section{padding:44px 0}.section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:25px}h2{font-size:25px;font-weight:650;letter-spacing:-.02em;line-height:1.5}.section-heading>p{font-size:12px;color:var(--muted);max-width:40em}.process{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:31px}.stage{padding-top:18px;border-top:1px solid #8ea68e;min-width:0}.stage h3{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:18px;font-weight:650}.stage svg{height:20px;width:26px;flex-shrink:0;stroke:#6a856e;stroke-width:1.5;fill:none}.stage>p{margin-top:13px;font-size:13px;line-height:1.95;max-width:36em}.stage .deliverable{color:var(--muted);font-size:12px;margin-top:15px}.deliverable strong{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}.service-note{margin-top:26px;padding-top:19px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);max-width:79em}.cases-section{padding-top:31px}.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}.case{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:27px 29px;min-width:0}.case h3{font-size:20px;font-weight:650;line-height:1.5}.case-scope{font-size:12px;color:var(--muted);margin-top:6px}.case-question{font-size:14px;margin-top:21px;max-width:36em}.case-result{font-size:22px;font-weight:600;color:var(--green);line-height:1.55;margin-top:17px;overflow-wrap:anywhere}.case-result.pending{font-size:14px;font-weight:400;color:var(--muted)}.case-summary{font-size:12px;color:var(--muted);margin-top:8px;min-height:44px}.case a{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-height:44px;margin-top:14px;font-size:13px;font-weight:650;color:var(--green);text-decoration:none}.case a:hover{text-decoration:underline}.case a svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7}.case-note{font-size:11px;color:var(--muted);margin-top:13px}.recording-section{padding-top:32px}.video-frame{background:var(--deep);border-radius:14px;overflow:hidden;aspect-ratio:16/9;display:grid;place-items:center}.video-frame video{display:block;width:100%;height:100%;aspect-ratio:16/9;background:var(--deep)}.video-empty{color:#d2e1d2;text-align:center;max-width:40em;padding:30px}.video-empty h3{color:#f0f7eb;font-size:24px;font-weight:500}.video-empty p{font-size:13px;margin-top:13px}.recording-meta{display:flex;justify-content:space-between;gap:20px;margin-top:13px;font-size:11px;color:var(--muted)}.recording-meta p{max-width:70ch}.download-section{margin:6px 0 34px;background:var(--soft);border-radius:14px;padding:30px 32px;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}.download-section h2{font-size:22px}.download-section p{font-size:13px;color:var(--muted);margin-top:8px;max-width:60ch}.download-actions{display:flex;flex-direction:column;gap:7px;align-items:stretch}.download-actions .repo{font-size:12px;text-align:center;min-height:38px;padding-top:6px;color:var(--green)}#release-status{font-size:11px;margin-top:10px}footer{max-width:1160px;margin:auto;padding:20px 30px 30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px}footer a{text-decoration:none}[hidden]{display:none!important}
+    @media(max-width:800px){h1{font-size:37px}.hero{padding:44px 0 36px}.hero-description{font-size:15px}.section-heading{display:block}.section-heading>p{margin-top:7px}.process{gap:21px}.stage h3{font-size:16px}.stage>p{font-size:12px}.case{padding:23px}.case h3{font-size:18px}.case-result{font-size:20px}.download-section{grid-template-columns:1fr;gap:20px}.download-actions{flex-direction:row;align-items:center;gap:21px}.download-actions .repo{padding:0;display:flex;align-items:center}.recording-meta{display:block}.recording-meta p+p{margin-top:5px}}
+    @media(max-width:570px){html{scroll-padding-top:20px}.topbar-inner{padding:16px 20px;display:block}.brand{font-size:14px}nav{margin-top:8px;gap:24px;font-size:11px}main{padding:0 20px}.hero{padding-top:33px}h1{font-size:30px;line-height:1.45;max-width:13em}.hero-description{font-size:14px;margin-top:17px}.hero-actions{gap:9px;margin-top:22px}.button{font-size:12px;padding:9px 15px;min-height:43px}.input-line{display:block;margin-top:22px;font-size:11px}.input-line span{display:block;margin-top:4px}h2{font-size:22px}.section{padding:32px 0}.section-heading{margin-bottom:21px}.process{grid-template-columns:1fr;gap:23px}.stage{padding-top:15px}.stage h3{font-size:18px}.stage svg{transform:rotate(90deg)}.stage>p{font-size:13px;margin-top:8px;max-width:65ch}.stage .deliverable{margin-top:10px}.deliverable strong{display:inline;margin-right:6px}.service-note{font-size:12px;margin-top:23px}.cases{grid-template-columns:1fr;gap:15px}.case{padding:23px}.case-question{margin-top:16px}.case-summary{min-height:0}.case-result{margin-top:13px}.case a{margin-top:12px}.recording-section{padding-top:19px}.video-empty{padding:20px}.video-empty h3{font-size:19px}.video-empty p{font-size:11px;margin-top:7px}.video-frame{aspect-ratio:4/3}.video-frame video{aspect-ratio:16/9;height:auto}.download-section{padding:23px;margin-bottom:25px}.download-section h2{font-size:20px}.download-section p{font-size:12px}.download-actions{flex-wrap:wrap;gap:10px 18px}footer{padding:18px 20px 25px;display:block}footer a{display:inline-block;margin-top:8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media print{@page{size:A4;margin:15mm}body{background:white;font-size:10px}.topbar,nav,.hero-actions,.video-frame,.download-actions,footer a{display:none!important}main{max-width:none;padding:0}.hero{padding:0 0 25px}h1{font-size:29px}.hero-description{font-size:12px}.section{padding:25px 0}h2{font-size:20px}.process{grid-template-columns:repeat(3,1fr);gap:20px}.stage h3{font-size:14px}.stage>p,.service-note{font-size:10px}.cases{grid-template-columns:repeat(2,1fr)}.case{padding:20px;break-inside:avoid}.case h3{font-size:16px}.case-question{font-size:11px}.case-summary{font-size:10px}.download-section{padding:20px;margin:0}.recording-section{padding:15px 0}footer{padding:15px 0}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到内容</a>
+  <header class="topbar"><div class="topbar-inner"><a class="brand" href="#main">商户经营诊断 Skill</a><nav aria-label="讲解导航"><a href="#workflow">服务流程</a><a href="#cases">两种案例</a><a href="#recording">操作录屏</a></nav></div></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">从一份周报，到下一步经营决定</h1>
+      <p class="hero-description">把店铺资料和经营周报变成一份能讨论、能执行的建议，再用商家回传判断下一步。供顾问、KA 和服务团队接单时使用。</p>
+      <div class="hero-actions"><a class="button primary" href="#cases">看两份老板看板</a><a class="button" href="#recording">看三分钟操作演示</a></div>
+      <div class="input-line"><span><strong>起点</strong>　公开店铺资料与老板目标</span><span><strong>补充</strong>　商家已有的经营周报</span><span><strong>交付</strong>　发现、行动、复盘安排</span></div>
+    </section>
+
+    <section id="cases" class="section cases-section" aria-labelledby="cases-title">
+      <div class="section-heading"><h2 id="cases-title">同一套方法，解决不同经营问题</h2><p>打开的是已经导出的报告，便于逐项讲解判断与行动。</p></div>
+      <div class="cases">
+        <article class="case"><h3 id="chain-title">榕味小馆 · 30 店预算重配</h3><p id="chain-scope" class="case-scope">连锁、有投放 · 周报 + 预算约束 + 分组试行</p><p id="chain-question" class="case-question">九成预算放在回收较弱的工具上，怎样调整更划算？</p><p id="chain-result" class="case-result">审慎测算：每月 +18,000 元</p><p id="chain-summary" class="case-summary">总推广预算不增，先试 7 天调拨。扣除 60% 变动成本和执行费，两轮验证后再决定整月持续。</p><a id="chain-link" href="reports/chain.html">查看连锁经营看板<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></article>
+        <article class="case"><h3 id="single-title">暖禾热饭 · 单店包装与退款</h3><p id="single-scope" class="case-scope">单店、无投放 · 乱格式工作簿 + 老板成本口径</p><p id="single-question" class="case-question">省下的包装钱，是否被冷餐退款吃掉了？</p><p id="single-result" class="case-result">审慎测算：每月 +1,650 元</p><p id="single-summary" class="case-summary">先恢复保温包装试行 7 天；多付的包材和复核费用已计入，按成熟退款回传决定是否继续。</p><a id="single-link" href="reports/single.html">查看单店经营看板<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></article>
+      </div>
+      <p id="case-status" class="case-note">演示案例使用合成材料，展示结果以对应报告的口径与范围为准。</p>
+    </section>
+
+
+    <section id="workflow" class="section" aria-labelledby="workflow-title">
+      <div class="section-heading"><h2 id="workflow-title">一单服务，沿着这三步推进</h2><p>经营判断由人负责，Skill 帮助理解材料、核算金额和整理交付。</p></div>
+      <div class="process">
+        <article class="stage"><h3>公开初诊<svg viewBox="0 0 28 20" aria-hidden="true"><path d="M2 10h22m-7-7 7 7-7 7"/></svg></h3><p>从店铺页、商品和评价中找到具体问题，先给商家一件能做的小事，再说明什么资料会改变判断。</p><p class="deliverable"><strong>交付</strong><a href="reports/public-initial.html">初诊发现与定向补数清单</a></p></article>
+        <article class="stage"><h3>补数定方案<svg viewBox="0 0 28 20" aria-hidden="true"><path d="M2 10h22m-7-7 7 7-7 7"/></svg></h3><p>读懂现有周报与老板口径，比较可选动作，核算费用和审慎情景，把责任人、试行范围与止损条件写清楚。</p><p class="deliverable"><strong>交付</strong>一份老板经营看板</p></article>
+        <article class="stage"><h3>执行后复盘</h3><p>先确认实际做了什么、投入多少，再比较同口径结果。根据新证据决定保留、调整、撤回或扩大。</p><p class="deliverable"><strong>交付</strong>下一步决定与回传安排</p></article>
+      </div>
+      <p class="service-note">接单时，先约定商家的目标和本次服务范围。初诊可单独交付；拿到内部材料后再形成方案，执行回传进入下一次复盘。</p>
+    </section>
+
+    <section id="recording" class="section recording-section" aria-labelledby="recording-title">
+      <div class="section-heading"><h2 id="recording-title">看一次从材料到交付的操作</h2><p>三分钟内，呈现真实操作过程。</p></div>
+      <div class="video-frame">
+        <video id="first-run-video" controls playsinline preload="metadata" poster="media/chain-firstfold.png" aria-label="商户经营诊断首次运行操作录屏"><source id="first-run-source" src="media/first-run.mp4" type="video/mp4">当前浏览器不支持播放，请<a href="media/first-run.mp4">下载录屏</a>查看。</video>
+        <div id="video-empty" class="video-empty" hidden><h3>视频暂时无法加载</h3><p>可以<a href="media/first-run.mp4">下载录屏</a>，查看材料读取、实际计算与看板导出的完整操作。</p></div>
+      </div>
+      <div class="recording-meta"><p id="recording-note">真实 Codex CLI 会话，经本机录屏入口提交三份材料。原始全程 202 秒，等待段 1.25 倍速，输入和结果原速；保留自行修正过程。<a href="reports/recorded-chain.html">查看本次实际产物</a>。</p><p id="recording-duration">交付时长 2:50</p></div>
+    </section>
+
+    <section id="download" class="download-section" aria-labelledby="download-title"><div><h2 id="download-title">把流程带到自己的工作里</h2><p>下载 Skill，在 Codex 或 Claude Code 中交给 Agent。替换为自己的店铺资料与周报，按 README 从首次诊断开始。</p><p id="release-status">Codex CLI 已实跑；Claude Code 本轮暂缓实机验收。</p></div><div class="download-actions"><a id="skill-download" class="button primary" href="https://github.com/fishINlab666/merchant-diagnosis-demo/raw/refs/heads/main/releases/merchant-diagnosis-v1.7.zip">下载 Skill · v1.7</a><a id="repo-link" class="repo" href="https://github.com/fishINlab666/merchant-diagnosis-demo">查看仓库与使用说明</a></div></section>
+  </main>
+  <footer><span>商户经营诊断 · 服务流程与案例讲解</span><a href="#main">回到顶部</a></footer>
+  <script>
+    (() => {
+      'use strict';
+      const video = document.getElementById('first-run-video');
+      const empty = document.getElementById('video-empty');
+      const showEmpty = () => { video.hidden = true; empty.hidden = false; };
+      video.addEventListener('error', showEmpty);
+      document.getElementById('first-run-source').addEventListener('error', showEmpty);
+      video.addEventListener('loadedmetadata', () => {
+        video.hidden = false; empty.hidden = true;
+        if (Number.isFinite(video.duration)) {
+          const minutes = Math.floor(video.duration / 60);
+          const seconds = Math.floor(video.duration % 60).toString().padStart(2, '0');
+          document.getElementById('recording-duration').textContent = '实际时长 ' + minutes + ':' + seconds;
+        }
+      });
+    })();
+  </script>
+</body>
 </html>

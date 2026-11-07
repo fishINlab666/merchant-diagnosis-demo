@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>经营行动方案</title>
+  <style>__BOSS_CSS__</style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到方案</a>
+  <header class="toolbar">
+    <a class="brand" href="#main">经营行动方案</a>
+    <nav aria-label="方案导航"><a href="#decision">先看结论</a><a href="#dashboard">看清依据</a><a href="#execution">开始行动</a></nav>
+    <div class="tools"><button id="copy" type="button">复制摘要</button><button id="print" type="button">打印 / PDF</button></div>
+  </header>
+  <main id="main">
+    <section id="decision" aria-labelledby="headline">
+      <div class="merchant-row"><p id="merchant"></p><span id="synthetic" hidden>合成数据演示</span></div>
+      <h1 id="headline"></h1>
+      <p id="scope" class="scope"></p>
+      <div class="decision-grid">
+        <div class="money-panel"><h2 id="money-label"></h2><p class="money-amount"><strong id="money-value"></strong><span id="money-unit"></span></p><p id="money-period" class="money-period"></p><p id="money-note" class="money-note"></p><details id="money-basis"><summary>怎么算的</summary><p></p></details></div>
+        <div class="first-action"><h2>先做这一件事</h2><p id="first-action-title"></p><dl id="first-action-meta"></dl><a class="action-link" href="#execution">查看执行安排 <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+    <section id="dashboard" aria-labelledby="dashboard-title"><div class="section-heading"><h2 id="dashboard-title">为什么值得做</h2><p>把钱花在哪、收益怎么来，一起看清</p></div><div id="charts" class="charts"></div><div id="findings" class="findings"></div></section>
+    <section id="execution" aria-labelledby="execution-title"><div class="section-heading"><h2 id="execution-title">接下来怎么做</h2><p>从试行到复盘，逐项推进</p></div><div id="actions" class="actions"></div><div id="gaps" class="gaps"></div><div id="followup" class="followup"><h3>到时看结果，再决定下一步</h3><dl></dl></div></section>
+    <footer><span id="footer-merchant"></span><a href="#decision">回到结论 ↑</a></footer>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <section id="copy-fallback" class="copy-fallback" hidden aria-labelledby="copy-label"><label id="copy-label" for="copy-text">请选中下方摘要复制</label><textarea id="copy-text" readonly></textarea><button id="close-copy" type="button">关闭</button></section>
+  <noscript><p class="noscript">请启用 JavaScript 查看经营方案。本文件可离线打开，不需要连接服务器。</p></noscript>
+  <script id="boss-data" type="application/json">__BOSS_DATA__</script>
+  <script>__BOSS_JS__</script>
+</body>
+</html>

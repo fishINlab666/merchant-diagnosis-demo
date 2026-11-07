@@ -14,7 +14,10 @@ LOCATORS = re.compile(r"html:\d+\(line:\d+\)|(?:ocr:line|row|line|page):\d+(?:-\
 
 def business_ids(text):
     # Spreadsheet coordinates use the same letters as F/A/D business identifiers.
-    return IDS.findall(LOCATORS.sub("", text))
+    plain = LOCATORS.sub("", text)
+    # A channel followed by a currency amount (A27万元) is not action A27.
+    return [m.group(1) for m in IDS.finditer(plain)
+            if not re.match(r'(?:,\d{3})*(?:\.\d+)?(?:亿|万)?元', plain[m.end():])]
 
 
 def file_mentions(text, sources):
@@ -23,7 +26,7 @@ def file_mentions(text, sources):
     masked = list(text)
     if sources:
         names = "|".join(re.escape(name) for name in sorted(sources, key=len, reverse=True))
-        for match in re.finditer(r"(?<![\w.-])(?:" + names + r")(?![\w.-])", text):
+        for match in re.finditer(r"(?<![A-Za-z0-9_.-])(?:" + names + r")(?![A-Za-z0-9_.-])", text):
             matches.append((match.group(), match.start(), match.end()))
             masked[match.start():match.end()] = " " * (match.end() - match.start())
     for match in FILES.finditer("".join(masked)):
@@ -83,13 +86,19 @@ def valid_location(filename, cell, material, sources=None):
     """Check exact point references and both endpoints of a cited range."""
     matches = file_mentions(cell, sources or {filename: material})
     known = {item["locator"] for item in material["fragments"]}
+    found_citation = False
     for index, (name, start, end) in enumerate(matches):
         if name != filename:
             continue
         part = cell[end:matches[index + 1][1] if index + 1 < len(matches) else len(cell)]
         citations = LOCATORS.findall(part)
         if not citations:
-            return False
+            # A prose mention may precede the actual citation in the same cell.
+            # An explicit citation marker without a locator is still invalid.
+            if re.match(r"\s*[／/]", part):
+                return False
+            continue
+        found_citation = True
         for locator in citations:
             if locator in known:
                 continue
@@ -104,7 +113,7 @@ def valid_location(filename, cell, material, sources=None):
                 if prefix + start in known and prefix + end in known:
                     continue
             return False
-    return True
+    return found_citation
 
 
 def validate_report(stage, text, materials, history=None):
@@ -191,19 +200,19 @@ def validate_report(stage, text, materials, history=None):
                                "结果": ("通过", "待确认", "不适用"), "判断状态": ("事实判断", "原因假设", "待补数据"),
                                "处理": ("保留", "调整", "撤回")}
                     if label in options and cell not in options[label]:
-                        errors.append(name + "：" + label + "取值不合法")
+                        errors.append(name + "（" + row[0] + "）：" + label + "取值不合法；允许：" + '／'.join(options[label]))
                     if label == "关联问题" and not any(i.startswith("F") for i in business_ids(cell)):
                         errors.append(name + "：必须关联 F 编号")
                     if label in ("证据", "定义与来源", "证据或缺口", "新依据", "基线与来源"):
                         cited = [item[0] for item in file_mentions(cell, sources)]
                         exempt = cell.startswith("不适用：") or any(i.startswith("D") or i in definitions(historical) for i in business_ids(cell))
                         if not cited and not exempt:
-                            errors.append(name + "：来源须含材料名与定位，或已定义的编号")
+                            errors.append(name + "（" + row[0] + "）：来源须含材料名与定位，或已定义的编号")
                         for filename in cited:
                             if filename not in sources:
                                 errors.append("引用不存在的材料：" + filename)
                             elif not valid_location(filename, cell, sources[filename], sources):
-                                errors.append("来源定位无法回查：" + filename)
+                                errors.append(name + "（" + row[0] + "）：来源定位无法回查：" + filename)
     for filename, start, end in file_mentions(text, sources):
         if filename not in sources and re.match(r"\s*[／/]", text[end:]):
             errors.append("引用不存在的材料：" + filename)

@@ -1,10 +1,12 @@
 # 输入与运行说明
 
+以下是当前 Agent 直接分析的操作方式。1.5 新增的独立 DeepSeek API、商家项目版本及连续服务命令见 [服务运行说明](service-operation.md)，两条路径的执行证据分开记录。
+
 运行需要能读取与写入文件、执行 Python 3.10+ 的 Agent。先让当前 Agent 读取同目录上一级的 SKILL.md；命令本身不生成诊断。所有命令从 Skill 根目录运行，文件路径由使用者替换，输出目录应位于宿主可写的工作区。不同产品的安装方式及验证状态见 [宿主兼容说明](compatibility.md)。
 
 ## 依赖
 
-文本与 CSV／TSV 只需 Python 标准库；XLSX 使用 openpyxl，文本 PDF 使用 pypdf。可在自己的虚拟环境安装 `python3 -m pip install -r requirements.txt`。脚本不需要 API 密钥，也不自动上传文件；Agent 推理所用模型及其数据处理范围由当前宿主决定。
+文本与 CSV／TSV 只需 Python 标准库；XLSX 使用 openpyxl，文本 PDF 使用 pypdf。可在自己的虚拟环境安装 `python3 -m pip install -r requirements.txt`。本页的准备、计算与校验脚本不需要 API 密钥，也不自动上传文件；Agent 推理所用模型及其数据处理范围由当前宿主决定。独立 `service.py run` 会调用 DeepSeek，按服务运行说明另行配置。
 
 启动前运行 `python3 --version` 与 `python3 -c "import openpyxl, pypdf; print(openpyxl.__version__, pypdf.__version__)"` 核对环境。命令不可用或云端沙箱不允许安装依赖时，只继续受支持材料，并明确未读取的文件。宿主使用其他 Python 命令名时，替换为已确认的解释器路径；不要把本机绝对路径写进可复用配置。
 
