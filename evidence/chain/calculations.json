@@ -1,0 +1,542 @@
+[
+  {
+    "id": "month_prudent",
+    "expression": "shift*(b-a)*(1-cost_pct/100)-fee",
+    "variables": {
+      "shift": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_pct": {
+        "value": 60,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "fee": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "30店30天规划月审慎经营贡献差额，扣成本与一次执行费",
+    "status": "ok",
+    "value": 18000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "trial_prudent",
+    "expression": "shift*(b-a)*(1-cost_pct/100)-fee",
+    "variables": {
+      "shift": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_pct": {
+        "value": 60,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "fee": {
+        "value": 1400,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "首轮7天审慎贡献差额",
+    "status": "ok",
+    "value": 4200,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "trial_negative",
+    "expression": "shift*(b-a)*(1-cost_pct/100)-fee",
+    "variables": {
+      "shift": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_pct": {
+        "value": 60,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "fee": {
+        "value": 1400,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "首轮7天负例贡献差额，用于不扩量与止损判断",
+    "status": "ok",
+    "value": -4200,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "a_income_loss_per_yuan",
+    "expression": "(pre_a*control_post/control_pre-post_a)/(spend_pre-spend_post)",
+    "variables": {
+      "pre_a": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D5"
+          }
+        ]
+      },
+      "post_a": {
+        "value": 358400,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E5"
+          }
+        ]
+      },
+      "control_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D4"
+          }
+        ]
+      },
+      "control_post": {
+        "value": 378000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E4"
+          }
+        ]
+      },
+      "spend_pre": {
+        "value": 42000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!F5"
+          }
+        ]
+      },
+      "spend_post": {
+        "value": 28000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!H5"
+          }
+        ]
+      }
+    },
+    "unit": "元/元",
+    "purpose": "对照调整后每减少A一元的入账损失，变量均取原始单元格",
+    "status": "ok",
+    "value": 1.4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "b_income_gain_per_yuan",
+    "expression": "(post_b-pre_b*control_post/control_pre)/(spend_post-spend_pre)",
+    "variables": {
+      "pre_b": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D6"
+          }
+        ]
+      },
+      "post_b": {
+        "value": 420000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E6"
+          }
+        ]
+      },
+      "control_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D4"
+          }
+        ]
+      },
+      "control_post": {
+        "value": 378000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E4"
+          }
+        ]
+      },
+      "spend_pre": {
+        "value": 4666.67,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!G6"
+          }
+        ]
+      },
+      "spend_post": {
+        "value": 18666.67,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!I6"
+          }
+        ]
+      }
+    },
+    "unit": "元/元",
+    "purpose": "对照调整后每增加B一元的入账增加，变量均取原始单元格",
+    "status": "ok",
+    "value": 3,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_income_delta",
+    "expression": "shift*(b-a)",
+    "variables": {
+      "shift": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "月度审慎净结算差额，未扣订单变动成本",
+    "status": "ok",
+    "value": 60000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_variable_cost",
+    "expression": "-shift*(b-a)*cost_pct/100",
+    "variables": {
+      "shift": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_pct": {
+        "value": 60,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "月度新增订单变动成本，以负值进入收益拆解",
+    "status": "ok",
+    "value": -36000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_execution_cost",
+    "expression": "-fee",
+    "variables": {
+      "fee": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "月度执行费仅扣一次，以负值进入收益拆解",
+    "status": "ok",
+    "value": -6000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "b_day_total_per_store",
+    "expression": "b_day_total/stores",
+    "variables": {
+      "b_day_total": {
+        "value": 3000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "stores": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      }
+    },
+    "unit": "元/店/日",
+    "purpose": "均匀分配时B总额每店每日",
+    "status": "ok",
+    "value": 100,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "b_day_extra_per_store",
+    "expression": "shift/days/stores",
+    "variables": {
+      "shift": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "days": {
+        "value": 7,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "stores": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      }
+    },
+    "unit": "元/店/日",
+    "purpose": "每店每日新增B，与总额分开；按66.67元上限及每日总额约束",
+    "status": "ok",
+    "value": 66.66666666666667,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_a_after",
+    "expression": "a_before-shift",
+    "variables": {
+      "a_before": {
+        "value": 270000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "shift": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "两轮支持整月持续后A预算；当前不直接执行整月",
+    "status": "ok",
+    "value": 210000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_b_after",
+    "expression": "b_before+shift",
+    "variables": {
+      "b_before": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "shift": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "两轮支持整月持续后B预算；与A合计不变",
+    "status": "ok",
+    "value": 90000,
+    "missing_variables": [],
+    "assumptions": []
+  }
+]

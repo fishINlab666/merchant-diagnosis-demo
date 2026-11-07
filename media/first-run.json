@@ -1,0 +1,11 @@
+{
+  "original_seconds": 201.88,
+  "waiting_speed": 1.2491,
+  "intro_original_seconds": 8.0,
+  "ending_original_seconds": 34.0,
+  "target_seconds": 170,
+  "segments_removed": false,
+  "source": "first-run-original.webm",
+  "output": "first-run.mp4",
+  "description": "真实屏幕录制；只加速等待，不替换运行或结果画面"
+}

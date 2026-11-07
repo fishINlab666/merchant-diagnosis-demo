@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "mode": "host",
+  "runtime": "Codex",
+  "draft_count": 1,
+  "calculation_batches": [
+    {
+      "requests": "calculation-001.requests.json",
+      "results": "calculation-001.results.json"
+    }
+  ],
+  "calculations_sha256": "6077050749a25f98c98a595734407913b14ba9d7ea691525e89617a037a65ba8",
+  "model_calls": 0,
+  "corrections": 0,
+  "inference_executed": false,
+  "model_id": "未暴露",
+  "semantic_review": "未确认",
+  "created_at": "2026-11-07T13:18:27.128529+00:00",
+  "business_review": {
+    "status": "not_independently_reviewed",
+    "required": "host_self_check"
+  },
+  "business_reviews": [],
+  "business_revisions": 0,
+  "completed_at": "2026-11-07T13:20:42.823747+00:00",
+  "report": "report.html",
+  "report_sha256": "6ea39ad0f2cb340eb98d27f9a6211aa65a5ee2c6329d23a7a3208f6fe756b31a"
+}

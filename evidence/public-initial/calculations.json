@@ -1,0 +1,76 @@
+[
+  {
+    "id": "contribution_change_unknown",
+    "expression": "settlement_change-variable_cost_change-ad_change-execution_fee",
+    "variables": {
+      "settlement_change": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:7"
+          }
+        ],
+        "assumption": "公开原件明确没有经营贡献信息，未提供方案前后可比净结算差额；未知，不假定为零。"
+      },
+      "variable_cost_change": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:7"
+          }
+        ],
+        "assumption": "原件没有成本信息，方案对应订单变动成本差额未知。"
+      },
+      "ad_change": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:7"
+          }
+        ],
+        "assumption": "原件没有预算信息，未核实方案期间广告费用变化；未知，不提出调拨预算。"
+      },
+      "execution_fee": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:7"
+          }
+        ],
+        "assumption": "实际页面维护工时和新增执行费用未提供；未知，不承诺零成本。"
+      }
+    },
+    "unit": "元",
+    "purpose": "保留经营贡献变化为未知：可比净结算变化减对应变动成本变化、广告变化与新增执行费；没有数值依据，不估收益。",
+    "status": "unknown",
+    "value": null,
+    "missing_variables": [
+      "ad_change",
+      "execution_fee",
+      "settlement_change",
+      "variable_cost_change"
+    ],
+    "assumptions": [
+      {
+        "variable": "settlement_change",
+        "assumption": "公开原件明确没有经营贡献信息，未提供方案前后可比净结算差额；未知，不假定为零。"
+      },
+      {
+        "variable": "variable_cost_change",
+        "assumption": "原件没有成本信息，方案对应订单变动成本差额未知。"
+      },
+      {
+        "variable": "ad_change",
+        "assumption": "原件没有预算信息，未核实方案期间广告费用变化；未知，不提出调拨预算。"
+      },
+      {
+        "variable": "execution_fee",
+        "assumption": "实际页面维护工时和新增执行费用未提供；未知，不承诺零成本。"
+      }
+    ]
+  }
+]
