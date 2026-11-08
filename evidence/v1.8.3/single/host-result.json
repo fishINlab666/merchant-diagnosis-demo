@@ -1,0 +1,13 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 307.27,
+  "report_exists": true,
+  "case": "single",
+  "inputs": [
+    "definitions.md",
+    "public.md",
+    "暖禾热饭_模拟原始台账.xlsx"
+  ],
+  "source": "candidate 1.8.3 ZIP",
+  "user_intervention": false
+}

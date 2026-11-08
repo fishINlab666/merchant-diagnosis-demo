@@ -1,0 +1,6419 @@
+[
+  {
+    "id": "pre_orders",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)",
+    "variables": {
+      "x0": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E6"
+          }
+        ]
+      },
+      "x2": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E7"
+          }
+        ]
+      },
+      "x3": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E8"
+          }
+        ]
+      },
+      "x4": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E9"
+          }
+        ]
+      },
+      "x5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E10"
+          }
+        ]
+      },
+      "x6": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E11"
+          }
+        ]
+      },
+      "x7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E12"
+          }
+        ]
+      },
+      "x8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E13"
+          }
+        ]
+      },
+      "x9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E14"
+          }
+        ]
+      },
+      "x10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E15"
+          }
+        ]
+      },
+      "x11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E16"
+          }
+        ]
+      },
+      "x12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E17"
+          }
+        ]
+      },
+      "x13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E18"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "pre_orders",
+    "status": "ok",
+    "value": 4200,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "pre_refunds",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)",
+    "variables": {
+      "x0": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F6"
+          }
+        ]
+      },
+      "x2": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F7"
+          }
+        ]
+      },
+      "x3": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F8"
+          }
+        ]
+      },
+      "x4": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F9"
+          }
+        ]
+      },
+      "x5": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F10"
+          }
+        ]
+      },
+      "x6": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F11"
+          }
+        ]
+      },
+      "x7": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F12"
+          }
+        ]
+      },
+      "x8": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F13"
+          }
+        ]
+      },
+      "x9": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F14"
+          }
+        ]
+      },
+      "x10": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F15"
+          }
+        ]
+      },
+      "x11": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F16"
+          }
+        ]
+      },
+      "x12": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F17"
+          }
+        ]
+      },
+      "x13": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F18"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "pre_refunds",
+    "status": "ok",
+    "value": 168,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "pre_cold",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)",
+    "variables": {
+      "x0": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G6"
+          }
+        ]
+      },
+      "x2": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G7"
+          }
+        ]
+      },
+      "x3": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G8"
+          }
+        ]
+      },
+      "x4": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G9"
+          }
+        ]
+      },
+      "x5": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G10"
+          }
+        ]
+      },
+      "x6": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G11"
+          }
+        ]
+      },
+      "x7": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G12"
+          }
+        ]
+      },
+      "x8": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G13"
+          }
+        ]
+      },
+      "x9": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G14"
+          }
+        ]
+      },
+      "x10": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G15"
+          }
+        ]
+      },
+      "x11": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G16"
+          }
+        ]
+      },
+      "x12": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G17"
+          }
+        ]
+      },
+      "x13": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G18"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "pre_cold",
+    "status": "ok",
+    "value": 84,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "pre_other",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)",
+    "variables": {
+      "x0": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H6"
+          }
+        ]
+      },
+      "x2": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H7"
+          }
+        ]
+      },
+      "x3": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H8"
+          }
+        ]
+      },
+      "x4": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H9"
+          }
+        ]
+      },
+      "x5": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H10"
+          }
+        ]
+      },
+      "x6": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H11"
+          }
+        ]
+      },
+      "x7": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H12"
+          }
+        ]
+      },
+      "x8": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H13"
+          }
+        ]
+      },
+      "x9": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H14"
+          }
+        ]
+      },
+      "x10": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H15"
+          }
+        ]
+      },
+      "x11": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H16"
+          }
+        ]
+      },
+      "x12": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H17"
+          }
+        ]
+      },
+      "x13": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H18"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "pre_other",
+    "status": "ok",
+    "value": 84,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "pre_income",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)*10000",
+    "variables": {
+      "x0": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K6"
+          }
+        ]
+      },
+      "x2": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K7"
+          }
+        ]
+      },
+      "x3": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K8"
+          }
+        ]
+      },
+      "x4": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K9"
+          }
+        ]
+      },
+      "x5": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K10"
+          }
+        ]
+      },
+      "x6": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K11"
+          }
+        ]
+      },
+      "x7": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K12"
+          }
+        ]
+      },
+      "x8": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K13"
+          }
+        ]
+      },
+      "x9": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K14"
+          }
+        ]
+      },
+      "x10": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K15"
+          }
+        ]
+      },
+      "x11": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K16"
+          }
+        ]
+      },
+      "x12": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K17"
+          }
+        ]
+      },
+      "x13": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K18"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "pre_income",
+    "status": "ok",
+    "value": 141120,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "pre_rate",
+    "expression": "sum(r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13)/sum(n0,n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13)*100",
+    "variables": {
+      "r0": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F5"
+          }
+        ]
+      },
+      "r1": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F6"
+          }
+        ]
+      },
+      "r2": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F7"
+          }
+        ]
+      },
+      "r3": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F8"
+          }
+        ]
+      },
+      "r4": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F9"
+          }
+        ]
+      },
+      "r5": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F10"
+          }
+        ]
+      },
+      "r6": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F11"
+          }
+        ]
+      },
+      "r7": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F12"
+          }
+        ]
+      },
+      "r8": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F13"
+          }
+        ]
+      },
+      "r9": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F14"
+          }
+        ]
+      },
+      "r10": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F15"
+          }
+        ]
+      },
+      "r11": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F16"
+          }
+        ]
+      },
+      "r12": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F17"
+          }
+        ]
+      },
+      "r13": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F18"
+          }
+        ]
+      },
+      "n0": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E5"
+          }
+        ]
+      },
+      "n1": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E6"
+          }
+        ]
+      },
+      "n2": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E7"
+          }
+        ]
+      },
+      "n3": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E8"
+          }
+        ]
+      },
+      "n4": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E9"
+          }
+        ]
+      },
+      "n5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E10"
+          }
+        ]
+      },
+      "n6": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E11"
+          }
+        ]
+      },
+      "n7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E12"
+          }
+        ]
+      },
+      "n8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E13"
+          }
+        ]
+      },
+      "n9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E14"
+          }
+        ]
+      },
+      "n10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E15"
+          }
+        ]
+      },
+      "n11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E16"
+          }
+        ]
+      },
+      "n12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E17"
+          }
+        ]
+      },
+      "n13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E18"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "pre_rate",
+    "status": "ok",
+    "value": 4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "pre_contribution",
+    "expression": "sum(i0,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13)*10000-sum(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27)",
+    "variables": {
+      "i0": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K5"
+          }
+        ]
+      },
+      "i1": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K6"
+          }
+        ]
+      },
+      "i2": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K7"
+          }
+        ]
+      },
+      "i3": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K8"
+          }
+        ]
+      },
+      "i4": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K9"
+          }
+        ]
+      },
+      "i5": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K10"
+          }
+        ]
+      },
+      "i6": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K11"
+          }
+        ]
+      },
+      "i7": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K12"
+          }
+        ]
+      },
+      "i8": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K13"
+          }
+        ]
+      },
+      "i9": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K14"
+          }
+        ]
+      },
+      "i10": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K15"
+          }
+        ]
+      },
+      "i11": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K16"
+          }
+        ]
+      },
+      "i12": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K17"
+          }
+        ]
+      },
+      "i13": {
+        "value": 1.008,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K18"
+          }
+        ]
+      },
+      "c0": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!B6"
+          }
+        ]
+      },
+      "c1": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!C6"
+          }
+        ]
+      },
+      "c2": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!D6"
+          }
+        ]
+      },
+      "c3": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!E6"
+          }
+        ]
+      },
+      "c4": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!F6"
+          }
+        ]
+      },
+      "c5": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!G6"
+          }
+        ]
+      },
+      "c6": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!H6"
+          }
+        ]
+      },
+      "c7": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!I6"
+          }
+        ]
+      },
+      "c8": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!J6"
+          }
+        ]
+      },
+      "c9": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!K6"
+          }
+        ]
+      },
+      "c10": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!L6"
+          }
+        ]
+      },
+      "c11": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!M6"
+          }
+        ]
+      },
+      "c12": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!N6"
+          }
+        ]
+      },
+      "c13": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!O6"
+          }
+        ]
+      },
+      "c14": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!B7"
+          }
+        ]
+      },
+      "c15": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!C7"
+          }
+        ]
+      },
+      "c16": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!D7"
+          }
+        ]
+      },
+      "c17": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!E7"
+          }
+        ]
+      },
+      "c18": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!F7"
+          }
+        ]
+      },
+      "c19": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!G7"
+          }
+        ]
+      },
+      "c20": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!H7"
+          }
+        ]
+      },
+      "c21": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!I7"
+          }
+        ]
+      },
+      "c22": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!J7"
+          }
+        ]
+      },
+      "c23": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!K7"
+          }
+        ]
+      },
+      "c24": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!L7"
+          }
+        ]
+      },
+      "c25": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!M7"
+          }
+        ]
+      },
+      "c26": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!N7"
+          }
+        ]
+      },
+      "c27": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!O7"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "pre_contribution",
+    "status": "ok",
+    "value": 58800,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "post_orders",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)",
+    "variables": {
+      "x0": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E22"
+          }
+        ]
+      },
+      "x1": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E23"
+          }
+        ]
+      },
+      "x2": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E24"
+          }
+        ]
+      },
+      "x3": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E25"
+          }
+        ]
+      },
+      "x4": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E26"
+          }
+        ]
+      },
+      "x5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E27"
+          }
+        ]
+      },
+      "x6": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E28"
+          }
+        ]
+      },
+      "x7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E29"
+          }
+        ]
+      },
+      "x8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E30"
+          }
+        ]
+      },
+      "x9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E31"
+          }
+        ]
+      },
+      "x10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E32"
+          }
+        ]
+      },
+      "x11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E33"
+          }
+        ]
+      },
+      "x12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E34"
+          }
+        ]
+      },
+      "x13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E35"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "post_orders",
+    "status": "ok",
+    "value": 4200,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "post_refunds",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)",
+    "variables": {
+      "x0": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F22"
+          }
+        ]
+      },
+      "x1": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F23"
+          }
+        ]
+      },
+      "x2": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F24"
+          }
+        ]
+      },
+      "x3": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F25"
+          }
+        ]
+      },
+      "x4": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F26"
+          }
+        ]
+      },
+      "x5": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F27"
+          }
+        ]
+      },
+      "x6": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F28"
+          }
+        ]
+      },
+      "x7": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F29"
+          }
+        ]
+      },
+      "x8": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F30"
+          }
+        ]
+      },
+      "x9": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F31"
+          }
+        ]
+      },
+      "x10": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F32"
+          }
+        ]
+      },
+      "x11": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F33"
+          }
+        ]
+      },
+      "x12": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F34"
+          }
+        ]
+      },
+      "x13": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F35"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "post_refunds",
+    "status": "ok",
+    "value": 336,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "post_cold",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)",
+    "variables": {
+      "x0": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G22"
+          }
+        ]
+      },
+      "x1": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G23"
+          }
+        ]
+      },
+      "x2": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G24"
+          }
+        ]
+      },
+      "x3": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G25"
+          }
+        ]
+      },
+      "x4": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G26"
+          }
+        ]
+      },
+      "x5": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G27"
+          }
+        ]
+      },
+      "x6": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G28"
+          }
+        ]
+      },
+      "x7": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G29"
+          }
+        ]
+      },
+      "x8": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G30"
+          }
+        ]
+      },
+      "x9": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G31"
+          }
+        ]
+      },
+      "x10": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G32"
+          }
+        ]
+      },
+      "x11": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G33"
+          }
+        ]
+      },
+      "x12": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G34"
+          }
+        ]
+      },
+      "x13": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!G35"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "post_cold",
+    "status": "ok",
+    "value": 252,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "post_other",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)",
+    "variables": {
+      "x0": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H22"
+          }
+        ]
+      },
+      "x1": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H23"
+          }
+        ]
+      },
+      "x2": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H24"
+          }
+        ]
+      },
+      "x3": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H25"
+          }
+        ]
+      },
+      "x4": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H26"
+          }
+        ]
+      },
+      "x5": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H27"
+          }
+        ]
+      },
+      "x6": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H28"
+          }
+        ]
+      },
+      "x7": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H29"
+          }
+        ]
+      },
+      "x8": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H30"
+          }
+        ]
+      },
+      "x9": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H31"
+          }
+        ]
+      },
+      "x10": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H32"
+          }
+        ]
+      },
+      "x11": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H33"
+          }
+        ]
+      },
+      "x12": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H34"
+          }
+        ]
+      },
+      "x13": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!H35"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "post_other",
+    "status": "ok",
+    "value": 84,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "post_income",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)*10000",
+    "variables": {
+      "x0": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K22"
+          }
+        ]
+      },
+      "x1": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K23"
+          }
+        ]
+      },
+      "x2": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K24"
+          }
+        ]
+      },
+      "x3": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K25"
+          }
+        ]
+      },
+      "x4": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K26"
+          }
+        ]
+      },
+      "x5": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K27"
+          }
+        ]
+      },
+      "x6": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K28"
+          }
+        ]
+      },
+      "x7": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K29"
+          }
+        ]
+      },
+      "x8": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K30"
+          }
+        ]
+      },
+      "x9": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K31"
+          }
+        ]
+      },
+      "x10": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K32"
+          }
+        ]
+      },
+      "x11": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K33"
+          }
+        ]
+      },
+      "x12": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K34"
+          }
+        ]
+      },
+      "x13": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K35"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "post_income",
+    "status": "ok",
+    "value": 135240,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "post_rate",
+    "expression": "sum(r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13)/sum(n0,n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13)*100",
+    "variables": {
+      "r0": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F22"
+          }
+        ]
+      },
+      "r1": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F23"
+          }
+        ]
+      },
+      "r2": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F24"
+          }
+        ]
+      },
+      "r3": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F25"
+          }
+        ]
+      },
+      "r4": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F26"
+          }
+        ]
+      },
+      "r5": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F27"
+          }
+        ]
+      },
+      "r6": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F28"
+          }
+        ]
+      },
+      "r7": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F29"
+          }
+        ]
+      },
+      "r8": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F30"
+          }
+        ]
+      },
+      "r9": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F31"
+          }
+        ]
+      },
+      "r10": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F32"
+          }
+        ]
+      },
+      "r11": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F33"
+          }
+        ]
+      },
+      "r12": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F34"
+          }
+        ]
+      },
+      "r13": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F35"
+          }
+        ]
+      },
+      "n0": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E22"
+          }
+        ]
+      },
+      "n1": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E23"
+          }
+        ]
+      },
+      "n2": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E24"
+          }
+        ]
+      },
+      "n3": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E25"
+          }
+        ]
+      },
+      "n4": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E26"
+          }
+        ]
+      },
+      "n5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E27"
+          }
+        ]
+      },
+      "n6": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E28"
+          }
+        ]
+      },
+      "n7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E29"
+          }
+        ]
+      },
+      "n8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E30"
+          }
+        ]
+      },
+      "n9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E31"
+          }
+        ]
+      },
+      "n10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E32"
+          }
+        ]
+      },
+      "n11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E33"
+          }
+        ]
+      },
+      "n12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E34"
+          }
+        ]
+      },
+      "n13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E35"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "post_rate",
+    "status": "ok",
+    "value": 8,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "post_contribution",
+    "expression": "sum(i0,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13)*10000-sum(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27)",
+    "variables": {
+      "i0": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K22"
+          }
+        ]
+      },
+      "i1": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K23"
+          }
+        ]
+      },
+      "i2": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K24"
+          }
+        ]
+      },
+      "i3": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K25"
+          }
+        ]
+      },
+      "i4": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K26"
+          }
+        ]
+      },
+      "i5": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K27"
+          }
+        ]
+      },
+      "i6": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K28"
+          }
+        ]
+      },
+      "i7": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K29"
+          }
+        ]
+      },
+      "i8": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K30"
+          }
+        ]
+      },
+      "i9": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K31"
+          }
+        ]
+      },
+      "i10": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K32"
+          }
+        ]
+      },
+      "i11": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K33"
+          }
+        ]
+      },
+      "i12": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K34"
+          }
+        ]
+      },
+      "i13": {
+        "value": 0.966,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!K35"
+          }
+        ]
+      },
+      "c0": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!B11"
+          }
+        ]
+      },
+      "c1": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!C11"
+          }
+        ]
+      },
+      "c2": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!D11"
+          }
+        ]
+      },
+      "c3": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!E11"
+          }
+        ]
+      },
+      "c4": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!F11"
+          }
+        ]
+      },
+      "c5": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!G11"
+          }
+        ]
+      },
+      "c6": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!H11"
+          }
+        ]
+      },
+      "c7": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!I11"
+          }
+        ]
+      },
+      "c8": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!J11"
+          }
+        ]
+      },
+      "c9": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!K11"
+          }
+        ]
+      },
+      "c10": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!L11"
+          }
+        ]
+      },
+      "c11": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!M11"
+          }
+        ]
+      },
+      "c12": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!N11"
+          }
+        ]
+      },
+      "c13": {
+        "value": 5460,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!O11"
+          }
+        ]
+      },
+      "c14": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!B12"
+          }
+        ]
+      },
+      "c15": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!C12"
+          }
+        ]
+      },
+      "c16": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!D12"
+          }
+        ]
+      },
+      "c17": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!E12"
+          }
+        ]
+      },
+      "c18": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!F12"
+          }
+        ]
+      },
+      "c19": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!G12"
+          }
+        ]
+      },
+      "c20": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!H12"
+          }
+        ]
+      },
+      "c21": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!I12"
+          }
+        ]
+      },
+      "c22": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!J12"
+          }
+        ]
+      },
+      "c23": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!K12"
+          }
+        ]
+      },
+      "c24": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!L12"
+          }
+        ]
+      },
+      "c25": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!M12"
+          }
+        ]
+      },
+      "c26": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!N12"
+          }
+        ]
+      },
+      "c27": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!O12"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "post_contribution",
+    "status": "ok",
+    "value": 56280,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "warm_orders",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D7"
+          }
+        ]
+      },
+      "x2": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D9"
+          }
+        ]
+      },
+      "x3": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D11"
+          }
+        ]
+      },
+      "x4": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D13"
+          }
+        ]
+      },
+      "x5": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D15"
+          }
+        ]
+      },
+      "x6": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D17"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "warm_orders",
+    "status": "ok",
+    "value": 1050,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "warm_refunds",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E7"
+          }
+        ]
+      },
+      "x2": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E9"
+          }
+        ]
+      },
+      "x3": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E11"
+          }
+        ]
+      },
+      "x4": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E13"
+          }
+        ]
+      },
+      "x5": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E15"
+          }
+        ]
+      },
+      "x6": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E17"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "warm_refunds",
+    "status": "ok",
+    "value": 42,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "warm_cold",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F7"
+          }
+        ]
+      },
+      "x2": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F9"
+          }
+        ]
+      },
+      "x3": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F11"
+          }
+        ]
+      },
+      "x4": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F13"
+          }
+        ]
+      },
+      "x5": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F15"
+          }
+        ]
+      },
+      "x6": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F17"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "warm_cold",
+    "status": "ok",
+    "value": 21,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "warm_other",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G7"
+          }
+        ]
+      },
+      "x2": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G9"
+          }
+        ]
+      },
+      "x3": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G11"
+          }
+        ]
+      },
+      "x4": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G13"
+          }
+        ]
+      },
+      "x5": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G15"
+          }
+        ]
+      },
+      "x6": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G17"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "warm_other",
+    "status": "ok",
+    "value": 21,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "warm_income",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J5"
+          }
+        ]
+      },
+      "x1": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J7"
+          }
+        ]
+      },
+      "x2": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J9"
+          }
+        ]
+      },
+      "x3": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J11"
+          }
+        ]
+      },
+      "x4": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J13"
+          }
+        ]
+      },
+      "x5": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J15"
+          }
+        ]
+      },
+      "x6": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J17"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "warm_income",
+    "status": "ok",
+    "value": 35280,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "warm_rate",
+    "expression": "sum(r0,r1,r2,r3,r4,r5,r6)/sum(n0,n1,n2,n3,n4,n5,n6)*100",
+    "variables": {
+      "r0": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E5"
+          }
+        ]
+      },
+      "r1": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E7"
+          }
+        ]
+      },
+      "r2": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E9"
+          }
+        ]
+      },
+      "r3": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E11"
+          }
+        ]
+      },
+      "r4": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E13"
+          }
+        ]
+      },
+      "r5": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E15"
+          }
+        ]
+      },
+      "r6": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E17"
+          }
+        ]
+      },
+      "n0": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D5"
+          }
+        ]
+      },
+      "n1": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D7"
+          }
+        ]
+      },
+      "n2": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D9"
+          }
+        ]
+      },
+      "n3": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D11"
+          }
+        ]
+      },
+      "n4": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D13"
+          }
+        ]
+      },
+      "n5": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D15"
+          }
+        ]
+      },
+      "n6": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D17"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "warm_rate",
+    "status": "ok",
+    "value": 4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "warm_contribution",
+    "expression": "sum(i0,i1,i2,i3,i4,i5,i6)-sum(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13)",
+    "variables": {
+      "i0": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J5"
+          }
+        ]
+      },
+      "i1": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J7"
+          }
+        ]
+      },
+      "i2": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J9"
+          }
+        ]
+      },
+      "i3": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J11"
+          }
+        ]
+      },
+      "i4": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J13"
+          }
+        ]
+      },
+      "i5": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J15"
+          }
+        ]
+      },
+      "i6": {
+        "value": 5040,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J17"
+          }
+        ]
+      },
+      "c0": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!B16"
+          }
+        ]
+      },
+      "c1": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!D16"
+          }
+        ]
+      },
+      "c2": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!F16"
+          }
+        ]
+      },
+      "c3": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!H16"
+          }
+        ]
+      },
+      "c4": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!J16"
+          }
+        ]
+      },
+      "c5": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!L16"
+          }
+        ]
+      },
+      "c6": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!N16"
+          }
+        ]
+      },
+      "c7": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!B17"
+          }
+        ]
+      },
+      "c8": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!D17"
+          }
+        ]
+      },
+      "c9": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!F17"
+          }
+        ]
+      },
+      "c10": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!H17"
+          }
+        ]
+      },
+      "c11": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!J17"
+          }
+        ]
+      },
+      "c12": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!L17"
+          }
+        ]
+      },
+      "c13": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!N17"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "warm_contribution",
+    "status": "ok",
+    "value": 14700,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "thin_orders",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D6"
+          }
+        ]
+      },
+      "x1": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D8"
+          }
+        ]
+      },
+      "x2": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D10"
+          }
+        ]
+      },
+      "x3": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D12"
+          }
+        ]
+      },
+      "x4": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D14"
+          }
+        ]
+      },
+      "x5": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D16"
+          }
+        ]
+      },
+      "x6": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D18"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "thin_orders",
+    "status": "ok",
+    "value": 1050,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "thin_refunds",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E6"
+          }
+        ]
+      },
+      "x1": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E8"
+          }
+        ]
+      },
+      "x2": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E10"
+          }
+        ]
+      },
+      "x3": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E12"
+          }
+        ]
+      },
+      "x4": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E14"
+          }
+        ]
+      },
+      "x5": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E16"
+          }
+        ]
+      },
+      "x6": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E18"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "thin_refunds",
+    "status": "ok",
+    "value": 84,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "thin_cold",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F6"
+          }
+        ]
+      },
+      "x1": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F8"
+          }
+        ]
+      },
+      "x2": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F10"
+          }
+        ]
+      },
+      "x3": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F12"
+          }
+        ]
+      },
+      "x4": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F14"
+          }
+        ]
+      },
+      "x5": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F16"
+          }
+        ]
+      },
+      "x6": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!F18"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "thin_cold",
+    "status": "ok",
+    "value": 63,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "thin_other",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G6"
+          }
+        ]
+      },
+      "x1": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G8"
+          }
+        ]
+      },
+      "x2": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G10"
+          }
+        ]
+      },
+      "x3": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G12"
+          }
+        ]
+      },
+      "x4": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G14"
+          }
+        ]
+      },
+      "x5": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G16"
+          }
+        ]
+      },
+      "x6": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!G18"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "thin_other",
+    "status": "ok",
+    "value": 21,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "thin_income",
+    "expression": "sum(x0,x1,x2,x3,x4,x5,x6)",
+    "variables": {
+      "x0": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J6"
+          }
+        ]
+      },
+      "x1": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J8"
+          }
+        ]
+      },
+      "x2": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J10"
+          }
+        ]
+      },
+      "x3": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J12"
+          }
+        ]
+      },
+      "x4": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J14"
+          }
+        ]
+      },
+      "x5": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J16"
+          }
+        ]
+      },
+      "x6": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J18"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "thin_income",
+    "status": "ok",
+    "value": 33810,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "thin_rate",
+    "expression": "sum(r0,r1,r2,r3,r4,r5,r6)/sum(n0,n1,n2,n3,n4,n5,n6)*100",
+    "variables": {
+      "r0": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E6"
+          }
+        ]
+      },
+      "r1": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E8"
+          }
+        ]
+      },
+      "r2": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E10"
+          }
+        ]
+      },
+      "r3": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E12"
+          }
+        ]
+      },
+      "r4": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E14"
+          }
+        ]
+      },
+      "r5": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E16"
+          }
+        ]
+      },
+      "r6": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E18"
+          }
+        ]
+      },
+      "n0": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D6"
+          }
+        ]
+      },
+      "n1": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D8"
+          }
+        ]
+      },
+      "n2": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D10"
+          }
+        ]
+      },
+      "n3": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D12"
+          }
+        ]
+      },
+      "n4": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D14"
+          }
+        ]
+      },
+      "n5": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D16"
+          }
+        ]
+      },
+      "n6": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D18"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "thin_rate",
+    "status": "ok",
+    "value": 8,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "thin_contribution",
+    "expression": "sum(i0,i1,i2,i3,i4,i5,i6)-sum(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13)",
+    "variables": {
+      "i0": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J6"
+          }
+        ]
+      },
+      "i1": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J8"
+          }
+        ]
+      },
+      "i2": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J10"
+          }
+        ]
+      },
+      "i3": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J12"
+          }
+        ]
+      },
+      "i4": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J14"
+          }
+        ]
+      },
+      "i5": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J16"
+          }
+        ]
+      },
+      "i6": {
+        "value": 4830,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!J18"
+          }
+        ]
+      },
+      "c0": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!C16"
+          }
+        ]
+      },
+      "c1": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!E16"
+          }
+        ]
+      },
+      "c2": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!G16"
+          }
+        ]
+      },
+      "c3": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!I16"
+          }
+        ]
+      },
+      "c4": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!K16"
+          }
+        ]
+      },
+      "c5": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!M16"
+          }
+        ]
+      },
+      "c6": {
+        "value": 2730,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!O16"
+          }
+        ]
+      },
+      "c7": {
+        "value": 90,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!C17"
+          }
+        ]
+      },
+      "c8": {
+        "value": 90,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!E17"
+          }
+        ]
+      },
+      "c9": {
+        "value": 90,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!G17"
+          }
+        ]
+      },
+      "c10": {
+        "value": 90,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!I17"
+          }
+        ]
+      },
+      "c11": {
+        "value": 90,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!K17"
+          }
+        ]
+      },
+      "c12": {
+        "value": 90,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!M17"
+          }
+        ]
+      },
+      "c13": {
+        "value": 90,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:成本横排!O17"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "thin_contribution",
+    "status": "ok",
+    "value": 14070,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "monthly_cautious",
+    "expression": "days*n*((sum(r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13)/sum(o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13))-rate)*loss-days*n*(pw-pt)-days*hours*wage-ad-ret",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      },
+      "r0": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F22"
+          }
+        ]
+      },
+      "r1": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F23"
+          }
+        ]
+      },
+      "r2": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F24"
+          }
+        ]
+      },
+      "r3": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F25"
+          }
+        ]
+      },
+      "r4": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F26"
+          }
+        ]
+      },
+      "r5": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F27"
+          }
+        ]
+      },
+      "r6": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F28"
+          }
+        ]
+      },
+      "r7": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F29"
+          }
+        ]
+      },
+      "r8": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F30"
+          }
+        ]
+      },
+      "r9": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F31"
+          }
+        ]
+      },
+      "r10": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F32"
+          }
+        ]
+      },
+      "r11": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F33"
+          }
+        ]
+      },
+      "r12": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F34"
+          }
+        ]
+      },
+      "r13": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F35"
+          }
+        ]
+      },
+      "o0": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E22"
+          }
+        ]
+      },
+      "o1": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E23"
+          }
+        ]
+      },
+      "o2": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E24"
+          }
+        ]
+      },
+      "o3": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E25"
+          }
+        ]
+      },
+      "o4": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E26"
+          }
+        ]
+      },
+      "o5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E27"
+          }
+        ]
+      },
+      "o6": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E28"
+          }
+        ]
+      },
+      "o7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E29"
+          }
+        ]
+      },
+      "o8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E30"
+          }
+        ]
+      },
+      "o9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E31"
+          }
+        ]
+      },
+      "o10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E32"
+          }
+        ]
+      },
+      "o11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E33"
+          }
+        ]
+      },
+      "o12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E34"
+          }
+        ]
+      },
+      "o13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E35"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "monthly_cautious",
+    "status": "ok",
+    "value": 1650,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "monthly_recovered_settlement",
+    "expression": "days*n*((sum(r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13)/sum(o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13))-rate)*loss",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      },
+      "r0": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F22"
+          }
+        ]
+      },
+      "r1": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F23"
+          }
+        ]
+      },
+      "r2": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F24"
+          }
+        ]
+      },
+      "r3": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F25"
+          }
+        ]
+      },
+      "r4": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F26"
+          }
+        ]
+      },
+      "r5": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F27"
+          }
+        ]
+      },
+      "r6": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F28"
+          }
+        ]
+      },
+      "r7": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F29"
+          }
+        ]
+      },
+      "r8": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F30"
+          }
+        ]
+      },
+      "r9": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F31"
+          }
+        ]
+      },
+      "r10": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F32"
+          }
+        ]
+      },
+      "r11": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F33"
+          }
+        ]
+      },
+      "r12": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F34"
+          }
+        ]
+      },
+      "r13": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F35"
+          }
+        ]
+      },
+      "o0": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E22"
+          }
+        ]
+      },
+      "o1": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E23"
+          }
+        ]
+      },
+      "o2": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E24"
+          }
+        ]
+      },
+      "o3": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E25"
+          }
+        ]
+      },
+      "o4": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E26"
+          }
+        ]
+      },
+      "o5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E27"
+          }
+        ]
+      },
+      "o6": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E28"
+          }
+        ]
+      },
+      "o7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E29"
+          }
+        ]
+      },
+      "o8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E30"
+          }
+        ]
+      },
+      "o9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E31"
+          }
+        ]
+      },
+      "o10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E32"
+          }
+        ]
+      },
+      "o11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E33"
+          }
+        ]
+      },
+      "o12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E34"
+          }
+        ]
+      },
+      "o13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E35"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "monthly_recovered_settlement",
+    "status": "ok",
+    "value": 9450,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "monthly_pack_increment",
+    "expression": "days*n*(pw-pt)",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "monthly_pack_increment",
+    "status": "ok",
+    "value": 7200,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "monthly_execution",
+    "expression": "days*hours*wage",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "monthly_execution",
+    "status": "ok",
+    "value": 600,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "monthly_total_pack",
+    "expression": "days*n*pw",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "monthly_total_pack",
+    "status": "ok",
+    "value": 12600,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "monthly_base",
+    "expression": "days*n*((sum(r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13)/sum(o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13))-(sum(wr0,wr1,wr2,wr3,wr4,wr5,wr6)/sum(wn0,wn1,wn2,wn3,wn4,wn5,wn6)))*loss-days*n*(pw-pt)-days*hours*wage-ad-ret",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      },
+      "r0": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F22"
+          }
+        ]
+      },
+      "r1": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F23"
+          }
+        ]
+      },
+      "r2": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F24"
+          }
+        ]
+      },
+      "r3": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F25"
+          }
+        ]
+      },
+      "r4": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F26"
+          }
+        ]
+      },
+      "r5": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F27"
+          }
+        ]
+      },
+      "r6": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F28"
+          }
+        ]
+      },
+      "r7": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F29"
+          }
+        ]
+      },
+      "r8": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F30"
+          }
+        ]
+      },
+      "r9": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F31"
+          }
+        ]
+      },
+      "r10": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F32"
+          }
+        ]
+      },
+      "r11": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F33"
+          }
+        ]
+      },
+      "r12": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F34"
+          }
+        ]
+      },
+      "r13": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F35"
+          }
+        ]
+      },
+      "o0": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E22"
+          }
+        ]
+      },
+      "o1": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E23"
+          }
+        ]
+      },
+      "o2": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E24"
+          }
+        ]
+      },
+      "o3": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E25"
+          }
+        ]
+      },
+      "o4": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E26"
+          }
+        ]
+      },
+      "o5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E27"
+          }
+        ]
+      },
+      "o6": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E28"
+          }
+        ]
+      },
+      "o7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E29"
+          }
+        ]
+      },
+      "o8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E30"
+          }
+        ]
+      },
+      "o9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E31"
+          }
+        ]
+      },
+      "o10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E32"
+          }
+        ]
+      },
+      "o11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E33"
+          }
+        ]
+      },
+      "o12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E34"
+          }
+        ]
+      },
+      "o13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E35"
+          }
+        ]
+      },
+      "wr0": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E5"
+          }
+        ]
+      },
+      "wr1": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E7"
+          }
+        ]
+      },
+      "wr2": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E9"
+          }
+        ]
+      },
+      "wr3": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E11"
+          }
+        ]
+      },
+      "wr4": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E13"
+          }
+        ]
+      },
+      "wr5": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E15"
+          }
+        ]
+      },
+      "wr6": {
+        "value": 6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!E17"
+          }
+        ]
+      },
+      "wn0": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D5"
+          }
+        ]
+      },
+      "wn1": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D7"
+          }
+        ]
+      },
+      "wn2": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D9"
+          }
+        ]
+      },
+      "wn3": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D11"
+          }
+        ]
+      },
+      "wn4": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D13"
+          }
+        ]
+      },
+      "wn5": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D15"
+          }
+        ]
+      },
+      "wn6": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:同窗试行!D17"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "monthly_base",
+    "status": "ok",
+    "value": 4800,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "breakeven_rate",
+    "expression": "((sum(r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13)/sum(o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13))-((pw-pt)+hours*wage/n)/loss)*100",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      },
+      "r0": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F22"
+          }
+        ]
+      },
+      "r1": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F23"
+          }
+        ]
+      },
+      "r2": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F24"
+          }
+        ]
+      },
+      "r3": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F25"
+          }
+        ]
+      },
+      "r4": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F26"
+          }
+        ]
+      },
+      "r5": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F27"
+          }
+        ]
+      },
+      "r6": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F28"
+          }
+        ]
+      },
+      "r7": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F29"
+          }
+        ]
+      },
+      "r8": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F30"
+          }
+        ]
+      },
+      "r9": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F31"
+          }
+        ]
+      },
+      "r10": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F32"
+          }
+        ]
+      },
+      "r11": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F33"
+          }
+        ]
+      },
+      "r12": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F34"
+          }
+        ]
+      },
+      "r13": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!F35"
+          }
+        ]
+      },
+      "o0": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E22"
+          }
+        ]
+      },
+      "o1": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E23"
+          }
+        ]
+      },
+      "o2": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E24"
+          }
+        ]
+      },
+      "o3": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E25"
+          }
+        ]
+      },
+      "o4": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E26"
+          }
+        ]
+      },
+      "o5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E27"
+          }
+        ]
+      },
+      "o6": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E28"
+          }
+        ]
+      },
+      "o7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E29"
+          }
+        ]
+      },
+      "o8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E30"
+          }
+        ]
+      },
+      "o9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E31"
+          }
+        ]
+      },
+      "o10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E32"
+          }
+        ]
+      },
+      "o11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E33"
+          }
+        ]
+      },
+      "o12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E34"
+          }
+        ]
+      },
+      "o13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:经营拼表!E35"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "breakeven_rate",
+    "status": "ok",
+    "value": 5.523809523809524,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "week_increment",
+    "expression": "week*n*(pw-pt)+week*hours*wage+ad+ret",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      },
+      "week": {
+        "value": 7,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:45"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "week_increment",
+    "status": "ok",
+    "value": 1820,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "week_total_pack_execution",
+    "expression": "week*n*pw+week*hours*wage+ad+ret",
+    "variables": {
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C10"
+          }
+        ]
+      },
+      "n": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C11"
+          }
+        ]
+      },
+      "rate": {
+        "value": 0.05,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C12"
+          }
+        ]
+      },
+      "pw": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C5"
+          }
+        ]
+      },
+      "pt": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C6"
+          }
+        ]
+      },
+      "hours": {
+        "value": 0.5,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C8"
+          }
+        ]
+      },
+      "wage": {
+        "value": 40,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C13"
+          }
+        ]
+      },
+      "ret": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:采购与排班!C7"
+          }
+        ]
+      },
+      "loss": {
+        "value": 35,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:17"
+          }
+        ]
+      },
+      "food": {
+        "value": 18.2,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:21"
+          }
+        ]
+      },
+      "week": {
+        "value": 7,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:45"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "week_total_pack_execution",
+    "status": "ok",
+    "value": 3080,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "warm_temperature",
+    "expression": "sum(t0,t1,t2,t3,t4,t5,t6)/7",
+    "variables": {
+      "t0": {
+        "value": 63,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F5"
+          }
+        ]
+      },
+      "t1": {
+        "value": 62,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F7"
+          }
+        ]
+      },
+      "t2": {
+        "value": 64,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F9"
+          }
+        ]
+      },
+      "t3": {
+        "value": 63,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F11"
+          }
+        ]
+      },
+      "t4": {
+        "value": 62,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F13"
+          }
+        ]
+      },
+      "t5": {
+        "value": 64,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F15"
+          }
+        ]
+      },
+      "t6": {
+        "value": 63,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F17"
+          }
+        ]
+      }
+    },
+    "unit": "℃",
+    "purpose": "warm_temperature",
+    "status": "ok",
+    "value": 63,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "thin_temperature",
+    "expression": "sum(t0,t1,t2,t3,t4,t5,t6)/7",
+    "variables": {
+      "t0": {
+        "value": 51,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F6"
+          }
+        ]
+      },
+      "t1": {
+        "value": 53,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F8"
+          }
+        ]
+      },
+      "t2": {
+        "value": 52,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F10"
+          }
+        ]
+      },
+      "t3": {
+        "value": 54,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F12"
+          }
+        ]
+      },
+      "t4": {
+        "value": 51,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F14"
+          }
+        ]
+      },
+      "t5": {
+        "value": 53,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F16"
+          }
+        ]
+      },
+      "t6": {
+        "value": 52,
+        "evidence": [
+          {
+            "material": "暖禾热饭_模拟原始台账.xlsx",
+            "locator": "sheet:温度抽查!F18"
+          }
+        ]
+      }
+    },
+    "unit": "℃",
+    "purpose": "thin_temperature",
+    "status": "ok",
+    "value": 52.285714285714285,
+    "missing_variables": [],
+    "assumptions": []
+  }
+]

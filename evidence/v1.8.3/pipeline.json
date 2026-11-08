@@ -1,0 +1,16 @@
+{
+  "upstream_api": "api-business-revised/report.json",
+  "upstream_api_status": "business_passed_after_agent_feedback",
+  "api_call_counts": [
+    3,
+    3,
+    7
+  ],
+  "total_api_calls": 13,
+  "last_api_wording_revision": "failed",
+  "customer_output": "api-chain/report.json",
+  "customer_output_mode": "host",
+  "customer_output_runtime": "Codex Agent 客户文案整理（承接 DeepSeek API 分析）",
+  "manual_changes_to_old_api_reports": false,
+  "scope": "API analysis followed by Codex Agent customer wording and fresh calculation/export; not a pure API unattended end-to-end pass"
+}

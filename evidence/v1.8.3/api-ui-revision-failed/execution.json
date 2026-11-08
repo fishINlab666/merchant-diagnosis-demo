@@ -1,0 +1,85 @@
+{
+  "status": "failed",
+  "mode": "api",
+  "runtime": "DeepSeek API",
+  "draft_count": 0,
+  "calculation_batches": [
+    {
+      "requests": "calculation-001.requests.json",
+      "results": "calculation-001.results.json"
+    },
+    {
+      "requests": "calculation-002.requests.json",
+      "results": "calculation-002.results.json"
+    }
+  ],
+  "calculations_sha256": "1c2cd54a8e1cf5e610cb002ad27889747279446a8205c65dc504a8832db35bb5",
+  "model_calls": 7,
+  "corrections": 1,
+  "inference_executed": true,
+  "model_id": "deepseek-v4-pro",
+  "semantic_review": "独立上下文复核退回",
+  "created_at": "2026-11-08T12:19:19.689085+00:00",
+  "business_review": {
+    "status": "rejected",
+    "call": 7,
+    "issues": [
+      "月度、7日及图表中的净结算收入变化算式均按（B参数−A参数）×调拨额得出6万/1.4万，但该结果仅是净收入变化，不是老板定义的经营贡献差额；贡献差额需再扣订单变动成本和执行费，且材料明确本次仅扣变动成本不涉及固定成本，报告已另列扣除项但 headline 和 charts 的部分表述未直接说明。",
+      "报告 findings 第2条将减少工具A支出损失的系数表述为约-1.4元每元，但 actions 和 charts 的 `a_py_loss` 计算值为 -1.4，图表系列标签为“减少工具A投放每元入账变化（试行估计）”，而 findings 用“约-1.4元/元”，两者没有区分入账损失与经营贡献差额。",
+      "method_usage 的 audience_offer 方法将“未设计具体券权益以保持试验纯净”列为 adapted 理由，但该判断没有对应可核验的材料定义或老板原话，且报告既称以工具B人群为倾斜对象，又把不叠加新券作为保持试验纯净，形成内部不一致。",
+      "首轮7日执行费1,400元（材料定义7日预算）与月度执行费6,000元（材料定义的月度情景）在计算中已分别扣除，但方法记录 execution_followup 未在 decision 中列明执行费的包含关系，且 actions 中停止条件“负值但未触线则不扩量”与 followup 三档条件一致，但 actions 第1条的停止条件只写了低于-5,000或B超3,000即停，未写明负值但未触线时不扩量的执行区别，容易造成实际执行不一致。"
+    ],
+    "mode": "api",
+    "model_id": "deepseek-v4-pro",
+    "independent_context": true,
+    "ignored_fields": []
+  },
+  "business_reviews": [
+    {
+      "status": "rejected",
+      "call": 5,
+      "issues": [
+        "动作1的预算表述可能混淆总量与单店额度：definitions.md line:29 明确“每店每天加 B 上限为 66.67 元”，报告 actions[0].budget 写“每店每天增加工具B投放上限66.67元”是准确的，但同时写“每日工具A总消耗7,000元、工具B总消耗3,000元”，需核对这3,000元为30店合计还是单店额度；材料中“每天 A 7000 元、B 3000 元”未明确是总量还是单店，若按总量理解则单店每天上限66.67与总量3000冲突，需回查原文口径。",
+        "findings[1] 中表述“增加工具B投放每元入账约3.0元、减少工具A投放每元入账变化约-1.4元”的数值计算正确，但图表2中“减少工具A投放每元入账变化（试行估计）”的 value 设为 -1.4，calc_id 为 a_py_loss，而 calculations 中 a_py 的 value 为 1.4，a_py_loss 的 value 为 -1.4；需确认图表标签与 calc_id 映射一致，避免读者把“损失”与“变化”混淆。",
+        "actions[2].success 中“试点店页面明确标注套餐适用人数/份量并经上线核对”与 public.md line:13/15 的页面事实一致，但未明确“上线核对”是否指已实际修改页面；材料未提供修改回执，报告应明确该动作仅为待执行，不能让人误以为已完成。建议检查 success 条件是否将意向写成事实。",
+        "followup.collect 中“老板确认的经营规模底线（如完成单不下降，暂为建议）”与 definitions.md line:39 的“负值但未触线则不扩量，先核对自然单变化及组间差异”以及“7天成熟样本贡献为正、执行完整且无新增费用缺口，才继续同一强度观察下一周”一致，但 actions[2].stop 中“信息说明不得因效果未改善而回滚为不完整说明”缺乏材料原文支持：public.md 无相关指令，definitions.md 也未提及商品页修改的停止条件，需核对是否将外部建议当作老板确认。",
+        "analysis.assumptions 中“同期对照、减少工具A投放、增加工具B投放三组为事先匹配非随机组”描述准确（definitions.md line:23），但 charts[1].series[1].evidence 引用了 sheet:边际试行!L5 和 L6，而 L5/L6 文本未直接包含“减少工具A投放每元入账变化-1.4”的数值来源；应确保所有图表派生值直接对应 calculations 中的 calc_id，且 evidence 能支持该派生值的计算过程。",
+        "report 中多处使用“工具A”“工具B”作为业务名称，符合验收要求；但 actions[0].title 为“从工具A转14,000元到工具B（30店合计）”，未明确这14,000元是首轮7天的调拨总额，可能被误认为是单日或单店额度；需核对与 definitions.md line:29 的“首轮 7 天只挪 14000 元”完全一致。"
+      ],
+      "mode": "api",
+      "model_id": "deepseek-v4-pro",
+      "independent_context": true,
+      "ignored_fields": []
+    },
+    {
+      "status": "rejected",
+      "call": 7,
+      "issues": [
+        "月度、7日及图表中的净结算收入变化算式均按（B参数−A参数）×调拨额得出6万/1.4万，但该结果仅是净收入变化，不是老板定义的经营贡献差额；贡献差额需再扣订单变动成本和执行费，且材料明确本次仅扣变动成本不涉及固定成本，报告已另列扣除项但 headline 和 charts 的部分表述未直接说明。",
+        "报告 findings 第2条将减少工具A支出损失的系数表述为约-1.4元每元，但 actions 和 charts 的 `a_py_loss` 计算值为 -1.4，图表系列标签为“减少工具A投放每元入账变化（试行估计）”，而 findings 用“约-1.4元/元”，两者没有区分入账损失与经营贡献差额。",
+        "method_usage 的 audience_offer 方法将“未设计具体券权益以保持试验纯净”列为 adapted 理由，但该判断没有对应可核验的材料定义或老板原话，且报告既称以工具B人群为倾斜对象，又把不叠加新券作为保持试验纯净，形成内部不一致。",
+        "首轮7日执行费1,400元（材料定义7日预算）与月度执行费6,000元（材料定义的月度情景）在计算中已分别扣除，但方法记录 execution_followup 未在 decision 中列明执行费的包含关系，且 actions 中停止条件“负值但未触线则不扩量”与 followup 三档条件一致，但 actions 第1条的停止条件只写了低于-5,000或B超3,000即停，未写明负值但未触线时不扩量的执行区别，容易造成实际执行不一致。"
+      ],
+      "mode": "api",
+      "model_id": "deepseek-v4-pro",
+      "independent_context": true,
+      "ignored_fields": []
+    }
+  ],
+  "business_revisions": 1,
+  "max_calls": 8,
+  "max_format_corrections": 2,
+  "analysis_calls": 5,
+  "review_calls": 2,
+  "client_settings": {
+    "model": "deepseek-v4-pro",
+    "thinking": "enabled",
+    "max_tokens": 24576,
+    "timeout": 120
+  },
+  "initial_calculation_batches": 2,
+  "revision_calculation_batches": 0,
+  "reviewed_report_sha256": null,
+  "failed_at": "2026-11-08T12:26:07.408879+00:00",
+  "last_error": "本轮未完成；查看 error/check 与已保留响应，不返回预置报告"
+}

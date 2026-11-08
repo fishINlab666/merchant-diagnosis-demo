@@ -1,0 +1,56 @@
+{
+  "audience-chain": {
+    "status": "completed",
+    "draft_count": 1,
+    "model_calls": 0,
+    "money": 20596.16,
+    "audiences": 6,
+    "sha256": {
+      "report.json": "6259dccc699794474b4ce0b3c3bc078b1322aee507363dd9faa5049f67af7bed",
+      "calculations.json": "4884869865051f02d591efb4ed13106e9a77f179999ba68b6c89c978014043ff",
+      "method-usage.json": "3a192dcd3b27a6c12aebf25bdd3821f8313a5bf648bd52b5ed383308f01f4468",
+      "execution.json": "4133b13f1949765e4ae91b6fcfe24226b31a3a6cfdd87cba30f77722bf0cfcba",
+      "manifest.json": "6da98edb741065b314726b5b46f1a157ee0f5dec4f1ba3db4a3e934dbdd02fc7"
+    },
+    "html_sha256": "c4b14ed758a32a03afaacbf4d6f6a3814bf5754a8818b9d2dd5962db22fbf7d5",
+    "command_count": 12,
+    "nonzero_command_count": 0,
+    "connection_retry_messages": 4
+  },
+  "single": {
+    "status": "completed",
+    "draft_count": 1,
+    "model_calls": 0,
+    "money": 1650,
+    "audiences": 0,
+    "sha256": {
+      "report.json": "42b6425006d3202a711325343a0674eb89f98be8fbf510d0dd2a403a42ba15c2",
+      "calculations.json": "cbc6e0cbbe21ea10b7613b3ddcfefc6a42fcd2a41ac88e0ab3d94b138292270d",
+      "method-usage.json": "1bf1297d68c4dd9b1651c20ce595a9f6217f0eaf0cc8691c19b3a0af6f8b01aa",
+      "execution.json": "c50ef0f4a59ee3a96df3e2b90dea2957911bd9fb4478cad5fc8a5840e1e6f99e",
+      "manifest.json": "d78d2c3a111dfd31f549662eceb453bc86da491bc7643aa5c81fc52e5e53fdab"
+    },
+    "html_sha256": "c3573288b856879eb8bed508d7ce134b78f19c49a9bd6213bd17d1a8e7a0ebf3",
+    "command_count": 12,
+    "nonzero_command_count": 0,
+    "connection_retry_messages": 4
+  },
+  "api-chain": {
+    "status": "completed",
+    "draft_count": 1,
+    "model_calls": 0,
+    "money": 18000,
+    "audiences": 0,
+    "sha256": {
+      "report.json": "467f102a7e31d49c68bde8da2a43405c23a62b7c4a525296a3b521401ebbb5fb",
+      "calculations.json": "0cf82e7ec7bd815bff450729556d94c25fffbd8fc7fef4f0ea9769ac2c04f6a2",
+      "method-usage.json": "e067024636baf7308e33afa8579ba62623e510f45da63cf7ed5633b8a1ce6391",
+      "execution.json": "e94f35226a48135f751c76fd6dfb33388369bd8f47d565cca0cb450dad910c2e",
+      "manifest.json": "8b37788299350d847a75094b8a1743421932504faecc76f30793fa32333c63c7"
+    },
+    "html_sha256": "909acc8a5bbb78a5066660e786699a0894a2e53d1c8e1397285a34b1e9d24e7a"
+  },
+  "recording_seconds": 115.28,
+  "actual_wait_seconds": 354.08,
+  "backend_elapsed_seconds": 353.8
+}

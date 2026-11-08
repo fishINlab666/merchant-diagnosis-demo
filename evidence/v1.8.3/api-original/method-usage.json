@@ -1,0 +1,129 @@
+[
+  {
+    "method": "store_segmentation",
+    "status": "needs_data",
+    "reason": "周报仅提供30店汇总入账与成本，无单店增长与贡献拆分，无法按增长×收益质量分店配置资源。",
+    "decision": "本轮按30店整体做预算调拨；是否分店加码需补门店级净收入与已确认成本口径。",
+    "evidence_summary": "周表覆盖演示城30家成熟直营店的汇总结算入账、餐材包材及按单工时与推广账单，未提供门店级拆分。",
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:3"
+      },
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:周报!C4"
+      }
+    ],
+    "targets": []
+  },
+  {
+    "method": "audience_offer",
+    "status": "adapted",
+    "reason": "渠道触达人群已有区分：A以广泛兴趣及新客为主、B以近期浏览和已购客为主；试行显示B边际入账更高，据此把资源向B人群倾斜，但未设计具体券权益以保持试验纯净。",
+    "decision": "首轮调拨改变触达人群结构（B增A减），不叠加新券，商品页人数标注作为并行承接改进。",
+    "evidence_summary": "渠道表标注A、B触达人群不同，边际试行显示增B每元入账3.0元、减A每元损1.4元，支持向已购/近期浏览客群倾斜。",
+    "evidence": [
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:渠道!J4"
+      },
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:渠道!J5"
+      },
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:边际试行!L5"
+      },
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:边际试行!L6"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "findings",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "method": "tool_mix",
+    "status": "applied",
+    "reason": "主要问题是推广预算集中于工具A(90%)且边际入账偏低；比较了继续保A与调拨A→B两个方向，依据边际试行选择小规模调拨，不按平均ROI(3.0对5.0)线性外推。",
+    "decision": "选择从A小试转B、总量不增，先7日14000元，按成熟贡献决定是否扩到整月60000元。",
+    "evidence_summary": "A占比90%、平均ROI3.0，B平均ROI5.0；但按边际试行，增B每元3.0元、减A每元损1.4元，据此以审慎参数B=2.50/A=1.50测算月度贡献。",
+    "evidence": [
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:渠道!E4"
+      },
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:渠道!E5"
+      },
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:边际试行!L5"
+      },
+      {
+        "material": "经营周报.xlsx",
+        "locator": "sheet:边际试行!L6"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:33"
+      }
+    ],
+    "targets": [
+      {
+        "section": "money",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "charts",
+        "index": 0
+      },
+      {
+        "section": "findings",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "method": "execution_followup",
+    "status": "applied",
+    "reason": "材料明确责任链（总部预算负责人、区域运营、门店联络人、财务）与回传节点（11-16执行/消耗、11-23复盘），并给出止损线。",
+    "decision": "首轮动作落到11-09启动、11-16查执行、11-23成熟复盘，设置停止线：贡献低于-5000元或B单日超3000元即停。",
+    "evidence_summary": "材料规定了各角色职责、每日消耗记录、缺货/出餐负荷记录，以及首轮损失承受上限5000元和B单日3000元限额。",
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:37"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:39"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 2
+      }
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "mode": "host",
+  "runtime": "Codex CLI独立会话",
+  "draft_count": 1,
+  "calculation_batches": [
+    {
+      "requests": "calculation-001.requests.json",
+      "results": "calculation-001.results.json"
+    }
+  ],
+  "calculations_sha256": "cbc6e0cbbe21ea10b7613b3ddcfefc6a42fcd2a41ac88e0ab3d94b138292270d",
+  "model_calls": 0,
+  "corrections": 0,
+  "inference_executed": false,
+  "model_id": "未暴露",
+  "semantic_review": "未确认",
+  "created_at": "2026-11-08T11:38:36.310399+00:00",
+  "business_review": {
+    "status": "not_independently_reviewed",
+    "required": "host_self_check"
+  },
+  "business_reviews": [],
+  "business_revisions": 0,
+  "completed_at": "2026-11-08T11:40:44.171914+00:00",
+  "report": "report.html",
+  "report_sha256": "42b6425006d3202a711325343a0674eb89f98be8fbf510d0dd2a403a42ba15c2",
+  "method_usage_sha256": "1bf1297d68c4dd9b1651c20ce595a9f6217f0eaf0cc8691c19b3a0af6f8b01aa",
+  "method_usage": {
+    "status": "structure_verified",
+    "methods": {
+      "store_segmentation": "not_applicable",
+      "audience_offer": "not_applicable",
+      "tool_mix": "applied",
+      "execution_followup": "applied"
+    },
+    "scope": "方法覆盖、证据定位与输出目标结构通过；不自动证明经营判断正确或商家执行"
+  }
+}

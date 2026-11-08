@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.3",
+  "created_at": "2026-11-08T11:38:36.308623+00:00",
+  "runtime": "Codex CLI独立会话",
+  "python_version": "3.12.14",
+  "inference_executed": false,
+  "inputs": [
+    {
+      "name": "definitions.md",
+      "sha256": "93fd11a557074ef785f243fd19991c2516a853d2c443ebe31aa53298b9a557f9"
+    },
+    {
+      "name": "public.md",
+      "sha256": "9fb823f3208a5d61b4bf3601b6fab39c3799a21c7b2d989acf5f20edc187ab1f"
+    },
+    {
+      "name": "暖禾热饭_模拟原始台账.xlsx",
+      "sha256": "0db430538261faf31cde0bf1becf1114fcdb1636d4918e1ad7825f50f19ea1d5"
+    }
+  ],
+  "files": {
+    "materials.json": "e193433779a497698460c0afb61e6f154f7ecb20abd9cb598eae5047f74050cc",
+    "prompt.md": "8126d5dd812b2e8d2f235098a2632af88e6ea939b8ecb0efa3f46641b090608b",
+    "quick-workflow.md": "fb41b3aeced18a7b7982068337dd31c7616e6af7c606e56109efd9c25b946af8",
+    "boss-output.md": "b23992b697d6ec6bc4f37762662b31eafba360b026b212617144f58fa740b4e6",
+    "ali-ka-playbook.md": "53e5005e1fa70fd1a32abd22b26d27d3ca5103a5f98e03e2cb70ed2f6e758283",
+    "ka-playbook.md": "175f215f9c0704794b81260e38cba8223e0e47b7411277e916fd04c9d625bfc6"
+  }
+}

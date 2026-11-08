@@ -1,0 +1,43 @@
+{
+  "audience-chain": {
+    "money": "+20,596.16",
+    "firstscreen": true,
+    "desktop_overflow": false,
+    "markers": 3,
+    "audiences": 6,
+    "forbidden": [],
+    "money_unchanged": true,
+    "deep_link": true,
+    "mobile_overflow": false,
+    "errors": []
+  },
+  "single": {
+    "money": "+1,650",
+    "firstscreen": true,
+    "desktop_overflow": false,
+    "markers": 2,
+    "audiences": 0,
+    "forbidden": [],
+    "money_unchanged": true,
+    "deep_link": true,
+    "mobile_overflow": false,
+    "errors": []
+  },
+  "api-chain": {
+    "money": "18,000",
+    "firstscreen": true,
+    "desktop_overflow": false,
+    "markers": 3,
+    "audiences": 0,
+    "forbidden": [],
+    "money_unchanged": true,
+    "deep_link": true,
+    "mobile_overflow": false,
+    "errors": []
+  },
+  "home": {
+    "duration": 115.28,
+    "images": true,
+    "mobile_overflow": false
+  }
+}

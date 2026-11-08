@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "mode": "api",
+  "runtime": "DeepSeek API",
+  "draft_count": 1,
+  "calculation_batches": [
+    {
+      "requests": "calculation-001.requests.json",
+      "results": "calculation-001.results.json"
+    }
+  ],
+  "calculations_sha256": "29fa1646248f03255d728c6832ff1f37162343fc8fd3b46a801346f218cbb2d0",
+  "model_calls": 3,
+  "corrections": 0,
+  "inference_executed": true,
+  "model_id": "deepseek-v4-pro",
+  "semantic_review": "独立模型内容复核通过；非人工或商家确认",
+  "created_at": "2026-11-08T11:36:21.720111+00:00",
+  "business_review": {
+    "status": "approved",
+    "call": 3,
+    "issues": [],
+    "mode": "api",
+    "model_id": "deepseek-v4-pro",
+    "independent_context": true,
+    "ignored_fields": []
+  },
+  "business_reviews": [
+    {
+      "status": "approved",
+      "call": 3,
+      "issues": [],
+      "mode": "api",
+      "model_id": "deepseek-v4-pro",
+      "independent_context": true,
+      "ignored_fields": []
+    }
+  ],
+  "business_revisions": 0,
+  "max_calls": 8,
+  "max_format_corrections": 2,
+  "analysis_calls": 2,
+  "review_calls": 1,
+  "client_settings": {
+    "model": "deepseek-v4-pro",
+    "thinking": "enabled",
+    "max_tokens": 24576,
+    "timeout": 120
+  },
+  "initial_calculation_batches": 1,
+  "revision_calculation_batches": 0,
+  "reviewed_report_sha256": "0aac149168378781666f6689dd974f6057700f891801bc84fcf8fd6df4f66aa3",
+  "completed_at": "2026-11-08T11:40:25.160656+00:00",
+  "report": "report.html",
+  "report_sha256": "0aac149168378781666f6689dd974f6057700f891801bc84fcf8fd6df4f66aa3",
+  "method_usage_sha256": "5937c56a47f4a5c630823275c872f923557aac4f74fa43d0a6dc8b8de1f025cf",
+  "method_usage": {
+    "status": "structure_verified",
+    "methods": {
+      "store_segmentation": "needs_data",
+      "audience_offer": "adapted",
+      "tool_mix": "applied",
+      "execution_followup": "applied"
+    },
+    "scope": "方法覆盖、证据定位与输出目标结构通过；不自动证明经营判断正确或商家执行"
+  }
+}
