@@ -13,7 +13,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from test_quick_contract import report, request
+from test_quick_contract import report as legacy_report, request, method_records
 from model_api import ModelClient, ModelAPIError
 
 
@@ -26,6 +26,12 @@ def envelope(message, finish='stop'):
 def review(approved=True, issues=None):
     return envelope({'role': 'assistant', 'content': json.dumps(
         {'kind': 'review', 'approved': approved, 'issues': issues or []})})
+
+
+def report():
+    value = legacy_report()
+    value['method_usage'] = method_records()
+    return value
 
 
 class QuickRunTests(unittest.TestCase):
@@ -79,7 +85,7 @@ class QuickRunTests(unittest.TestCase):
         with patch.object(self.runner(), 'REFERENCES', references):
             self.prepare()
             manifest = json.loads((self.run / 'manifest.json').read_text())
-            self.assertEqual('1.1', manifest['schema_version'])
+            self.assertEqual('1.2', manifest['schema_version'])
             self.assertEqual({'materials.json', 'prompt.md', 'quick-workflow.md',
                               'boss-output.md', 'ka-playbook.md'}, set(manifest['files']))
             self.assertEqual(hashlib.sha256(original).hexdigest(), manifest['files']['ka-playbook.md'])
@@ -146,13 +152,13 @@ class QuickRunTests(unittest.TestCase):
             self.as_legacy_snapshot()
             self.runner().calculate_run(self.run, [request()])
             with self.renderer():
-                self.runner().finish_run(self.run, report())
+                self.runner().finish_run(self.run, legacy_report())
             previous = self.run / 'report.json'
             original = previous.read_bytes()
             current = self.base / 'new-version'
             self.runner().prepare_run([self.source], current, merchant='测试店', synthetic=True,
                                       previous_report=previous)
-        self.assertEqual('1.1', json.loads((current / 'manifest.json').read_text())['schema_version'])
+        self.assertEqual('1.2', json.loads((current / 'manifest.json').read_text())['schema_version'])
         self.assertEqual(60, json.loads((current / 'materials.json').read_text())['history']['report']['money']['value'])
         self.assertEqual(original, previous.read_bytes())
 
@@ -172,6 +178,106 @@ class QuickRunTests(unittest.TestCase):
             self.runner().semantic_review(client, bundle, calculations, report(),
                                           run_dir=self.run, call_number=1)
         self.assertNotIn(original, json.dumps(payloads, ensure_ascii=False))
+
+    def test_new_run_rejects_missing_usage_and_accepts_one_complete_correction(self):
+        self.prepare()
+        self.runner().calculate_run(self.run, [request()])
+        with self.assertRaisesRegex(ValueError, 'method_usage'), self.renderer():
+            self.runner().finish_run(self.run, legacy_report())
+        self.assertFalse((self.run / 'report.html').exists())
+        with self.renderer():
+            self.runner().finish_run(self.run, report())
+        self.assertEqual('completed', json.loads((self.run / 'execution.json').read_text())['status'])
+
+    def test_method_usage_copy_and_digest_are_kept_with_completed_report(self):
+        previous = self.completed_prior()
+        bound = json.loads(previous.read_text())
+        copy_path = self.run / 'method-usage.json'
+        self.assertTrue(copy_path.is_file())
+        self.assertEqual(bound['method_usage'], json.loads(copy_path.read_text()))
+        state = json.loads((self.run / 'execution.json').read_text())
+        self.assertEqual(hashlib.sha256(copy_path.read_bytes()).hexdigest(), state.get('method_usage_sha256'))
+        self.assertEqual('structure_verified', state.get('method_usage', {}).get('status'))
+        self.assertEqual('needs_data', state['method_usage']['methods']['audience_offer'])
+
+    def test_previous_run_rejects_missing_or_changed_usage_copy_even_if_report_unchanged(self):
+        previous = self.completed_prior()
+        copy_path = self.run / 'method-usage.json'
+        self.assertTrue(copy_path.is_file())
+        original = copy_path.read_bytes()
+        for mutation in ('changed', 'missing', 'digest_only'):
+            with self.subTest(mutation=mutation):
+                if mutation == 'missing':
+                    copy_path.unlink()
+                else:
+                    copy_path.write_text('[]')
+                state_path = self.run / 'execution.json'
+                state_original = state_path.read_text()
+                if mutation == 'digest_only':
+                    state = json.loads(state_original)
+                    state['method_usage_sha256'] = hashlib.sha256(copy_path.read_bytes()).hexdigest()
+                    state_path.write_text(json.dumps(state))
+                with self.assertRaisesRegex(ValueError, '方法|method'):
+                    self.runner().prepare_run([self.source], self.base / mutation,
+                        merchant='测试店', synthetic=True, previous_report=previous)
+                copy_path.write_bytes(original)
+                state_path.write_text(state_original)
+
+    def test_schema_11_without_method_record_can_finish_and_feed_new_run(self):
+        self.prepare()
+        path = self.run / 'manifest.json'
+        value = json.loads(path.read_text())
+        value['schema_version'] = '1.1'
+        path.write_text(json.dumps(value))
+        self.runner().calculate_run(self.run, [request()])
+        with self.renderer():
+            self.runner().finish_run(self.run, legacy_report())
+        self.assertFalse((self.run / 'method-usage.json').exists())
+        self.runner().prepare_run([self.source], self.base / 'next-12', merchant='测试店',
+                                  synthetic=True, previous_report=self.run / 'report.json')
+
+    def test_schema_11_review_still_uses_frozen_methods_without_retroactive_record_requirement(self):
+        references = self.reference_fixture()
+        frozen = (references / 'ka-playbook.md').read_text()
+        payloads = []
+        def transport(url, payload, *args):
+            payloads.append(json.loads(payload))
+            return review()
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+        with patch.object(self.runner(), 'REFERENCES', references):
+            self.prepare()
+            path = self.run / 'manifest.json'
+            manifest = json.loads(path.read_text())
+            manifest['schema_version'] = '1.1'
+            path.write_text(json.dumps(manifest))
+            values = self.runner().calculate_run(self.run, [request()])
+            bundle = json.loads((self.run / 'materials.json').read_text())
+            self.runner().semantic_review(client, bundle, values, legacy_report(),
+                                          run_dir=self.run, call_number=1)
+        system = payloads[-1]['messages'][1]['content']
+        self.assertIn(frozen, system)
+        self.assertNotIn('核对 method_usage 的四项适用判断', system)
+
+    def test_api_missing_record_cannot_reach_review_until_corrected(self):
+        old = legacy_report()
+        old['money'].pop('calc_id')
+        old['money']['value'] = None
+        old['charts'] = []
+        corrected = copy.deepcopy(old)
+        corrected['method_usage'] = method_records()
+        replies = [envelope({'role': 'assistant', 'content': json.dumps({'kind': 'final', 'report': value})})
+                   for value in (old, corrected)] + [review()]
+        payloads = []
+        def transport(url, payload, *args):
+            payloads.append(json.loads(payload))
+            return replies.pop(0)
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+        with self.renderer():
+            self.runner().run_api([self.source], self.run, client=client, merchant='测试店', synthetic=True)
+        self.assertEqual(3, len(payloads))
+        self.assertIn('method_usage', payloads[1]['messages'][-1]['content'])
+        self.assertIn('method_usage', payloads[-1]['messages'][1]['content'])
+        self.assertTrue((self.run / 'method-usage.json').is_file())
 
     def test_prepare_freezes_actual_materials_without_old_stage_templates(self):
         self.prepare()

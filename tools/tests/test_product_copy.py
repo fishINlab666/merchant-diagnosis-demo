@@ -78,6 +78,23 @@ class ProductCopyTests(unittest.TestCase):
                 self.assertEqual(result.returncode, 1, result.stderr)
                 self.assertTrue(result.stdout.startswith('index.html:2: '), result.stdout)
 
+    def test_generated_report_payload_is_checked_after_json_decoding(self):
+        self.write('index.html', '<h1>老板看板</h1>\n'
+                   '<script id="boss-data" type="application/json">'
+                   '{"headline":"\\u9762\\u8bd5展示","methods":[{"name":"求职作品"}]}'
+                   '</script>')
+        result = self.check()
+        self.assertEqual(result.returncode, 1, result.stderr)
+        self.assertIn('index.html:2: 面试', result.stdout)
+        self.assertIn('index.html:2: 求职', result.stdout)
+
+    def test_invalid_report_payload_blocks_instead_of_skipping_copy_check(self):
+        self.write('index.html', '<script id="boss-data" type="application/json">{broken}</script>')
+        result = self.check()
+        self.assertEqual(result.returncode, 2)
+        self.assertIn('index.html', result.stderr)
+        self.assertNotIn('Traceback', result.stderr)
+
     def test_html_script_style_comments_and_noncopy_attributes_are_ignored(self):
         self.write('index.html', '''<!doctype html><html><head>
 <script>const old = "面试 interview";</script>

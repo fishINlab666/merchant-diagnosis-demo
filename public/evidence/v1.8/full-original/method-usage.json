@@ -1,0 +1,130 @@
+[
+  {
+    "method": "store_segmentation",
+    "status": "applied",
+    "reason": "可比六店周账与品牌双目标齐备",
+    "decision": "增长支持国贸，科创修承接；滨江修贡献、学府修供给，社区维持，城西分时处理",
+    "evidence_summary": "可比六店周账与品牌双目标齐备；增长支持国贸，科创修承接；滨江修贡献、学府修供给，社区维持，城西分时处理",
+    "evidence": [
+      {
+        "material": "manager-notes.md",
+        "locator": "line:5"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:财务周账!I6"
+      }
+    ],
+    "targets": [
+      {
+        "section": "findings",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 1
+      },
+      {
+        "section": "actions",
+        "index": 2
+      }
+    ]
+  },
+  {
+    "method": "audience_offer",
+    "status": "applied",
+    "reason": "六组互斥分母、成本及模拟对照可比较",
+    "decision": "优先复购三群及高频去普券，不统一发券",
+    "evidence_summary": "六组互斥分母、成本及模拟对照可比较；优先复购三群及高频去普券，不统一发券",
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:24"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!H14"
+      }
+    ],
+    "targets": [
+      {
+        "section": "findings",
+        "index": 1
+      },
+      {
+        "section": "audience_plan",
+        "index": 0
+      },
+      {
+        "section": "audience_plan",
+        "index": 3
+      },
+      {
+        "section": "actions",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "method": "tool_mix",
+    "status": "applied",
+    "reason": "承接与人群差异需要不同工具",
+    "decision": "菜单展示、套餐专券和定向触达配合，不按平均回收比搬预算",
+    "evidence_summary": "承接与人群差异需要不同工具；菜单展示、套餐专券和定向触达配合，不按平均回收比搬预算",
+    "evidence": [
+      {
+        "material": "manager-notes.md",
+        "locator": "line:19"
+      },
+      {
+        "material": "manager-notes.md",
+        "locator": "line:23"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "method": "execution_followup",
+    "status": "applied",
+    "reason": "总部、直营、加盟权限不同，有既定七天复盘要求",
+    "decision": "先确认执行回执，再用贡献和规模决定扩围",
+    "evidence_summary": "总部、直营、加盟权限不同，有既定七天复盘要求；先确认执行回执，再用贡献和规模决定扩围",
+    "evidence": [
+      {
+        "material": "manager-notes.md",
+        "locator": "line:17"
+      },
+      {
+        "material": "manager-notes.md",
+        "locator": "line:27"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 1
+      },
+      {
+        "section": "actions",
+        "index": 2
+      }
+    ]
+  }
+]

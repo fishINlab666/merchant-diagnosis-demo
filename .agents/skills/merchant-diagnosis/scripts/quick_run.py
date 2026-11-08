@@ -18,6 +18,7 @@ RULE_FILES = ('quick-workflow.md', 'boss-output.md', 'ka-playbook.md')
 SNAPSHOT_FILES = {
     '1.0': {'materials.json', 'prompt.md', 'quick-workflow.md', 'boss-output.md'},
     '1.1': {'materials.json', 'prompt.md', *RULE_FILES},
+    '1.2': {'materials.json', 'prompt.md', *RULE_FILES},
 }
 DEFAULT_GOAL = '先看最值得改善的问题，给出可试行的动作'
 DEFAULT_SCOPE = '本次提供材料覆盖的门店'
@@ -115,14 +116,15 @@ def prepare_run(input_paths, output, *, merchant, goal=DEFAULT_GOAL,
               '先规划全部主要公式并尽量一批提交；初始最多两批计算，业务修订最多一批纠错计算。总调用上限含最终成稿和独立复核。\n'
               '预算或数据不足时主金额可为null并说明局部缺口，不能为节省步骤捏造计算。\n'
               '变量须为有限数字或 null，并带 evidence:[{material,locator}] 或明确 assumption；未知不能填零。\n'
-              '主金额必须给 calc_id，公式须实际使用至少一个有来源或明确假设的变量，不能用裸常数充当核算。\n'
+              '主金额有数值时必须给 calc_id，公式须实际使用至少一个有来源或明确假设的变量，不能用裸常数充当核算。\n'
+              '没有金额依据时直接给 money.value:null，不必为未知金额创建计算；金额单位与实际计算相同，期间单独写 period。\n'
               '程序会填真实数值；发现、动作、图表只写一次，无需 F/A/D 编号或五阶段Markdown。\n'
               '主机模式用 quick_run.py calculate 执行相同工具；API 模式必须等真实 tool 结果返回再出报告。\n'
               '只返回 {"kind":"final","report":{...}}。内部 analysis 保存备选策略和假设，不写成客户免责声明。\n\n'
               + '\n\n'.join(references.values()))
     payloads = {'materials.json': _json(bundle), 'prompt.md': prompt,
                 **{name: text for name, text in references.items()}}
-    manifest = {'schema_version': '1.1', 'created_at': _now(), 'runtime': runtime,
+    manifest = {'schema_version': '1.2', 'created_at': _now(), 'runtime': runtime,
                 'python_version': platform.python_version(), 'inference_executed': False,
                 'inputs': [{'name': item['name'], 'sha256': item['sha256']} for item in materials],
                 'files': {name: _sha(text.encode('utf-8')) for name, text in payloads.items()}}
@@ -160,7 +162,21 @@ def _load_run(root, *, allow_completed=False):
         raise ValueError('本轮已结束，请使用新运行目录')
     if _sha((root / 'calculations.json').read_bytes()) != state.get('calculations_sha256'):
         raise ValueError('计算记录已变化；不能将改写的结果作为真实计算')
+    method_fingerprint = state.get('method_usage_sha256')
+    if version == '1.2' and state.get('status') == 'completed' and not method_fingerprint:
+        raise ValueError('已完成的新轮次缺少方法使用记录指纹')
+    if method_fingerprint is not None:
+        try:
+            actual = _sha((root / 'method-usage.json').read_bytes())
+        except OSError as error:
+            raise ValueError('方法使用记录副本缺失，请保留本轮原件') from error
+        if actual != method_fingerprint:
+            raise ValueError('方法使用记录副本已变化，请保留本轮原件')
     return _read(root / 'materials.json'), state, _read(root / 'calculations.json')
+
+
+def _require_method_usage(root):
+    return _read(Path(root) / 'manifest.json')['schema_version'] == '1.2'
 
 
 def _previous_history(report_path, identity):
@@ -180,9 +196,13 @@ def _previous_history(report_path, identity):
     if saved_fingerprint is not None and saved_fingerprint != fingerprint:
         raise ValueError('前序 report.json 已被改写，请保留原件并重新运行')
     report = parse_report(raw.decode('utf-8-sig'))
-    bound = bind_report(report, bundle, calculations, expected_merchant=prior_identity)
+    bound = bind_report(report, bundle, calculations, expected_merchant=prior_identity,
+                        require_method_usage=_require_method_usage(path.parent))
     if report != bound:
         raise ValueError('前序报告与该轮证据或真实计算绑定不一致')
+    if execution.get('method_usage_sha256') is not None and (
+            _read(path.parent / 'method-usage.json') != report.get('method_usage')):
+        raise ValueError('方法使用记录副本与前序报告不一致')
     return {'kind': 'historical_judgment', 'report': report, 'report_sha256': fingerprint,
             'manifest_sha256': _sha((path.parent / 'manifest.json').read_bytes()),
             'execution_sha256': _sha((path.parent / 'execution.json').read_bytes()),
@@ -229,7 +249,8 @@ def finish_run(run_dir, report):
         state['status'] = 'checking'
         write_json(root / 'execution.json', state)
         try:
-            bound = bind_report(report, bundle, calculations, expected_merchant=bundle['merchant'])
+            bound = bind_report(report, bundle, calculations, expected_merchant=bundle['merchant'],
+                                require_method_usage=_require_method_usage(root))
             if state['mode'] in ('api', 'test_double') and (
                     state.get('business_review', {}).get('status') != 'approved' or
                     state.get('reviewed_report_sha256') != _sha(_json(bound).encode('utf-8'))):
@@ -239,7 +260,7 @@ def finish_run(run_dir, report):
             state.update(status='needs_correction' if index == 1 else 'failed', last_error=str(error))
             write_json(root / 'execution.json', state)
             raise
-        if (root / 'report.json').exists() or (root / 'report.html').exists():
+        if any((root / name).exists() for name in ('report.json', 'report.html', 'method-usage.json')):
             raise ValueError('报告输出已存在，不能覆盖')
         from boss_report import export_boss
         metadata = {'runtime': state['runtime'], 'mode': state['mode'],
@@ -256,6 +277,13 @@ def finish_run(run_dir, report):
             'scope': '来源定位、真实计算引用、业务字段结构；未自动证明因果或商家执行效果'}))
         state.update(status='completed', completed_at=_now(), report='report.html',
                      report_sha256=_sha((root / 'report.json').read_bytes()))
+        if 'method_usage' in bound:
+            _new_text(root / 'method-usage.json', _json(bound['method_usage']))
+            state['method_usage_sha256'] = _sha((root / 'method-usage.json').read_bytes())
+            state['method_usage'] = {
+                'status': 'structure_verified',
+                'methods': {item['method']: item['status'] for item in bound['method_usage']},
+                'scope': '方法覆盖、证据定位与输出目标结构通过；不自动证明经营判断正确或商家执行'}
         state.pop('last_error', None)
         write_json(root / 'execution.json', state)
         return Path(output)
@@ -273,11 +301,19 @@ def semantic_review(client, bundle, calculations, report, *, run_dir, call_numbe
     root = Path(run_dir)
     _load_run(root)
     review_prompt = REVIEW_PROMPT
-    if _read(root / 'manifest.json')['schema_version'] == '1.1':
+    version = _read(root / 'manifest.json')['schema_version']
+    if version in ('1.1', '1.2'):
         review_prompt += ('\n\n## 本轮冻结的经营方法\n'
                           '只核对本轮材料实际触发的决策及适用边界，不要求展开所有分支。'
                           '缺少人群或JBP材料不应阻断普通商家诊断；不得补造材料来凑齐打法。\n\n'
                           + (root / 'ka-playbook.md').read_text(encoding='utf-8'))
+    if version == '1.2':
+        review_prompt += ('\n\n核对 method_usage 的四项适用判断：已采用/改写必须由其 evidence 支持，'
+                          'targets 指向的实际结论或动作必须体现该决策；不适用/缺数据的原因要与材料相符。'
+                          '有数据不能借缺数跳过，确实缺数据也不能为凑齐方法编造分群或权益。'
+                          'audience_plan 的人群、商品、权益、测算和验证条件需有材料依据；'
+                          '合成案例只能说明演示方案，不当作实际经营效果。'
+                          '程序只核定位和结构，采用与不采用的业务合理性由本次独立上下文复核检查。\n')
     messages = [{'role': 'system', 'content': review_prompt},
                 {'role': 'user', 'content': _model_json({'bundle': bundle, 'calculations': calculations, 'report': report})}]
     settings = {key: getattr(client, key, None) for key in ('model', 'thinking', 'max_tokens', 'timeout')}
@@ -419,7 +455,8 @@ def run_api(input_paths, output, *, client, merchant, goal=DEFAULT_GOAL, scope=D
             _new_text(root / f'candidate-{candidates:03d}.json', _json(value))
             try:
                 bundle, _, calculations = _load_run(root)
-                bound = bind_report(value, bundle, calculations, expected_merchant=bundle['merchant'])
+                bound = bind_report(value, bundle, calculations, expected_merchant=bundle['merchant'],
+                                    require_method_usage=_require_method_usage(root))
             except ValueError as error:
                 _new_text(root / f'candidate-check-{candidates:03d}.json',
                           _json({'valid': False, 'error': str(error)}))

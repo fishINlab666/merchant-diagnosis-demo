@@ -3,7 +3,7 @@ name: merchant-diagnosis
 description: Use when a merchant, brand KA, or operator provides store-page information and operating reports for a business diagnosis, targeted data request, action plan, follow-up review, or an HTML business dashboard. Supports single stores, chains, advertising and no-advertising businesses.
 ---
 
-# 商户经营诊断 · 1.7.2
+# 商户经营诊断 · 1.8
 
 把店铺资料和现有周报交给当前 Agent，理解材料、实际计算、判断先做什么，导出能直接给老板看的 `report.html`。不要求客户套表头，不返回预置案例。公开资料能先交初诊，补数后更新方案。
 
@@ -21,7 +21,7 @@ description: Use when a merchant, brand KA, or operator provides store-page info
 
 1. **准备**：`python3 scripts/quick_run.py prepare --input <店铺资料> <周报> --output <新目录> --merchant <商家名> --runtime <实际宿主>`。演示合成材料加 `--synthetic`。读取生成的 prompt.md、materials.json。
 2. **分析与计算**：按目标→问题→原因→策略→动作→复盘推理，批量提交计算请求。运行 `python3 scripts/quick_run.py calculate --run <目录> --requests <请求.json>`，读取真实结果。不要让客户手算或逐阶段审批。
-3. **交付**：写一份老板报告 JSON；运行 `python3 scripts/quick_run.py finish --run <目录> --report <草稿.json>`，最后给出 report.html。计算值由程序绑定，页面自动生成；不用另写展示配置或五张 Markdown 表。
+3. **交付**：写一份老板报告 JSON，记录四类方法的采用/改写/缺数据/不适用及依据；有人群资料时补人群×商品×权益方案。运行 `python3 scripts/quick_run.py finish --run <目录> --report <草稿.json>`，最后给出 report.html。计算值和方法落点由程序绑定，页面自动生成「老板看板／产品讲解」；旁边留存 method-usage.json，不用另写展示配置或让客户填表。
 
 程序报错时只修正具体问题，再执行相关命令。格式自动归一化；缺业务数据用 null 和定向补数表达，继续交付其余发现与动作。不能为了过检查填零、伪造来源或改写计算结果。新材料用新目录，保留旧报告；有前次判断时解释保留、调整或撤回的部分。
 
@@ -35,6 +35,7 @@ description: Use when a merchant, brand KA, or operator provides store-page info
 - 首屏一句判断、一个核心钱数、一件先行动作。优先展示有依据的审慎情景，条件只在钱数旁说明一次；负面情景写进止损条件。收到反面事实时应撤回原结论，不能隐藏。
 - 每项动作有负责人、时间/范围、投入、成功和停止条件。回传先核是否执行，再谈效果；没有商家回执就不写成执行成功。
 - 保留分析依据和工具记录，客户HTML不展示DEF/F/A/D内部编号、校验术语或模型协议。
+- 方法采用必须指向本轮材料及实际建议；缺人群数据不编分群收益。讲解圈点来自真实方法记录，不能先写产品亮点再虚构采用证据。
 
 ## 其他入口与边界
 

@@ -12,6 +12,7 @@
   <header class="toolbar">
     <a class="brand" href="#main">经营行动方案</a>
     <nav aria-label="方案导航"><a href="#decision">先看结论</a><a href="#dashboard">看清依据</a><a href="#execution">开始行动</a></nav>
+    <div id="view-mode" class="view-mode" role="group" aria-label="展示方式" hidden><button id="mode-boss" type="button" aria-pressed="true">老板看板</button><button id="mode-product" type="button" aria-pressed="false">产品讲解</button></div>
     <div class="tools"><button id="copy" type="button">复制摘要</button><button id="print" type="button">打印 / PDF</button></div>
   </header>
   <main id="main">
@@ -19,13 +20,16 @@
       <div class="merchant-row"><p id="merchant"></p><span id="synthetic" hidden>合成数据演示</span></div>
       <h1 id="headline"></h1>
       <p id="scope" class="scope"></p>
+      <div id="explanation-guide" class="explanation-guide explain-only" hidden><p>查看经营判断背后的方法</p><div id="explanation-links" aria-label="方法讲解入口"></div></div>
       <div class="decision-grid">
         <div class="money-panel"><h2 id="money-label"></h2><p class="money-amount"><strong id="money-value"></strong><span id="money-unit"></span></p><p id="money-period" class="money-period"></p><p id="money-note" class="money-note"></p><details id="money-basis"><summary>怎么算的</summary><p></p></details></div>
         <div class="first-action"><h2>先做这一件事</h2><p id="first-action-title"></p><dl id="first-action-meta"></dl><a class="action-link" href="#execution">查看执行安排 <span aria-hidden="true">→</span></a></div>
       </div>
     </section>
     <section id="dashboard" aria-labelledby="dashboard-title"><div class="section-heading"><h2 id="dashboard-title">为什么值得做</h2><p>把钱花在哪、收益怎么来，一起看清</p></div><div id="charts" class="charts"></div><div id="findings" class="findings"></div></section>
+    <section id="audience" aria-labelledby="audience-title" hidden><div class="section-heading"><h2 id="audience-title">把商品和权益给对人</h2><p>选择人群，查看判断依据与验收方式</p></div><div class="audience-columns" aria-hidden="true"><span>人群</span><span>匹配商品</span><span>给什么权益</span><span>本次决策</span></div><div id="audience-options" class="audience-options"></div></section>
     <section id="execution" aria-labelledby="execution-title"><div class="section-heading"><h2 id="execution-title">接下来怎么做</h2><p>从试行到复盘，逐项推进</p></div><div id="actions" class="actions"></div><div id="gaps" class="gaps"></div><div id="followup" class="followup"><h3>到时看结果，再决定下一步</h3><dl></dl></div></section>
+    <section id="methods" class="explain-only" aria-labelledby="methods-title" hidden><div class="section-heading"><h2 id="methods-title">这次怎样使用经营方法</h2><p>每项方法都说明适用情况与材料依据</p></div><div id="method-records" class="method-records"></div></section>
     <footer><span id="footer-merchant"></span><a href="#decision">回到结论 ↑</a></footer>
   </main>
   <div id="toast" role="status" aria-live="polite"></div>

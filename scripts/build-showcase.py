@@ -5,7 +5,9 @@ import subprocess
 import sys
 
 root = Path(__file__).resolve().parents[1]
-subprocess.run([sys.executable, str(root / 'tools/check_product_copy.py'), '--root', str(root)],
+subprocess.run([sys.executable, str(root / 'tools/check_product_copy.py'), '--root', str(root),
+                '--file', 'public/reports/audience-chain.html',
+                '--file', '.agents/skills/merchant-diagnosis/assets/boss-report.js'],
                check=True)
 destination = root / 'dist'
 if destination.is_symlink():

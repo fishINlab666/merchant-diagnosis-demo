@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.2",
+  "created_at": "2026-11-08T09:06:34.704602+00:00",
+  "runtime": "Codex CLI 独立会话",
+  "python_version": "3.12.14",
+  "inference_executed": false,
+  "inputs": [
+    {
+      "name": "public.md",
+      "sha256": "aa2a19457d50f3a871741d97596822409629265c6b216bb04841ed0aded9b522"
+    },
+    {
+      "name": "definitions.md",
+      "sha256": "904c8220a09b1e9671d394457b60588c22057e802e10a7a8eea629490dbff0c5"
+    },
+    {
+      "name": "manager-notes.md",
+      "sha256": "8639f96e92965d664beabe6049c4e1c72437a695e791fab384b2a80629f484f4"
+    },
+    {
+      "name": "禾序饭盒_仅门店周报.xlsx",
+      "sha256": "39cf73504ac21eee995ee32ea098bf9ccdc043dd4cceaf893dd3eedf871788f0"
+    }
+  ],
+  "files": {
+    "materials.json": "3a05558b69457e99d214363c6f49bb93c231f27d07c31b878524e854b0c0e108",
+    "prompt.md": "80ea647500cd8bd4da276f17c4ba64d081bb1654a45035ac53fe52b413f9d5b4",
+    "quick-workflow.md": "2247af8a73b8143df0ba7ed6643d01ece012602dcc89caac1d286e947861c1cb",
+    "boss-output.md": "b2ae6e9b8085450aa8557bd57bf4ad669255beae4a50f833ba0aa09da50f73e7",
+    "ka-playbook.md": "175f215f9c0704794b81260e38cba8223e0e47b7411277e916fd04c9d625bfc6"
+  }
+}

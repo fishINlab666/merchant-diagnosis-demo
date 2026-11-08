@@ -1,0 +1,1425 @@
+{
+  "merchant": {
+    "name": "禾序饭盒",
+    "scope": "六店；仅本轮原件",
+    "period": "2026-10-19至10-25，对比10-12至10-18；容量确认日11月8日",
+    "synthetic": true
+  },
+  "headline": "学府先恢复供给，滨江先修让利，国贸与科创分别支持增长",
+  "money": {
+    "label": "审慎月度贡献改善",
+    "unit": "元",
+    "period": "未来月度",
+    "note": "缺人群成交、商品成本与增量试行依据，暂不估金额；先按门店推进可核验动作。",
+    "basis": "周账能算既有经营贡献，但不能证明未来增量；尚缺新增执行费用、替代原价订单及可比对照。",
+    "value": null,
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:12"
+      },
+      {
+        "material": "public.md",
+        "locator": "line:18"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "国贸优先保供，科创先查晚餐商品展示",
+      "detail": "按老板单均8元、净收入增长5%的目标：国贸10.64元/单、增长15.20%，可优先支持承接；科创11.43元/单却下降8.36%，先检查晚餐组合的首屏呈现与进店下单。社区13.56元/单、增长4%，维持家庭套餐和会员自提；城西10.85元/单、下降4.68%，先补午餐打包岗位。",
+      "basis": "同店完整两周，退款均成熟7天；高贡献而增长弱的店应分别查商品展示与履约，不统一加曝光。",
+      "evidence": [
+        {
+          "material": "禾序饭盒_仅门店周报.xlsx",
+          "locator": "sheet:财务周账!I6"
+        },
+        {
+          "material": "禾序饭盒_仅门店周报.xlsx",
+          "locator": "sheet:财务周账!I7"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:10"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:11"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:15"
+        }
+      ]
+    },
+    {
+      "title": "滨江增长不能掩盖低单均贡献",
+      "detail": "滨江净收入增长17.87%，单均贡献仅2.36元，未达老板要求。商家券实扣23,800元，加盟商承担；先核同款商品让利与成本，不能仅因广告金额高就搬预算。",
+      "basis": "净收入已扣商家券，贡献另扣食材、包材、平台、配送与广告；不重复扣券。低贡献不能仅归因于券，需商品级拆账。",
+      "evidence": [
+        {
+          "material": "禾序饭盒_仅门店周报.xlsx",
+          "locator": "sheet:财务周账!H8"
+        },
+        {
+          "material": "禾序饭盒_仅门店周报.xlsx",
+          "locator": "sheet:财务周账!I8"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:13"
+        }
+      ]
+    },
+    {
+      "title": "学府主要可控问题是供给不足",
+      "detail": "学府单均贡献1.29元，净收入下降12.50%。10月19日鸡腿供货从每日100份降至60份，伴随19次售罄记录；无货换菜退款本周105单、前周20单，价格、配送半径与营业时间未变。先恢复可兑现供给，再评推广。",
+      "basis": "变更时间、售罄机制、退款理由及替代解释相互支持；恢复幅度及效果须以新回执验证，不能直接按历史差额估收益。",
+      "evidence": [
+        {
+          "material": "manager-notes.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "禾序饭盒_仅门店周报.xlsx",
+          "locator": "sheet:供给与权限!G8"
+        },
+        {
+          "material": "禾序饭盒_仅门店周报.xlsx",
+          "locator": "sheet:财务周账!I9"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "先让学府主套餐在午峰有货可卖",
+      "owner": "加盟商老板确认采购；学府店长执行；总部运营协调；财务回传",
+      "timing": "建议确认后2日内落实补货与上架，连续观察7个完整营业日",
+      "budget": "先核恢复每日100份供货的可行性、实耗及损耗；不新增推广；采购和执行费先报价获批，不视为零",
+      "success": "先有采购、到货、上架与售罄记录；同口径无货换菜退款单/支付单下降，完成单和净收入恢复，相对可比基线经营贡献差额为正才继续",
+      "stop": "仍缺货则停止扩量并修补货节奏；食品损耗或退款恶化、贡献差额不正时调整备货，不以砍订单达标"
+    },
+    {
+      "title": "国贸保供、科创改展示，其余按瓶颈支持",
+      "owner": "总部运营确认范围和费用；直营店长操作；财务复核",
+      "timing": "建议2日内核实11月8日容量仍有效，上线后观察7日；同期保留可比时段或商品对照",
+      "budget": "暂不追加广告或券；展示及培训先报实际工时费用。国贸新增承接上限午20/晚20单每日；科创午15/晚20；社区午5/晚15；城西午0/晚8，均为上限而非订单预测",
+      "success": "国贸保双主菜库存；科创准确露出双主菜随心配42元及晚餐组合40元，比较同口径进店到下单；社区维持原会员自提；城西先核打包岗排班。核实际执行后，贡献差额为正且完成单/净收入不恶化才讨论扩围",
+      "stop": "未获费用批准不启动新增支出；达时段容量或履约恶化立即限量；贡献改善靠订单萎缩、或展示无改善时调整方案并继续保留准确商品说明"
+    },
+    {
+      "title": "滨江先拆满减订单，再决定商品与权益",
+      "owner": "加盟商老板确认商品价格和券；总部运营核投放；财务提供拆账",
+      "timing": "建议3日内拿同款商品及券订单拆账，确认后另设对照与试行额度",
+      "budget": "当前不加补贴、不调拨广告；维持商品供给，不直接全停券；未给平台共投资源，不计补贴收入",
+      "success": "区分优惠订单与可比无券订单，扣齐费用及原价替代后，方案贡献差额为正且规模守住，再有限试行；8元/单为老板方向要求",
+      "stop": "加盟商未确认或成本核不清不改价；若缩券造成完成单、净收入明显下降且贡献未改善，停止扩大调整并复核商品价值"
+    }
+  ],
+  "followup": {
+    "when": "先在建议2—3日准备窗口核执行；有完整7日同口径结果且退款成熟7日后复盘，阈值和窗口为建议设置待老板确认",
+    "decision": "先验是否执行，再决定继续供给修复、调整展示或滨江权益；分群资料齐备才选目标人群和权益；有可比增量及费用才估月度机会。未收到本轮执行回执。",
+    "collect": [
+      "采购、备货、排班、上线截图、实际费用与未执行原因；六店同字段周账及退款成熟日期",
+      "按店/时段的曝光、进店、支付、完成、退款及分母；若要选人群，再给频次/生命周期定义、去重人数、观察期、触达和下单人数",
+      "商品实际成本、权益规则和承担方、领券核销及原价订单替代；可比对照与执行费"
+    ]
+  },
+  "charts": [
+    {
+      "type": "bar",
+      "title": "单均经营贡献",
+      "unit": "元/单",
+      "caption": "老板本轮要求至少8元；分母为完成单，不是支付单。",
+      "series": [
+        {
+          "label": "国贸店",
+          "calc_id": "s0_unit",
+          "value": 10.644444444444444,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F18"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B18"
+            }
+          ]
+        },
+        {
+          "label": "科创店",
+          "calc_id": "s1_unit",
+          "value": 11.433333333333334,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F19"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B19"
+            }
+          ]
+        },
+        {
+          "label": "滨江店",
+          "calc_id": "s2_unit",
+          "value": 2.364705882352941,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F20"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B20"
+            }
+          ]
+        },
+        {
+          "label": "学府店",
+          "calc_id": "s3_unit",
+          "value": 1.2904761904761906,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F21"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B21"
+            }
+          ]
+        },
+        {
+          "label": "社区店",
+          "calc_id": "s4_unit",
+          "value": 13.561538461538461,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F22"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B22"
+            }
+          ]
+        },
+        {
+          "label": "城西店",
+          "calc_id": "s5_unit",
+          "value": 10.85,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F23"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "商品净收入较前周变化",
+      "unit": "%",
+      "caption": "本轮品牌增长工作目标5%；同店完整7天且退款成熟。",
+      "series": [
+        {
+          "label": "国贸店",
+          "calc_id": "s0_growth",
+          "value": 15.2,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F18"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B18"
+            }
+          ]
+        },
+        {
+          "label": "科创店",
+          "calc_id": "s1_growth",
+          "value": -8.363636363636363,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F19"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B19"
+            }
+          ]
+        },
+        {
+          "label": "滨江店",
+          "calc_id": "s2_growth",
+          "value": 17.866666666666667,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F20"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B20"
+            }
+          ]
+        },
+        {
+          "label": "学府店",
+          "calc_id": "s3_growth",
+          "value": -12.5,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F21"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B21"
+            }
+          ]
+        },
+        {
+          "label": "社区店",
+          "calc_id": "s4_growth",
+          "value": 4,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F22"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B22"
+            }
+          ]
+        },
+        {
+          "label": "城西店",
+          "calc_id": "s5_growth",
+          "value": -4.680851063829787,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F23"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "本周经营贡献",
+      "unit": "元",
+      "caption": "已扣食材、包材、平台、配送及广告，未扣房租、固定工资与税。",
+      "series": [
+        {
+          "label": "国贸店",
+          "calc_id": "s0_contribution",
+          "value": 38320,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N6"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F18"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B18"
+            }
+          ]
+        },
+        {
+          "label": "科创店",
+          "calc_id": "s1_contribution",
+          "value": 34300,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N7"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F19"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B19"
+            }
+          ]
+        },
+        {
+          "label": "滨江店",
+          "calc_id": "s2_contribution",
+          "value": 8040,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N8"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F20"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B20"
+            }
+          ]
+        },
+        {
+          "label": "学府店",
+          "calc_id": "s3_contribution",
+          "value": 2710,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N9"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F21"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B21"
+            }
+          ]
+        },
+        {
+          "label": "社区店",
+          "calc_id": "s4_contribution",
+          "value": 35260,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N10"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F22"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B22"
+            }
+          ]
+        },
+        {
+          "label": "城西店",
+          "calc_id": "s5_contribution",
+          "value": 30380,
+          "evidence": [
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!C11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!D11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!E11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!G11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!H11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!I11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!J11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!K11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!L11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!M11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!N11"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!F23"
+            },
+            {
+              "material": "禾序饭盒_仅门店周报.xlsx",
+              "locator": "sheet:财务周账!B23"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "以商户经营贡献和完成单为双目标，按六店原账选择支持资源；贡献不含房租、固定工资和税。",
+    "chosen_strategy": "按老板8元单均与5%增长目标分店：国贸双达标保供并准备有限承接；科创、社区、城西贡献达标增长未达标，分别修展示、保现有会员经营、修履约；滨江增长达标贡献弱先拆让利成本；学府双弱先恢复供给。没有人群证据，不推出人群商品权益方案。",
+    "execution": "总部管直营菜单、会员和投放；加盟商批准滨江/学府价格供货；店长回传操作与容量，财务回传成熟退款及同字段费用。无人回执即未核实执行。",
+    "alternatives": [
+      "全店加曝光：学府缺货、城西午餐容量为零，可能放大流失，缺边际证据不选。",
+      "全店发券或调拨滨江广告：没有分群成本、增量归因和替代率，不据平均收益或预算占比决策。",
+      "直接推广双主菜套餐给特定画像：页面商品可核，但未给分群需求和成本，只先检验科创展示，不指定人群优惠。"
+    ],
+    "assumptions": [
+      "所有建议为计划，未实施；建议窗口未经商家确认。",
+      "周账为10月历史，11月8日容量不能证明10月增长原因，也不直接用于月度预测。",
+      "未提供任何history，未读历史。",
+      "无可比竞店和人群切片，不凭场景名推画像；客群分母、增量周期、执行费用与蚕食均未知。"
+    ]
+  },
+  "gaps": [
+    {
+      "item": "同店同周期分群去重人数、触达/进店/成交分母及频次和生命周期规则",
+      "why": "决定优先支持谁；缺此信息暂停分群方案与收益。"
+    },
+    {
+      "item": "SKU实耗、券承担及核销、原价替代、执行费与可比增量试行",
+      "why": "决定滨江保留哪些权益、科创组合能否试行及月度贡献差额；已确认周账成本不重复索取。"
+    },
+    {
+      "item": "学府恢复供货、城西排班及各店最新容量回执",
+      "why": "决定是否允许增长试行和扩围，容量不当作需求。"
+    }
+  ],
+  "audience_plan": [],
+  "method_usage": [
+    {
+      "method": "store_segmentation",
+      "status": "applied",
+      "reason": "六店有同口径周账及老板目标",
+      "decision": "不同店分别保供、修展示、修单均及修履约",
+      "evidence_summary": "六店贡献与增长差异决定支持顺序",
+      "evidence": [
+        {
+          "material": "禾序饭盒_仅门店周报.xlsx",
+          "locator": "sheet:财务周账!I6"
+        },
+        {
+          "material": "禾序饭盒_仅门店周报.xlsx",
+          "locator": "sheet:财务周账!I7"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:5"
+        }
+      ],
+      "targets": [
+        {
+          "section": "findings",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 1
+        }
+      ]
+    },
+    {
+      "method": "audience_offer",
+      "status": "needs_data",
+      "reason": "只有门店周账，无分群成交成本及核销",
+      "decision": "暂不选主投人群或确定券，先补真实分群分母",
+      "evidence_summary": "页面场景不代表实际人群收益",
+      "evidence": [
+        {
+          "material": "public.md",
+          "locator": "line:18"
+        }
+      ],
+      "targets": []
+    },
+    {
+      "method": "tool_mix",
+      "status": "applied",
+      "reason": "已有供给与承接瓶颈，不能先搬广告",
+      "decision": "供给恢复与商品展示优先，暂停新增广告和未经核算权益",
+      "evidence_summary": "学府供货变更与科创首屏展示分别需要不同工具",
+      "evidence": [
+        {
+          "material": "manager-notes.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:10"
+        }
+      ],
+      "targets": [
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 1
+        }
+      ]
+    },
+    {
+      "method": "execution_followup",
+      "status": "applied",
+      "reason": "直营和加盟权限不同且要求回执",
+      "decision": "明确总部、加盟商、店长和财务职责，先核执行再扩围",
+      "evidence_summary": "行动未收到回执，按责任链回传",
+      "evidence": [
+        {
+          "material": "manager-notes.md",
+          "locator": "line:7"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:17"
+        }
+      ],
+      "targets": [
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 2
+        }
+      ]
+    }
+  ]
+}

@@ -43,6 +43,27 @@ def report():
                          'execution': '建议，尚未执行', 'assumptions': []}, 'gaps': []}
 
 
+def method_records():
+    """Synthetic applicability decisions for the single-store fixture."""
+    return [
+        {'method': 'store_segmentation', 'status': 'not_applicable',
+         'reason': '材料只覆盖一家店，无法进行门店之间的资源分层',
+         'decision': '先处理单店包装问题', 'evidence_summary': '', 'evidence': [], 'targets': []},
+        {'method': 'audience_offer', 'status': 'needs_data',
+         'reason': '材料没有顾客频次、商品组合与权益核销明细',
+         'decision': '当前不调整人群权益；包装试行无需等待这些数据',
+         'evidence_summary': '', 'evidence': [], 'targets': []},
+        {'method': 'tool_mix', 'status': 'adapted',
+         'reason': '现有材料指向包装问题，先选择运营动作',
+         'decision': '优先抽查包装，不安排广告加投', 'evidence_summary': '本周已说明经营口径',
+         'evidence': citation(), 'targets': [{'section': 'actions', 'index': 0}]},
+        {'method': 'execution_followup', 'status': 'applied',
+         'reason': '试行需要明确店长责任和回传节奏',
+         'decision': '店长记录执行回执，一周后决定是否扩大', 'evidence_summary': '按本次周报确定执行范围',
+         'evidence': citation(), 'targets': [{'section': 'actions', 'index': 0}]},
+    ]
+
+
 class QuickContractTests(unittest.TestCase):
     def contract(self):
         self.assertIsNotNone(importlib.util.find_spec('quick_contract'), 'quick contract missing')

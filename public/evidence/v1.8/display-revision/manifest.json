@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.2",
+  "created_at": "2026-11-08T09:17:32.054226+00:00",
+  "runtime": "Codex 原生 Agent 定向复核修订",
+  "python_version": "3.12.14",
+  "inference_executed": false,
+  "inputs": [
+    {
+      "name": "public.md",
+      "sha256": "aa2a19457d50f3a871741d97596822409629265c6b216bb04841ed0aded9b522"
+    },
+    {
+      "name": "definitions.md",
+      "sha256": "fb14c7da36536c9f3542e65fa1b0e2fba6dce5491bac5064bd0285ea9a08993e"
+    },
+    {
+      "name": "manager-notes.md",
+      "sha256": "e342955c1a6c0931c4094fe9404e7a927bb652a85ba136ee93f99b053dc305f3"
+    },
+    {
+      "name": "禾序饭盒_混排周报与人群观察.xlsx",
+      "sha256": "2efb2f3eb6ff268718c9937edde1a5a0e8d7211a3406091b45789026f7bf53ca"
+    }
+  ],
+  "files": {
+    "materials.json": "d5a220cc87b7fef6d581ec809cf7b5e2ac6c00e66c49eefd84bcd11d2ad3aa28",
+    "prompt.md": "879f91b1b8200546c4baa2bc1370fc3ec03f6b9d3575461fcb7cb1525815d565",
+    "quick-workflow.md": "2247af8a73b8143df0ba7ed6643d01ece012602dcc89caac1d286e947861c1cb",
+    "boss-output.md": "cea8531bc22eed9592f29ac5027c829c028f29fc779e67c9048ab5a82fe09236",
+    "ka-playbook.md": "175f215f9c0704794b81260e38cba8223e0e47b7411277e916fd04c9d625bfc6"
+  }
+}

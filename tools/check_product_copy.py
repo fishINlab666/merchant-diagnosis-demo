@@ -8,6 +8,7 @@ discovered or scanned. HTML extraction is static and does not execute scripts.
 import argparse
 from html import unescape
 from html.parser import HTMLParser
+import json
 from pathlib import Path
 import re
 import sys
@@ -64,6 +65,8 @@ class ProductHTML(HTMLParser):
         self.ignored = None
         self.in_head = False
         self.in_title = False
+        self.report_payload = None
+        self.report_segments = []
 
     def append(self, text, lines=None):
         self.chunks.append(text)
@@ -74,6 +77,10 @@ class ProductHTML(HTMLParser):
             return
         if tag in ('script', 'style'):
             self.ignored = tag
+            attributes = dict(attrs)
+            if (tag == 'script' and attributes.get('id') == 'boss-data'
+                    and attributes.get('type') == 'application/json'):
+                self.report_payload = []
             return
         if tag in BLOCK_TAGS:
             self.append('\n')
@@ -95,6 +102,21 @@ class ProductHTML(HTMLParser):
     def handle_endtag(self, tag):
         if self.ignored:
             if tag == self.ignored:
+                if self.report_payload is not None:
+                    raw = ''.join(text for text, _ in self.report_payload)
+                    line = self.report_payload[0][1] if self.report_payload else self.getpos()[0]
+                    value = json.loads(raw)
+                    def collect(item):
+                        if isinstance(item, str):
+                            self.report_segments.append((item, [line] * len(item)))
+                        elif isinstance(item, dict):
+                            for child in item.values():
+                                collect(child)
+                        elif isinstance(item, list):
+                            for child in item:
+                                collect(child)
+                    collect(value)
+                    self.report_payload = None
                 self.ignored = None
             return
         if tag in BLOCK_TAGS:
@@ -105,6 +127,9 @@ class ProductHTML(HTMLParser):
             self.in_title = False
 
     def handle_data(self, data):
+        if self.report_payload is not None:
+            self.report_payload.append((data, self.getpos()[0]))
+            return
         if not self.ignored and (not self.in_head or self.in_title):
             self.append(*located(data, self.getpos()[0]))
 
@@ -116,7 +141,9 @@ class ProductHTML(HTMLParser):
         self.handle_entityref('#' + name)
 
     def segments(self):
-        return [(''.join(self.chunks), self.lines)] + self.attributes
+        if self.report_payload is not None:
+            raise ValueError('Unclosed report payload')
+        return [(''.join(self.chunks), self.lines)] + self.attributes + self.report_segments
 
 
 def blank(match):
@@ -171,7 +198,10 @@ def main():
         except (OSError, UnicodeError) as exc:
             errors.append(f'{name}: {type(exc).__name__}')
             continue
-        hits.extend(f'{name}:{line}: {term}' for line, term in findings(source, path.suffix))
+        try:
+            hits.extend(f'{name}:{line}: {term}' for line, term in findings(source, path.suffix))
+        except (ValueError, RecursionError):
+            errors.append(f'{name}: InvalidReportData')
     for error in errors:
         print(error, file=sys.stderr)
     for hit in hits:

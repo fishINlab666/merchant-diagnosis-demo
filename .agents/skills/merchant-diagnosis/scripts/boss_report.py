@@ -8,6 +8,8 @@ import re
 import sys
 import tempfile
 
+from method_usage import METHODS, STATUSES, validate_usage
+
 ASSETS = Path(__file__).resolve().parents[1] / "assets"
 PROTOCOL_TOKEN = r"(?:DEF\d+|[FAD]\d+|S[1-5])"
 
@@ -117,9 +119,29 @@ def customer_data(report):
     if not isinstance(collect, list):
         raise ValueError("followup.collect 必须为文字列表")
     followup["collect"] = [_text(item, "followup.collect") for item in collect]
+    audience_plan = []
+    for item in _items(report.get("audience_plan", []), "audience_plan", maximum=6):
+        row = _texts(item, ("audience", "product", "benefit", "decision", "validation", "basis"),
+                     "audience_plan", optional=("basis",))
+        if item.get("economics") is not None:
+            source = _object(item["economics"], "audience_plan.economics")
+            row["economics"] = _texts(source, ("label", "unit"), "audience_plan.economics")
+            row["economics"]["value"] = _number(source, "audience_plan.economics")
+        audience_plan.append(row)
+    methods = []
+    if "method_usage" in report:
+        for record in validate_usage(report["method_usage"], report):
+            provenance = METHODS[record["method"]]
+            used = record["status"] in ("applied", "adapted")
+            methods.append({"name": provenance["name"], "origin": provenance["origin"],
+                            "status": STATUSES[record["status"]], "used": used,
+                            "reason": _text(record["reason"], "method_usage.reason"),
+                            "decision": _text(record["decision"], "method_usage.decision"),
+                            "basis": _text(record["evidence_summary"], "method_usage.evidence_summary", optional=True),
+                            "anchors": record["targets"] if used else []})
     return {"merchant": merchant, "headline": _text(report.get("headline"), "headline"), "money": money,
             "findings": findings, "actions": actions, "charts": charts,
-            "followup": followup,
+            "followup": followup, "audience_plan": audience_plan, "methods": methods,
             "gaps": [_texts(item, ("item", "why"), "gaps") for item in _items(report.get("gaps", []), "gaps")]}
 
 

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "monthly_contribution_opportunity",
+    "expression": "income_delta-variable_cost_delta-ad_delta-execution_fee",
+    "variables": {
+      "income_delta": {
+        "value": null,
+        "assumption": "缺少可比试行与基线净结算差额，不能从券前菜单价推算月收入变化"
+      },
+      "variable_cost_delta": {
+        "value": null,
+        "assumption": "缺少食材包材、平台配送与商家承担权益费用及其包含关系"
+      },
+      "ad_delta": {
+        "value": null,
+        "assumption": "未提供广告账单或变更计划；无推广标识不能当广告费为零"
+      },
+      "execution_fee": {
+        "value": null,
+        "assumption": "尚无排班、页面修改工时与新增执行费确认"
+      }
+    },
+    "unit": "元/月",
+    "purpose": "记录审慎月度贡献机会的真实缺口；不以零替代未知",
+    "status": "unknown",
+    "value": null,
+    "missing_variables": [
+      "ad_delta",
+      "execution_fee",
+      "income_delta",
+      "variable_cost_delta"
+    ],
+    "assumptions": [
+      {
+        "variable": "income_delta",
+        "assumption": "缺少可比试行与基线净结算差额，不能从券前菜单价推算月收入变化"
+      },
+      {
+        "variable": "variable_cost_delta",
+        "assumption": "缺少食材包材、平台配送与商家承担权益费用及其包含关系"
+      },
+      {
+        "variable": "ad_delta",
+        "assumption": "未提供广告账单或变更计划；无推广标识不能当广告费为零"
+      },
+      {
+        "variable": "execution_fee",
+        "assumption": "尚无排班、页面修改工时与新增执行费确认"
+      }
+    ]
+  }
+]

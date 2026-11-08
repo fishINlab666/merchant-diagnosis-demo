@@ -1,0 +1,2151 @@
+{
+  "merchant": {
+    "name": "禾序饭盒",
+    "scope": "六店诊断；国贸、科创两店定向试行",
+    "period": "周账10/12–10/25；模拟观察10/26–11/01；计划11/09–12/08",
+    "synthetic": true
+  },
+  "headline": "优先支持国贸、科创分群经营；学府先补供给，滨江先修让利",
+  "money": {
+    "label": "审慎月度贡献机会",
+    "unit": "元",
+    "period": "2026-11-09至12-08，30天",
+    "note": "按增长增量保留60%、高频420单/千人测算，限两店四群单次触达；扣执行费1,800元，待试行验证。",
+    "basis": "各群候选商品净收入减食材、包材、平台、配送、广告，与各自现行基线比较，再扣一次性执行费。固定工资、租金及税未计。",
+    "calc_id": "monthly_opportunity",
+    "value": 20596.16,
+    "evidence": [
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!C7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!H7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!N7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!O7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!P7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!S7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!Q7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!R7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!H8"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!S8"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!B5"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!C5"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!D5"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!E5"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!F5"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!J8"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:人群包11月8日!C6"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!B11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!C9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!H9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!N9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!O9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!P9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!S9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!Q9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!R9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!H10"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!S10"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!B6"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!C6"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!D6"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!E6"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!F6"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!J10"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:人群包11月8日!C7"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!C11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!H11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!N11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!O11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!P11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!S11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!Q11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!R11"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!H12"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!S12"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!J12"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:人群包11月8日!C8"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!C14"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!N14"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!O14"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!P14"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!S14"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!Q14"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!R14"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!S13"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:同窗观察_模拟!J13"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:人群包11月8日!C9"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!B12"
+      },
+      {
+        "material": "禾序饭盒_混排周报与人群观察.xlsx",
+        "locator": "sheet:商品与计划参数!B13"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "支持增长与先修经营，要分店安排",
+      "detail": "国贸单均贡献10.64元、净收入增长15.20%，可有限支持增长；科创11.43元但下降8.36%，优先修双主菜及晚餐承接。滨江增长17.87%但单均仅2.36元，先调整加盟商承担的满减。学府1.29元且下降12.50%，先修供给。社区13.56元、增长4%，维持家庭套餐与会员自提；城西10.85元但下降4.68%，先补午餐打包岗，不给午餐加量。",
+      "basis": "以老板本轮单均8元、净收入增长5%目标分层；贡献为扣已确认费用后的经营贡献。",
+      "evidence": [
+        {
+          "material": "manager-notes.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:财务周账!I6"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:财务周账!I11"
+        }
+      ]
+    },
+    {
+      "title": "商品权益优先支持复购，取消高频普发券需看减单代价",
+      "detail": "优先首购第二单减2元，以及留存一单、二单双主菜减3元；高频尝试取消通用5元券。潜客尝鲜、沉睡召回的模拟贡献虽为正，提升较小，暂不占本轮试点资源。四群共27,000人，只用本月可触达池的一轮，不用84,000品牌候选外推。",
+      "basis": "每臂以去重分配1,000人为完成转化分母，非1,300触达次数；高频现行对照为有券，其他三群为原菜单。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:25"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:33"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:36"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!H14"
+        }
+      ]
+    },
+    {
+      "title": "保留前次承接方向，升级为有边界的经营决定",
+      "detail": "保留学府、城西午餐优先修复及科创商品展示方向。学府10/19供货从100份降至60份，售罄19/56个巡检时段、无货换菜退款从20升至105单，且价格、半径、营业时间未变，供给减少是主要可控原因。调整原先其余店暂不分层、暂不做人群权益的判断；社区广告已确认确为零。撤去旧轮缺整套经营账的补数要求。",
+      "basis": "旧报告仅是判断沿革；本轮账、供给和分群材料支持更新。模拟观察不证明旧建议已经执行。",
+      "evidence": [
+        {
+          "material": "manager-notes.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:11"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:15"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:19"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "国贸、科创先上线四群商品权益小试",
+      "owner": "总部运营确认范围与活动上限；两店店长落实商品、库存；财务回传贡献",
+      "timing": "11/09启动，先跑7天；11/15窗口结束后等退款成熟7天，11/22决定是否继续，12/08结束后12/15终审",
+      "budget": "四群最多27,000人，国贸60%、科创40%，每人一轮；触达广告总额8,100元（相对现行新增0），新增执行费两店合计上限1,800元；券仅完成单核销、不叠加。其他既有广告不取消、不搬移。",
+      "success": "建议分批释放、保留同群同期对照；先验上线与核销回执。相对可比基线扣齐费用贡献差额为正，组合完成单不下降且无明显低价替代，才继续余下人群；分时增量不超国贸午20/晚20、科创午15/晚20单/日。",
+      "stop": "无回执、授权或商品未就绪先暂停；贡献差额非正、超容量或退款恶化即暂停新增触达并查原因。高频低于420单/千人先重算贡献及规模代价，再决定是否恢复权益。"
+    },
+    {
+      "title": "学府恢复供给，城西补齐午餐打包岗",
+      "owner": "学府加盟商老板确认备货；总部协调城西排班，两店店长执行",
+      "timing": "首个营业日前核可恢复供货及排班；连续7天按午餐巡检与订单核查",
+      "budget": "学府先评估恢复原100份/日供货；城西先补现有固定编制排班。任何额外费用须另报批准；未核改善前不加推广，城西午餐新增容量为0。",
+      "success": "建议以同星期午餐成熟单比较无货换菜退款率和出餐超时率，兼看完成单及贡献；学府售罄巡检统一56时段/周。上架、备货、排班和退款回执齐备且改善后才讨论增长。",
+      "stop": "供货无法落实或额外成本未确认则不加量；记录反证供给原因则撤回对应归因，查其他原因；不以停售缩量制造改善。"
+    },
+    {
+      "title": "滨江先改让利，社区保供，城西只核晚餐",
+      "owner": "总部运营协调滨江加盟商老板；社区、城西店长执行；财务复核",
+      "timing": "一周内拆清滨江商品让利并提出限量对照；社区照常经营；城西修午餐期间单列晚餐",
+      "budget": "滨江不新增广告或假设平台补贴，先核现有券承担及套餐替代；社区维持零广告；城西晚餐上限8单/日仅是容量，不预报增单收益。",
+      "success": "滨江方案须比现行满减贡献更高且完成单规模可接受，再争取达到单均8元目标；社区同时保完成单和贡献；城西晚餐取得同窗成本与成交才决定权益。",
+      "stop": "加盟商未确认不改价；滨江减券导致贡献差额非正或显著失单则调整；其他店没有同群证据不复制两店预计收益。"
+    }
+  ],
+  "followup": {
+    "when": "上线前核执行；首7天结束且退款成熟后复盘；30天结束后再成熟7天终审。",
+    "decision": "先确认执行，再按相对基线贡献差额及订单、退款、容量决定继续、调整或停止；本轮不外推另四店，不登记实施成效。",
+    "collect": [
+      "各群分配、去重有效触达、进店、支付、成熟完成、退款、券核销及全部费用，保留同期同群对照和原商品被替代情况",
+      "国贸/科创逐日午晚增量、库存和超时；活动截图、领券/核销、培训与投入回执及偏离原因",
+      "学府供货、56时段售罄巡检及无货换菜成熟退款分母；城西排班、午餐超时分母；滨江调整权限及商品成本方案"
+    ]
+  },
+  "charts": [
+    {
+      "type": "bar",
+      "title": "六店单均经营贡献",
+      "unit": "元/单",
+      "caption": "品牌目标至少8元；与净收入增长共同决定资源，不以正贡献自动判优。",
+      "series": [
+        {
+          "label": "国贸",
+          "calc_id": "store_0_unit",
+          "value": 10.644444444444444,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F18"
+            }
+          ]
+        },
+        {
+          "label": "科创",
+          "calc_id": "store_1_unit",
+          "value": 11.433333333333334,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F19"
+            }
+          ]
+        },
+        {
+          "label": "滨江",
+          "calc_id": "store_2_unit",
+          "value": 2.364705882352941,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F20"
+            }
+          ]
+        },
+        {
+          "label": "学府",
+          "calc_id": "store_3_unit",
+          "value": 1.2904761904761906,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F21"
+            }
+          ]
+        },
+        {
+          "label": "社区",
+          "calc_id": "store_4_unit",
+          "value": 13.561538461538461,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F22"
+            }
+          ]
+        },
+        {
+          "label": "城西",
+          "calc_id": "store_5_unit",
+          "value": 10.85,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "六店可比净收入增长",
+      "unit": "%",
+      "caption": "完整7天、成熟退款，品牌增长筛选目标5%。",
+      "series": [
+        {
+          "label": "国贸",
+          "calc_id": "store_0_growth",
+          "value": 15.2,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F18"
+            }
+          ]
+        },
+        {
+          "label": "科创",
+          "calc_id": "store_1_growth",
+          "value": -8.363636363636363,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F19"
+            }
+          ]
+        },
+        {
+          "label": "滨江",
+          "calc_id": "store_2_growth",
+          "value": 17.866666666666667,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F20"
+            }
+          ]
+        },
+        {
+          "label": "学府",
+          "calc_id": "store_3_growth",
+          "value": -12.5,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F21"
+            }
+          ]
+        },
+        {
+          "label": "社区",
+          "calc_id": "store_4_growth",
+          "value": 4,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F22"
+            }
+          ]
+        },
+        {
+          "label": "城西",
+          "calc_id": "store_5_growth",
+          "value": -4.680851063829787,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!E11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!G11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!H11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!I11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!J11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!K11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!L11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!M11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!N11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:财务周账!F23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "四群审慎贡献差额",
+      "unit": "元",
+      "caption": "各群未分摊执行费；主金额已合计扣一次1,800元。",
+      "series": [
+        {
+          "label": "首购第二单",
+          "calc_id": "plan_0",
+          "value": 4845.6,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!C7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!H7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!N7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!O7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!P7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!S7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!Q7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!R7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!C8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!H8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!N8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!O8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!P8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!S8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!Q8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!R8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!C5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!D5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!E5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!F5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!J8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:人群包11月8日!C6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B12"
+            }
+          ]
+        },
+        {
+          "label": "留存一单",
+          "calc_id": "plan_1",
+          "value": 4104.96,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!C9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!H9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!N9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!O9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!P9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!S9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!Q9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!R9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!C10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!H10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!N10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!O10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!P10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!S10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!Q10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!R10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!C6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!D6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!E6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!F6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!J10"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:人群包11月8日!C7"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B12"
+            }
+          ]
+        },
+        {
+          "label": "留存二单",
+          "calc_id": "plan_2",
+          "value": 4205.6,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!C11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!H11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!N11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!O11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!P11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!S11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!Q11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!R11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!C12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!H12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!N12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!O12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!P12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!S12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!Q12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!R12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!C6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!D6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!E6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!F6"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!J12"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:人群包11月8日!C8"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B12"
+            }
+          ]
+        },
+        {
+          "label": "高频取消通用券",
+          "calc_id": "plan_3",
+          "value": 9240,
+          "evidence": [
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!C14"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!H14"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!N14"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!O14"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!P14"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!S14"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!Q14"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!R14"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!C13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!H13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!N13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!O13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!P13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!S13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!Q13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!R13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!C5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!D5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!E5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!F5"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:同窗观察_模拟!J13"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:人群包11月8日!C9"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B11"
+            },
+            {
+              "material": "禾序饭盒_混排周报与人群观察.xlsx",
+              "locator": "sheet:商品与计划参数!B12"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "商户经营贡献与完成单双目标；六店选支持顺序，两店选择人群、商品和权益。",
+    "chosen_strategy": "国贸保履约测增长，科创修复购承接；首购、留存一单、二单使用不同商品权益，高频取消普发券有限试行。潜客模拟贡献754对510，沉睡716对572，均为合成窗口的弱增益，留待后轮，不将未选人群收入并入方案。",
+    "execution": "全部为待执行计划，未收到商家真实回执。总部确认权限和额度，店长上架、库存及分时限量，财务按同口径回传。不会操作先培训、资源不足协调、无权限先确认；未执行不判营销失败。先释放一批且保留同期对照属于建议试点设置，具体分配需总部登记；27,000人是全窗口上限，非首周承诺。",
+    "alternatives": [
+      "全店统一5元券：高频有券470单贡献4964，原菜单450单贡献6990，规模少量提升伴随存量折价，不优先。",
+      "直接全品牌加曝光或搬广告：承接损坏店会放大退款，缺边际广告证据，不做。",
+      "只改页面：能解决可见性但不足以解释各群商品与权益经济性，组合菜单承接、定向权益和回传。"
+    ],
+    "assumptions": [
+      "前次公开初诊不作为任何数值来源；本轮六店周账、两店模拟观察及11/8人群池各自独立，不相加。",
+      "60%仅保留增长完成单增量，商品与券成本按候选口径；高频按420对有券470，减少300单，组合净增972单。",
+      "27,000为四群可用人数；品牌84,000、可触达39,000及旧观察12,000互斥核验，不将周池乘4。",
+      "保守容量按增长三群全部新增1272单，不用高频减单抵消；国贸午10.176/晚15.264，科创午6.784/晚10.176单/日，平均低于上限但上线仍须逐日分时约束。",
+      "随机等分是合成设定，不能宣称真实实验效果；未覆盖全店替代或跨月复购，主金额仅预算情景。"
+    ]
+  },
+  "gaps": [
+    {
+      "item": "试行执行与同期对照、存量折价替代回传",
+      "why": "决定四群是否继续、缩量或恢复高频券，不能把模拟差额当实际成果。"
+    },
+    {
+      "item": "学府修复供货、城西排班与成熟午餐订单回传",
+      "why": "决定何时解除增长暂停；不重复索取已有财务口径。"
+    },
+    {
+      "item": "滨江加盟商同意的商品让利替代方案",
+      "why": "决定能否在不丢规模前提下修贡献，当前不编该店金额。"
+    }
+  ],
+  "audience_plan": [
+    {
+      "audience": "首购新客",
+      "product": "单人能量餐",
+      "benefit": "第二单专享减2元",
+      "decision": "培养第二单，按可触达6,000人上限",
+      "validation": "按去重分配UV比较成熟完成转化、贡献差额和订单；同时查进店承接、退款及存量折价。高频额外关注420单/千人下限。",
+      "basis": "同窗两臂各1,000名合格用户，去重分组固定；财务已扣退款与商家券。",
+      "evidence": [
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A7"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A8"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:34"
+        }
+      ],
+      "economics": {
+        "label": "30天审慎贡献差额（未摊执行费）",
+        "unit": "元",
+        "calc_id": "plan_0",
+        "value": 4845.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      }
+    },
+    {
+      "audience": "留存一单",
+      "product": "双主菜随心配",
+      "benefit": "套餐专享减3元，不叠券",
+      "decision": "用双主菜承接复购，可触达8,000人",
+      "validation": "按去重分配UV比较成熟完成转化、贡献差额和订单；同时查进店承接、退款及存量折价。高频额外关注420单/千人下限。",
+      "basis": "同窗两臂各1,000名合格用户，去重分组固定；财务已扣退款与商家券。",
+      "evidence": [
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A9"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A10"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:34"
+        }
+      ],
+      "economics": {
+        "label": "30天审慎贡献差额（未摊执行费）",
+        "unit": "元",
+        "calc_id": "plan_1",
+        "value": 4104.96,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J10"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      }
+    },
+    {
+      "audience": "留存二单",
+      "product": "双主菜随心配",
+      "benefit": "套餐专享减3元，不叠券",
+      "decision": "增加选择而非全店降价，可触达7,000人",
+      "validation": "按去重分配UV比较成熟完成转化、贡献差额和订单；同时查进店承接、退款及存量折价。高频额外关注420单/千人下限。",
+      "basis": "同窗两臂各1,000名合格用户，去重分组固定；财务已扣退款与商家券。",
+      "evidence": [
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A11"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A12"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:34"
+        }
+      ],
+      "economics": {
+        "label": "30天审慎贡献差额（未摊执行费）",
+        "unit": "元",
+        "calc_id": "plan_2",
+        "value": 4205.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J12"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      }
+    },
+    {
+      "audience": "高频留存",
+      "product": "单人能量餐原菜单",
+      "benefit": "取消月度通用5元券，保留自然菜单原价",
+      "decision": "减少自然订单折价，可触达6,000人；审慎少300单",
+      "validation": "按去重分配UV比较成熟完成转化、贡献差额和订单；同时查进店承接、退款及存量折价。高频额外关注420单/千人下限。",
+      "basis": "同窗两臂各1,000名合格用户，去重分组固定；财务已扣退款与商家券。",
+      "evidence": [
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A14"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A15"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:34"
+        }
+      ],
+      "economics": {
+        "label": "30天审慎贡献差额（未摊执行费）",
+        "unit": "元",
+        "calc_id": "plan_3",
+        "value": 9240,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H14"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N14"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O14"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P14"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S14"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q14"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R14"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J13"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          },
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      }
+    },
+    {
+      "audience": "潜客",
+      "product": "单人能量餐",
+      "benefit": "本轮暂不扩大首次尝鲜券",
+      "decision": "模拟有小幅增益但本轮先做复购；候选池非终身未购",
+      "validation": "后轮保留同群同期对照，补实际成交和全部费用后再决定，不编月度收益。",
+      "basis": "同窗两臂各1,000名合格用户，去重分组固定；财务已扣退款与商家券。",
+      "evidence": [
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A5"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A6"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:34"
+        }
+      ]
+    },
+    {
+      "audience": "沉睡老客",
+      "product": "晚餐热食组合",
+      "benefit": "本轮暂不扩大晚餐减5元召回",
+      "decision": "增益较小，先验有效需求和商品承接",
+      "validation": "后轮保留同群同期对照，补实际成交和全部费用后再决定，不编月度收益。",
+      "basis": "同窗两臂各1,000名合格用户，去重分组固定；财务已扣退款与商家券。",
+      "evidence": [
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A15"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!A16"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:34"
+        }
+      ]
+    }
+  ],
+  "method_usage": [
+    {
+      "method": "store_segmentation",
+      "status": "applied",
+      "reason": "可比六店周账与品牌双目标齐备",
+      "decision": "增长支持国贸，科创修承接；滨江修贡献、学府修供给，社区维持，城西分时处理",
+      "evidence_summary": "可比六店周账与品牌双目标齐备；增长支持国贸，科创修承接；滨江修贡献、学府修供给，社区维持，城西分时处理",
+      "evidence": [
+        {
+          "material": "manager-notes.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:财务周账!I6"
+        }
+      ],
+      "targets": [
+        {
+          "section": "findings",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 1
+        },
+        {
+          "section": "actions",
+          "index": 2
+        }
+      ]
+    },
+    {
+      "method": "audience_offer",
+      "status": "applied",
+      "reason": "六组互斥分母、成本及模拟对照可比较",
+      "decision": "优先复购三群及高频去普券，不统一发券",
+      "evidence_summary": "六组互斥分母、成本及模拟对照可比较；优先复购三群及高频去普券，不统一发券",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:24"
+        },
+        {
+          "material": "禾序饭盒_混排周报与人群观察.xlsx",
+          "locator": "sheet:同窗观察_模拟!H14"
+        }
+      ],
+      "targets": [
+        {
+          "section": "findings",
+          "index": 1
+        },
+        {
+          "section": "audience_plan",
+          "index": 0
+        },
+        {
+          "section": "audience_plan",
+          "index": 3
+        },
+        {
+          "section": "actions",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "method": "tool_mix",
+      "status": "applied",
+      "reason": "承接与人群差异需要不同工具",
+      "decision": "菜单展示、套餐专券和定向触达配合，不按平均回收比搬预算",
+      "evidence_summary": "承接与人群差异需要不同工具；菜单展示、套餐专券和定向触达配合，不按平均回收比搬预算",
+      "evidence": [
+        {
+          "material": "manager-notes.md",
+          "locator": "line:19"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:23"
+        }
+      ],
+      "targets": [
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 1
+        }
+      ]
+    },
+    {
+      "method": "execution_followup",
+      "status": "applied",
+      "reason": "总部、直营、加盟权限不同，有既定七天复盘要求",
+      "decision": "先确认执行回执，再用贡献和规模决定扩围",
+      "evidence_summary": "总部、直营、加盟权限不同，有既定七天复盘要求；先确认执行回执，再用贡献和规模决定扩围",
+      "evidence": [
+        {
+          "material": "manager-notes.md",
+          "locator": "line:17"
+        },
+        {
+          "material": "manager-notes.md",
+          "locator": "line:27"
+        }
+      ],
+      "targets": [
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 1
+        },
+        {
+          "section": "actions",
+          "index": 2
+        }
+      ]
+    }
+  ]
+}

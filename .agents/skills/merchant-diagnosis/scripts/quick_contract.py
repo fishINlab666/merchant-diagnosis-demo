@@ -7,6 +7,7 @@ import re
 
 from service_calculator import _tree
 from validate import LOCATORS, valid_location
+from method_usage import validate_usage
 
 
 def _pairs(pairs):
@@ -183,7 +184,7 @@ def _value(item, unit, sources, calculations, path, *, main=False):
     return result
 
 
-def bind_report(report, materials, calculations, expected_merchant=None):
+def bind_report(report, materials, calculations, expected_merchant=None, *, require_method_usage=False):
     """Normalize display fields; evidence and calculations are never fabricated.
 
     This checks sources, arithmetic references, and actionable structure. It does
@@ -253,4 +254,21 @@ def bind_report(report, materials, calculations, expected_merchant=None):
         result['analysis'][key] = _texts(analysis.get(key, []), 'analysis.' + key)
     result['gaps'] = [{key: _text(item.get(key), 'gap.' + key) for key in ('item', 'why')}
                       for item in _objects(report.get('gaps', []), 'gaps')]
+    if 'audience_plan' in report:
+        result['audience_plan'] = []
+        for item in _objects(report['audience_plan'], 'audience_plan', maximum=6):
+            row = {key: _text(item.get(key), 'audience_plan.' + key)
+                   for key in ('audience', 'product', 'benefit', 'decision', 'validation')}
+            row['basis'] = _text(item.get('basis'), 'audience_plan.basis', optional=True)
+            row['evidence'] = _evidence(item.get('evidence'), sources, 'audience_plan.evidence', required=True)
+            if 'economics' in item:
+                economics = _object(item['economics'], 'audience_plan.economics')
+                row['economics'] = {key: _text(economics.get(key), 'audience_plan.economics.' + key)
+                                    for key in ('label', 'unit')}
+                row['economics'].update(_value(economics, row['economics']['unit'], sources,
+                    known_calculations, 'audience_plan.economics', main=True))
+            result['audience_plan'].append(row)
+    if require_method_usage or 'method_usage' in report:
+        result['method_usage'] = validate_usage(report.get('method_usage'), result,
+            bind_evidence=lambda evidence: _evidence(evidence, sources, 'method_usage.evidence'))
     return result

@@ -10,6 +10,7 @@ import tempfile
 import unittest
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
+sys.path.insert(0, str(SCRIPTS))
 
 
 def sample_report():
@@ -29,6 +30,33 @@ def sample_report():
         "analysis": {"goal": "INTERNAL_ONLY", "execution": "PRIVATE_EXECUTION"},
         "gaps": [{"item": "执行记录", "why": "确认实际是否按计划调整"}],
     }
+
+
+def explained_report():
+    report = sample_report()
+    report["audience_plan"] = [{
+        "audience": "新客", "product": "双人套餐", "benefit": "满额减免",
+        "decision": "只在有余量的门店小范围验证", "validation": "7 天后比较贡献和退款",
+        "basis": "同周期新客购买偏好与门店产能记录。",
+        "evidence": [{"material": "private-audience.csv", "locator": "row:2"}],
+        "economics": {"label": "每单贡献", "unit": "元", "value": 12,
+                      "calc_id": "private-audience-calc", "evidence": "private-audience-cost"},
+    }]
+    report["method_usage"] = []
+    for method, status, target in (
+        ("store_segmentation", "applied", {"section": "findings", "index": 0}),
+        ("audience_offer", "adapted", {"section": "audience_plan", "index": 0}),
+        ("tool_mix", "needs_data", None),
+        ("execution_followup", "not_applicable", None),
+    ):
+        report["method_usage"].append({
+            "method": method, "status": status, "reason": "依据本次材料决定方法是否适用。",
+            "decision": "先在已有样本中验证，再决定是否扩大。",
+            "evidence_summary": "店长确认的同周期经营数据。" if target else "",
+            "evidence": [{"material": "private-method.csv", "locator": "row:2"}] if target else [],
+            "targets": [target, {"section": "actions", "index": 0}] if target else [],
+        })
+    return report
 
 
 class BossReportTests(unittest.TestCase):
@@ -119,6 +147,80 @@ class BossReportTests(unittest.TestCase):
         self.assertEqual("", data["money"]["note"])
         self.assertEqual([], data["gaps"])
         self.assertEqual([], data["followup"]["collect"])
+
+    def test_legacy_report_has_no_invented_methods_or_audience_plan(self):
+        _, data = self.export()
+        self.assertEqual([], data["methods"])
+        self.assertEqual([], data["audience_plan"])
+
+    def test_methods_export_human_labels_and_strip_internal_evidence(self):
+        report = explained_report()
+        original = copy.deepcopy(report)
+        html, data = self.export(report)
+        self.assertEqual(original, report)
+        self.assertEqual(4, len(data["methods"]))
+        self.assertEqual([True, True, False, False], [m["used"] for m in data["methods"]])
+        self.assertEqual(["已采用", "按场景改写", "材料不足，暂不采用", "本轮不适用"], [m["status"] for m in data["methods"]])
+        self.assertEqual("店长确认的同周期经营数据。", data["methods"][0]["basis"])
+        self.assertTrue(data["methods"][0]["origin"])
+        for private in ("private-method.csv", "row:2", "private-audience.csv", "private-audience-cost", "private-audience-calc", "store_segmentation", "audience_offer", "tool_mix", "execution_followup", '"evidence"', '"calc_id"'):
+            self.assertNotIn(private, html)
+        self.assertEqual({"section": "findings", "index": 0}, data["methods"][0]["anchors"][0])
+
+    def test_audience_values_preserve_null_zero_and_negative(self):
+        report = explained_report()
+        report["audience_plan"] *= 3
+        report["audience_plan"] = [copy.deepcopy(row) for row in report["audience_plan"]]
+        for row, value in zip(report["audience_plan"], [None, 0, -2]):
+            row["economics"]["value"] = value
+        _, data = self.export(report)
+        self.assertEqual([None, 0, -2], [row["economics"]["value"] for row in data["audience_plan"]])
+        self.assertEqual("同周期新客购买偏好与门店产能记录。", data["audience_plan"][0]["basis"])
+
+    def test_audience_economics_must_be_resolved_and_finite(self):
+        for value in (float("nan"), float("inf"), True, "12"):
+            report = explained_report()
+            report["audience_plan"][0]["economics"]["value"] = value
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                self.exporter().export_boss(report, self.output)
+        report = explained_report()
+        del report["audience_plan"][0]["economics"]["value"]
+        with self.assertRaisesRegex(ValueError, "绑定"):
+            self.exporter().export_boss(report, self.output)
+
+    def test_new_copy_cannot_inject_markup(self):
+        report = explained_report()
+        attack = '</script><img src=x onerror="alert(1)">'
+        report["method_usage"][0]["decision"] = attack
+        report["audience_plan"][0]["audience"] = attack
+        html, data = self.export(report)
+        self.assertNotIn(attack, html)
+        self.assertEqual(attack, data["methods"][0]["decision"])
+        self.assertEqual(attack, data["audience_plan"][0]["audience"])
+        self.assertNotIn("innerHTML", html)
+
+    def test_missing_method_evidence_cannot_become_a_product_annotation(self):
+        report = explained_report()
+        report["method_usage"][0]["evidence"] = []
+        with self.assertRaises(ValueError):
+            self.exporter().export_boss(report, self.output)
+
+    def test_method_target_must_refer_to_existing_report_content(self):
+        report = explained_report()
+        report["method_usage"][0]["targets"] = [{"section": "actions", "index": 99}]
+        with self.assertRaises(ValueError):
+            self.exporter().export_boss(report, self.output)
+
+    def test_export_has_accessible_modes_and_print_exclusion(self):
+        html, _ = self.export(explained_report())
+        self.assertIn('id="mode-boss"', html)
+        self.assertIn('id="mode-product"', html)
+        self.assertIn('aria-pressed="true"', html)
+        self.assertIn('aria-expanded', html)
+        self.assertIn('产品讲解', html)
+        self.assertNotIn('面试', html)
+        self.assertNotIn('求职', html)
+        self.assertIn('.explain-only', html)
 
     def test_merchant_identity_is_not_cleaned_as_protocol_copy(self):
         report = sample_report()
