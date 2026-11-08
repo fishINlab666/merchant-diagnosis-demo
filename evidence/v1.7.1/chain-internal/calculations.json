@@ -1,0 +1,2407 @@
+[
+  {
+    "id": "s01_p0_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D5"
+          }
+        ]
+      },
+      "cost": {
+        "value": 180000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F5"
+          }
+        ]
+      },
+      "ad": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G5"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 90000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s01_p0_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D5"
+          }
+        ]
+      },
+      "cost": {
+        "value": 180000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F5"
+          }
+        ]
+      },
+      "ad": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G5"
+          }
+        ]
+      },
+      "orders": {
+        "value": 12000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E5"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 7.5,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s01_p1_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 33,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D11"
+          }
+        ]
+      },
+      "cost": {
+        "value": 198000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F11"
+          }
+        ]
+      },
+      "ad": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G11"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 102000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s01_p1_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 33,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D11"
+          }
+        ]
+      },
+      "cost": {
+        "value": 198000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F11"
+          }
+        ]
+      },
+      "ad": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G11"
+          }
+        ]
+      },
+      "orders": {
+        "value": 13200,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E11"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 7.7272727272727275,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s01_income_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 33,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D11"
+          }
+        ]
+      },
+      "previous": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D5"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期各30天、同成熟订单口径净入账增长",
+    "status": "ok",
+    "value": 10,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s01_order_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 13200,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E11"
+          }
+        ]
+      },
+      "previous": {
+        "value": 12000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E5"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期可比完成单量增长",
+    "status": "ok",
+    "value": 10,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s01_contribution_change",
+    "expression": "(i1-i0)*10000-(c1-c0)-(a1-a0)",
+    "variables": {
+      "i1": {
+        "value": 33,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D11"
+          }
+        ]
+      },
+      "i0": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D5"
+          }
+        ]
+      },
+      "c1": {
+        "value": 198000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F11"
+          }
+        ]
+      },
+      "c0": {
+        "value": 180000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F5"
+          }
+        ]
+      },
+      "a1": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G11"
+          }
+        ]
+      },
+      "a0": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G5"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "历史经营贡献变化，不当作方案效果",
+    "status": "ok",
+    "value": 12000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s02_p0_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D6"
+          }
+        ]
+      },
+      "cost": {
+        "value": 150000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F6"
+          }
+        ]
+      },
+      "ad": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G6"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 75000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s02_p0_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D6"
+          }
+        ]
+      },
+      "cost": {
+        "value": 150000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F6"
+          }
+        ]
+      },
+      "ad": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G6"
+          }
+        ]
+      },
+      "orders": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E6"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 7.5,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s02_p1_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 27.5,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D12"
+          }
+        ]
+      },
+      "cost": {
+        "value": 165000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F12"
+          }
+        ]
+      },
+      "ad": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G12"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 85000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s02_p1_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 27.5,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D12"
+          }
+        ]
+      },
+      "cost": {
+        "value": 165000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F12"
+          }
+        ]
+      },
+      "ad": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G12"
+          }
+        ]
+      },
+      "orders": {
+        "value": 11000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E12"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 7.7272727272727275,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s02_income_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 27.5,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D12"
+          }
+        ]
+      },
+      "previous": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D6"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期各30天、同成熟订单口径净入账增长",
+    "status": "ok",
+    "value": 10,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s02_order_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 11000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E12"
+          }
+        ]
+      },
+      "previous": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E6"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期可比完成单量增长",
+    "status": "ok",
+    "value": 10,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s02_contribution_change",
+    "expression": "(i1-i0)*10000-(c1-c0)-(a1-a0)",
+    "variables": {
+      "i1": {
+        "value": 27.5,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D12"
+          }
+        ]
+      },
+      "i0": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D6"
+          }
+        ]
+      },
+      "c1": {
+        "value": 165000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F12"
+          }
+        ]
+      },
+      "c0": {
+        "value": 150000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F6"
+          }
+        ]
+      },
+      "a1": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G12"
+          }
+        ]
+      },
+      "a0": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G6"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "历史经营贡献变化，不当作方案效果",
+    "status": "ok",
+    "value": 10000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s03_p0_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D7"
+          }
+        ]
+      },
+      "cost": {
+        "value": 150000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F7"
+          }
+        ]
+      },
+      "ad": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G7"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 75000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s03_p0_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D7"
+          }
+        ]
+      },
+      "cost": {
+        "value": 150000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F7"
+          }
+        ]
+      },
+      "ad": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G7"
+          }
+        ]
+      },
+      "orders": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E7"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 7.5,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s03_p1_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D13"
+          }
+        ]
+      },
+      "cost": {
+        "value": 108000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F13"
+          }
+        ]
+      },
+      "ad": {
+        "value": 35000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G13"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 37000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s03_p1_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D13"
+          }
+        ]
+      },
+      "cost": {
+        "value": 108000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F13"
+          }
+        ]
+      },
+      "ad": {
+        "value": 35000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G13"
+          }
+        ]
+      },
+      "orders": {
+        "value": 7200,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E13"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 5.138888888888889,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s03_income_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D13"
+          }
+        ]
+      },
+      "previous": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D7"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期各30天、同成熟订单口径净入账增长",
+    "status": "ok",
+    "value": -28,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s03_order_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 7200,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E13"
+          }
+        ]
+      },
+      "previous": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E7"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期可比完成单量增长",
+    "status": "ok",
+    "value": -28,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s03_contribution_change",
+    "expression": "(i1-i0)*10000-(c1-c0)-(a1-a0)",
+    "variables": {
+      "i1": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D13"
+          }
+        ]
+      },
+      "i0": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D7"
+          }
+        ]
+      },
+      "c1": {
+        "value": 108000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F13"
+          }
+        ]
+      },
+      "c0": {
+        "value": 150000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F7"
+          }
+        ]
+      },
+      "a1": {
+        "value": 35000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G13"
+          }
+        ]
+      },
+      "a0": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G7"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "历史经营贡献变化，不当作方案效果",
+    "status": "ok",
+    "value": -38000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s04_p0_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 20,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D8"
+          }
+        ]
+      },
+      "cost": {
+        "value": 120000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F8"
+          }
+        ]
+      },
+      "ad": {
+        "value": 20000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G8"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 60000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s04_p0_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 20,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D8"
+          }
+        ]
+      },
+      "cost": {
+        "value": 120000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F8"
+          }
+        ]
+      },
+      "ad": {
+        "value": 20000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G8"
+          }
+        ]
+      },
+      "orders": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E8"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 7.5,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s04_p1_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 16,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D14"
+          }
+        ]
+      },
+      "cost": {
+        "value": 96000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F14"
+          }
+        ]
+      },
+      "ad": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G14"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 34000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s04_p1_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 16,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D14"
+          }
+        ]
+      },
+      "cost": {
+        "value": 96000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F14"
+          }
+        ]
+      },
+      "ad": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G14"
+          }
+        ]
+      },
+      "orders": {
+        "value": 6400,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E14"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 5.3125,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s04_income_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 16,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D14"
+          }
+        ]
+      },
+      "previous": {
+        "value": 20,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D8"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期各30天、同成熟订单口径净入账增长",
+    "status": "ok",
+    "value": -20,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s04_order_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 6400,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E14"
+          }
+        ]
+      },
+      "previous": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E8"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期可比完成单量增长",
+    "status": "ok",
+    "value": -20,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s04_contribution_change",
+    "expression": "(i1-i0)*10000-(c1-c0)-(a1-a0)",
+    "variables": {
+      "i1": {
+        "value": 16,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D14"
+          }
+        ]
+      },
+      "i0": {
+        "value": 20,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D8"
+          }
+        ]
+      },
+      "c1": {
+        "value": 96000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F14"
+          }
+        ]
+      },
+      "c0": {
+        "value": 120000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F8"
+          }
+        ]
+      },
+      "a1": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G14"
+          }
+        ]
+      },
+      "a0": {
+        "value": 20000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G8"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "历史经营贡献变化，不当作方案效果",
+    "status": "ok",
+    "value": -26000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p0_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D9"
+          }
+        ]
+      },
+      "cost": {
+        "value": 90000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 15000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G9"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": 45000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p0_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D9"
+          }
+        ]
+      },
+      "cost": {
+        "value": 90000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F9"
+          }
+        ]
+      },
+      "ad": {
+        "value": 15000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G9"
+          }
+        ]
+      },
+      "orders": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E9"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": 7.5,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p1_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D15"
+          }
+        ]
+      },
+      "cost": {
+        "value": 144000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F15"
+          }
+        ]
+      },
+      "ad": {
+        "value": 40000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G15"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "ok",
+    "value": -4000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p1_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D15"
+          }
+        ]
+      },
+      "cost": {
+        "value": 144000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F15"
+          }
+        ]
+      },
+      "ad": {
+        "value": 40000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G15"
+          }
+        ]
+      },
+      "orders": {
+        "value": 9000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E15"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "ok",
+    "value": -0.4444444444444444,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_income_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D15"
+          }
+        ]
+      },
+      "previous": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D9"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期各30天、同成熟订单口径净入账增长",
+    "status": "ok",
+    "value": 20,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_order_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 9000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E15"
+          }
+        ]
+      },
+      "previous": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E9"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期可比完成单量增长",
+    "status": "ok",
+    "value": 50,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_contribution_change",
+    "expression": "(i1-i0)*10000-(c1-c0)-(a1-a0)",
+    "variables": {
+      "i1": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D15"
+          }
+        ]
+      },
+      "i0": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D9"
+          }
+        ]
+      },
+      "c1": {
+        "value": 144000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F15"
+          }
+        ]
+      },
+      "c0": {
+        "value": 90000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F9"
+          }
+        ]
+      },
+      "a1": {
+        "value": 40000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G15"
+          }
+        ]
+      },
+      "a0": {
+        "value": 15000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G9"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "历史经营贡献变化，不当作方案效果",
+    "status": "ok",
+    "value": -49000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s06_p0_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D10"
+          }
+        ]
+      },
+      "cost": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:8"
+          }
+        ]
+      },
+      "ad": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G10"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "unknown",
+    "value": null,
+    "missing_variables": [
+      "cost"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "s06_p0_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D10"
+          }
+        ]
+      },
+      "cost": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:8"
+          }
+        ]
+      },
+      "ad": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G10"
+          }
+        ]
+      },
+      "orders": {
+        "value": 4500,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E10"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "unknown",
+    "value": null,
+    "missing_variables": [
+      "cost"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "s06_p1_contribution",
+    "expression": "income*10000-cost-ad",
+    "variables": {
+      "income": {
+        "value": 11,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D16"
+          }
+        ]
+      },
+      "cost": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:8"
+          }
+        ]
+      },
+      "ad": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G16"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "固定成本前经营贡献；入账已扣退款、优惠、平台及配送费，不重复扣",
+    "status": "unknown",
+    "value": null,
+    "missing_variables": [
+      "cost"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "s06_p1_unit",
+    "expression": "(income*10000-cost-ad)/orders",
+    "variables": {
+      "income": {
+        "value": 11,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D16"
+          }
+        ]
+      },
+      "cost": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:8"
+          }
+        ]
+      },
+      "ad": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G16"
+          }
+        ]
+      },
+      "orders": {
+        "value": 5500,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E16"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "可比完成订单单均经营贡献",
+    "status": "unknown",
+    "value": null,
+    "missing_variables": [
+      "cost"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "s06_income_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 11,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D16"
+          }
+        ]
+      },
+      "previous": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D10"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期各30天、同成熟订单口径净入账增长",
+    "status": "ok",
+    "value": 22.22222222222222,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s06_order_growth",
+    "expression": "(current/previous-1)*100",
+    "variables": {
+      "current": {
+        "value": 5500,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E16"
+          }
+        ]
+      },
+      "previous": {
+        "value": 4500,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E10"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "两期可比完成单量增长",
+    "status": "ok",
+    "value": 22.22222222222222,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s06_contribution_change",
+    "expression": "(i1-i0)*10000-(c1-c0)-(a1-a0)",
+    "variables": {
+      "i1": {
+        "value": 11,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D16"
+          }
+        ]
+      },
+      "i0": {
+        "value": 9,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D10"
+          }
+        ]
+      },
+      "c1": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:8"
+          }
+        ]
+      },
+      "c0": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:8"
+          }
+        ]
+      },
+      "a1": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G16"
+          }
+        ]
+      },
+      "a0": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G10"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "历史经营贡献变化，不当作方案效果",
+    "status": "unknown",
+    "value": null,
+    "missing_variables": [
+      "c0",
+      "c1"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "total_ad_p0",
+    "expression": "sum(a5,a6,a7,a8,a9,a10)",
+    "variables": {
+      "a5": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G5"
+          }
+        ]
+      },
+      "a6": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G6"
+          }
+        ]
+      },
+      "a7": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G7"
+          }
+        ]
+      },
+      "a8": {
+        "value": 20000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G8"
+          }
+        ]
+      },
+      "a9": {
+        "value": 15000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G9"
+          }
+        ]
+      },
+      "a10": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G10"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "6店实际广告账单合计；历史花费不等于未来自动批准额度",
+    "status": "ok",
+    "value": 125000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "total_ad_p1",
+    "expression": "sum(a11,a12,a13,a14,a15,a16)",
+    "variables": {
+      "a11": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G11"
+          }
+        ]
+      },
+      "a12": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G12"
+          }
+        ]
+      },
+      "a13": {
+        "value": 35000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G13"
+          }
+        ]
+      },
+      "a14": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G14"
+          }
+        ]
+      },
+      "a15": {
+        "value": 40000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G15"
+          }
+        ]
+      },
+      "a16": {
+        "value": 10000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G16"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "6店实际广告账单合计；历史花费不等于未来自动批准额度",
+    "status": "ok",
+    "value": 170000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p0_income_per_order",
+    "expression": "amount*10000/orders",
+    "variables": {
+      "amount": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D9"
+          }
+        ]
+      },
+      "orders": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E9"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "S05单均入账、变动成本或广告分解",
+    "status": "ok",
+    "value": 25,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p0_cost_per_order",
+    "expression": "amount/orders",
+    "variables": {
+      "amount": {
+        "value": 90000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F9"
+          }
+        ]
+      },
+      "orders": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E9"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "S05单均入账、变动成本或广告分解",
+    "status": "ok",
+    "value": 15,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p0_ad_per_order",
+    "expression": "amount/orders",
+    "variables": {
+      "amount": {
+        "value": 15000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G9"
+          }
+        ]
+      },
+      "orders": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E9"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "S05单均入账、变动成本或广告分解",
+    "status": "ok",
+    "value": 2.5,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p1_income_per_order",
+    "expression": "amount*10000/orders",
+    "variables": {
+      "amount": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D15"
+          }
+        ]
+      },
+      "orders": {
+        "value": 9000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E15"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "S05单均入账、变动成本或广告分解",
+    "status": "ok",
+    "value": 20,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p1_cost_per_order",
+    "expression": "amount/orders",
+    "variables": {
+      "amount": {
+        "value": 144000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F15"
+          }
+        ]
+      },
+      "orders": {
+        "value": 9000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E15"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "S05单均入账、变动成本或广告分解",
+    "status": "ok",
+    "value": 16,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_p1_ad_per_order",
+    "expression": "amount/orders",
+    "variables": {
+      "amount": {
+        "value": 40000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G15"
+          }
+        ]
+      },
+      "orders": {
+        "value": 9000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!E15"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "S05单均入账、变动成本或广告分解",
+    "status": "ok",
+    "value": 4.444444444444445,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "known_five_change",
+    "expression": "(sum(i11,i12,i13,i14,i15)-sum(i5,i6,i7,i8,i9))*10000-(sum(c11,c12,c13,c14,c15)-sum(c5,c6,c7,c8,c9))-(sum(a11,a12,a13,a14,a15)-sum(a5,a6,a7,a8,a9))",
+    "variables": {
+      "i5": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D5"
+          }
+        ]
+      },
+      "i6": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D6"
+          }
+        ]
+      },
+      "i7": {
+        "value": 25,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D7"
+          }
+        ]
+      },
+      "i8": {
+        "value": 20,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D8"
+          }
+        ]
+      },
+      "i9": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D9"
+          }
+        ]
+      },
+      "i11": {
+        "value": 33,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D11"
+          }
+        ]
+      },
+      "i12": {
+        "value": 27.5,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D12"
+          }
+        ]
+      },
+      "i13": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D13"
+          }
+        ]
+      },
+      "i14": {
+        "value": 16,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D14"
+          }
+        ]
+      },
+      "i15": {
+        "value": 18,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!D15"
+          }
+        ]
+      },
+      "c5": {
+        "value": 180000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F5"
+          }
+        ]
+      },
+      "c6": {
+        "value": 150000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F6"
+          }
+        ]
+      },
+      "c7": {
+        "value": 150000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F7"
+          }
+        ]
+      },
+      "c8": {
+        "value": 120000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F8"
+          }
+        ]
+      },
+      "c9": {
+        "value": 90000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F9"
+          }
+        ]
+      },
+      "c11": {
+        "value": 198000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F11"
+          }
+        ]
+      },
+      "c12": {
+        "value": 165000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F12"
+          }
+        ]
+      },
+      "c13": {
+        "value": 108000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F13"
+          }
+        ]
+      },
+      "c14": {
+        "value": 96000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F14"
+          }
+        ]
+      },
+      "c15": {
+        "value": 144000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!F15"
+          }
+        ]
+      },
+      "a5": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G5"
+          }
+        ]
+      },
+      "a6": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G6"
+          }
+        ]
+      },
+      "a7": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G7"
+          }
+        ]
+      },
+      "a8": {
+        "value": 20000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G8"
+          }
+        ]
+      },
+      "a9": {
+        "value": 15000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G9"
+          }
+        ]
+      },
+      "a11": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G11"
+          }
+        ]
+      },
+      "a12": {
+        "value": 25000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G12"
+          }
+        ]
+      },
+      "a13": {
+        "value": 35000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G13"
+          }
+        ]
+      },
+      "a14": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G14"
+          }
+        ]
+      },
+      "a15": {
+        "value": 40000,
+        "evidence": [
+          {
+            "material": "门店经营月报.xlsx",
+            "locator": "sheet:经营月报!G15"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "仅S01至S05可比经营贡献变化，S06缺成本不纳入",
+    "status": "ok",
+    "value": -91000,
+    "missing_variables": [],
+    "assumptions": []
+  }
+]
