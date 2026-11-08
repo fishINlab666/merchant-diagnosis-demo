@@ -1,0 +1,643 @@
+{
+  "merchant": {
+    "name": "禾味小馆·方法验证",
+    "scope": "东城6家成熟直营店；贡献可算5店，S06缺成本",
+    "period": "2026年9月1–30日对比10月1–30日，结算截至11月5日",
+    "synthetic": true
+  },
+  "headline": "S05增单却亏贡献；先修商品成本，S03/S04核承接",
+  "money": {
+    "label": "S05本期经营贡献",
+    "unit": "元",
+    "period": "2026-10-01至10-30，30天",
+    "note": "已扣变动成本及广告，未扣固定成本；这是当前经营结果，方案改善额仍需SKU与执行费用。",
+    "basis": "18万元净入账减14.4万元食材包材按单工时，再减4万元广告；退款、优惠、平台和配送费已在入账中扣除。",
+    "calc_id": "s05_p1_contribution",
+    "value": -4000,
+    "evidence": [
+      {
+        "material": "门店经营月报.xlsx",
+        "locator": "sheet:经营月报!D15"
+      },
+      {
+        "material": "门店经营月报.xlsx",
+        "locator": "sheet:经营月报!F15"
+      },
+      {
+        "material": "门店经营月报.xlsx",
+        "locator": "sheet:经营月报!G15"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "S05应先修单均贡献，不再放大低效增单",
+      "detail": "完成单量增长50%，净入账仅增长20%；单均入账25元降至20元，变动成本15元升至16元，广告分摊2.50元升至4.44元。经营贡献较上期下降49,000元。低价双拼、搭配和包装同期改变，不能把全部变化归给份量说明或单一广告渠道。",
+      "basis": "同一成熟订单口径、同为30天；保留上轮准确补清份量动作，新增SKU成本与权益核算优先级。",
+      "evidence": [
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D9"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!E9"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!F9"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!G9"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D15"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!E15"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!F15"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!G15"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:4"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:6"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:11"
+        }
+      ]
+    },
+    {
+      "title": "S03、S04增长与贡献走弱，先核并修承接",
+      "detail": "净入账分别下降28%、20%，单均贡献由7.50元降至5.14元、5.31元。实际营业240/260小时低于各300小时计划，缺货占比25%/20%高于上期各5%。先逐日核实排班和到货，再在已核问题上修接单与补货；访谈尚不能证明这解释全部收入下降。",
+      "basis": "相对同店上期与同城S01/S02判断优先级，避免把仍有正贡献等同经营优质；广告增加不能直接判定渠道低效。",
+      "evidence": [
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D7"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D8"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D13"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D14"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!E13"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!E14"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!F13"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!F14"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!G13"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!G14"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!I13"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!I14"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!J7"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!J8"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!J13"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!J14"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!H13"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!H14"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:10"
+        }
+      ]
+    },
+    {
+      "title": "S01/S02保稳定，S06不凭增收加码",
+      "detail": "S01、S02入账与订单均增长10%，本期单均贡献约7.73元，营业和缺货指标稳定；保留供给与现有资源。S06净入账增长22.22%，但成本缺失，无法评判贡献。仅5家成本完整门店的合计贡献较上期减少91,000元，不外推其余门店。",
+      "basis": "各店按可比增长与贡献分开决定资源；无分渠道归因或边际试验，不能凭广告占比调拨。",
+      "evidence": [
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D5"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D6"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D10"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D11"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D12"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!D16"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!F11"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!F12"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!G11"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!G12"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!I11"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!I12"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!J11"
+        },
+        {
+          "material": "门店经营月报.xlsx",
+          "locator": "sheet:经营月报!J12"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:3"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:7"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:8"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:12"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "S05核清双拼单均账并确定局部改品方案",
+      "owner": "总部运营两天内协调老板确认商品和促销权限；S05店长核出品，财务核SKU收入成本",
+      "timing": "两天内形成现卖双拼与替代组合的对比；第7天看过程，第30天按成熟订单看贡献",
+      "budget": "总广告额度不增加，不自动变更各店预算；使用现有每天15分钟记录额度；新增采购、包装、促销和工时先核额再获批",
+      "success": "先核净入账已包含哪些优惠，再比较商品成本、按单工时与广告；小范围获批方案相对可比基线的贡献差额转正，同时订单和净入账无不可接受下滑；下滑容忍线由老板在上线前确定",
+      "stop": "SKU拆分或新增费用不全则不推出新补贴；扣齐费用后增量贡献不正，或规模越过老板预先确定的止损线，停止试点并保留真实份量说明"
+    },
+    {
+      "title": "S03/S04按午高峰记录恢复真实承接缺口",
+      "owner": "总部运营协调排班与到货；两店店长留痕执行；财务核新增成本",
+      "timing": "两天内核逐日接单、缺货、班表和到货时间；第7天核是否修复，第30天看贡献与规模",
+      "budget": "先用现有人员和每天15分钟记录；新增排班与采购支出须核定，未核定不承诺恢复收益；暂不增加或自动转移广告",
+      "success": "先确认问题发生的时段及订单影响；按300小时计划核实际营业，缺货占计划营业时长与同口径5%历史水平比较；最终要求相对可比基线的贡献、订单和入账改善",
+      "stop": "若原始记录不支持缺货/停单，撤回承接归因并转查触达、商品与成本；已完成修复但贡献差额不正时重审投入，不能继续靠增员堆量"
+    },
+    {
+      "title": "S01/S02保供给，S06先补成本再定资源",
+      "owner": "总部运营维持现有资源边界；各店店长回传运行情况；财务补S06两期成本",
+      "timing": "两天内确认S06成本能否补齐；第7天过程核验，第30天统一重算",
+      "budget": "保持总额度不增加，各店预算任何变化均需授权；不以S06增长或S01/S02平均回收比自动分配资金",
+      "success": "S01/S02维持营业、供给与订单规模，单均贡献不出现解释不清的恶化；S06补齐后按相同口径分层",
+      "stop": "S01/S02承接恶化先修供给；S06成本仍缺则不做收益加码判断，不影响其他店动作"
+    }
+  ],
+  "followup": {
+    "when": "两天内定范围与费用；7天先核执行；30天按成熟退款重算",
+    "decision": "先分清未执行与执行后无效，再评价策略。只在单店相对可比基线的贡献改善且规模可接受时保留或扩围；当前无执行回执。",
+    "collect": [
+      "S05 SKU净入账、成本、优惠承担与核销、出品及包装变化、获批费用和上线截图：决定改组合、调整权益还是停止试点；优惠已扣部分不再重复扣。",
+      "S03/S04逐日午高峰库存、接单、排班及到货记录，与订单/退款分母：确认承接问题及决定是否改排班采购；反证则撤回。",
+      "S06两期订单匹配成本：决定能否支持增长；无需重复索要已有净结算和费用口径。",
+      "各店实际执行范围、未执行原因、实际投入与同期变化；若拟调拨广告，再补同口径成熟边际试验：决定继续、调整、停止或是否授权调拨。"
+    ]
+  },
+  "charts": [
+    {
+      "type": "bar",
+      "title": "各店本期单均经营贡献",
+      "unit": "元/单",
+      "caption": "固定成本前；S06成本缺失，保留未知。",
+      "series": [
+        {
+          "label": "S01",
+          "calc_id": "s01_p1_unit",
+          "value": 7.7272727272727275,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D11"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!F11"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G11"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!E11"
+            }
+          ]
+        },
+        {
+          "label": "S02",
+          "calc_id": "s02_p1_unit",
+          "value": 7.7272727272727275,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D12"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!F12"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G12"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!E12"
+            }
+          ]
+        },
+        {
+          "label": "S03",
+          "calc_id": "s03_p1_unit",
+          "value": 5.138888888888889,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D13"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!F13"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G13"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!E13"
+            }
+          ]
+        },
+        {
+          "label": "S04",
+          "calc_id": "s04_p1_unit",
+          "value": 5.3125,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D14"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!F14"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G14"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!E14"
+            }
+          ]
+        },
+        {
+          "label": "S05",
+          "calc_id": "s05_p1_unit",
+          "value": -0.4444444444444444,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D15"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!F15"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G15"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!E15"
+            }
+          ]
+        },
+        {
+          "label": "S06",
+          "calc_id": "s06_p1_unit",
+          "value": null,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D16"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:8"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G16"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!E16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "各店可比净入账增长",
+      "unit": "%",
+      "caption": "两期各30天；增长不能替代收益质量。",
+      "series": [
+        {
+          "label": "S01",
+          "calc_id": "s01_income_growth",
+          "value": 10,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D11"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D5"
+            }
+          ]
+        },
+        {
+          "label": "S02",
+          "calc_id": "s02_income_growth",
+          "value": 10,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D12"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D6"
+            }
+          ]
+        },
+        {
+          "label": "S03",
+          "calc_id": "s03_income_growth",
+          "value": -28,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D13"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D7"
+            }
+          ]
+        },
+        {
+          "label": "S04",
+          "calc_id": "s04_income_growth",
+          "value": -20,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D14"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D8"
+            }
+          ]
+        },
+        {
+          "label": "S05",
+          "calc_id": "s05_income_growth",
+          "value": 20,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D15"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D9"
+            }
+          ]
+        },
+        {
+          "label": "S06",
+          "calc_id": "s06_income_growth",
+          "value": 22.22222222222222,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D16"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!D10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "广告支出核对基线",
+      "unit": "元",
+      "caption": "6店历史实付；不是渠道ROI，也不构成未来预算调整授权。",
+      "series": [
+        {
+          "label": "9月30天",
+          "calc_id": "total_ad_p0",
+          "value": 125000,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G5"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G6"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G7"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G8"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G9"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G10"
+            }
+          ]
+        },
+        {
+          "label": "10月30天",
+          "calc_id": "total_ad_p1",
+          "value": 170000,
+          "evidence": [
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G11"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G12"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G13"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G14"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G15"
+            },
+            {
+              "material": "门店经营月报.xlsx",
+              "locator": "sheet:经营月报!G16"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "在总广告额度不增加、各店预算不能自动变更的边界内，改善商户固定成本前经营贡献，兼顾完成单量与净入账；仅覆盖东城6家成熟直营店。",
+    "chosen_strategy": "相对同店上期及同城可比店判断：S01/S02收益与增长较好，保供给和现有资源；S03/S04收益质量与增长走弱，先核实后修承接；S05增长高但单均贡献为负，优先核SKU并改商品/成本/权益；S06成本未知，暂缓收益型加码。保留上轮S05准确表达，承接线索升级为值得优先核查的表内问题，但不升级为已证明因果。",
+    "execution": "总部运营协调商品、排班与供应链方案，老板/现有授权人批准范围及任何预算变更，店长每天最多15分钟留存执行记录，财务回传成熟订单净入账和完整费用；两天/7天/30天来自老板要求。未提供回执，不认定任何措施已实施。",
+    "alternatives": [
+      "把S03/S04或S05预算直接搬给S01/S02：缺可比边际效果和分渠道归因，预算占比、平均回收均不足以支持，暂不选。",
+      "统一增加流量或全店降价：违背总额度边界，也会放大S05低单均贡献与S03/S04潜在承接损失，暂不选。",
+      "只改S05页面：能减少预期偏差，但无法单独解决已观察的单均收入下滑和成本上升，保留为配套。"
+    ],
+    "assumptions": [
+      "万元到元的换算在表达式显式执行；退款、商家优惠、平台及配送费已扣，不重复扣。",
+      "经营贡献未扣房租、固定底薪与总部成本；S06空成本为null，无全品牌贡献结论。",
+      "供给与经营同期恶化加访谈只支持优先验证，不足以归因全部下降。",
+      "无时段人群或分群结果：不编白领/学生画像，不宣称改了人群投放策略；无共投政策，不假定补贴。",
+      "方案新增费用和增量收入未确认，当前不编月度改善额；主金额为真实可算的当前问题金额。",
+      "实际执行边界及规模止损线需老板确认，材料没有授权自动调预算。"
+    ]
+  },
+  "gaps": [
+    {
+      "item": "S05 SKU经济账及新增执行费",
+      "why": "改变选择改搭配、权益还是包装/流程，并决定方案是否带来正贡献差额。"
+    },
+    {
+      "item": "S03/S04逐日承接与订单证据",
+      "why": "改变是否执行排班、采购修复；若无异常，必须转向其他解释。"
+    },
+    {
+      "item": "S06两期可变成本",
+      "why": "决定是否可以保留或增加其增长资源；当前只确认收入增长。"
+    },
+    {
+      "item": "行动回执与必要时的边际广告试验",
+      "why": "先判断是否执行；无边际比较不能决定跨店调拨额度。"
+    }
+  ]
+}

@@ -14,6 +14,11 @@ from service_calculator import calculate_requests
 from service_store import project_lock, write_json
 
 REFERENCES = Path(__file__).resolve().parents[1] / 'references'
+RULE_FILES = ('quick-workflow.md', 'boss-output.md', 'ka-playbook.md')
+SNAPSHOT_FILES = {
+    '1.0': {'materials.json', 'prompt.md', 'quick-workflow.md', 'boss-output.md'},
+    '1.1': {'materials.json', 'prompt.md', *RULE_FILES},
+}
 DEFAULT_GOAL = '先看最值得改善的问题，给出可试行的动作'
 DEFAULT_SCOPE = '本次提供材料覆盖的门店'
 DEFAULT_PERIOD = '本次材料所示期间'
@@ -94,8 +99,7 @@ def prepare_run(input_paths, output, *, merchant, goal=DEFAULT_GOAL,
             unreadable.append({'name': path.name, 'reason': str(error)})
     if not materials:
         raise ValueError('本次材料均未能读取；请提供可读取的文字、CSV、XLSX 或文本 PDF')
-    references = {name: (REFERENCES / name).read_text(encoding='utf-8')
-                  for name in ('quick-workflow.md', 'boss-output.md')}
+    references = {name: (REFERENCES / name).read_text(encoding='utf-8') for name in RULE_FILES}
     bundle = {'schema_version': '1.0', 'merchant': identity, 'goal': goal,
               'materials': materials, 'unreadable_materials': unreadable}
     if history is not None:
@@ -118,7 +122,7 @@ def prepare_run(input_paths, output, *, merchant, goal=DEFAULT_GOAL,
               + '\n\n'.join(references.values()))
     payloads = {'materials.json': _json(bundle), 'prompt.md': prompt,
                 **{name: text for name, text in references.items()}}
-    manifest = {'schema_version': '1.0', 'created_at': _now(), 'runtime': runtime,
+    manifest = {'schema_version': '1.1', 'created_at': _now(), 'runtime': runtime,
                 'python_version': platform.python_version(), 'inference_executed': False,
                 'inputs': [{'name': item['name'], 'sha256': item['sha256']} for item in materials],
                 'files': {name: _sha(text.encode('utf-8')) for name, text in payloads.items()}}
@@ -140,11 +144,16 @@ def prepare_run(input_paths, output, *, merchant, goal=DEFAULT_GOAL,
 def _load_run(root, *, allow_completed=False):
     root = Path(root)
     manifest = _read(root / 'manifest.json')
-    expected_files = {'materials.json', 'prompt.md', 'quick-workflow.md', 'boss-output.md'}
-    if manifest.get('schema_version') != '1.0' or set(manifest.get('files', {})) != expected_files:
+    version = manifest.get('schema_version')
+    expected_files = SNAPSHOT_FILES.get(version) if isinstance(version, str) else None
+    if expected_files is None or set(manifest.get('files', {})) != expected_files:
         raise ValueError('运行快照清单不完整')
     for name, fingerprint in manifest['files'].items():
-        if _sha((root / name).read_bytes()) != fingerprint:
+        try:
+            actual = _sha((root / name).read_bytes())
+        except OSError as error:
+            raise ValueError('本轮冻结材料或规则缺失，请新建运行目录') from error
+        if actual != fingerprint:
             raise ValueError('本轮冻结材料或规则已变化，请新建运行目录')
     state = _read(root / 'execution.json')
     if state.get('status') == 'failed' or (state.get('status') == 'completed' and not allow_completed):
@@ -262,7 +271,14 @@ def _api_state(root, **changes):
 def semantic_review(client, bundle, calculations, report, *, run_dir, call_number):
     """Review in fresh context; no reviewer tool requests are ever executed."""
     root = Path(run_dir)
-    messages = [{'role': 'system', 'content': REVIEW_PROMPT},
+    _load_run(root)
+    review_prompt = REVIEW_PROMPT
+    if _read(root / 'manifest.json')['schema_version'] == '1.1':
+        review_prompt += ('\n\n## 本轮冻结的经营方法\n'
+                          '只核对本轮材料实际触发的决策及适用边界，不要求展开所有分支。'
+                          '缺少人群或JBP材料不应阻断普通商家诊断；不得补造材料来凑齐打法。\n\n'
+                          + (root / 'ka-playbook.md').read_text(encoding='utf-8'))
+    messages = [{'role': 'system', 'content': review_prompt},
                 {'role': 'user', 'content': _model_json({'bundle': bundle, 'calculations': calculations, 'report': report})}]
     settings = {key: getattr(client, key, None) for key in ('model', 'thinking', 'max_tokens', 'timeout')}
     settings['tool_choice'] = 'none'

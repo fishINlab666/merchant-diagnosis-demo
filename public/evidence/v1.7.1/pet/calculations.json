@@ -1,0 +1,362 @@
+[
+  {
+    "id": "booking_change",
+    "expression": "later-earlier",
+    "variables": {
+      "later": {
+        "value": 100,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "earlier": {
+        "value": 80,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "两周预约量差额",
+    "status": "ok",
+    "value": 20,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "booking_growth",
+    "expression": "(later/earlier-1)*100",
+    "variables": {
+      "later": {
+        "value": 100,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "earlier": {
+        "value": 80,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "预约增长率",
+    "status": "ok",
+    "value": 25,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "completed_change",
+    "expression": "later-earlier",
+    "variables": {
+      "later": {
+        "value": 60,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "earlier": {
+        "value": 60,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "完成服务量差额",
+    "status": "ok",
+    "value": 0,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "store_cancel_change",
+    "expression": "later-earlier",
+    "variables": {
+      "later": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "earlier": {
+        "value": 4,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "店方取消增量",
+    "status": "ok",
+    "value": 20,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "customer_cancel_change",
+    "expression": "later-earlier",
+    "variables": {
+      "later": {
+        "value": 16,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "earlier": {
+        "value": 16,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "客户取消量差额",
+    "status": "ok",
+    "value": 0,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "completion_rate_before",
+    "expression": "completed/bookings*100",
+    "variables": {
+      "completed": {
+        "value": 60,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      },
+      "bookings": {
+        "value": 80,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "前周预约完成率",
+    "status": "ok",
+    "value": 75,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "completion_rate_after",
+    "expression": "completed/bookings*100",
+    "variables": {
+      "completed": {
+        "value": 60,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "bookings": {
+        "value": 100,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "后周预约完成率",
+    "status": "ok",
+    "value": 60,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "store_cancel_rate_before",
+    "expression": "cancelled/bookings*100",
+    "variables": {
+      "cancelled": {
+        "value": 4,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      },
+      "bookings": {
+        "value": 80,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "前周店方取消率，以预约单为分母",
+    "status": "ok",
+    "value": 5,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "store_cancel_rate_after",
+    "expression": "cancelled/bookings*100",
+    "variables": {
+      "cancelled": {
+        "value": 24,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "bookings": {
+        "value": 100,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "后周店方取消率，以预约单为分母",
+    "status": "ok",
+    "value": 24,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "settlement_change",
+    "expression": "later-earlier",
+    "variables": {
+      "later": {
+        "value": 9000,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "earlier": {
+        "value": 9000,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:2"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "两周结算入账差额，已扣退款与支付手续费，未扣成本，不是贡献差额",
+    "status": "ok",
+    "value": 0,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "service_hours_share",
+    "expression": "service/scheduled*100",
+    "variables": {
+      "service": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "scheduled": {
+        "value": 160,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "后周服务占用工时占排班工时，仅为工时构成，非产能利用率",
+    "status": "ok",
+    "value": 93.75,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "hours_arithmetic_difference",
+    "expression": "scheduled-service",
+    "variables": {
+      "scheduled": {
+        "value": 160,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      },
+      "service": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "周表.csv",
+            "locator": "row:3"
+          }
+        ]
+      }
+    },
+    "unit": "小时",
+    "purpose": "工时算术差，不是可售空闲工时；排班含前台整理，服务占用含消毒",
+    "status": "ok",
+    "value": 10,
+    "missing_variables": [],
+    "assumptions": []
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "id": "monthly_contribution_change",
+    "expression": "income_change-cost_change-ad_change-execution_cost",
+    "variables": {
+      "income_change": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:10"
+          }
+        ]
+      },
+      "cost_change": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:10"
+          }
+        ]
+      },
+      "ad_change": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:10"
+          }
+        ]
+      },
+      "execution_cost": {
+        "value": null,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:10"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "公开材料未提供各项增量金额，月度经营贡献改善额保持未知",
+    "status": "unknown",
+    "value": null,
+    "missing_variables": [
+      "ad_change",
+      "cost_change",
+      "execution_cost",
+      "income_change"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "s03_sample",
+    "expression": "complaints/samples*100",
+    "variables": {
+      "complaints": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:6"
+          }
+        ]
+      },
+      "samples": {
+        "value": 10,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:6"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "仅描述最近10条摘录中相关反馈占比，不外推订单或全店发生率",
+    "status": "ok",
+    "value": 30,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s04_sample",
+    "expression": "complaints/samples*100",
+    "variables": {
+      "complaints": {
+        "value": 2,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:6"
+          }
+        ]
+      },
+      "samples": {
+        "value": 10,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:6"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "仅描述最近10条摘录中相关反馈占比，不外推订单或全店发生率",
+    "status": "ok",
+    "value": 20,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "s05_sample",
+    "expression": "complaints/samples*100",
+    "variables": {
+      "complaints": {
+        "value": 2,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:7"
+          }
+        ]
+      },
+      "samples": {
+        "value": 10,
+        "evidence": [
+          {
+            "material": "public.md",
+            "locator": "line:7"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "仅描述最近10条摘录中相关反馈占比，不外推订单或全店发生率",
+    "status": "ok",
+    "value": 20,
+    "missing_variables": [],
+    "assumptions": []
+  }
+]

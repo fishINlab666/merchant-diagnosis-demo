@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "mode": "host",
+  "runtime": "Codex·按独立审阅定点修订",
+  "draft_count": 1,
+  "calculation_batches": [
+    {
+      "requests": "calculation-001.requests.json",
+      "results": "calculation-001.results.json"
+    }
+  ],
+  "calculations_sha256": "cb5dca5129fdca008301958bffd07c1b022f30e1298f0198eb07dc0454a7ade9",
+  "model_calls": 0,
+  "corrections": 0,
+  "inference_executed": false,
+  "model_id": "未暴露",
+  "semantic_review": "未确认",
+  "created_at": "2026-11-08T06:42:09.708175+00:00",
+  "business_review": {
+    "status": "not_independently_reviewed",
+    "required": "host_self_check"
+  },
+  "business_reviews": [],
+  "business_revisions": 0,
+  "completed_at": "2026-11-08T06:42:09.994449+00:00",
+  "report": "report.html",
+  "report_sha256": "698aaa61daf3912f86281b98b2cbbcfa2ba459acb167f5f08614dcd9176fa8b3"
+}

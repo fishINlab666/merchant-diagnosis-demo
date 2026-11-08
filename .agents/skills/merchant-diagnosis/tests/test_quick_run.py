@@ -1,5 +1,6 @@
 """Offline integration of the quick path, including actual native-tool parsing."""
 import copy
+import hashlib
 import importlib
 import io
 import json
@@ -49,6 +50,128 @@ class QuickRunTests(unittest.TestCase):
             Path(output).write_text('<html>测试导出</html>', encoding='utf-8')
             return Path(output)
         return patch.dict(sys.modules, {'boss_report': types.SimpleNamespace(export_boss=export)})
+
+    def reference_fixture(self):
+        directory = self.base / 'references'
+        directory.mkdir()
+        for name in ('quick-workflow.md', 'boss-output.md'):
+            (directory / name).write_bytes((self.runner().REFERENCES / name).read_bytes())
+        (directory / 'ka-playbook.md').write_text('test-method-original-53d9\n', encoding='utf-8')
+        return directory
+
+    def as_legacy_snapshot(self):
+        """Represent an already prepared 1.0 run, before the extra rule existed."""
+        path = self.run / 'manifest.json'
+        manifest = json.loads(path.read_text())
+        manifest['schema_version'] = '1.0'
+        manifest['files'].pop('ka-playbook.md', None)
+        method = self.run / 'ka-playbook.md'
+        if method.exists():
+            prompt = self.run / 'prompt.md'
+            prompt.write_text(prompt.read_text().replace(method.read_text(), ''))
+            manifest['files']['prompt.md'] = hashlib.sha256(prompt.read_bytes()).hexdigest()
+            method.unlink()
+        path.write_text(json.dumps(manifest))
+
+    def test_method_snapshot_survives_installed_rule_update(self):
+        references = self.reference_fixture()
+        original = (references / 'ka-playbook.md').read_bytes()
+        with patch.object(self.runner(), 'REFERENCES', references):
+            self.prepare()
+            manifest = json.loads((self.run / 'manifest.json').read_text())
+            self.assertEqual('1.1', manifest['schema_version'])
+            self.assertEqual({'materials.json', 'prompt.md', 'quick-workflow.md',
+                              'boss-output.md', 'ka-playbook.md'}, set(manifest['files']))
+            self.assertEqual(hashlib.sha256(original).hexdigest(), manifest['files']['ka-playbook.md'])
+            self.assertEqual(original, (self.run / 'ka-playbook.md').read_bytes())
+            self.assertIn(original.decode(), (self.run / 'prompt.md').read_text())
+            (references / 'ka-playbook.md').write_text('test-method-replaced-b810\n')
+            result = self.runner().calculate_run(self.run, [request()])
+        self.assertEqual(60, result[0]['value'])
+        self.assertEqual(original, (self.run / 'ka-playbook.md').read_bytes())
+
+    def test_method_snapshot_tampering_or_missing_file_stops_calculation(self):
+        references = self.reference_fixture()
+        with patch.object(self.runner(), 'REFERENCES', references):
+            for mutation in ('changed', 'deleted', 'unlisted', 'unknown_version'):
+                with self.subTest(mutation=mutation):
+                    self.run = self.base / mutation
+                    self.prepare()
+                    method = self.run / 'ka-playbook.md'
+                    self.assertTrue(method.is_file())
+                    if mutation == 'changed':
+                        method.write_text('changed frozen rule')
+                    elif mutation == 'deleted':
+                        method.unlink()
+                    else:
+                        path = self.run / 'manifest.json'
+                        value = json.loads(path.read_text())
+                        if mutation == 'unlisted':
+                            value['files'].pop('ka-playbook.md')
+                        else:
+                            value['schema_version'] = '9.9'
+                        path.write_text(json.dumps(value))
+                    with self.assertRaises(ValueError):
+                        self.runner().calculate_run(self.run, [request()])
+                    self.assertEqual([], json.loads((self.run / 'calculations.json').read_text()))
+
+    def test_api_analysis_and_review_share_frozen_method_after_install_changes(self):
+        references = self.reference_fixture()
+        original = (references / 'ka-playbook.md').read_text()
+        replacement = 'test-method-replaced-b810\n'
+        payloads = []
+        replies = [envelope({'role': 'assistant', 'content': json.dumps(
+                       {'kind': 'calculate', 'requests': [request()]})}),
+                   envelope({'role': 'assistant', 'content': json.dumps(
+                       {'kind': 'final', 'report': report()})}), review()]
+        def transport(url, payload, *args):
+            payloads.append(json.loads(payload))
+            (references / 'ka-playbook.md').write_text(replacement)
+            return replies.pop(0)
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+        with patch.object(self.runner(), 'REFERENCES', references), self.renderer():
+            self.runner().run_api([self.source], self.run, client=client, merchant='测试店',
+                                  scope='单店', period='本周', synthetic=True)
+        for payload in (payloads[0], payloads[-1]):
+            system = '\n'.join(item['content'] for item in payload['messages'] if item['role'] == 'system')
+            self.assertIn(original, system)
+            self.assertNotIn(replacement, system)
+        self.assertEqual(['system', 'system', 'user'], [item['role'] for item in payloads[-1]['messages']])
+        self.assertEqual(3, len(payloads))
+
+    def test_legacy_completed_snapshot_can_feed_new_run(self):
+        references = self.reference_fixture()
+        with patch.object(self.runner(), 'REFERENCES', references):
+            self.prepare()
+            self.as_legacy_snapshot()
+            self.runner().calculate_run(self.run, [request()])
+            with self.renderer():
+                self.runner().finish_run(self.run, report())
+            previous = self.run / 'report.json'
+            original = previous.read_bytes()
+            current = self.base / 'new-version'
+            self.runner().prepare_run([self.source], current, merchant='测试店', synthetic=True,
+                                      previous_report=previous)
+        self.assertEqual('1.1', json.loads((current / 'manifest.json').read_text())['schema_version'])
+        self.assertEqual(60, json.loads((current / 'materials.json').read_text())['history']['report']['money']['value'])
+        self.assertEqual(original, previous.read_bytes())
+
+    def test_legacy_review_does_not_import_new_global_method(self):
+        references = self.reference_fixture()
+        original = (references / 'ka-playbook.md').read_text()
+        payloads = []
+        def transport(url, payload, *args):
+            payloads.append(json.loads(payload))
+            return review()
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+        with patch.object(self.runner(), 'REFERENCES', references):
+            self.prepare()
+            self.as_legacy_snapshot()
+            calculations = self.runner().calculate_run(self.run, [request()])
+            bundle = json.loads((self.run / 'materials.json').read_text())
+            self.runner().semantic_review(client, bundle, calculations, report(),
+                                          run_dir=self.run, call_number=1)
+        self.assertNotIn(original, json.dumps(payloads, ensure_ascii=False))
 
     def test_prepare_freezes_actual_materials_without_old_stage_templates(self):
         self.prepare()

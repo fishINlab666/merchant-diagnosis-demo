@@ -8,7 +8,7 @@
 | headline | 一句具体判断，说明问题和行动方向，避免空泛“有优化空间” |
 | money | `{label,calc_id,value,unit,period,note,basis,evidence}`；有数值必须关联实际 calculate 的 calc_id，程序填入 value；未知用 value:null。label 说清指标，unit 通常元，period 说清期间，note 集中说明条件一次，basis 用人话解释计算口径 |
 | findings | 最多3项 `{title,detail,basis,evidence}`；basis 为自然语言，evidence 为 `[{material,locator}]` |
-| actions | 至少1项 `{title,owner,timing,budget,success,stop}`，均文字。第一项自动成为首屏“先做这件事”，不另填重复字段 |
+| actions | 1–3项 `{title,owner,timing,budget,success,stop}`，均文字。按优先级保留最多三项，相关门店动作可合并；其他执行细节放 analysis.execution 或 followup。第一项自动成为首屏“先做这件事”，不另填重复字段 |
 | followup | `{when,collect,decision}`；when/decision 文字，collect 为文字列表，说明回传资料改变哪个决定 |
 | charts | 最多3项 `{type,title,unit,caption,series}`，type 用 bar/stacked/waterfall；series 为 `[{label,value,calc_id,role,group,evidence}]`。有 calc_id 时由计算记录绑定值；原始数值可用 value+evidence；未知用 null。role 可选 total/increase/decrease；group 可选组名 |
 | analysis | 内部记录 `{goal,chosen_strategy,alternatives,execution,assumptions}`；goal/chosen_strategy/execution 为文字；alternatives/assumptions 为文字列表，不进入客户HTML |
