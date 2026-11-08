@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.2",
+  "created_at": "2026-11-08T09:06:30.940198+00:00",
+  "runtime": "Codex CLI 独立会话",
+  "python_version": "3.12.14",
+  "inference_executed": false,
+  "inputs": [
+    {
+      "name": "public.md",
+      "sha256": "aa2a19457d50f3a871741d97596822409629265c6b216bb04841ed0aded9b522"
+    }
+  ],
+  "files": {
+    "materials.json": "93ea39ca41bd9bcd679c55e6250fc34f3c5d41e76a49d7a51e326c441234314b",
+    "prompt.md": "80ea647500cd8bd4da276f17c4ba64d081bb1654a45035ac53fe52b413f9d5b4",
+    "quick-workflow.md": "2247af8a73b8143df0ba7ed6643d01ece012602dcc89caac1d286e947861c1cb",
+    "boss-output.md": "b2ae6e9b8085450aa8557bd57bf4ad669255beae4a50f833ba0aa09da50f73e7",
+    "ka-playbook.md": "175f215f9c0704794b81260e38cba8223e0e47b7411277e916fd04c9d625bfc6"
+  }
+}

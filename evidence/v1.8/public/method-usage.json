@@ -1,0 +1,101 @@
+[
+  {
+    "method": "store_segmentation",
+    "status": "adapted",
+    "reason": "没有增长与贡献账，只有门店时段差异。",
+    "decision": "按供给履约线索安排核查先后，暂停收益分层与资源加码。",
+    "evidence_summary": "没有增长与贡献账，只有门店时段差异。按供给履约线索安排核查先后，暂停收益分层与资源加码。",
+    "evidence": [
+      {
+        "material": "public.md",
+        "locator": "line:12"
+      },
+      {
+        "material": "public.md",
+        "locator": "line:14"
+      }
+    ],
+    "targets": [
+      {
+        "section": "findings",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "method": "audience_offer",
+    "status": "needs_data",
+    "reason": "场景文字与评价不能形成可比客群证据。",
+    "decision": "暂停优先客群与确定权益方案，补分群分母、承担与成本。",
+    "evidence_summary": "场景文字与评价不能形成可比客群证据。暂停优先客群与确定权益方案，补分群分母、承担与成本。",
+    "evidence": [
+      {
+        "material": "public.md",
+        "locator": "line:18"
+      }
+    ],
+    "targets": []
+  },
+  {
+    "method": "tool_mix",
+    "status": "applied",
+    "reason": "供给与展示线索支持不同工具，缺广告边际依据。",
+    "decision": "先核供给与出餐，科创做真实商品展示，不统一加广告或发券。",
+    "evidence_summary": "供给与展示线索支持不同工具，缺广告边际依据。先核供给与出餐，科创做真实商品展示，不统一加广告或发券。",
+    "evidence": [
+      {
+        "material": "public.md",
+        "locator": "line:10"
+      },
+      {
+        "material": "public.md",
+        "locator": "line:12"
+      },
+      {
+        "material": "public.md",
+        "locator": "line:14"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "method": "execution_followup",
+    "status": "adapted",
+    "reason": "公开线索需要现场记录确认，未收到执行回执。",
+    "decision": "按老板确认权限投入、店长回传、先验执行再判断效果推进。",
+    "evidence_summary": "公开线索需要现场记录确认，未收到执行回执。按老板确认权限投入、店长回传、先验执行再判断效果推进。",
+    "evidence": [
+      {
+        "material": "public.md",
+        "locator": "line:12"
+      },
+      {
+        "material": "public.md",
+        "locator": "line:14"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 2
+      }
+    ]
+  }
+]

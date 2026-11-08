@@ -1,0 +1,111 @@
+{
+  "public": {
+    "host": {
+      "exit_code": 0,
+      "elapsed_seconds": 159.18,
+      "report_exists": true,
+      "session": "public"
+    },
+    "status": "completed",
+    "draft_count": 2,
+    "money": null,
+    "audiences": 0,
+    "sha256": {
+      "report.json": "cf1a893d2180be214f3d9648be347911c20ba02d0bf2a7c48ee345b7860b7309",
+      "calculations.json": "1c50a6ef0b7ce7c2d18744ecf88add3cf21dabb4dfe327a26dff76599299c2c0",
+      "method-usage.json": "f534b779fbab993b57597faa8170b22e2a37aad2a9f5d5b2a040a86ac52bd2b1",
+      "execution.json": "9553f503b543d66408d3a7b23b30072fa21914d2f16e7ed0ca6ad470c13cd606",
+      "manifest.json": "76211803aa77a770f55d421383b975fe1109373872153bbffe339069105d5d68"
+    }
+  },
+  "full-original": {
+    "host": {
+      "exit_code": 0,
+      "elapsed_seconds": 336.25,
+      "report_exists": true,
+      "session": "full"
+    },
+    "status": "completed",
+    "draft_count": 2,
+    "money": 20596.16,
+    "audiences": 6,
+    "sha256": {
+      "report.json": "fe5a5ab71c080b1cef3f1beb1e02ac8c8a75a10964a7bde9ae5d1953fe9abaac",
+      "calculations.json": "b6a412ec4f1be301c34d0fe314f6b8d9164da80c049e87aa52871951b95b97e2",
+      "method-usage.json": "704a61f73a0aeb5ee0edfa3c1f108f07587bee647bfb507b3d2bf0ea55b3884a",
+      "execution.json": "5a19b45bba346261a18e131940ab944ff2115c12de5474e3b364957d508d8fed",
+      "manifest.json": "0896fdf5c1bcba51a8016d016dd737b201834ab2a00fc44fe64c9d02ba52f03b"
+    }
+  },
+  "full-repeat": {
+    "host": {
+      "exit_code": 0,
+      "elapsed_seconds": 287.17,
+      "report_exists": true,
+      "session": "full-retry"
+    },
+    "status": "completed",
+    "draft_count": 1,
+    "money": 20596.16,
+    "audiences": 6,
+    "sha256": {
+      "report.json": "32e47858db48276967186149c9aafe0443ba6388bd4dce167be710c640acf711",
+      "calculations.json": "aec2693b21cf0807270c3ee5562ca9bd815ccd33b03d589f88f8d1cdc12574f3",
+      "method-usage.json": "d044c8d8501482f7d29681875cd1c39a445a9d0d38a9e229dc55416ab1c40121",
+      "execution.json": "16beb85a844f1b6da83e875619711f522da0b9d919af3cca6a5596a85196a1d4",
+      "manifest.json": "41e4c4ba365fdae4911404d8aadd8b37df1c52fa082a1a93ad6ce89f416711f5"
+    }
+  },
+  "missing-original": {
+    "host": {
+      "exit_code": 0,
+      "elapsed_seconds": 196.55,
+      "report_exists": true,
+      "session": "missing-audience"
+    },
+    "status": "completed",
+    "draft_count": 1,
+    "money": null,
+    "audiences": 0,
+    "sha256": {
+      "report.json": "c9ee5cb38f49f33ebbe1f988725eab0a4f14b7e5fe70d9ce1da2dfb7b44e9483",
+      "calculations.json": "edf828a432b145d043bb3e2fa910325532767e2257cc8b5d9b42e04ee0cbb0d1",
+      "method-usage.json": "84c0cea495813c8d6e2a697e9927c705874edf9541fc63681f816dc3543cda72",
+      "execution.json": "ba7985bf6213d29f8fa27ec1ce39b30d63ae31e86c496dcd58d1ad0f714e9aef",
+      "manifest.json": "6089b567b505cb4421149ff35699d20fdb63b5380fb7904f2123ae0bce6b4fe5"
+    }
+  },
+  "missing-fixed": {
+    "host": {
+      "exit_code": 0,
+      "elapsed_seconds": 179.49,
+      "report_exists": true,
+      "session": "missing-audience-fixed"
+    },
+    "status": "completed",
+    "draft_count": 1,
+    "money": null,
+    "audiences": 0,
+    "sha256": {
+      "report.json": "3e070273f918ff178ef81fcbb60d75d20dd5323a8b6364f139916cdda4694730",
+      "calculations.json": "ec272d9e5e1ebdab6a134cb9136fd63eba9537b66491f9af244d53ccf055995f",
+      "method-usage.json": "e8d4cdd07f3be49d3d9437b633fcba240da28de7f847c20c673909ca87a89f74",
+      "execution.json": "31455ffe98c9b5e39a152db8d45440be25b1680a215e573139367d13c0de1b6b",
+      "manifest.json": "06dc90b0eb23b9b89a2aca0823f00c0330aa911fcb8662f3d9fdbbed0c241083"
+    }
+  },
+  "display-revision": {
+    "host": null,
+    "status": "completed",
+    "draft_count": 1,
+    "money": 20596.16,
+    "audiences": 6,
+    "sha256": {
+      "report.json": "0fea909568bc12986479d6e66722d75e47e6273b0d50813e6a3c62263eed4d89",
+      "calculations.json": "b6a412ec4f1be301c34d0fe314f6b8d9164da80c049e87aa52871951b95b97e2",
+      "method-usage.json": "dc5c67d1cdb77c8ceacc81f5254e5a4ce0800641e2d731beccbbbdbc46c5a459",
+      "execution.json": "e2efb2d47bf44d7ff4056530391e03ba4ee8ff94adbb47d445c970e21a63ca59",
+      "manifest.json": "ada4268d99fa83c29327b10298d5836b85e02368d69773224b72bd7e10b9bfd3"
+    }
+  }
+}

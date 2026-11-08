@@ -1,0 +1,101 @@
+[
+  {
+    "method": "store_segmentation",
+    "status": "applied",
+    "reason": "六店有同口径周账及老板目标",
+    "decision": "不同店分别保供、修展示、修单均及修履约",
+    "evidence_summary": "六店贡献与增长差异决定支持顺序",
+    "evidence": [
+      {
+        "material": "禾序饭盒_仅门店周报.xlsx",
+        "locator": "sheet:财务周账!I6"
+      },
+      {
+        "material": "禾序饭盒_仅门店周报.xlsx",
+        "locator": "sheet:财务周账!I7"
+      },
+      {
+        "material": "manager-notes.md",
+        "locator": "line:5"
+      }
+    ],
+    "targets": [
+      {
+        "section": "findings",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "method": "audience_offer",
+    "status": "needs_data",
+    "reason": "只有门店周账，无分群成交成本及核销",
+    "decision": "暂不选主投人群或确定券，先补真实分群分母",
+    "evidence_summary": "页面场景不代表实际人群收益",
+    "evidence": [
+      {
+        "material": "public.md",
+        "locator": "line:18"
+      }
+    ],
+    "targets": []
+  },
+  {
+    "method": "tool_mix",
+    "status": "applied",
+    "reason": "已有供给与承接瓶颈，不能先搬广告",
+    "decision": "供给恢复与商品展示优先，暂停新增广告和未经核算权益",
+    "evidence_summary": "学府供货变更与科创首屏展示分别需要不同工具",
+    "evidence": [
+      {
+        "material": "manager-notes.md",
+        "locator": "line:9"
+      },
+      {
+        "material": "public.md",
+        "locator": "line:10"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "method": "execution_followup",
+    "status": "applied",
+    "reason": "直营和加盟权限不同且要求回执",
+    "decision": "明确总部、加盟商、店长和财务职责，先核执行再扩围",
+    "evidence_summary": "行动未收到回执，按责任链回传",
+    "evidence": [
+      {
+        "material": "manager-notes.md",
+        "locator": "line:7"
+      },
+      {
+        "material": "manager-notes.md",
+        "locator": "line:17"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 2
+      }
+    ]
+  }
+]
