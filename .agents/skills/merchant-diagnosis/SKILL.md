@@ -3,9 +3,13 @@ name: merchant-diagnosis
 description: Use when a merchant, brand KA, or operator provides store-page information and operating reports for a business diagnosis, targeted data request, action plan, follow-up review, or an HTML business dashboard. Supports single stores, chains, advertising and no-advertising businesses.
 ---
 
-# 商户经营诊断 · 1.7.1
+# 商户经营诊断 · 1.7.2
 
 把店铺资料和现有周报交给当前 Agent，理解材料、实际计算、判断先做什么，导出能直接给老板看的 `report.html`。不要求客户套表头，不返回预置案例。公开资料能先交初诊，补数后更新方案。
+
+## 对外产品定位（强制）
+
+产品服务商户经营诊断、执行与复盘。展示模式统一称「老板看板／产品讲解」；产品界面、导出看板、提示、元信息及公开介绍不得用「面试」「求职」「应聘」等目的定位产品，也不以面试官为产品受众。产品讲解展示材料、经营判断、方法来源与行动；内部职业准备和历史原件单独保存，真实商家原文不因禁词删改。方法来源与实际运行、未启用和未验证状态分别说明，不能为增强展示而捏造采用记录。这一要求适用于后续修改，不能为演示擅自豁免。
 
 ## 默认操作：一次到看板
 

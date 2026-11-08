@@ -30,7 +30,7 @@ jobs:
       - name: Test Skill
         run: python -m unittest discover -s .agents/skills/merchant-diagnosis/tests -q
 
-      - name: Test recording entry
+      - name: Test delivery tools
         run: python -m unittest discover -s tools/tests -q
 
       - name: Build static showcase

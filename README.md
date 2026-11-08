@@ -2,10 +2,12 @@
 
 把店铺资料和现有周报交给 Agent，得到一页「发现、钱账、先做什么」的老板看板。支持单店、连锁、有投放和无投放场景；老板已说明的口径直接采用，缺数只暂停受影响的测算。
 
-[打开演示看板](https://fishinlab666.github.io/merchant-diagnosis-demo/) · [首次运行录屏](public/media/first-run.mp4) · [下载 v1.7.1](releases/merchant-diagnosis-v1.7.1.zip) · [验收记录](ACCEPTANCE.md)
+[打开演示看板](https://fishinlab666.github.io/merchant-diagnosis-demo/) · [首次运行录屏](public/media/first-run.mp4) · [下载 v1.7.2](releases/merchant-diagnosis-v1.7.2.zip) · [验收记录](ACCEPTANCE.md)
 
 ![连锁经营看板](public/media/chain-firstfold.png)
 ![单店经营看板](public/media/single-firstfold.png)
+
+产品面向商户经营诊断、执行与复盘；展示模式统一称「老板看板／产品讲解」。讲解展示材料如何支持判断、方法如何影响动作。1.7.2 加入默认表达约束与发布检查，模式切换和圈点交互尚未加入。
 
 ## 哪些是作者的 KA 经验
 
@@ -60,4 +62,4 @@ Agent 完成读取材料、判断并计算、导出 HTML 三个核心动作；�
 
 ## 展示层与历史版本
 
-当前首页是固定面试展示页，打开报告不会启动分析；新材料由 Agent 或独立 API 处理后再导出。`src/` 保留早期网页源码，当前发布用 `python3 scripts/build-showcase.py` 构建静态展示，不依赖前端框架。历史 v1.4 报告与安装包仍保留，首次体验请使用 v1.7.1。
+当前首页是固定产品展示页，打开报告不会启动分析；新材料由 Agent 或独立 API 处理后再导出。`src/` 保留早期网页源码，当前发布用 `python3 scripts/build-showcase.py` 构建静态展示，不依赖前端框架。历史 v1.4 报告与安装包仍保留，首次体验请使用 v1.7.2。

@@ -1,8 +1,12 @@
-"""Publish the Skill's static interview page and generated reports."""
+"""Publish the product showcase and generated merchant reports."""
 from pathlib import Path
 import shutil
+import subprocess
+import sys
 
 root = Path(__file__).resolve().parents[1]
+subprocess.run([sys.executable, str(root / 'tools/check_product_copy.py'), '--root', str(root)],
+               check=True)
 destination = root / 'dist'
 if destination.is_symlink():
     raise RuntimeError('dist must not be a symlink')
