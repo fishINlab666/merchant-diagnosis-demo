@@ -1,0 +1,528 @@
+{
+  "merchant": {
+    "name": "榕味小馆30店",
+    "scope": "30家门店",
+    "period": "材料期2026-10-05至11-01；规划月按30天",
+    "synthetic": true
+  },
+  "headline": "总预算不变，先做7日工具A→工具B小转试行，按成熟口径贡献差额三档决定继续、不扩量或停止。",
+  "money": {
+    "label": "月度经营贡献差额（审慎情景）",
+    "unit": "元",
+    "period": "30天规划月",
+    "note": "审慎参数：工具B为2.50、工具A为1.50；订单变动成本率60%，扣执行费6,000元。固定成本前情景，非已执行结果。",
+    "basis": "30天规划月从工具A调拨60,000元至工具B：净结算收入增加60,000元（工具B增加150,000元、工具A损失90,000元），扣订单变动成本36,000元与执行费6,000元，经营贡献净增18,000元。",
+    "calc_id": "month_contrib",
+    "value": 18000,
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:29"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:33"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:15"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "推广预算高度集中于工具A（90%），存在不增预算的调拨检查点",
+      "detail": "渠道表工具A花费252,000元、工具B花费28,000元，工具A占90%，超过单一工具占比70%的集中检查线。集中本身不等于低效，需边际试行验证是否值得搬钱。",
+      "basis": "渠道表工具A/工具B花费及归因口径相同、7日成熟去重；工具A花费除以工具A+工具B花费得90%。",
+      "evidence": [
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:渠道!E4"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:渠道!E5"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:19"
+        }
+      ]
+    },
+    {
+      "title": "边际试行增工具B每元入账3.0、减工具A每元损1.4，方向支持工具A→工具B调拨",
+      "detail": "按同期对照门店组的入账变化（后窗/前窗=1.05）调整对照：增加工具B投放门店组仅将工具B投放增加14,000元，后窗入账420,000元，比预期378,000元多42,000元（3.0元/元）；减少工具A投放门店组仅将工具A投放减少14,000元，后窗入账358,400元，比预期少19,600元（1.4元/元）。方向性支持从工具A挪向工具B，但为事先匹配非随机组，非严格因果增量。",
+      "basis": "对照预期=本组前窗×（同期对照门店组后窗÷同期对照门店组前窗）；差额除以调拨额得每元系数。",
+      "evidence": [
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:边际试行!E5"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:边际试行!E6"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:25"
+        }
+      ]
+    },
+    {
+      "title": "中央店双拼套餐详情写两份米饭但主图未标人数；南站店页面未标适用人数",
+      "detail": "中央店招牌双拼套餐详情写有两份米饭、主图不标人数；南站店同款套餐未标适用人数，评价反映下单前不知道是两份饭。科创店单人餐首屏可见组成，不套用双拼结论。这是5条独立评价的方便样本，不能推算全店发生率。",
+      "basis": "公开门店页与评价摘录的方便样本，逐店区分页面信息，非后台订单口径。",
+      "evidence": [
+        {
+          "material": "public.md",
+          "locator": "line:13"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:15"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:23"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:26"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "首轮7日：从工具A调拨14,000元至工具B（30店合计），总预算不变",
+      "owner": "总部预算负责人确认调拨，区域运营记录每日消耗，门店联络人记录缺货/出餐负荷，财务复核结算",
+      "timing": "11-09启动，11-16查执行与消耗，11-23成熟复盘",
+      "budget": "调拨14,000元（工具A投放减少14,000元、工具B投放增加14,000元）；工具A每日总额7,000元、工具B每日总额3,000元，每店每天新增工具B投放上限66.67元；执行费1,400元",
+      "success": "7日成熟口径经营贡献差额为正、执行完整且无新增费用缺口，才继续同一强度观察下一周",
+      "stop": "成熟贡献差额低于-5,000元或工具B单日消耗超3,000元总限额即停止追加并核对原因；负值但未触线则不扩量，先核对自然单变化与组间差异"
+    },
+    {
+      "title": "商品页双拼套餐补标人数/份量，先限未纳入预算试点的待选店",
+      "owner": "总部运营协调，门店店长核对页面与上架权限",
+      "timing": "与预算试点同期、不同店，避免与试验评价混同",
+      "budget": "先核对修改权限与实际现金/工时，无来源的投入不填报",
+      "success": "试点店页面明确标注套餐适用人数/份量并经上线核对；效果评价需同口径分母与可比窗口，零投诉不等同改善",
+      "stop": "若核对发现仅个别门店或商品则缩小范围，不扩大到预算试点店；信息说明不得因效果未改善而回滚为不完整说明"
+    },
+    {
+      "title": "11-23复盘：两轮方向一致才讨论30店整月持续（最多调拨60,000元），另核规模与承接",
+      "owner": "总部预算负责人决策，财务复核结算与成本",
+      "timing": "11-23首轮复盘后，再观察一轮",
+      "budget": "整月最多从工具A转工具B 60,000元，总额不变",
+      "success": "两轮成熟贡献差额均为正、执行完整、无新增费用缺口，且经营规模与承接过关",
+      "stop": "任一轮成熟贡献差额为负未触线则不扩量；低于-5,000元或工具B日超3,000元即停止并核对原因"
+    }
+  ],
+  "followup": {
+    "when": "11-16回传首轮执行与早期信号，11-23回传7日成熟复盘",
+    "decision": "按成熟口径贡献差额分三档：为正且执行完整、无费用缺口→继续同一强度；为负但未触线（不低于-5000且工具B日消耗不超3000）→不扩量、核对自然单与组间差异；低于-5000或工具B单日超3000→停止追加并核对原因。两轮方向一致才讨论整月持续，规模底线待老板确认。",
+    "collect": [
+      "区域运营每日实际消耗及工具B单日是否超3,000元总限额",
+      "门店联络人缺货/出餐负荷记录",
+      "财务同口径结算与成本复核（含自然单变化）",
+      "试点店商品页人数标注上架记录",
+      "老板确认的经营规模底线（如完成单不下降，暂为建议）"
+    ]
+  },
+  "charts": [
+    {
+      "type": "waterfall",
+      "title": "月度经营贡献拆解（审慎情景）",
+      "unit": "元",
+      "caption": "从工具A调拨60,000元至工具B的30天规划月：净结算收入增加60,000元，扣订单变动成本36,000元与执行费6,000元，净贡献增加18,000元。",
+      "series": [
+        {
+          "label": "净结算收入变化",
+          "calc_id": "month_income",
+          "value": 60000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "increase",
+          "group": "贡献拆解"
+        },
+        {
+          "label": "订单变动成本变化",
+          "calc_id": "month_cost",
+          "value": 36000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:15"
+            }
+          ],
+          "role": "decrease",
+          "group": "贡献拆解"
+        },
+        {
+          "label": "额外执行费",
+          "value": 6000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "decrease",
+          "group": "贡献拆解"
+        },
+        {
+          "label": "月度经营贡献差额",
+          "calc_id": "month_contrib",
+          "value": 18000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:15"
+            }
+          ],
+          "role": "total",
+          "group": "贡献拆解"
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "每元推广对应的入账变化",
+      "unit": "元入账/元推广",
+      "caption": "试行估计：增工具B每元3.0、减工具A每元损1.4；审慎参数取工具B=2.50、工具A=1.50。",
+      "series": [
+        {
+          "label": "增加工具B投放每元入账（增加工具B投放门店组估计）",
+          "calc_id": "b_py",
+          "value": 3,
+          "evidence": [
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E6"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D6"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!L6"
+            }
+          ],
+          "group": "试行估计"
+        },
+        {
+          "label": "减少工具A投放每元损失（减少工具A投放门店组估计）",
+          "calc_id": "a_py",
+          "value": 1.4,
+          "evidence": [
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D5"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E5"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!E4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!D4"
+            },
+            {
+              "material": "经营周报.xlsx",
+              "locator": "sheet:边际试行!L5"
+            }
+          ],
+          "group": "试行估计"
+        },
+        {
+          "label": "审慎参数工具B",
+          "value": 2.5,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "group": "规划参数"
+        },
+        {
+          "label": "审慎参数工具A",
+          "value": 1.5,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "group": "规划参数"
+        }
+      ]
+    },
+    {
+      "type": "waterfall",
+      "title": "首轮7日试行贡献拆解（审慎情景）",
+      "unit": "元",
+      "caption": "7日从工具A调拨14,000元至工具B：净结算收入增加14,000元，扣订单变动成本8,400元与执行费1,400元，净贡献增加4,200元。",
+      "series": [
+        {
+          "label": "净结算收入变化",
+          "calc_id": "d7_income",
+          "value": 14000,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "increase",
+          "group": "首轮试行"
+        },
+        {
+          "label": "订单变动成本变化",
+          "calc_id": "d7_cost",
+          "value": 8400,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:15"
+            }
+          ],
+          "role": "decrease",
+          "group": "首轮试行"
+        },
+        {
+          "label": "额外执行费",
+          "value": 1400,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            }
+          ],
+          "role": "decrease",
+          "group": "首轮试行"
+        },
+        {
+          "label": "7日经营贡献差额",
+          "calc_id": "d7_contrib",
+          "value": 4200,
+          "evidence": [
+            {
+              "material": "definitions.md",
+              "locator": "line:29"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:33"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:15"
+            }
+          ],
+          "role": "total",
+          "group": "首轮试行"
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "30店总推广预算30万不增，找出可试行的月度经营贡献改善；收益主体为演示城30家成熟直营店，指标为固定成本前经营贡献。",
+    "chosen_strategy": "依据T02/T03边际试行与审慎参数，小规模从A调拨到B（先7日14000、总额不变），按成熟口径贡献差额三档判定继续、不扩量或停止；商品页人数标注作为并行、不同店的改进，不与预算试验混同。",
+    "execution": "总部预算负责人确认调拨；区域运营记录每日消耗；门店联络人记录缺货/出餐负荷；财务复核结算与成本。11-09启动、11-16查执行、11-23成熟复盘；商品页修改限未纳入预算试点的待选店。",
+    "alternatives": [
+      "保持A主导不加B：无增贡献证据且A占比90%、边际损失相对高，未选。",
+      "按平均ROI(5.0)直接大额转B：平均ROI非边际增量，且T03为匹配非随机组，不能线性外推，未选直接扩量。",
+      "全店统一改商品页：会与预算试验混同、难以归因，改为分批不同店进行。"
+    ],
+    "assumptions": [
+      "审慎参数B=2.50/A=1.50为经营负责人设定，非实测因果增量；负例B=1.50/A=2.00用于预警B饱和与A减投损失扩大，未作主卡。",
+      "T01–T03为事先匹配非随机组，边际估计可能受商圈、人群或组间差异影响。",
+      "订单变动成本率60%由T01–T03成本账推导，跨月、跨商品结构须复核。",
+      "周报为30店汇总，无单店收入/成本拆分，暂按整体调拨。",
+      "未纳入固定租金、固定薪资与总部摊销，结果仅为固定成本前经营贡献。",
+      "方案尚未执行，贡献差额为审慎情景，非经营结果。",
+      "经营规模底线（如完成单不下降）为建议试点设置，待老板确认，不以减单获利视为改善。"
+    ]
+  },
+  "gaps": [],
+  "audience_plan": [],
+  "method_usage": [
+    {
+      "method": "store_segmentation",
+      "status": "needs_data",
+      "reason": "周报仅提供30店汇总入账与成本，无单店增长与贡献拆分，无法按增长×收益质量分店配置资源。",
+      "decision": "本轮按30店整体做预算调拨；是否分店加码需补门店级净收入与已确认成本口径。",
+      "evidence_summary": "周表覆盖演示城30家成熟直营店的汇总结算入账、餐材包材及按单工时与推广账单，未提供门店级拆分。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:3"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:周报!C4"
+        }
+      ],
+      "targets": []
+    },
+    {
+      "method": "audience_offer",
+      "status": "adapted",
+      "reason": "渠道触达人群已有区分：工具A以广泛兴趣及新客为主、工具B以近期浏览和已购客为主；试行显示工具B边际入账更高，据此把资源向工具B人群倾斜，但未设计具体券权益以保持试验纯净。",
+      "decision": "首轮调拨改变触达人群结构（工具B增工具A减），不叠加新券；商品页人数标注作为并行承接改进。",
+      "evidence_summary": "渠道表标注工具A、工具B触达人群不同，边际试行显示增工具B每元入账3.0元、减工具A每元损1.4元，支持向已购/近期浏览客群倾斜。",
+      "evidence": [
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:渠道!J4"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:渠道!J5"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:边际试行!L5"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:边际试行!L6"
+        }
+      ],
+      "targets": [
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "findings",
+          "index": 1
+        }
+      ]
+    },
+    {
+      "method": "tool_mix",
+      "status": "applied",
+      "reason": "主要问题是推广预算集中于工具A(90%)且边际入账偏低；比较了继续保工具A与调拨工具A→工具B两个方向，依据边际试行选择小规模调拨，不按平均ROI(3.0对5.0)线性外推。",
+      "decision": "选择从工具A小试转工具B、总量不增，先7日14,000元，按成熟贡献差额三档决定是否扩到整月60,000元。",
+      "evidence_summary": "工具A占比90%、平均ROI3.0，工具B平均ROI5.0；但按边际试行，增工具B每元3.0元、减工具A每元损1.4元，据此以审慎参数工具B=2.50/工具A=1.50测算月度贡献。",
+      "evidence": [
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:渠道!E4"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:渠道!E5"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:边际试行!L5"
+        },
+        {
+          "material": "经营周报.xlsx",
+          "locator": "sheet:边际试行!L6"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:33"
+        }
+      ],
+      "targets": [
+        {
+          "section": "money",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "charts",
+          "index": 0
+        },
+        {
+          "section": "findings",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "method": "execution_followup",
+      "status": "applied",
+      "reason": "材料明确责任链（总部预算负责人、区域运营、门店联络人、财务）与回传节点（11-16执行/消耗、11-23复盘），并给出三档继续/不扩量/停止口径。",
+      "decision": "首轮动作落到11-09启动、11-16查执行、11-23成熟复盘；按成熟贡献差额三档判定：为正且执行完整→继续、负未触线→不扩量、低于-5000或工具B日超3000→停止。",
+      "evidence_summary": "材料规定各角色职责、每日消耗记录、缺货/出餐负荷记录，以及首轮损失承受上限5,000元、工具B单日3,000元限额和负值不扩量口径。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:37"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:39"
+        }
+      ],
+      "targets": [
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 2
+        }
+      ]
+    }
+  ]
+}

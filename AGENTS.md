@@ -18,6 +18,8 @@
 
 1.8 构建额外检查禾序饭盒报告、老板报告模板与脚本。报告的 `boss-data` JSON 文字也会解码检查；无效 JSON 阻止发布。检查不执行任意 JavaScript，切换、圈点与人群详情仍须做浏览器验收。
 
+1.8.3 构建在默认检查范围之外，明确检查 `public/reports/audience-chain.html`、`public/reports/audience-chain-v183.html`、`public/reports/single-v183.html`、`public/reports/api-chain-v183.html`、`tools/recording-console.html` 和 `.agents/skills/merchant-diagnosis/assets/boss-report.js`。任一当前目标缺失或文案检查不通过，须在覆盖既有 `dist` 前停止。历史归档报告保留原件，不因本版发布改写、重新标注验证版本或自动纳入当前产品入口检查；不得以历史归档名义豁免新增或仍在使用的产品入口。构建集成回归见 `tools/tests/test_build_showcase.py`。
+
 词语检查也可能命中真实的商家招聘事实。若后续产品内容需引用此类事实，应保留原件、人工确认语境，并在同一变更中增加限定于该事实引用的例外及反例测试；不得删改事实或整体关闭检查。
 
 Skill 默认规则位于 `.agents/skills/merchant-diagnosis/`；产品定位要求须同时保留在默认冻结的 `references/quick-workflow.md` 及输出说明中。旧运行快照和历史安装包不得覆盖改写。

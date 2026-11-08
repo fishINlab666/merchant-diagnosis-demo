@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.3",
+  "created_at": "2026-11-08T12:28:37.236883+00:00",
+  "runtime": "Codex Agent 客户文案整理（承接 DeepSeek API 分析）",
+  "python_version": "3.12.14",
+  "inference_executed": false,
+  "inputs": [
+    {
+      "name": "public.md",
+      "sha256": "918e9c21d2774b137dc49de937e13731f8c79c4cb358253e75035c929a5420c8"
+    },
+    {
+      "name": "definitions.md",
+      "sha256": "ddbc4541c821b8c3cfcb6dceb416a26daefafbd1cbe7350c8d6410722577d028"
+    },
+    {
+      "name": "经营周报.xlsx",
+      "sha256": "5e8f84c514f0c581da8302c7206a9f11bfc65e6f75c22aa92278088045e668ae"
+    }
+  ],
+  "files": {
+    "materials.json": "4651238fbfd1ab2efb112febfaa238c3d95f072a762f67efbb9bb97e13747432",
+    "prompt.md": "8126d5dd812b2e8d2f235098a2632af88e6ea939b8ecb0efa3f46641b090608b",
+    "quick-workflow.md": "fb41b3aeced18a7b7982068337dd31c7616e6af7c606e56109efd9c25b946af8",
+    "boss-output.md": "b23992b697d6ec6bc4f37762662b31eafba360b026b212617144f58fa740b4e6",
+    "ali-ka-playbook.md": "53e5005e1fa70fd1a32abd22b26d27d3ca5103a5f98e03e2cb70ed2f6e758283",
+    "ka-playbook.md": "175f215f9c0704794b81260e38cba8223e0e47b7411277e916fd04c9d625bfc6"
+  }
+}

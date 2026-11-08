@@ -4,16 +4,19 @@ Not a hosted product. Binds only loopback; does not accept credentials from the 
 """
 import argparse
 import base64
+from html import escape
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
 import threading
 import time
 import uuid
+from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / '.agents' / 'skills' / 'merchant-diagnosis'
@@ -42,13 +45,14 @@ def run_codex(directory, inputs, merchant, log):
     subprocess.run(['git', 'init', '--quiet', str(directory)], check=True,
                    stdout=log, stderr=subprocess.STDOUT)
     local_skill = directory / 'skills' / 'merchant-diagnosis'
+    skill = getattr(OPTIONS, 'skill_dir', SKILL)
     local_skill.mkdir(parents=True)
     for name in ('SKILL.md', 'README.md', 'requirements.txt'):
-        shutil.copy2(SKILL / name, local_skill / name)
+        shutil.copy2(skill / name, local_skill / name)
     excluded = shutil.ignore_patterns('examples', 'tests', '__pycache__', '*.pyc',
                                      '.venv', 'venv', '.git', 'runs', 'reports', 'showcase')
     for name in ('references', 'scripts', 'assets'):
-        shutil.copytree(SKILL / name, local_skill / name, ignore=excluded)
+        shutil.copytree(skill / name, local_skill / name, ignore=excluded)
     python = Path(sys.executable)
     prompt = f'''这是新的真实 Codex CLI 分析会话。当前你就是分析模型，按本轮复制的 Skill 完成诊断。
 只读本目录里的 Skill 规则、默认 quick 流程所需脚本/资源和本轮 input 原件，不读取父目录、旧稿、旧报告、参考答案、测试或其他实例。不调用独立模型 API 或网络数据源，不读取凭证，不修改 Skill 代码。
@@ -57,7 +61,7 @@ def run_codex(directory, inputs, merchant, log):
 本轮原始输入绝对路径：{json.dumps([str(p) for p in inputs], ensure_ascii=False)}。
 唯一输出目录：{directory / 'run'}。保留首次草稿、计算、格式错误与导出记录，不借用任何既有报告。
 依赖已准备，所有 Python 脚本必须使用 {python}；此服务端解释器已准备解析依赖，不安装新依赖、不跳过工作簿。
-目标：{GOAL}
+目标：{getattr(OPTIONS, 'goal', GOAL)}
 完成前自行对照原件检查业务口径、来源、成本、停止条件；最终只说明实际产物路径与返工情况。'''
     (directory / 'input-prompt.txt').write_text(prompt)
     env = os.environ.copy()
@@ -70,28 +74,127 @@ def run_codex(directory, inputs, merchant, log):
                               env=env, stdout=events, stderr=log)
 
 
+def checked_file(directory, path):
+    """Reject lexical escapes and symlinks before resolving any run artifact."""
+    path = Path(path)
+    if not path.is_absolute():
+        path = directory / path
+    if '..' in path.parts or not path.is_relative_to(directory / 'run'):
+        raise ValueError('报告路径不在本轮 run 根内')
+    if any(part.is_symlink() for part in (path, *path.parents)
+           if part.is_relative_to(directory)) or not path.is_file():
+        raise ValueError('报告关联文件缺失或使用了软链接')
+    return path
+
+
+def verify_report(directory, relative):
+    report = checked_file(directory, relative)
+    if report.name != 'report.html':
+        raise ValueError('交付链接须指向 report.html')
+    root = report.parent
+    manifest = json.loads(checked_file(directory, root / 'manifest.json').read_text())
+    state = json.loads(checked_file(directory, root / 'execution.json').read_text())
+    if state.get('status') != 'completed' or state.get('report') != 'report.html':
+        raise ValueError('所选报告尚未完成')
+    names = ['report.json', 'calculations.json', 'ali-ka-playbook.md', *manifest['files']]
+    if state.get('method_usage_sha256'):
+        names.append('method-usage.json')
+    for name in names:
+        if not isinstance(name, str) or Path(name).name != name:
+            raise ValueError('报告关联文件名无效')
+        checked_file(directory, root / name)
+    # Use installed, trusted validators, never execute code delivered in the run.
+    code = '''import json, re, sys
+from pathlib import Path
+sys.path.insert(0, sys.argv[1])
+from quick_run import _previous_history
+from boss_report import customer_data
+root = Path(sys.argv[2])
+bundle = json.loads((root / 'materials.json').read_text())
+record = _previous_history(root / 'report.json', bundle['merchant'])
+payloads = re.findall(r'<script id="boss-data" type="application/json">(.*?)</script>',
+                     (root / 'report.html').read_text(), re.S)
+if len(payloads) != 1 or json.loads(payloads[0]) != customer_data(record['report']):
+    raise ValueError('HTML/report binding mismatch')
+'''
+    result = subprocess.run([sys.executable, '-I', '-B', '-c', code,
+        str(ROOT / '.agents/skills/merchant-diagnosis/scripts'), str(root)],
+        capture_output=True, text=True, timeout=30)
+    if result.returncode:
+        raise ValueError('报告、计算、HTML 或冻结规则关联校验失败')
+    return report
+
+
+def delivery_targets(text):
+    links = []
+    def markdown(match):
+        links.append(match.group(1) or match.group(2))
+        return ' '
+    text = re.sub(r'\[[^\]]*\]\((?:<([^>]+)>|([^\s)]+))\)', markdown, text)
+    def quoted(match):
+        links.append(match.group(1))
+        return ' '
+    text = re.sub(r'`+([^`]+)`+', quoted, text)
+    links.extend(re.findall(r'''[^\s`<>\[\](){}，。；：!?'"]+\.html(?:[:?#][^\s`<>\[\](){}，。；：!?'"]*)?''', text, re.I))
+    targets = set()
+    for link in links:
+        link = unquote(link.strip())
+        if not re.search(r'\.html(?=[:?#\s]|$)', link, re.I):
+            continue
+        link = re.sub(r'(\.html):[0-9]+(?::[0-9]+)?$', r'\1', link, flags=re.I)
+        parsed = urlsplit(link)
+        if parsed.scheme or parsed.netloc or parsed.query or parsed.fragment:
+            raise ValueError('交付报告链接须为本轮本地文件')
+        targets.add(parsed.path)
+    return targets
+
+
+def select_report(directory, backend):
+    targets = set()
+    events = directory / 'host-events.jsonl'
+    if backend == 'codex' and events.is_file():
+        final = ''
+        for line in events.read_text(encoding='utf-8').splitlines():
+            event = json.loads(line)
+            item = event.get('item', {})
+            if event.get('type') == 'item.completed' and item.get('type') == 'agent_message':
+                final = item.get('text', '')
+        targets = delivery_targets(final)
+    if not targets:
+        targets = {str(path.relative_to(directory)) for path in (directory / 'run').rglob('report.html')}
+    if len(targets) != 1:
+        raise ValueError('未生成本次 report.html，或存在多个报告且没有唯一明确交付链接')
+    report = verify_report(directory, targets.pop())
+    return str(report.relative_to(directory))
+
+
 def worker(directory, inputs, merchant):
     directory = directory.resolve()
     inputs = [path.resolve() for path in inputs]
     exit_code = None
     error = None
+    selected = None
     with (directory / 'process.log').open('w') as stream:
         try:
             if OPTIONS.backend == 'codex':
                 result = run_codex(directory, inputs, merchant, stream)
             else:
-                command = [sys.executable, str(SKILL / 'scripts/quick_run.py'), 'api',
+                skill = getattr(OPTIONS, 'skill_dir', SKILL)
+                command = [sys.executable, str(skill / 'scripts/quick_run.py'), 'api',
                            '--input', *map(str, inputs), '--output', str(directory / 'run'),
-                           '--merchant', merchant, '--synthetic', '--goal', GOAL,
+                           '--merchant', merchant, '--synthetic', '--goal', getattr(OPTIONS, 'goal', GOAL),
                            '--model', OPTIONS.model, '--thinking', OPTIONS.thinking,
                            '--max-tokens', str(OPTIONS.max_tokens), '--max-calls', '8']
                 if OPTIONS.config:
                     command.extend(['--config', OPTIONS.config])
-                result = subprocess.run(command, cwd=SKILL, stdout=stream,
+                result = subprocess.run(command, cwd=skill, stdout=stream,
                                         stderr=subprocess.STDOUT)
             exit_code = result.returncode
-            if exit_code == 0 and not (directory / 'run' / 'report.html').is_file():
-                error = '后端已结束，但未生成本次 report.html；请查看本次过程日志。'
+            if exit_code == 0:
+                try:
+                    selected = select_report(directory, OPTIONS.backend)
+                except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError):
+                    error = '未生成本次 report.html，或最终交付路径/完成状态/产物关联无法确认；请查看本次过程日志。'
         except Exception as exc:
             stream.write(f'Backend preparation or execution failed: {type(exc).__name__}: {exc}\n')
             error = '后端准备或执行失败；请查看本次 process.log。'
@@ -101,6 +204,9 @@ def worker(directory, inputs, merchant):
         STATE['status'] = 'complete' if exit_code == 0 and error is None else 'failed'
         STATE['elapsed'] = round(time.monotonic() - STATE['started'], 1)
         STATE['exit_code'] = exit_code
+        STATE.pop('output_report', None)
+        if STATE['status'] == 'complete':
+            STATE['output_report'] = selected
         if error:
             STATE['error'] = error
 
@@ -132,9 +238,26 @@ class Handler(BaseHTTPRequestHandler):
                 if STATE.get('started'):
                     public['elapsed'] = STATE.get('elapsed', round(time.monotonic() - STATE['started'], 1))
             self.send(public)
-        elif self.path == '/report.html' and STATE.get('status') == 'complete':
-            report = STATE['directory'] / 'run' / 'report.html'
-            self.send(report.read_bytes(), 'text/html')
+        elif self.path in ('/report.html', '/playbook.html') and STATE.get('status') == 'complete':
+            with LOCK:
+                directory, selected = STATE['directory'], STATE.get('output_report')
+            try:
+                report = verify_report(directory, selected)
+            except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError):
+                self.send({'error': 'not found'}, status=404)
+                return
+            if self.path == '/report.html':
+                self.send(report.read_bytes(), 'text/html')
+                return
+            frozen = checked_file(directory, report.parent / 'ali-ka-playbook.md')
+            source = escape(frozen.read_text(encoding='utf-8'))
+            self.send('<!doctype html><html lang="zh-CN"><meta charset="utf-8">'
+                      '<meta name="viewport" content="width=device-width, initial-scale=1">'
+                      '<title>本轮方法一页纸</title><style>body{max-width:960px;margin:40px auto;'
+                      'padding:0 24px;background:#f5f7f1;color:#173b32;font:17px/1.8 system-ui;}'
+                      'pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}</style>'
+                      '<a href="/report.html">返回本次看板</a><h1>本轮方法一页纸</h1>'
+                      '<p>以下为本次 prepare 冻结的原文。</p><pre>' + source + '</pre></html>', 'text/html')
         else:
             self.send({'error': 'not found'}, status=404)
 
@@ -190,7 +313,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send({'error': str(exc)}, status=400)
 
 
-if __name__ == '__main__':
+def parse_options(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--port', type=int, default=8767)
     parser.add_argument('--backend', choices=('codex', 'deepseek'), default='deepseek')
@@ -200,13 +323,31 @@ if __name__ == '__main__':
     parser.add_argument('--thinking', choices=('enabled', 'disabled'), default='enabled')
     parser.add_argument('--max-tokens', type=int, default=24576)
     parser.add_argument('--output', type=Path, default=HERE / 'recorded-runs')
-    OPTIONS = parser.parse_args()
-    if OPTIONS.backend == 'codex':
-        executable = shutil.which(OPTIONS.codex_bin) if OPTIONS.codex_bin else None
+    parser.add_argument('--skill-dir', type=Path, default=SKILL,
+                        help='本轮已解压的 Skill 根目录（含 SKILL.md 和 README.md）')
+    parser.add_argument('--goal-file', type=Path, help='逐字读取 UTF-8 诊断目标；省略则使用原默认目标')
+    options = parser.parse_args(argv)
+    options.skill_dir = options.skill_dir.resolve()
+    required = ('SKILL.md', 'README.md', 'requirements.txt', 'references', 'scripts', 'assets')
+    if any(not (options.skill_dir / name).exists() for name in required):
+        parser.error('--skill-dir 缺少 Skill 必需文件或目录')
+    try:
+        options.goal = options.goal_file.read_text(encoding='utf-8') if options.goal_file else GOAL
+    except (OSError, UnicodeError) as exc:
+        parser.error(f'无法读取 UTF-8 --goal-file：{exc}')
+    if not options.goal.strip():
+        parser.error('--goal-file 不可为空')
+    if options.backend == 'codex':
+        executable = shutil.which(options.codex_bin) if options.codex_bin else None
         if not executable:
             parser.error('未找到可执行的 Codex CLI；请将 codex 加入 PATH，或用 --codex-bin 指定可执行文件。')
-        OPTIONS.codex_bin = str(Path(executable).resolve())
-    OPTIONS.output = OPTIONS.output.resolve()
+        options.codex_bin = str(Path(executable).resolve())
+    options.output = options.output.resolve()
+    return options
+
+
+if __name__ == '__main__':
+    OPTIONS = parse_options()
     OPTIONS.output.mkdir(parents=True, exist_ok=True)
     STATE['backend'] = OPTIONS.backend
     print(f'Recording fixture ({OPTIONS.backend}) on http://127.0.0.1:{OPTIONS.port}', flush=True)

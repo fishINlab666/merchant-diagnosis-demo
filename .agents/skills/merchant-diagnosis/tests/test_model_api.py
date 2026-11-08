@@ -34,6 +34,41 @@ def native_response(arguments=None, **changes):
 
 
 class ModelAPITests(unittest.TestCase):
+    def test_calculator_description_explains_binding_and_new_ids_for_recalculation(self):
+        description = self.api().CALCULATE_TOOL['function']['description']
+        self.assertIn('expression', description)
+        self.assertIn('variables', description)
+        self.assertIn('实际引用', description)
+        self.assertIn('新calc_id', description)
+
+    def test_review_profile_preserves_mode_and_writer_settings(self):
+        for use_transport in (False, True):
+            options = {'transport': lambda *args: response()} if use_transport else {}
+            writer = self.api().ModelClient('deepseek', 'unit-test-secret', 'configured-model',
+                thinking='enabled', max_tokens=24576, timeout=90, **options)
+            reviewer = writer.for_review()
+            self.assertIsNot(writer, reviewer)
+            self.assertEqual(writer.mode, reviewer.mode)
+            self.assertEqual(('enabled', 24576), (writer.thinking, writer.max_tokens))
+            self.assertEqual(('disabled', 8192), (reviewer.thinking, reviewer.max_tokens))
+            self.assertIs(writer._transport, reviewer._transport)
+            self.assertEqual(writer.timeout, reviewer.timeout)
+            self.assertEqual(writer.max_response_bytes, reviewer.max_response_bytes)
+
+    def test_native_calculation_evidence_capacity_matches_schema_only(self):
+        args = calculation_arguments()
+        citations = [{'material': 'raw.csv', 'locator': f'row:{row}'} for row in range(2, 1003)]
+        args['requests'][0]['variables']['income']['evidence'] = citations[:1000]
+        result = self.client(lambda *unused: native_response(args)).complete([{'role': 'user', 'content': 'x'}])
+        self.assertEqual(citations[:1000], result['data']['requests'][0]['variables']['income']['evidence'])
+        schema = self.api().CALCULATE_TOOL['function']['parameters']['properties']['requests']
+        self.assertEqual(100, schema['maxItems'])
+        self.assertEqual(100, schema['items']['properties']['variables']['maxProperties'])
+        self.assertEqual(1000, schema['items']['properties']['variables']['additionalProperties']['properties']['evidence']['maxItems'])
+        args['requests'][0]['variables']['income']['evidence'] = citations
+        with self.assertRaises(ValueError):
+            self.client(lambda *unused: native_response(args)).complete([{'role': 'user', 'content': 'x'}])
+
     def test_tool_choice_none_and_default_auto_are_explicit_and_validated(self):
         payloads = []
         def transport(url, payload, *args):

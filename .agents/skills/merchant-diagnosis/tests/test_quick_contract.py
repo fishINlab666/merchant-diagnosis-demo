@@ -65,6 +65,68 @@ def method_records():
 
 
 class QuickContractTests(unittest.TestCase):
+    def test_large_evidence_lists_validate_every_source_without_truncation(self):
+        bundle = materials()
+        bundle['materials'][0]['fragments'] = [
+            {'locator': f'row:{row}', 'text': '原始观察'} for row in range(2, 1003)]
+        citations = [{'material': 'weekly.csv', 'locator': f'row:{row}'}
+                     for row in range(2, 1003)]
+        for count in (101, 1000):
+            value = report()
+            value['findings'][0]['evidence'] = citations[:count]
+            value['method_usage'] = method_records()
+            value['method_usage'][2]['evidence'] = citations[:count]
+            result = self.contract().bind_report(value, bundle, self.calculations())
+            self.assertEqual(citations[:count], result['findings'][0]['evidence'])
+            self.assertEqual(citations[:count], result['method_usage'][2]['evidence'])
+        for field in ('finding', 'method'):
+            for tail in (citations, citations[:100] + [{'material': 'weekly.csv', 'locator': 'row:9999'}]):
+                value = report()
+                value['method_usage'] = method_records()
+                target = value['findings'][0] if field == 'finding' else value['method_usage'][2]
+                target['evidence'] = tail
+                with self.subTest(field=field, count=len(tail)), self.assertRaises(ValueError):
+                    self.contract().bind_report(value, bundle, self.calculations())
+        value['findings'][0]['evidence'] = citations[:101] + citations[:1]
+        value['method_usage'][2]['evidence'] = citations[:101] + citations[:1]
+        result = self.contract().bind_report(value, bundle, self.calculations())
+        self.assertEqual(citations[:101], result['findings'][0]['evidence'])
+        self.assertEqual(citations[:101], result['method_usage'][2]['evidence'])
+
+    def test_large_calculation_sources_remain_bound_to_actual_result(self):
+        from service_calculator import calculate_requests
+        bundle = materials()
+        bundle['materials'][0]['fragments'] = [
+            {'locator': f'row:{row}', 'text': '原始观察'} for row in range(2, 1003)]
+        citations = [{'material': 'weekly.csv', 'locator': f'row:{row}'}
+                     for row in range(2, 1003)]
+        item = request()
+        item['variables']['income']['evidence'] = citations[:999]
+        item['variables']['cost']['evidence'] = citations[999:1000]
+        normalized = self.contract().normalize_requests([item], bundle)
+        values = calculate_requests(normalized, bundle)
+        result = self.contract().bind_report(report(), bundle, values)
+        self.assertEqual(60, result['money']['value'])
+        self.assertEqual(citations[:1000], result['money']['evidence'])
+        item['variables']['income']['evidence'] = citations
+        with self.assertRaises(ValueError):
+            self.contract().normalize_requests([item], bundle)
+        with self.assertRaises(ValueError):
+            calculate_requests([item], bundle)
+
+    def test_evidence_expansion_does_not_expand_unrelated_lists(self):
+        value = report()
+        value['followup']['collect'] = ['执行回执'] * 101
+        with self.assertRaises(ValueError):
+            self.contract().bind_report(value, materials(), self.calculations())
+        with self.assertRaises(ValueError):
+            self.contract().normalize_requests([request()] * 101, materials())
+        value = report()
+        value['method_usage'] = method_records()
+        value['method_usage'][2]['targets'] *= 101
+        with self.assertRaises(ValueError):
+            self.contract().bind_report(value, materials(), self.calculations())
+
     def contract(self):
         self.assertIsNotNone(importlib.util.find_spec('quick_contract'), 'quick contract missing')
         return importlib.import_module('quick_contract')

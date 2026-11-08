@@ -1,0 +1,44 @@
+{
+  "reviewer": "独立Codex Agent，另读本轮原件与终稿，不修改受测报告",
+  "scope": "只覆盖对应合成原件和文件指纹；不证明真实商家经营效果",
+  "cases": {
+    "audience-chain": {
+      "status": "PASS",
+      "report_sha256": "6259dccc699794474b4ce0b3c3bc078b1322aee507363dd9faa5049f67af7bed",
+      "formula_count": 55,
+      "direct_xlsx_value_count": 684,
+      "source_locator_count": 860
+    },
+    "single": {
+      "status": "PASS",
+      "report_sha256": "42b6425006d3202a711325343a0674eb89f98be8fbf510d0dd2a403a42ba15c2",
+      "formula_count": 39,
+      "direct_xlsx_value_count": 641,
+      "source_locator_count": 818
+    },
+    "api-chain": {
+      "status": "PASS",
+      "report_sha256": "467f102a7e31d49c68bde8da2a43405c23a62b7c4a525296a3b521401ebbb5fb",
+      "formula_count": 9,
+      "direct_xlsx_value_count": 12,
+      "source_locator_count": 56,
+      "revision": "已通过业务验收的API分析由Codex Agent整理31个客户文字字段，9项请求实际重算，业务及数值等价；mode=host。最后纯API文案轮失败，累计API调用3+3+7=13。"
+    },
+    "single-reverse": {
+      "status": "PASS",
+      "report_sha256": "2e7e85da149bb4444714ce01833521f8d340ca2ff6ac1a69eb018879b1c11657",
+      "formula_count": 21,
+      "direct_xlsx_value_count": 130,
+      "source_locator_count": 100,
+      "additional_csv_values_checked": 67
+    },
+    "api-business-revised": {
+      "status": "PASS",
+      "report_sha256": "646cd4030361a764a44b6bbe4a13258c1bd7dcf02258790bc400193b08fc4292",
+      "formula_count": 9,
+      "direct_xlsx_value_count": 12,
+      "source_locator_count": 56,
+      "revision": "原轮3次调用后经Agent反馈，API修订3次调用；不是首次无人反馈通过。"
+    }
+  }
+}

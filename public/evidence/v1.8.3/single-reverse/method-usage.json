@@ -1,0 +1,197 @@
+[
+  {
+    "method": "store_segmentation",
+    "status": "adapted",
+    "reason": "单店没有可比门店，按待取场景改写资源优先级。",
+    "decision": "长待取先验证出餐取餐协同；短待取保留现有配置作可比参照。",
+    "evidence_summary": "两包装在短待取层均21/525单退款、到手63℃，长待取均63/525单、51℃。",
+    "evidence": [
+      {
+        "material": "reverse_wait_strata.csv",
+        "locator": "row:2"
+      },
+      {
+        "material": "reverse_wait_strata.csv",
+        "locator": "row:3"
+      },
+      {
+        "material": "reverse_wait_strata.csv",
+        "locator": "row:4"
+      },
+      {
+        "material": "reverse_wait_strata.csv",
+        "locator": "row:5"
+      }
+    ],
+    "targets": [
+      {
+        "section": "findings",
+        "index": 1
+      },
+      {
+        "section": "actions",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "method": "audience_offer",
+    "status": "needs_data",
+    "reason": "没有新老客、频次或权益分组记录。",
+    "decision": "不编生命周期人群，不确定差异优惠；本轮先修同SKU履约。",
+    "evidence_summary": "原件仅提供单店单SKU、包装与待取分层，没有人群权益结果。",
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:5"
+      }
+    ],
+    "targets": []
+  },
+  {
+    "method": "tool_mix",
+    "status": "applied",
+    "reason": "更正证据要求在包装投入与待取协同之间重新选择。",
+    "decision": "撤回恢复保温投入，选择薄盒下验证短待取，不加广告。",
+    "evidence_summary": "更正同窗两包装每日各150单、各12单退款；进价1.40与0.60元，原包装复核每天半小时、40元每小时。",
+    "evidence": [
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:2"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:3"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:4"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:5"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:6"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:7"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:8"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:9"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:10"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:11"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:12"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:13"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:14"
+      },
+      {
+        "material": "reverse_trial.csv",
+        "locator": "row:15"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C5"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C6"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C8"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C9"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C10"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C11"
+      },
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:5"
+      },
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:7"
+      },
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:9"
+      },
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:11"
+      }
+    ],
+    "targets": [
+      {
+        "section": "findings",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "money",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "method": "execution_followup",
+    "status": "applied",
+    "reason": "责任链及成熟窗口明确，但更正时尚未执行。",
+    "decision": "保留店长、财务、老板回传链；调整试行动作，先核费用及覆盖再验贡献。",
+    "evidence_summary": "老板要求全扣成本后的可比贡献差额为正，首周损失上限500元；11月16日查执行、21日成熟复盘。",
+    "evidence": [
+      {
+        "material": "definitions.md",
+        "locator": "line:45"
+      },
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:11"
+      }
+    ],
+    "targets": [
+      {
+        "section": "actions",
+        "index": 0
+      },
+      {
+        "section": "actions",
+        "index": 1
+      }
+    ]
+  }
+]

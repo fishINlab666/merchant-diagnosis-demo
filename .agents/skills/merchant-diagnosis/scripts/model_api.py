@@ -1,4 +1,5 @@
 """Bounded DeepSeek JSON calls. No model defaults, retries or persisted secrets."""
+import copy
 import json
 import math
 import os
@@ -33,7 +34,9 @@ TOOL_ERROR_CODES = {
 
 CALCULATE_TOOL = {'type': 'function', 'function': {
     'name': 'calculate',
-    'description': '用受控算术核对金额、比例和单位。只能计算表达式，不能运行代码或读取文件。',
+    'description': '用受控算术核对金额、比例和单位。只能计算表达式，不能运行代码或读取文件。'
+                   'expression 须实际引用有来源或明确假设的variables，不能只声明变量却写裸常数。'
+                   '重算使用新calc_id（请求的id），不复用本轮已执行编号。',
     'parameters': {'type': 'object', 'additionalProperties': False, 'required': ['requests'],
         'properties': {'requests': {'type': 'array', 'minItems': 1, 'maxItems': 100,
             'items': {'type': 'object', 'additionalProperties': False,
@@ -48,7 +51,7 @@ CALCULATE_TOOL = {'type': 'function', 'function': {
                             'required': ['value'], 'properties': {
                                 'value': {'type': ['number', 'null']},
                                 'assumption': {'type': 'string', 'minLength': 1, 'maxLength': 2000},
-                                'evidence': {'type': 'array', 'maxItems': 100, 'items': {
+                                'evidence': {'type': 'array', 'maxItems': 1000, 'items': {
                                     'type': 'object', 'additionalProperties': False,
                                     'required': ['material', 'locator'], 'properties': {
                                         'material': {'type': 'string', 'minLength': 1},
@@ -154,7 +157,7 @@ def _calculation_arguments(raw):
                 assumption = None
             if evidence is None and isinstance(assumption, str) and assumption.strip():
                 variable['evidence'] = evidence = []
-            if (not isinstance(evidence, list) or len(evidence) > 100
+            if (not isinstance(evidence, list) or len(evidence) > 1000
                     or ('assumption' in variable and (not isinstance(assumption, str)
                         or not assumption.strip() or len(assumption) > 2000))
                     or (not evidence and not assumption)):
@@ -275,6 +278,13 @@ class ModelClient:
     @property
     def mode(self):
         return self._mode
+
+    def for_review(self):
+        """Keep transport provenance and writer settings; bound review separately."""
+        reviewer = copy.copy(self)
+        reviewer.thinking = 'disabled'
+        reviewer.max_tokens = 8192
+        return reviewer
 
     @classmethod
     def from_env(cls, provider='deepseek'):

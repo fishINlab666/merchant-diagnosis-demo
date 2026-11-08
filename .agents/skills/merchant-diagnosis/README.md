@@ -59,12 +59,14 @@ Agent 自动完成准备、计算、导出；不用你逐个复制 JSON。输出
   --input examples/chain/raw/public.md examples/chain/raw/definitions.md examples/chain/raw/经营周报.xlsx \
   --merchant '榕味小馆30店·独立演示' --scope '30家门店' \
   --goal '预算总额不增，找出可试行的月度经营贡献改善' \
-  --synthetic --model deepseek-v4-pro --output runs/chain-new
+  --synthetic --model deepseek-v4-pro --thinking enabled --max-tokens 24576 --output runs/chain-new
 ```
 
 本命令真实调用模型并执行计算，会把指定材料发给 DeepSeek。当前 Agent 模式使用宿主本身的模型，不需要这项配置。模型ID以账户实际可用项为准；密钥不要写入命令文本、仓库或聊天。
 
-每次模型请求默认等待最多 120 秒，可用 `--timeout 1` 至 `--timeout 120` 调整。网络或模型响应过慢仍可能失败；失败记录会保留，不会改用预置报告冒充完成。
+分析阶段按命令开启思考；独立业务复核使用单独上下文，关闭思考、最多输出 8,192 token，避免复核耗尽输出空间。分析与复核均真实调用模型，失败仍停止交付。总调用最多8次；额度内最多两次格式纠正和一次业务修订，重算使用新编号，体验者不用手改JSON。
+
+网络操作的超时参数默认 120 秒，可用 `--timeout 1` 至 `--timeout 120` 调整；完整推理的实际耗时可能更长。网络或模型响应过慢仍可能失败；失败记录会保留，不会改用预置报告冒充完成。
 
 ## 支持与处理方式
 

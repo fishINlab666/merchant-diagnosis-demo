@@ -1,0 +1,414 @@
+[
+  {
+    "id": "b_py",
+    "expression": "(t03_actual - t03_pre*(t01_post/t01_pre))/b_spend",
+    "variables": {
+      "t03_actual": {
+        "value": 420000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E6"
+          }
+        ]
+      },
+      "t03_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D6"
+          }
+        ]
+      },
+      "t01_post": {
+        "value": 378000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E4"
+          }
+        ]
+      },
+      "t01_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D4"
+          }
+        ]
+      },
+      "b_spend": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!L6"
+          }
+        ]
+      }
+    },
+    "unit": "元入账/元推广",
+    "purpose": "T03仅增B按T01同期调整后的每元入账增量",
+    "status": "ok",
+    "value": 3,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "a_py",
+    "expression": "(t02_pre*(t01_post/t01_pre) - t02_actual)/a_spend",
+    "variables": {
+      "t02_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D5"
+          }
+        ]
+      },
+      "t02_actual": {
+        "value": 358400,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E5"
+          }
+        ]
+      },
+      "t01_post": {
+        "value": 378000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E4"
+          }
+        ]
+      },
+      "t01_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D4"
+          }
+        ]
+      },
+      "a_spend": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!L5"
+          }
+        ]
+      }
+    },
+    "unit": "元入账/元推广",
+    "purpose": "T02仅减A按T01同期调整后的每元入账损失",
+    "status": "ok",
+    "value": 1.4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "a_share_pct",
+    "expression": "a_spend_total/(a_spend_total+b_spend_total)",
+    "variables": {
+      "a_spend_total": {
+        "value": 252000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:渠道!E4"
+          }
+        ]
+      },
+      "b_spend_total": {
+        "value": 28000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:渠道!E5"
+          }
+        ]
+      }
+    },
+    "unit": "占比",
+    "purpose": "工具A花费占总推广花费比例",
+    "status": "ok",
+    "value": 0.9,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_income",
+    "expression": "transfer_m*b - transfer_m*a",
+    "variables": {
+      "transfer_m": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "30天规划月从A转60000到B的净结算收入变化（审慎参数）",
+    "status": "ok",
+    "value": 60000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_cost",
+    "expression": "transfer_m*cost_rate",
+    "variables": {
+      "transfer_m": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "cost_rate": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          },
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "30天规划月订单变动成本变化",
+    "status": "ok",
+    "value": 36000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_contrib",
+    "expression": "(transfer_m*b - transfer_m*a) - transfer_m*cost_rate - fee_m",
+    "variables": {
+      "transfer_m": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_rate": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          },
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      },
+      "fee_m": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "30天规划月固定成本前经营贡献差额（审慎情景）",
+    "status": "ok",
+    "value": 18000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "d7_income",
+    "expression": "transfer_d7*b - transfer_d7*a",
+    "variables": {
+      "transfer_d7": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "首轮7日从A转14000到B的净结算收入变化（审慎参数）",
+    "status": "ok",
+    "value": 14000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "d7_cost",
+    "expression": "transfer_d7*cost_rate",
+    "variables": {
+      "transfer_d7": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "cost_rate": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          },
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "首轮7日订单变动成本变化",
+    "status": "ok",
+    "value": 8400,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "d7_contrib",
+    "expression": "(transfer_d7*b - transfer_d7*a) - transfer_d7*cost_rate - fee_d7",
+    "variables": {
+      "transfer_d7": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_rate": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          },
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      },
+      "fee_d7": {
+        "value": 1400,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "首轮7日固定成本前经营贡献差额（审慎情景）",
+    "status": "ok",
+    "value": 4200,
+    "missing_variables": [],
+    "assumptions": []
+  }
+]

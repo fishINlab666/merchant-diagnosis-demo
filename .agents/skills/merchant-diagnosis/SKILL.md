@@ -3,7 +3,7 @@ name: merchant-diagnosis
 description: Use when a merchant, brand KA, or operator provides store-page information and operating reports for a business diagnosis, targeted data request, action plan, follow-up review, or an HTML business dashboard. Supports single stores, chains, advertising and no-advertising businesses.
 ---
 
-# 商户经营诊断 · 1.8.1
+# 商户经营诊断 · 1.8.3
 
 把店铺资料和现有周报交给当前 Agent，理解材料、实际计算、判断先做什么，导出能直接给老板看的 `report.html`。不要求客户套表头，不返回预置案例。公开资料能先交初诊，补数后更新方案。
 

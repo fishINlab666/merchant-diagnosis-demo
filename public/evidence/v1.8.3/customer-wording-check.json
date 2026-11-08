@@ -1,0 +1,20 @@
+{
+  "upstream_report_sha256": "646cd4030361a764a44b6bbe4a13258c1bd7dcf02258790bc400193b08fc4292",
+  "output_report_sha256": "467f102a7e31d49c68bde8da2a43405c23a62b7c4a525296a3b521401ebbb5fb",
+  "changed_text_fields": 31,
+  "calculations_reexecuted": 9,
+  "calculation_requests_equal": true,
+  "calculation_results_equal": true,
+  "all_text_numeric_values_unchanged": true,
+  "protected_fields_unchanged": true,
+  "upstream_report_hash_unchanged": true,
+  "customer_codes_absent": true,
+  "html_payload_matches_report": true,
+  "completed_snapshot_binding_verified": true,
+  "mode": "host",
+  "runtime": "Codex Agent 客户文案整理（承接 DeepSeek API 分析）",
+  "main_amount": 18000,
+  "seven_day_contribution": 4200,
+  "synthetic": true,
+  "api_model_calls_this_run": 0
+}

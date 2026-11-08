@@ -1,0 +1,622 @@
+{
+  "merchant": {
+    "name": "暖禾热饭·望江店",
+    "scope": "单店、招牌鸡腿热饭套餐",
+    "period": "历史9月28日至11月1日；11月6日冻结更正",
+    "synthetic": true
+  },
+  "headline": "撤回恢复保温款；先缩短长待取，保留薄盒验证",
+  "money": {
+    "label": "缩短待取的审慎月度贡献改善",
+    "unit": "元",
+    "period": "30个营业日",
+    "note": "新策略缺执行成本与可比试行效果，金额暂缓；旧5%假设已撤回，不能沿用。",
+    "basis": "以每天300单、后窗薄盒配置为比较基线，收入变化扣全订单变动成本、广告及新增执行费；不得把长短待取观察差异直接当作可实现收益。",
+    "value": null,
+    "evidence": [
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:5"
+      },
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:7"
+      },
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:9"
+      },
+      {
+        "material": "reverse_mechanism.md",
+        "locator": "line:11"
+      },
+      {
+        "material": "reverse_wait_strata.csv",
+        "locator": "row:2"
+      },
+      {
+        "material": "reverse_wait_strata.csv",
+        "locator": "row:3"
+      },
+      {
+        "material": "reverse_wait_strata.csv",
+        "locator": "row:4"
+      },
+      {
+        "material": "reverse_wait_strata.csv",
+        "locator": "row:5"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "原恢复包装方案撤回：月度贡献差额为负7,800元",
+      "detail": "更正同窗两包装各1,050单、84单退款，到账均33,810元。若退款率维持该同窗水平，恢复保温每月只增加包材7,200元与复核600元，没有退款回收改善。旧报告的正向测算及包装主因判断撤回；方案尚未执行。",
+      "basis": "原交易记录逐条替换；等量餐材人工不变、无广告，到账已扣退款，不再重复扣。",
+      "evidence": [
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:2"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:3"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:4"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:5"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:6"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:7"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:8"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:9"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:10"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:11"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:12"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:13"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:14"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:15"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:7"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C11"
+        }
+      ]
+    },
+    {
+      "title": "长待取比包装更值得先查",
+      "detail": "两种包装短待取均为3分钟、到手63℃，长待取均为18分钟、到手51℃；每层525单，退款分别21与63单。长短待取合并退款率为12%与4%，在途均为15分钟。",
+      "basis": "待取规则10月12日发生变化；同待取层包装结果一致，反驳包装主因。待取分层并非随机干预，支持优先验证，尚不能证明缩短待取必然带来多少收益；温度不作安全判定。",
+      "evidence": [
+        {
+          "material": "reverse_wait_strata.csv",
+          "locator": "row:2"
+        },
+        {
+          "material": "reverse_wait_strata.csv",
+          "locator": "row:3"
+        },
+        {
+          "material": "reverse_wait_strata.csv",
+          "locator": "row:4"
+        },
+        {
+          "material": "reverse_wait_strata.csv",
+          "locator": "row:5"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:7"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:11"
+        }
+      ]
+    },
+    {
+      "title": "保留热饭体验目标，调整验证方式",
+      "detail": "保留不加广告、固定成本前贡献及成熟退款复盘口径；从换包装改为薄盒下短待取试行。公开12条评价只是体验线索，不当作退款发生率。",
+      "basis": "只存在单店单SKU，无其他门店或生命周期客群资料，不外推品牌资源配置、不凭空发券。",
+      "evidence": [
+        {
+          "material": "public.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:21"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:45"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "保留薄盒，核实集中取餐并设计短待取对照",
+      "owner": "店长安排出餐与骑手衔接；老板确认新增工时和损失范围",
+      "timing": "11月9日前确认方案；拟11月9—15日同星期、午晚及距离匹配试行，变更后留对照",
+      "budget": "不恢复保温采购，不加广告；短待取所需加班、协调或设备费用待报价，报价前不承诺新增支出。500元为首周损失上限，不是可花总预算。",
+      "success": "先核执行覆盖、待取时间及偏离；以短待取层约3分钟作为建议试行目标。成熟后相对可比薄盒原规则贡献差额>0；建议完成单不下降，同时看凉餐退款和到手体验。",
+      "stop": "累计相对可比基线损失达到500元即暂停；成熟贡献差额≤0不继续；订单下降或待取无法缩短先复核。待观察退款计提风险，不把未成熟退款当通过。"
+    },
+    {
+      "title": "财务按实际订单与全费用核算后再定继续",
+      "owner": "财务核到账及新增成本；店长回传逐单履约；老板决定",
+      "timing": "11月16日核执行；11月21日按5天售后成熟窗口复盘，未按期执行则顺延",
+      "budget": "短待取投入单列并经老板确认；不套用仅适用于恢复包装的每天半小时费用",
+      "success": "回传试行/对照订单日、时段距离、待取与在途、包装、成熟全口径及凉餐退款、到账和全部成本；先检查分组可比性，再核贡献差额。",
+      "stop": "缺费用只暂停净改善金额；分组不比或执行未完成先修设计，不将观察差异记为经营效果。"
+    }
+  ],
+  "followup": {
+    "when": "11月9日前补报价与试行安排，11月16日查执行，11月21日成熟复盘",
+    "decision": "费用与可比试行结果齐备后补月度审慎贡献差额；正改善且规模稳定才继续，否则调整或停止。原包装方案不自动恢复。",
+    "collect": [
+      "缩短待取的具体安排、可承担工时及新增费用",
+      "实际覆盖、单量与时段距离匹配对照、待取及在途记录",
+      "成熟退款、到账、餐材人工包材及新增费用回执"
+    ]
+  },
+  "charts": [
+    {
+      "type": "bar",
+      "title": "撤回包装方案的月度账",
+      "unit": "元",
+      "caption": "每天300单、30天；按更正同窗退款率一致进行情景核算。",
+      "series": [
+        {
+          "label": "新增包材支出",
+          "calc_id": "pack_extra",
+          "value": 7200,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            }
+          ]
+        },
+        {
+          "label": "新增复核支出",
+          "calc_id": "check_extra",
+          "value": 600,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            }
+          ]
+        },
+        {
+          "label": "贡献改善差额",
+          "calc_id": "withdrawn_month",
+          "value": -7800,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "reverse_trial.csv",
+              "locator": "row:2"
+            },
+            {
+              "material": "reverse_trial.csv",
+              "locator": "row:3"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "同窗待取层退款率",
+      "unit": "%",
+      "caption": "两包装合并，长短层各1,050单；是观察差异，不能直接折算收益。",
+      "series": [
+        {
+          "label": "短待取",
+          "calc_id": "short_rate",
+          "value": 4,
+          "evidence": [
+            {
+              "material": "reverse_wait_strata.csv",
+              "locator": "row:2"
+            },
+            {
+              "material": "reverse_wait_strata.csv",
+              "locator": "row:4"
+            }
+          ]
+        },
+        {
+          "label": "长待取",
+          "calc_id": "long_rate",
+          "value": 12,
+          "evidence": [
+            {
+              "material": "reverse_wait_strata.csv",
+              "locator": "row:3"
+            },
+            {
+              "material": "reverse_wait_strata.csv",
+              "locator": "row:5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "单店商户固定成本前月度贡献改善，30天每天300单。",
+    "chosen_strategy": "撤回旧包装主因与5%退款假设、旧正向金额及恢复包装行动；保留热饭体验、不加广告、成熟退款及正贡献继续纪律。改为薄盒下按待取场景验证出餐取餐协同；当前策略净额未知。",
+    "execution": "店长核现有出餐取餐安排，老板确认权限与新增费用，财务核全费用；采购不执行已撤回的补货退货。先核是否执行再看效果，冻结时本轮方案未执行。",
+    "alternatives": [
+      "恢复保温：更正同窗无退款优势、增加成本，月度负7800，撤回。",
+      "维持全部原规则：可避免包装新增成本但放任长待取线索，仅留作可比对照。",
+      "加广告或打折：无投放诉求，不能修待取，未选。"
+    ],
+    "assumptions": [
+      "交易T只用更正CSV，原Q全撤回；分层是同一2100单，不能重复加总。",
+      "撤回定义、工作簿及未提供镜像中的同一5%假设；保留30天300单、进价与其他未撤回口径。",
+      "历史只解释旧判断，所有本轮数字取本轮原件。",
+      "无额外包装改善可证；短待取收益与成本均不可由分层直接推算。"
+    ]
+  },
+  "gaps": [
+    {
+      "item": "缩短待取方案的新增执行成本与可行安排",
+      "why": "决定是否启动有成本试行及扣齐费用后的改善额。"
+    },
+    {
+      "item": "短待取干预的可比结果与实际执行回执",
+      "why": "分层观察不能等同因果效果；决定是否继续及月度改善，不影响撤回亏损包装方案。"
+    }
+  ],
+  "audience_plan": [],
+  "method_usage": [
+    {
+      "method": "store_segmentation",
+      "status": "adapted",
+      "reason": "单店没有可比门店，按待取场景改写资源优先级。",
+      "decision": "长待取先验证出餐取餐协同；短待取保留现有配置作可比参照。",
+      "evidence_summary": "两包装在短待取层均21/525单退款、到手63℃，长待取均63/525单、51℃。",
+      "evidence": [
+        {
+          "material": "reverse_wait_strata.csv",
+          "locator": "row:2"
+        },
+        {
+          "material": "reverse_wait_strata.csv",
+          "locator": "row:3"
+        },
+        {
+          "material": "reverse_wait_strata.csv",
+          "locator": "row:4"
+        },
+        {
+          "material": "reverse_wait_strata.csv",
+          "locator": "row:5"
+        }
+      ],
+      "targets": [
+        {
+          "section": "findings",
+          "index": 1
+        },
+        {
+          "section": "actions",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "method": "audience_offer",
+      "status": "needs_data",
+      "reason": "没有新老客、频次或权益分组记录。",
+      "decision": "不编生命周期人群，不确定差异优惠；本轮先修同SKU履约。",
+      "evidence_summary": "原件仅提供单店单SKU、包装与待取分层，没有人群权益结果。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:5"
+        }
+      ],
+      "targets": []
+    },
+    {
+      "method": "tool_mix",
+      "status": "applied",
+      "reason": "更正证据要求在包装投入与待取协同之间重新选择。",
+      "decision": "撤回恢复保温投入，选择薄盒下验证短待取，不加广告。",
+      "evidence_summary": "更正同窗两包装每日各150单、各12单退款；进价1.40与0.60元，原包装复核每天半小时、40元每小时。",
+      "evidence": [
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:2"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:3"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:4"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:5"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:6"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:7"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:8"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:9"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:10"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:11"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:12"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:13"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:14"
+        },
+        {
+          "material": "reverse_trial.csv",
+          "locator": "row:15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C11"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:7"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:11"
+        }
+      ],
+      "targets": [
+        {
+          "section": "findings",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "money",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "method": "execution_followup",
+      "status": "applied",
+      "reason": "责任链及成熟窗口明确，但更正时尚未执行。",
+      "decision": "保留店长、财务、老板回传链；调整试行动作，先核费用及覆盖再验贡献。",
+      "evidence_summary": "老板要求全扣成本后的可比贡献差额为正，首周损失上限500元；11月16日查执行、21日成熟复盘。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:45"
+        },
+        {
+          "material": "reverse_mechanism.md",
+          "locator": "line:11"
+        }
+      ],
+      "targets": [
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 1
+        }
+      ]
+    }
+  ]
+}

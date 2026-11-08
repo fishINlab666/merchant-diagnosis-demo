@@ -4,6 +4,7 @@ Run from the release root:
     python3 -m unittest discover -s tools/tests -p 'test_recording_server.py' -v
 """
 import base64
+import hashlib
 import importlib.util
 import io
 import json
@@ -30,7 +31,215 @@ def load(source, index):
     return module
 
 
+def completed_fixture(directory, headline='本轮已完成判断'):
+    scripts = SOURCES[0].parents[1] / '.agents/skills/merchant-diagnosis/scripts'
+    code = '''import json, sys
+from pathlib import Path
+sys.path.insert(0, sys.argv[1])
+from quick_run import prepare_run, finish_run
+root = Path(sys.argv[2])
+source = root.parent / ('fixture-' + root.name + '.txt')
+source.parent.mkdir(parents=True, exist_ok=True)
+source.write_text('仅有公开资料，金额未知。')
+prepare_run([source], root, merchant='测试商家', synthetic=True)
+report = {'merchant': {'name':'测试商家','scope':'本次提供材料覆盖的门店','period':'本次材料所示期间','synthetic':True},
+'headline':sys.argv[3], 'money':{'label':'待核金额','value':None,'unit':'元','period':'本期'},
+'actions':[{'title':'核对当前菜单','owner':'店长','timing':'今日','budget':'先确认工时',
+'success':'完成原件核对','stop':'无依据不修改'}],
+'followup':{'when':'核对后','collect':['当前菜单'],'decision':'决定是否更新页面'},
+'analysis':{'goal':'改善经营','chosen_strategy':'先核对','execution':'尚未执行'},
+'method_usage':[{'method':name,'status':'not_applicable','reason':'当前没有相关经营数据',
+'decision':'当前仅核对公开资料','evidence':[],'targets':[]} for name in
+('store_segmentation','audience_offer','tool_mix','execution_followup')]}
+finish_run(root, report)
+'''
+    subprocess.run([sys.executable, '-B', '-c', code, str(scripts), str(directory), headline],
+                   check=True, capture_output=True, text=True)
+
+
+def final_message(directory, text):
+    (directory / 'host-events.jsonl').write_text(json.dumps({
+        'type': 'item.completed', 'item': {'type': 'agent_message', 'text': text}}, ensure_ascii=False) + '\n')
+
+
 class RecordingRegression(unittest.TestCase):
+    def test_explicit_wrong_html_filename_does_not_fall_back_to_only_old_report(self):
+        module = load(SOURCES[0], 70)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            completed_fixture(root / 'run', '首稿保留')
+            final_message(root, '[最终看板](run/revision-final/missing.html)')
+            with self.assertRaises(ValueError):
+                module.select_report(root, 'codex')
+
+    def test_plain_backtick_and_codex_line_links_never_fall_back_and_select_existing_revision(self):
+        module = load(SOURCES[0], 71)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            completed_fixture(root / 'run', '首稿保留')
+            messages = ('最终交付：run/revision-final/report.html；原稿已作废。',
+                        '最终交付：`run/revision-final/report.html`；原稿已作废。',
+                        '[最终交付](run/revision-final/report.html:1)',
+                        '[最终交付](run/revision-final/report.html:1:2)')
+            for text in messages:
+                with self.subTest(text=text, exists=False):
+                    final_message(root, text)
+                    with self.assertRaises(ValueError):
+                        module.select_report(root, 'codex')
+            completed_fixture(root / 'run/revision-final', '最终修订稿')
+            for text in messages:
+                with self.subTest(text=text, exists=True):
+                    final_message(root, text)
+                    self.assertEqual('run/revision-final/report.html', module.select_report(root, 'codex'))
+            final_message(root, '`run/report.html` 和 run/revision-final/report.html')
+            with self.assertRaises(ValueError):
+                module.select_report(root, 'codex')
+
+    def test_final_nested_revision_selects_report_and_playbook_from_same_completed_run(self):
+        module = load(SOURCES[0], 40)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            completed_fixture(root / 'run', '首稿保留')
+            completed_fixture(root / 'run/revision-final', '最终修订稿')
+            final_message(root, '[老板看板／产品讲解](run/revision-final/report.html)')
+            module.OPTIONS = SimpleNamespace(backend='codex')
+            module.STATE.update(status='running', directory=root, started=time.monotonic())
+            with patch.object(module, 'run_codex', return_value=SimpleNamespace(returncode=0)):
+                module.worker(root, [], '测试商家')
+            self.assertEqual('complete', module.STATE['status'])
+            self.assertEqual('run/revision-final/report.html', module.STATE.get('output_report'))
+            handler = module.Handler.__new__(module.Handler)
+            replies = []
+            handler.send = lambda body, content_type='application/json', status=200: replies.append((status, body))
+            handler.path = '/report.html'
+            handler.do_GET()
+            self.assertEqual((200, (root / 'run/revision-final/report.html').read_bytes()), replies.pop())
+            (root / 'run/ali-ka-playbook.md').write_text('旧稿规则改动不应影响修订稿')
+            handler.path = '/playbook.html'
+            handler.do_GET()
+            status, content = replies.pop()
+            self.assertEqual(200, status)
+            self.assertNotIn('旧稿规则改动', content)
+            handler.path = '/status'
+            handler.do_GET()
+            public = replies.pop()[1]
+            self.assertEqual('run/revision-final/report.html', public['output_report'])
+            self.assertNotIn(str(root), json.dumps(public))
+
+    def test_explicit_invalid_or_ambiguous_delivery_never_falls_back_to_first_report(self):
+        for index, mode in enumerate(('incomplete', 'outside', 'symlink', 'ambiguous', 'no_link_ambiguous',
+                                      'html_mismatch', 'rules_changed', 'report_changed')):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary).resolve()
+                module = load(SOURCES[0], 50 + index)
+                completed_fixture(root / 'run', '首稿保留')
+                selected = root / 'run/revision-final'
+                completed_fixture(selected, '修订稿')
+                text = '[看板](run/revision-final/report.html)'
+                if mode == 'incomplete':
+                    path = selected / 'execution.json'
+                    state = json.loads(path.read_text())
+                    state['status'] = 'analysing'
+                    path.write_text(json.dumps(state))
+                elif mode == 'outside':
+                    text = '[看板](../outside/report.html)'
+                elif mode == 'symlink':
+                    (root / 'run/alias').symlink_to(selected, target_is_directory=True)
+                    text = '[看板](run/alias/report.html)'
+                elif mode == 'ambiguous':
+                    text += ' [另一看板](run/report.html)'
+                elif mode == 'no_link_ambiguous':
+                    text = '已完成。'
+                elif mode == 'html_mismatch':
+                    (selected / 'report.html').write_bytes((root / 'run/report.html').read_bytes())
+                elif mode == 'rules_changed':
+                    (selected / 'ali-ka-playbook.md').write_text('改写规则')
+                elif mode == 'report_changed':
+                    (selected / 'report.json').write_text('{}')
+                final_message(root, text)
+                module.OPTIONS = SimpleNamespace(backend='codex')
+                module.STATE.update(status='running', directory=root, started=time.monotonic())
+                with patch.object(module, 'run_codex', return_value=SimpleNamespace(returncode=0)):
+                    module.worker(root, [], '测试商家')
+                self.assertEqual('failed', module.STATE['status'])
+                self.assertNotIn('output_report', module.STATE)
+
+    def test_explicit_package_and_exact_utf8_goal(self):
+        module = load(SOURCES[0], 30)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            skill = root / 'current-package'
+            skill.mkdir()
+            for name in ('SKILL.md', 'README.md', 'requirements.txt'):
+                (skill / name).write_text('current ' + name, encoding='utf-8')
+            for name in ('references', 'scripts', 'assets'):
+                (skill / name).mkdir()
+            goal = '按人群分配商品与权益。\n不适合补贴的人群不追加补贴。\n'
+            goal_file = root / 'goal.txt'
+            goal_file.write_text(goal, encoding='utf-8')
+            options = module.parse_options(['--skill-dir', str(skill), '--goal-file', str(goal_file)])
+            self.assertEqual(options.skill_dir, skill.resolve())
+            self.assertEqual(options.goal, goal)
+            self.assertEqual(module.parse_options([]).goal, module.GOAL)
+            module.OPTIONS = options
+            module.OPTIONS.codex_bin = '/fake/codex'
+            directory = root / 'fresh-run'
+            directory.mkdir()
+            with patch.object(module.subprocess, 'run', return_value=SimpleNamespace(returncode=0)):
+                module.run_codex(directory, [], '禾序饭盒', io.StringIO())
+            local = directory / 'skills' / 'merchant-diagnosis'
+            self.assertEqual((local / 'README.md').read_text(), 'current README.md')
+            prompt = (directory / 'input-prompt.txt').read_text()
+            self.assertIn('目标：' + goal, prompt)
+            self.assertNotIn(module.GOAL, prompt)
+
+    def test_invalid_goal_and_package_fail_before_startup(self):
+        module = load(SOURCES[0], 32)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            goal = root / 'goal.txt'
+            for body in (b'', b' \n', b'\xff'):
+                goal.write_bytes(body)
+                with self.subTest(body=body), patch('sys.stderr', new=io.StringIO()), self.assertRaises(SystemExit):
+                    module.parse_options(['--goal-file', str(goal)])
+            with patch('sys.stderr', new=io.StringIO()), self.assertRaises(SystemExit):
+                module.parse_options(['--skill-dir', str(root / 'missing')])
+
+    def test_frozen_playbook_only_after_completion_and_escaped(self):
+        module = load(SOURCES[0], 31)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            completed_fixture(root / 'run')
+            frozen = root / 'run' / 'ali-ka-playbook.md'
+            frozen.write_text('# 本轮方法\n<script>alert(1)</script> & 原文', encoding='utf-8')
+            manifest = json.loads((root / 'run/manifest.json').read_text())
+            manifest['files'][frozen.name] = hashlib.sha256(frozen.read_bytes()).hexdigest()
+            (root / 'run/manifest.json').write_text(json.dumps(manifest))
+            handler = module.Handler.__new__(module.Handler)
+            handler.path = '/playbook.html'
+            responses = []
+            handler.send = lambda body, content_type='application/json', status=200: responses.append((status, body))
+            module.STATE.update(status='running', directory=root, output_report='run/report.html')
+            handler.do_GET()
+            self.assertEqual(responses.pop()[0], 404)
+            module.STATE['status'] = 'complete'
+            handler.do_GET()
+            status, page = responses.pop()
+            self.assertEqual(status, 200)
+            self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt; &amp; 原文', page)
+            self.assertNotIn('<script>', page)
+            frozen.unlink()
+            handler.do_GET()
+            self.assertEqual(responses.pop()[0], 404)
+            outside = root / 'private.txt'
+            outside.write_text('must not be served')
+            frozen.symlink_to(outside)
+            handler.do_GET()
+            self.assertEqual(responses.pop()[0], 404)
+            handler.path = '/playbook.html?path=/etc/passwd'
+            handler.do_GET()
+            self.assertEqual(responses.pop()[0], 404)
+
     def test_parent_venv_and_fake_codex_results(self):
         if not PARENT_VENV_TEST:
             with tempfile.TemporaryDirectory(prefix='recording-parent-') as temporary:
@@ -77,9 +286,9 @@ if result.returncode:
     sys.exit(7)
 mode = os.environ['FAKE_CODEX_MODE']
 if mode != 'missing':
-    (p / 'run').mkdir()
-    (p / 'run' / 'report.html').write_text('fresh fixture')
-    (p / 'run' / 'report.json').write_text('{}')
+    sys.path.insert(0, os.environ['FIXTURE_HELPER_DIR'])
+    from test_recording_server import completed_fixture
+    completed_fixture(p / 'run')
 sys.exit(3 if mode == 'nonzero' else 0)
 ''')
                 fake.chmod(0o755)
@@ -98,7 +307,8 @@ sys.exit(3 if mode == 'nonzero' else 0)
                         inputs.append(path)
                     module.STATE.clear()
                     module.STATE.update(status='running', started=time.monotonic(), directory=directory, backend='codex')
-                    with patch.dict(os.environ, {'FAKE_CODEX_MODE': mode}):
+                    with patch.dict(os.environ, {'FAKE_CODEX_MODE': mode,
+                                                'FIXTURE_HELPER_DIR': str(Path(__file__).parent)}):
                         module.worker(directory, inputs, '商家测试')
                     dependency = json.loads((directory / 'dependency.json').read_text())
                     self.assertEqual(dependency['returncode'], 0, (source.name, mode, dependency))

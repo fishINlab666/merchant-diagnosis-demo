@@ -1,0 +1,3509 @@
+{
+  "merchant": {
+    "name": "暖禾热饭·望江店",
+    "scope": "单店·招牌鸡腿热饭套餐",
+    "period": "历史9月28日—11月1日；材料冻结2026年11月6日",
+    "synthetic": true
+  },
+  "headline": "薄盒省下包材却扩大凉餐退款，先恢复保温款7天",
+  "money": {
+    "label": "审慎月度贡献改善",
+    "unit": "元",
+    "period": "30个营业日",
+    "note": "按每天300单、全口径退款率5%规划，对比后窗薄盒基线；未来销量与退款率待回传。",
+    "basis": "少冲减到账9,450元，减新增包材7,200元、复核工时600元。等量订单餐材人工差额为0；广告与退货费为0。固定成本不变，指标为经营贡献差额。",
+    "calc_id": "monthly_cautious",
+    "value": 1650,
+    "evidence": [
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C10"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C11"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C12"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C5"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C6"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C8"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C9"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C13"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:采购与排班!C7"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:17"
+      },
+      {
+        "material": "definitions.md",
+        "locator": "line:21"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F22"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F23"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F24"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F25"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F26"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F27"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F28"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F29"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F30"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F31"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F32"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F33"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F34"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!F35"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E22"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E23"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E24"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E25"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E26"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E27"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E28"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E29"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E30"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E31"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E32"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E33"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E34"
+      },
+      {
+        "material": "暖禾热饭_模拟原始台账.xlsx",
+        "locator": "sheet:经营拼表!E35"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "title": "包装是本轮主要可控原因",
+      "detail": "前后各4,200单，退款由168单升至336单；凉餐退款84单升至252单，其他退款均84单。价格、商品和出餐派单规则未变。",
+      "basis": "10月12日全量换薄盒，时间顺序、退款原因与包装机制一致；公开评价仅作体验线索。",
+      "evidence": [
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E22"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F22"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G22"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H22"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K22"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E23"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F23"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G23"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H23"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K23"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E24"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F24"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G24"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H24"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K24"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E25"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F25"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G25"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H25"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K25"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E26"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F26"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G26"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H26"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K26"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E27"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F27"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G27"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H27"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K27"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E28"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F28"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G28"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H28"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K28"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E29"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F29"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G29"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H29"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K29"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E30"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F30"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G30"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H30"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K30"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E31"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F31"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G31"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H31"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K31"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E32"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F32"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G32"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H32"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K32"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E33"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F33"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G33"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H33"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K33"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E34"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F34"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G34"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H34"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K34"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!E35"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!F35"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!G35"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!H35"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:经营拼表!K35"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:13"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:17"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:21"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:15"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:16"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:17"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:21"
+        }
+      ]
+    },
+    {
+      "title": "同窗对照支持恢复保温款",
+      "detail": "两组各1,050单：保温款退款42单、薄盒84单；各组其他退款均21单。到手抽样均温为63℃与52.29℃，对应配送距离、待取与在途均时相同。",
+      "basis": "午晚、近远四区组内预先洗牌均衡分配；每组每日20份预定抽样。温度用于解释体验，不作食品安全结论。",
+      "evidence": [
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!D18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!E18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!F18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!G18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!H18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!I18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!J18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:温度抽查!K18"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:25"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:29"
+        }
+      ]
+    },
+    {
+      "title": "把钱放在履约，当前不加广告、不发券",
+      "detail": "同窗历史经营贡献：保温组14,700元，薄盒组14,070元。恢复包装的审慎月度差额为正；按历史保温组4%退款率的基准情景为4,800元。",
+      "basis": "到账已扣退款及平台、配送费用；全部已制作订单照计成本。单店单SKU且无客群结果，不编门店象限、分群补贴或分群收益。",
+      "evidence": [
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J18"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:9"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:13"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:21"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:33"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:37"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:41"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:9"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "title": "恢复保温餐盒和保温袋，连续试行7天",
+      "owner": "店长执行；采购补货、退回薄盒；老板确认投入",
+      "timing": "2026年11月9—15日，全店同SKU；首日培训纳入当天复核工时",
+      "budget": "按每天300单：首周新增1,820元；包装及复核总支出3,080元。每日小批量供货；广告0元，原价退薄盒无额外费。",
+      "success": "逐单记录包装覆盖与偏离，维持供给；11月16日核执行，11月21日成熟退款后按实际单量与同星期薄盒基线核成本全扣后的贡献差额，必须为正。建议规模底线为完成单不下降。",
+      "stop": "相对可比薄盒基线累计损失达到500元即暂停并复核；成熟结果贡献差额≤0不继续。退款未成熟时计提已发生及待观察损失，不以暂未退款视为通过。"
+    },
+    {
+      "title": "核成熟退款与贡献，再决定是否继续",
+      "owner": "财务核算；店长回传；老板决定继续或调整",
+      "timing": "11月16日检查执行、投入和偏离；11月21日按订单日回看完整5天售后窗",
+      "budget": "复核费用已包含在首项投入内，不重复追加",
+      "success": "到账、全部履约单成本、包装、广告及加班支出逐项对账；按实际量匹配后窗同星期、相同经营规则的薄盒基线，贡献改善为正且规模与体验不恶化才继续。",
+      "stop": "在每天300单、其他口径不变时，全口径退款率须低于约5.524%才有正改善；量或成本变化则重算，不能机械沿用该线。执行不到位先修执行，不认定方案无效。"
+    }
+  ],
+  "followup": {
+    "when": "2026年11月16日核执行；11月21日做成熟复盘",
+    "decision": "先核覆盖和偏离，再算相对可比薄盒基线的贡献差额；正改善且规模稳定则继续，触及500元损失或成熟改善不为正则暂停、调整。尚无本次建议的执行回执。",
+    "collect": [
+      "11月9—15日逐日履约单、包装实耗及错漏包记录、缺货与营业变化",
+      "按订单日归属且完成5天观察的凉餐/其他退款单和实际冲减、到账明细",
+      "采购退货回单、复核加班时长与实际支出、同期价格优惠及配送变化",
+      "按原抽样方法覆盖午晚、近远的到手温度与履约时长"
+    ]
+  },
+  "charts": [
+    {
+      "type": "bar",
+      "title": "同窗两种包装的退款率",
+      "unit": "%",
+      "caption": "10月26日—11月1日，各组1,050单，均已完成售后观察。",
+      "series": [
+        {
+          "label": "保温款",
+          "calc_id": "warm_rate",
+          "value": 4,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E15"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E17"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D15"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D17"
+            }
+          ]
+        },
+        {
+          "label": "薄盒款",
+          "calc_id": "thin_rate",
+          "value": 8,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!E18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:同窗试行!D18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "审慎月度改善的收支拆分",
+      "unit": "元",
+      "caption": "收入恢复减包材与复核新增成本，餐材人工等量差额为零。",
+      "series": [
+        {
+          "label": "少冲减到账",
+          "calc_id": "monthly_recovered_settlement",
+          "value": 9450,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C7"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:21"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F22"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F23"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F24"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F25"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F26"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F27"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F28"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F29"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F30"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F31"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F32"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F33"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F34"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F35"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E22"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E23"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E24"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E25"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E26"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E27"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E28"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E29"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E30"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E31"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E32"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E33"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E34"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E35"
+            }
+          ]
+        },
+        {
+          "label": "新增包材成本",
+          "calc_id": "monthly_pack_increment",
+          "value": 7200,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C7"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:21"
+            }
+          ]
+        },
+        {
+          "label": "新增复核成本",
+          "calc_id": "monthly_execution",
+          "value": 600,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C7"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:21"
+            }
+          ]
+        },
+        {
+          "label": "贡献改善",
+          "calc_id": "monthly_cautious",
+          "value": 1650,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:采购与排班!C7"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:17"
+            },
+            {
+              "material": "definitions.md",
+              "locator": "line:21"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F22"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F23"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F24"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F25"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F26"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F27"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F28"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F29"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F30"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F31"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F32"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F33"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F34"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!F35"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E22"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E23"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E24"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E25"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E26"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E27"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E28"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E29"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E30"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E31"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E32"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E33"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E34"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!E35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "历史前后窗经营贡献",
+      "unit": "元",
+      "caption": "每窗14天、4,200单；按明细重算，未采用四舍五入小计。",
+      "series": [
+        {
+          "label": "前窗保温款",
+          "calc_id": "pre_contribution",
+          "value": 58800,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K5"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K8"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K9"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K10"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K13"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K14"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K15"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K16"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K17"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K18"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!B6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!C6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!D6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!E6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!F6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!G6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!H6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!I6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!J6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!K6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!L6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!M6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!N6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!O6"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!B7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!C7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!D7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!E7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!F7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!G7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!H7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!I7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!J7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!K7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!L7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!M7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!N7"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!O7"
+            }
+          ]
+        },
+        {
+          "label": "后窗薄盒款",
+          "calc_id": "post_contribution",
+          "value": 56280,
+          "evidence": [
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K22"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K23"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K24"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K25"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K26"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K27"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K28"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K29"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K30"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K31"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K32"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K33"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K34"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:经营拼表!K35"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!B11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!C11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!D11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!E11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!F11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!G11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!H11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!I11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!J11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!K11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!L11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!M11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!N11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!O11"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!B12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!C12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!D12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!E12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!F12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!G12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!H12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!I12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!J12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!K12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!L12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!M12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!N12"
+            },
+            {
+              "material": "暖禾热饭_模拟原始台账.xlsx",
+              "locator": "sheet:成本横排!O12"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "goal": "单店收益主体；固定成本前经营贡献，30天每天300单比较恢复保温包装与后窗薄盒配置。",
+    "chosen_strategy": "先修保温承接：全店同SKU恢复保温款7天，采购退货、店长培训复核、财务成熟退款核算组成执行工具。仅单店，无可比客群结果，不分象限、不做个性化券。",
+    "execution": "老板确认资源；采购每天小批量供货及原价退货；店长首日培训并逐日记包装、异常与复核工时；财务11月16日查覆盖和投入、11月21日按成熟退款计算；截至冻结未执行，历史分配试验不归因于Skill。",
+    "alternatives": [
+      "继续薄盒以节约采购：同窗与前后数据均显示节省包材不足抵消凉餐退款，不优先。",
+      "薄盒配合加广告或优惠：没有触达瓶颈证据且老板不加广告，优惠不解决到手温度，不选。",
+      "按近远或午晚差异化包装：仅有区组均衡设计而无各区组退款经济结果，不足以确定差别配置；先按整体证据恢复。"
+    ],
+    "assumptions": [
+      "5%退款率为老板指定审慎假设，4%为历史同期保温组比例用于基准情景，均非未来实测。",
+      "餐材人工18.20元/全部履约单不因退款回冲；净结算已扣退款不再扣第二次。",
+      "仅以H/T记录号各计一次，成本横排按号连接，不加订单；万元转元，小计非加项。",
+      "前窗到账小计14.11万元与明细14.112万元、后窗13.52万元与明细13.524万元为小计精度差，采用明细。",
+      "固定费用不变无需补租金；未来量价、配送、成本有变时重新构造可比基线。",
+      "分区组资料只支持分配可比性，不支持近远/午晚客群差异策略。"
+    ]
+  },
+  "gaps": [],
+  "audience_plan": [],
+  "method_usage": [
+    {
+      "method": "store_segmentation",
+      "status": "not_applicable",
+      "reason": "仅有单店单SKU，没有门店间或区组结果可供收益增长分层。",
+      "decision": "不虚构象限或分区包装收益；按全店可比包装证据行动。",
+      "evidence_summary": "材料限定单店单SKU；午晚、近远仅用于均衡分配，未给分区退款结果。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:5"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:25"
+        }
+      ],
+      "targets": []
+    },
+    {
+      "method": "audience_offer",
+      "status": "not_applicable",
+      "reason": "本轮问题为包装履约，无客群、生命周期或权益效果数据。",
+      "decision": "保留既有39元套餐与权益，先修到手体验；不创建无依据的分群券方案。",
+      "evidence_summary": "价格、份量、券未变；同窗包装组退款为42单与84单，未提供客群结果。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:21"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:25"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J18"
+        }
+      ],
+      "targets": []
+    },
+    {
+      "method": "tool_mix",
+      "status": "applied",
+      "reason": "包装对照及成本口径足以比较保温投入与维持薄盒、推广优惠方向。",
+      "decision": "选择恢复保温与复核组合，不加广告不打折，把新增支出纳入贡献差额。",
+      "evidence_summary": "同窗每组1,050单，保温款退款42单、薄盒84单；采购每套1.40元与0.60元，额外每天半小时、每小时40元。",
+      "evidence": [
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J13"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J14"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J15"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J16"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J17"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!D18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!E18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!F18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!G18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:同窗试行!J18"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C5"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C6"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C7"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C8"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C9"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C10"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C11"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C12"
+        },
+        {
+          "material": "暖禾热饭_模拟原始台账.xlsx",
+          "locator": "sheet:采购与排班!C13"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:37"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:41"
+        },
+        {
+          "material": "public.md",
+          "locator": "line:9"
+        }
+      ],
+      "targets": [
+        {
+          "section": "money",
+          "index": 0
+        },
+        {
+          "section": "findings",
+          "index": 1
+        },
+        {
+          "section": "actions",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "method": "execution_followup",
+      "status": "applied",
+      "reason": "单店责任人与检查日、成熟窗口、老板损失上限均已给定。",
+      "decision": "把采购、店长与财务串成先验执行后验贡献的回传链。",
+      "evidence_summary": "店长11月9日起试7天，采购负责补退货、财务核账；11月16日查执行、11月21日成熟复盘，首周损失上限500元。",
+      "evidence": [
+        {
+          "material": "definitions.md",
+          "locator": "line:37"
+        },
+        {
+          "material": "definitions.md",
+          "locator": "line:45"
+        }
+      ],
+      "targets": [
+        {
+          "section": "actions",
+          "index": 0
+        },
+        {
+          "section": "actions",
+          "index": 1
+        }
+      ]
+    }
+  ]
+}

@@ -144,7 +144,7 @@ def calculate_requests(requests, materials):
                     or name in FUNCTIONS or not isinstance(item, dict) or 'value' not in item):
                 raise ValueError('变量名称或定义无效')
             evidence, assumption = item.get('evidence', []), item.get('assumption')
-            if not isinstance(evidence, list) or len(evidence) > 100:
+            if not isinstance(evidence, list) or len(evidence) > 1000:
                 raise ValueError('变量引用无效')
             if assumption is not None and (not isinstance(assumption, str) or not assumption.strip() or len(assumption) > 2000):
                 raise ValueError('假设说明无效')

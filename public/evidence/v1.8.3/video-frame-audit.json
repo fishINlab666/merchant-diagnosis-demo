@@ -1,0 +1,84 @@
+{
+  "raw": [
+    163,
+    9015,
+    11609
+  ],
+  "final": [
+    163,
+    288,
+    2882
+  ],
+  "hashes_match": {
+    "original": true,
+    "video": true,
+    "report": true,
+    "html": true
+  },
+  "samples": [
+    [
+      "input",
+      4
+    ],
+    [
+      "wait",
+      8
+    ],
+    [
+      "boss_firstscreen",
+      17.46199999999999
+    ],
+    [
+      "product_mode",
+      34.80500000000001
+    ],
+    [
+      "evidence_marker_1",
+      34.85699999999997
+    ],
+    [
+      "evidence_marker_2",
+      41.94900000000001
+    ],
+    [
+      "evidence_marker_3",
+      49.04899999999998
+    ],
+    [
+      "audience_choice_1",
+      56.13499999999999
+    ],
+    [
+      "audience_choice_2",
+      62.178999999999974
+    ],
+    [
+      "audience_choice_3",
+      68.226
+    ],
+    [
+      "audience_choice_4",
+      74.26600000000002
+    ],
+    [
+      "audience_choice_5",
+      80.30200000000002
+    ],
+    [
+      "audience_choice_6",
+      86.33999999999997
+    ],
+    [
+      "execution",
+      92.56400000000002
+    ],
+    [
+      "frozen_playbook",
+      100.21100000000001
+    ],
+    [
+      "frozen_playbook_bottom",
+      104.21100000000001
+    ]
+  ]
+}

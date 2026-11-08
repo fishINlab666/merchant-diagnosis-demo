@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "mode": "host",
+  "runtime": "Codex Agent 客户文案整理（承接 DeepSeek API 分析）",
+  "draft_count": 1,
+  "calculation_batches": [
+    {
+      "requests": "calculation-001.requests.json",
+      "results": "calculation-001.results.json"
+    }
+  ],
+  "calculations_sha256": "0cf82e7ec7bd815bff450729556d94c25fffbd8fc7fef4f0ea9769ac2c04f6a2",
+  "model_calls": 0,
+  "corrections": 0,
+  "inference_executed": false,
+  "model_id": "未暴露",
+  "semantic_review": "未确认",
+  "created_at": "2026-11-08T12:28:37.238015+00:00",
+  "business_review": {
+    "status": "not_independently_reviewed",
+    "required": "host_self_check"
+  },
+  "business_reviews": [],
+  "business_revisions": 0,
+  "completed_at": "2026-11-08T12:29:17.974436+00:00",
+  "report": "report.html",
+  "report_sha256": "467f102a7e31d49c68bde8da2a43405c23a62b7c4a525296a3b521401ebbb5fb",
+  "method_usage_sha256": "e067024636baf7308e33afa8579ba62623e510f45da63cf7ed5633b8a1ce6391",
+  "method_usage": {
+    "status": "structure_verified",
+    "methods": {
+      "store_segmentation": "needs_data",
+      "audience_offer": "adapted",
+      "tool_mix": "applied",
+      "execution_followup": "applied"
+    },
+    "scope": "方法覆盖、证据定位与输出目标结构通过；不自动证明经营判断正确或商家执行"
+  }
+}

@@ -1,0 +1,518 @@
+[
+  {
+    "id": "a_share",
+    "expression": "a_spend/(a_spend+b_spend)",
+    "variables": {
+      "a_spend": {
+        "value": 252000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:渠道!E4"
+          }
+        ]
+      },
+      "b_spend": {
+        "value": 28000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:渠道!E5"
+          }
+        ]
+      }
+    },
+    "unit": "比例",
+    "purpose": "工具A占推广花费比例",
+    "status": "ok",
+    "value": 0.9,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "a_per_yuan",
+    "expression": "(t02_pre*(t01_post/t01_pre)-t02_actual)/a_cut",
+    "variables": {
+      "t02_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D5"
+          }
+        ]
+      },
+      "t01_post": {
+        "value": 378000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E4"
+          }
+        ]
+      },
+      "t01_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D4"
+          }
+        ]
+      },
+      "t02_actual": {
+        "value": 358400,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E5"
+          }
+        ]
+      },
+      "a_cut": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!L5"
+          }
+        ]
+      }
+    },
+    "unit": "元入账/元推广",
+    "purpose": "仅减A每1元对应的入账损失估计",
+    "status": "ok",
+    "value": 1.4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "b_per_yuan",
+    "expression": "(t03_actual-t03_pre*(t01_post/t01_pre))/b_add",
+    "variables": {
+      "t03_actual": {
+        "value": 420000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E6"
+          }
+        ]
+      },
+      "t03_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D6"
+          }
+        ]
+      },
+      "t01_post": {
+        "value": 378000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!E4"
+          }
+        ]
+      },
+      "t01_pre": {
+        "value": 360000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!D4"
+          }
+        ]
+      },
+      "b_add": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "经营周报.xlsx",
+            "locator": "sheet:边际试行!L6"
+          }
+        ]
+      }
+    },
+    "unit": "元入账/元推广",
+    "purpose": "仅增B每1元对应的入账增加估计",
+    "status": "ok",
+    "value": 3,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "d7_income",
+    "expression": "b_add*b_rate-a_cut*a_rate",
+    "variables": {
+      "b_add": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b_rate": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a_cut": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "a_rate": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "7日首轮净结算收入变化（审慎参数）",
+    "status": "ok",
+    "value": 14000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "d7_cost",
+    "expression": "(b_add*b_rate-a_cut*a_rate)*cost_ratio",
+    "variables": {
+      "b_add": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b_rate": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a_cut": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "a_rate": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_ratio": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "7日订单变动成本变化（审慎）",
+    "status": "ok",
+    "value": 8400,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "d7_contrib",
+    "expression": "(b_add*b_rate-a_cut*a_rate)-(b_add*b_rate-a_cut*a_rate)*cost_ratio-d7_fee",
+    "variables": {
+      "b_add": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b_rate": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a_cut": {
+        "value": 14000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "a_rate": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_ratio": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      },
+      "d7_fee": {
+        "value": 1400,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "7日首轮经营贡献差额（审慎）",
+    "status": "ok",
+    "value": 4200,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_income",
+    "expression": "month_transfer*b_rate-month_transfer*a_rate",
+    "variables": {
+      "month_transfer": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b_rate": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a_rate": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "月度净结算收入变化（审慎参数）",
+    "status": "ok",
+    "value": 60000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_cost",
+    "expression": "(month_transfer*b_rate-month_transfer*a_rate)*cost_ratio",
+    "variables": {
+      "month_transfer": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b_rate": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a_rate": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_ratio": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "月度订单变动成本变化（审慎）",
+    "status": "ok",
+    "value": 36000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_contrib",
+    "expression": "(month_transfer*b_rate-month_transfer*a_rate)-(month_transfer*b_rate-month_transfer*a_rate)*cost_ratio-month_fee",
+    "variables": {
+      "month_transfer": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b_rate": {
+        "value": 2.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a_rate": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_ratio": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      },
+      "month_fee": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "月度经营贡献差额（审慎，主金额）",
+    "status": "ok",
+    "value": 18000,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "month_negative",
+    "expression": "(month_transfer*b_neg-month_transfer*a_neg)-(month_transfer*b_neg-month_transfer*a_neg)*cost_ratio-month_fee",
+    "variables": {
+      "month_transfer": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:29"
+          }
+        ]
+      },
+      "b_neg": {
+        "value": 1.5,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "a_neg": {
+        "value": 2.0,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      },
+      "cost_ratio": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:15"
+          }
+        ]
+      },
+      "month_fee": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "definitions.md",
+            "locator": "line:33"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "月度负例情景经营贡献差额（止损参照）",
+    "status": "ok",
+    "value": -18000,
+    "missing_variables": [],
+    "assumptions": []
+  }
+]

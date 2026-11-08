@@ -1,0 +1,6818 @@
+[
+  {
+    "id": "store_6",
+    "expression": "I6-sum(J6,K6,L6,M6,N6)",
+    "variables": {
+      "I6": {
+        "value": 115200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I6"
+          }
+        ]
+      },
+      "J6": {
+        "value": 41800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J6"
+          }
+        ]
+      },
+      "K6": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K6"
+          }
+        ]
+      },
+      "L6": {
+        "value": 10080,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L6"
+          }
+        ]
+      },
+      "M6": {
+        "value": 12600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M6"
+          }
+        ]
+      },
+      "N6": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N6"
+          }
+        ]
+      },
+      "E6": {
+        "value": 3600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E6"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 38320,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "unit_6",
+    "expression": "(I6-sum(J6,K6,L6,M6,N6))/E6",
+    "variables": {
+      "I6": {
+        "value": 115200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I6"
+          }
+        ]
+      },
+      "J6": {
+        "value": 41800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J6"
+          }
+        ]
+      },
+      "K6": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K6"
+          }
+        ]
+      },
+      "L6": {
+        "value": 10080,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L6"
+          }
+        ]
+      },
+      "M6": {
+        "value": 12600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M6"
+          }
+        ]
+      },
+      "N6": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N6"
+          }
+        ]
+      },
+      "E6": {
+        "value": 3600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E6"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 10.644444444444444,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "growth_6",
+    "expression": "(a/b-1)*100",
+    "variables": {
+      "a": {
+        "value": 115200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I6"
+          }
+        ]
+      },
+      "b": {
+        "value": 100000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!F18"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 15.2,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "store_7",
+    "expression": "I7-sum(J7,K7,L7,M7,N7)",
+    "variables": {
+      "I7": {
+        "value": 100800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I7"
+          }
+        ]
+      },
+      "J7": {
+        "value": 36000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J7"
+          }
+        ]
+      },
+      "K7": {
+        "value": 4500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K7"
+          }
+        ]
+      },
+      "L7": {
+        "value": 8400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L7"
+          }
+        ]
+      },
+      "M7": {
+        "value": 10800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M7"
+          }
+        ]
+      },
+      "N7": {
+        "value": 6800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N7"
+          }
+        ]
+      },
+      "E7": {
+        "value": 3000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E7"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 34300,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "unit_7",
+    "expression": "(I7-sum(J7,K7,L7,M7,N7))/E7",
+    "variables": {
+      "I7": {
+        "value": 100800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I7"
+          }
+        ]
+      },
+      "J7": {
+        "value": 36000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J7"
+          }
+        ]
+      },
+      "K7": {
+        "value": 4500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K7"
+          }
+        ]
+      },
+      "L7": {
+        "value": 8400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L7"
+          }
+        ]
+      },
+      "M7": {
+        "value": 10800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M7"
+          }
+        ]
+      },
+      "N7": {
+        "value": 6800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N7"
+          }
+        ]
+      },
+      "E7": {
+        "value": 3000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E7"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 11.433333333333334,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "growth_7",
+    "expression": "(a/b-1)*100",
+    "variables": {
+      "a": {
+        "value": 100800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I7"
+          }
+        ]
+      },
+      "b": {
+        "value": 110000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!F19"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": -8.363636363636363,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "store_8",
+    "expression": "I8-sum(J8,K8,L8,M8,N8)",
+    "variables": {
+      "I8": {
+        "value": 88400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I8"
+          }
+        ]
+      },
+      "J8": {
+        "value": 42500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J8"
+          }
+        ]
+      },
+      "K8": {
+        "value": 5100,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K8"
+          }
+        ]
+      },
+      "L8": {
+        "value": 9520,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L8"
+          }
+        ]
+      },
+      "M8": {
+        "value": 12240,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M8"
+          }
+        ]
+      },
+      "N8": {
+        "value": 11000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N8"
+          }
+        ]
+      },
+      "E8": {
+        "value": 3400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E8"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 8040,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "unit_8",
+    "expression": "(I8-sum(J8,K8,L8,M8,N8))/E8",
+    "variables": {
+      "I8": {
+        "value": 88400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I8"
+          }
+        ]
+      },
+      "J8": {
+        "value": 42500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J8"
+          }
+        ]
+      },
+      "K8": {
+        "value": 5100,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K8"
+          }
+        ]
+      },
+      "L8": {
+        "value": 9520,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L8"
+          }
+        ]
+      },
+      "M8": {
+        "value": 12240,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M8"
+          }
+        ]
+      },
+      "N8": {
+        "value": 11000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N8"
+          }
+        ]
+      },
+      "E8": {
+        "value": 3400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E8"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 2.364705882352941,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "growth_8",
+    "expression": "(a/b-1)*100",
+    "variables": {
+      "a": {
+        "value": 88400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I8"
+          }
+        ]
+      },
+      "b": {
+        "value": 75000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!F20"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 17.866666666666667,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "store_9",
+    "expression": "I9-sum(J9,K9,L9,M9,N9)",
+    "variables": {
+      "I9": {
+        "value": 52500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I9"
+          }
+        ]
+      },
+      "J9": {
+        "value": 25200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J9"
+          }
+        ]
+      },
+      "K9": {
+        "value": 3150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K9"
+          }
+        ]
+      },
+      "L9": {
+        "value": 5880,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L9"
+          }
+        ]
+      },
+      "M9": {
+        "value": 7560,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M9"
+          }
+        ]
+      },
+      "N9": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N9"
+          }
+        ]
+      },
+      "E9": {
+        "value": 2100,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E9"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 2710,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "unit_9",
+    "expression": "(I9-sum(J9,K9,L9,M9,N9))/E9",
+    "variables": {
+      "I9": {
+        "value": 52500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I9"
+          }
+        ]
+      },
+      "J9": {
+        "value": 25200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J9"
+          }
+        ]
+      },
+      "K9": {
+        "value": 3150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K9"
+          }
+        ]
+      },
+      "L9": {
+        "value": 5880,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L9"
+          }
+        ]
+      },
+      "M9": {
+        "value": 7560,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M9"
+          }
+        ]
+      },
+      "N9": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N9"
+          }
+        ]
+      },
+      "E9": {
+        "value": 2100,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E9"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 1.2904761904761906,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "growth_9",
+    "expression": "(a/b-1)*100",
+    "variables": {
+      "a": {
+        "value": 52500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I9"
+          }
+        ]
+      },
+      "b": {
+        "value": 60000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!F21"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": -12.5,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "store_10",
+    "expression": "I10-sum(J10,K10,L10,M10,N10)",
+    "variables": {
+      "I10": {
+        "value": 85800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I10"
+          }
+        ]
+      },
+      "J10": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J10"
+          }
+        ]
+      },
+      "K10": {
+        "value": 3900,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K10"
+          }
+        ]
+      },
+      "L10": {
+        "value": 7280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L10"
+          }
+        ]
+      },
+      "M10": {
+        "value": 9360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M10"
+          }
+        ]
+      },
+      "N10": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N10"
+          }
+        ]
+      },
+      "E10": {
+        "value": 2600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E10"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 35260,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "unit_10",
+    "expression": "(I10-sum(J10,K10,L10,M10,N10))/E10",
+    "variables": {
+      "I10": {
+        "value": 85800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I10"
+          }
+        ]
+      },
+      "J10": {
+        "value": 30000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J10"
+          }
+        ]
+      },
+      "K10": {
+        "value": 3900,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K10"
+          }
+        ]
+      },
+      "L10": {
+        "value": 7280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L10"
+          }
+        ]
+      },
+      "M10": {
+        "value": 9360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M10"
+          }
+        ]
+      },
+      "N10": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N10"
+          }
+        ]
+      },
+      "E10": {
+        "value": 2600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E10"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 13.561538461538461,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "growth_10",
+    "expression": "(a/b-1)*100",
+    "variables": {
+      "a": {
+        "value": 85800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I10"
+          }
+        ]
+      },
+      "b": {
+        "value": 82500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!F22"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "store_11",
+    "expression": "I11-sum(J11,K11,L11,M11,N11)",
+    "variables": {
+      "I11": {
+        "value": 89600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I11"
+          }
+        ]
+      },
+      "J11": {
+        "value": 33600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J11"
+          }
+        ]
+      },
+      "K11": {
+        "value": 4200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K11"
+          }
+        ]
+      },
+      "L11": {
+        "value": 7840,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L11"
+          }
+        ]
+      },
+      "M11": {
+        "value": 10080,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M11"
+          }
+        ]
+      },
+      "N11": {
+        "value": 3500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N11"
+          }
+        ]
+      },
+      "E11": {
+        "value": 2800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E11"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 30380,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "unit_11",
+    "expression": "(I11-sum(J11,K11,L11,M11,N11))/E11",
+    "variables": {
+      "I11": {
+        "value": 89600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I11"
+          }
+        ]
+      },
+      "J11": {
+        "value": 33600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!J11"
+          }
+        ]
+      },
+      "K11": {
+        "value": 4200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!K11"
+          }
+        ]
+      },
+      "L11": {
+        "value": 7840,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!L11"
+          }
+        ]
+      },
+      "M11": {
+        "value": 10080,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!M11"
+          }
+        ]
+      },
+      "N11": {
+        "value": 3500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!N11"
+          }
+        ]
+      },
+      "E11": {
+        "value": 2800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!E11"
+          }
+        ]
+      }
+    },
+    "unit": "元/单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 10.85,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "growth_11",
+    "expression": "(a/b-1)*100",
+    "variables": {
+      "a": {
+        "value": 89600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!I11"
+          }
+        ]
+      },
+      "b": {
+        "value": 94000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:财务周账!F23"
+          }
+        ]
+      }
+    },
+    "unit": "%",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": -4.680851063829787,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_5",
+    "expression": "N5-sum(O5,P5,Q5,R5,S5)",
+    "variables": {
+      "N5": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N5"
+          }
+        ]
+      },
+      "O5": {
+        "value": 600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O5"
+          }
+        ]
+      },
+      "P5": {
+        "value": 70,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P5"
+          }
+        ]
+      },
+      "Q5": {
+        "value": 140,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q5"
+          }
+        ]
+      },
+      "R5": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R5"
+          }
+        ]
+      },
+      "S5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S5"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 510,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_6",
+    "expression": "N6-sum(O6,P6,Q6,R6,S6)",
+    "variables": {
+      "N6": {
+        "value": 3135,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N6"
+          }
+        ]
+      },
+      "O6": {
+        "value": 1140,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O6"
+          }
+        ]
+      },
+      "P6": {
+        "value": 133,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P6"
+          }
+        ]
+      },
+      "Q6": {
+        "value": 266,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q6"
+          }
+        ]
+      },
+      "R6": {
+        "value": 342,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R6"
+          }
+        ]
+      },
+      "S6": {
+        "value": 500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S6"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 754,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_7",
+    "expression": "N7-sum(O7,P7,Q7,R7,S7)",
+    "variables": {
+      "N7": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N7"
+          }
+        ]
+      },
+      "O7": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O7"
+          }
+        ]
+      },
+      "P7": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P7"
+          }
+        ]
+      },
+      "Q7": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q7"
+          }
+        ]
+      },
+      "R7": {
+        "value": 540,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R7"
+          }
+        ]
+      },
+      "S7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S7"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 2130,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_8",
+    "expression": "N8-sum(O8,P8,Q8,R8,S8)",
+    "variables": {
+      "N8": {
+        "value": 9520,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N8"
+          }
+        ]
+      },
+      "O8": {
+        "value": 3360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O8"
+          }
+        ]
+      },
+      "P8": {
+        "value": 392,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P8"
+          }
+        ]
+      },
+      "Q8": {
+        "value": 784,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q8"
+          }
+        ]
+      },
+      "R8": {
+        "value": 1008,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R8"
+          }
+        ]
+      },
+      "S8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S8"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 3676,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_9",
+    "expression": "N9-sum(O9,P9,Q9,R9,S9)",
+    "variables": {
+      "N9": {
+        "value": 6480,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N9"
+          }
+        ]
+      },
+      "O9": {
+        "value": 2160,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O9"
+          }
+        ]
+      },
+      "P9": {
+        "value": 252,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P9"
+          }
+        ]
+      },
+      "Q9": {
+        "value": 504,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q9"
+          }
+        ]
+      },
+      "R9": {
+        "value": 648,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R9"
+          }
+        ]
+      },
+      "S9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S9"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 2616,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_10",
+    "expression": "N10-sum(O10,P10,Q10,R10,S10)",
+    "variables": {
+      "N10": {
+        "value": 10140,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N10"
+          }
+        ]
+      },
+      "O10": {
+        "value": 3900,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O10"
+          }
+        ]
+      },
+      "P10": {
+        "value": 468,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P10"
+          }
+        ]
+      },
+      "Q10": {
+        "value": 873.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q10"
+          }
+        ]
+      },
+      "R10": {
+        "value": 988,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R10"
+          }
+        ]
+      },
+      "S10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S10"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 3610.4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_11",
+    "expression": "N11-sum(O11,P11,Q11,R11,S11)",
+    "variables": {
+      "N11": {
+        "value": 9360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N11"
+          }
+        ]
+      },
+      "O11": {
+        "value": 3120,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O11"
+          }
+        ]
+      },
+      "P11": {
+        "value": 364,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P11"
+          }
+        ]
+      },
+      "Q11": {
+        "value": 728,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q11"
+          }
+        ]
+      },
+      "R11": {
+        "value": 936,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R11"
+          }
+        ]
+      },
+      "S11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S11"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 3912,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_12",
+    "expression": "N12-sum(O12,P12,Q12,R12,S12)",
+    "variables": {
+      "N12": {
+        "value": 14040,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N12"
+          }
+        ]
+      },
+      "O12": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O12"
+          }
+        ]
+      },
+      "P12": {
+        "value": 648,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P12"
+          }
+        ]
+      },
+      "Q12": {
+        "value": 1209.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q12"
+          }
+        ]
+      },
+      "R12": {
+        "value": 1368,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R12"
+          }
+        ]
+      },
+      "S12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S12"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 5114.4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_13",
+    "expression": "N13-sum(O13,P13,Q13,R13,S13)",
+    "variables": {
+      "N13": {
+        "value": 16200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N13"
+          }
+        ]
+      },
+      "O13": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O13"
+          }
+        ]
+      },
+      "P13": {
+        "value": 630,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P13"
+          }
+        ]
+      },
+      "Q13": {
+        "value": 1260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q13"
+          }
+        ]
+      },
+      "R13": {
+        "value": 1620,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R13"
+          }
+        ]
+      },
+      "S13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S13"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 6990,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_14",
+    "expression": "N14-sum(O14,P14,Q14,R14,S14)",
+    "variables": {
+      "N14": {
+        "value": 14570,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N14"
+          }
+        ]
+      },
+      "O14": {
+        "value": 5640,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O14"
+          }
+        ]
+      },
+      "P14": {
+        "value": 658,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P14"
+          }
+        ]
+      },
+      "Q14": {
+        "value": 1316,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q14"
+          }
+        ]
+      },
+      "R14": {
+        "value": 1692,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R14"
+          }
+        ]
+      },
+      "S14": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S14"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 4964,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_15",
+    "expression": "N15-sum(O15,P15,Q15,R15,S15)",
+    "variables": {
+      "N15": {
+        "value": 2160,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N15"
+          }
+        ]
+      },
+      "O15": {
+        "value": 720,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O15"
+          }
+        ]
+      },
+      "P15": {
+        "value": 84,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P15"
+          }
+        ]
+      },
+      "Q15": {
+        "value": 168,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q15"
+          }
+        ]
+      },
+      "R15": {
+        "value": 216,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R15"
+          }
+        ]
+      },
+      "S15": {
+        "value": 400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S15"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 572,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "obs_16",
+    "expression": "N16-sum(O16,P16,Q16,R16,S16)",
+    "variables": {
+      "N16": {
+        "value": 3150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N16"
+          }
+        ]
+      },
+      "O16": {
+        "value": 1260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O16"
+          }
+        ]
+      },
+      "P16": {
+        "value": 144,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P16"
+          }
+        ]
+      },
+      "Q16": {
+        "value": 288,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q16"
+          }
+        ]
+      },
+      "R16": {
+        "value": 342,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R16"
+          }
+        ]
+      },
+      "S16": {
+        "value": 400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S16"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 716,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "diff_5",
+    "expression": "(N6-sum(O6,P6,Q6,R6,S6))-(N5-sum(O5,P5,Q5,R5,S5))",
+    "variables": {
+      "N5": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N5"
+          }
+        ]
+      },
+      "O5": {
+        "value": 600,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O5"
+          }
+        ]
+      },
+      "P5": {
+        "value": 70,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P5"
+          }
+        ]
+      },
+      "Q5": {
+        "value": 140,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q5"
+          }
+        ]
+      },
+      "R5": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R5"
+          }
+        ]
+      },
+      "S5": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S5"
+          }
+        ]
+      },
+      "N6": {
+        "value": 3135,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N6"
+          }
+        ]
+      },
+      "O6": {
+        "value": 1140,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O6"
+          }
+        ]
+      },
+      "P6": {
+        "value": 133,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P6"
+          }
+        ]
+      },
+      "Q6": {
+        "value": 266,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q6"
+          }
+        ]
+      },
+      "R6": {
+        "value": 342,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R6"
+          }
+        ]
+      },
+      "S6": {
+        "value": 500,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S6"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 244,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "diff_7",
+    "expression": "(N8-sum(O8,P8,Q8,R8,S8))-(N7-sum(O7,P7,Q7,R7,S7))",
+    "variables": {
+      "N7": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N7"
+          }
+        ]
+      },
+      "O7": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O7"
+          }
+        ]
+      },
+      "P7": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P7"
+          }
+        ]
+      },
+      "Q7": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q7"
+          }
+        ]
+      },
+      "R7": {
+        "value": 540,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R7"
+          }
+        ]
+      },
+      "S7": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S7"
+          }
+        ]
+      },
+      "N8": {
+        "value": 9520,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N8"
+          }
+        ]
+      },
+      "O8": {
+        "value": 3360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O8"
+          }
+        ]
+      },
+      "P8": {
+        "value": 392,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P8"
+          }
+        ]
+      },
+      "Q8": {
+        "value": 784,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q8"
+          }
+        ]
+      },
+      "R8": {
+        "value": 1008,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R8"
+          }
+        ]
+      },
+      "S8": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S8"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 1546,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "diff_9",
+    "expression": "(N10-sum(O10,P10,Q10,R10,S10))-(N9-sum(O9,P9,Q9,R9,S9))",
+    "variables": {
+      "N9": {
+        "value": 6480,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N9"
+          }
+        ]
+      },
+      "O9": {
+        "value": 2160,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O9"
+          }
+        ]
+      },
+      "P9": {
+        "value": 252,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P9"
+          }
+        ]
+      },
+      "Q9": {
+        "value": 504,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q9"
+          }
+        ]
+      },
+      "R9": {
+        "value": 648,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R9"
+          }
+        ]
+      },
+      "S9": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S9"
+          }
+        ]
+      },
+      "N10": {
+        "value": 10140,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N10"
+          }
+        ]
+      },
+      "O10": {
+        "value": 3900,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O10"
+          }
+        ]
+      },
+      "P10": {
+        "value": 468,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P10"
+          }
+        ]
+      },
+      "Q10": {
+        "value": 873.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q10"
+          }
+        ]
+      },
+      "R10": {
+        "value": 988,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R10"
+          }
+        ]
+      },
+      "S10": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S10"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 994.4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "diff_11",
+    "expression": "(N12-sum(O12,P12,Q12,R12,S12))-(N11-sum(O11,P11,Q11,R11,S11))",
+    "variables": {
+      "N11": {
+        "value": 9360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N11"
+          }
+        ]
+      },
+      "O11": {
+        "value": 3120,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O11"
+          }
+        ]
+      },
+      "P11": {
+        "value": 364,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P11"
+          }
+        ]
+      },
+      "Q11": {
+        "value": 728,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q11"
+          }
+        ]
+      },
+      "R11": {
+        "value": 936,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R11"
+          }
+        ]
+      },
+      "S11": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S11"
+          }
+        ]
+      },
+      "N12": {
+        "value": 14040,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N12"
+          }
+        ]
+      },
+      "O12": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O12"
+          }
+        ]
+      },
+      "P12": {
+        "value": 648,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P12"
+          }
+        ]
+      },
+      "Q12": {
+        "value": 1209.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q12"
+          }
+        ]
+      },
+      "R12": {
+        "value": 1368,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R12"
+          }
+        ]
+      },
+      "S12": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S12"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 1202.4,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "diff_13",
+    "expression": "(N14-sum(O14,P14,Q14,R14,S14))-(N13-sum(O13,P13,Q13,R13,S13))",
+    "variables": {
+      "N13": {
+        "value": 16200,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N13"
+          }
+        ]
+      },
+      "O13": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O13"
+          }
+        ]
+      },
+      "P13": {
+        "value": 630,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P13"
+          }
+        ]
+      },
+      "Q13": {
+        "value": 1260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q13"
+          }
+        ]
+      },
+      "R13": {
+        "value": 1620,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R13"
+          }
+        ]
+      },
+      "S13": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S13"
+          }
+        ]
+      },
+      "N14": {
+        "value": 14570,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N14"
+          }
+        ]
+      },
+      "O14": {
+        "value": 5640,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O14"
+          }
+        ]
+      },
+      "P14": {
+        "value": 658,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P14"
+          }
+        ]
+      },
+      "Q14": {
+        "value": 1316,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q14"
+          }
+        ]
+      },
+      "R14": {
+        "value": 1692,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R14"
+          }
+        ]
+      },
+      "S14": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S14"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": -2026,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "diff_15",
+    "expression": "(N16-sum(O16,P16,Q16,R16,S16))-(N15-sum(O15,P15,Q15,R15,S15))",
+    "variables": {
+      "N15": {
+        "value": 2160,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N15"
+          }
+        ]
+      },
+      "O15": {
+        "value": 720,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O15"
+          }
+        ]
+      },
+      "P15": {
+        "value": 84,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P15"
+          }
+        ]
+      },
+      "Q15": {
+        "value": 168,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q15"
+          }
+        ]
+      },
+      "R15": {
+        "value": 216,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R15"
+          }
+        ]
+      },
+      "S15": {
+        "value": 400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S15"
+          }
+        ]
+      },
+      "N16": {
+        "value": 3150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N16"
+          }
+        ]
+      },
+      "O16": {
+        "value": 1260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O16"
+          }
+        ]
+      },
+      "P16": {
+        "value": 144,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P16"
+          }
+        ]
+      },
+      "Q16": {
+        "value": 288,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q16"
+          }
+        ]
+      },
+      "R16": {
+        "value": 342,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R16"
+          }
+        ]
+      },
+      "S16": {
+        "value": 400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S16"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 144,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "plan_new",
+    "expression": "(((base+retain*(cand-base))*(price-coupon-sum(food,pack,fee,delivery))-ad)-(bN-sum(bO,bP,bQ,bR,bS)))*pool/uv",
+    "variables": {
+      "pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "coupon": {
+        "value": 2,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J8"
+          }
+        ]
+      },
+      "food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S8"
+          }
+        ]
+      },
+      "bN": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N7"
+          }
+        ]
+      },
+      "bO": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O7"
+          }
+        ]
+      },
+      "bP": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P7"
+          }
+        ]
+      },
+      "bQ": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q7"
+          }
+        ]
+      },
+      "bR": {
+        "value": 540,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R7"
+          }
+        ]
+      },
+      "bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S7"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 4845.6,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "orders_new",
+    "expression": "((base+retain*(cand-base))-base)*pool/uv",
+    "variables": {
+      "pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "coupon": {
+        "value": 2,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J8"
+          }
+        ]
+      },
+      "food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S8"
+          }
+        ]
+      },
+      "bN": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N7"
+          }
+        ]
+      },
+      "bO": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O7"
+          }
+        ]
+      },
+      "bP": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P7"
+          }
+        ]
+      },
+      "bQ": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q7"
+          }
+        ]
+      },
+      "bR": {
+        "value": 540,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R7"
+          }
+        ]
+      },
+      "bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S7"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 468,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "plan_one",
+    "expression": "(((base+retain*(cand-base))*(price-coupon-sum(food,pack,fee,delivery))-ad)-(bN-sum(bO,bP,bQ,bR,bS)))*pool/uv",
+    "variables": {
+      "pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "price": {
+        "value": 42,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          }
+        ]
+      },
+      "coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J10"
+          }
+        ]
+      },
+      "food": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          }
+        ]
+      },
+      "pack": {
+        "value": 1.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          }
+        ]
+      },
+      "fee": {
+        "value": 3.36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          }
+        ]
+      },
+      "delivery": {
+        "value": 3.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          }
+        ]
+      },
+      "ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S10"
+          }
+        ]
+      },
+      "bN": {
+        "value": 6480,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N9"
+          }
+        ]
+      },
+      "bO": {
+        "value": 2160,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O9"
+          }
+        ]
+      },
+      "bP": {
+        "value": 252,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P9"
+          }
+        ]
+      },
+      "bQ": {
+        "value": 504,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q9"
+          }
+        ]
+      },
+      "bR": {
+        "value": 648,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R9"
+          }
+        ]
+      },
+      "bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S9"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 4104.96,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "orders_one",
+    "expression": "((base+retain*(cand-base))-base)*pool/uv",
+    "variables": {
+      "pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "price": {
+        "value": 42,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          }
+        ]
+      },
+      "coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J10"
+          }
+        ]
+      },
+      "food": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          }
+        ]
+      },
+      "pack": {
+        "value": 1.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          }
+        ]
+      },
+      "fee": {
+        "value": 3.36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          }
+        ]
+      },
+      "delivery": {
+        "value": 3.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          }
+        ]
+      },
+      "ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S10"
+          }
+        ]
+      },
+      "bN": {
+        "value": 6480,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N9"
+          }
+        ]
+      },
+      "bO": {
+        "value": 2160,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O9"
+          }
+        ]
+      },
+      "bP": {
+        "value": 252,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P9"
+          }
+        ]
+      },
+      "bQ": {
+        "value": 504,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q9"
+          }
+        ]
+      },
+      "bR": {
+        "value": 648,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R9"
+          }
+        ]
+      },
+      "bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S9"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 384,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "plan_two",
+    "expression": "(((base+retain*(cand-base))*(price-coupon-sum(food,pack,fee,delivery))-ad)-(bN-sum(bO,bP,bQ,bR,bS)))*pool/uv",
+    "variables": {
+      "pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "price": {
+        "value": 42,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          }
+        ]
+      },
+      "coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J12"
+          }
+        ]
+      },
+      "food": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          }
+        ]
+      },
+      "pack": {
+        "value": 1.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          }
+        ]
+      },
+      "fee": {
+        "value": 3.36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          }
+        ]
+      },
+      "delivery": {
+        "value": 3.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          }
+        ]
+      },
+      "ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S12"
+          }
+        ]
+      },
+      "bN": {
+        "value": 9360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N11"
+          }
+        ]
+      },
+      "bO": {
+        "value": 3120,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O11"
+          }
+        ]
+      },
+      "bP": {
+        "value": 364,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P11"
+          }
+        ]
+      },
+      "bQ": {
+        "value": 728,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q11"
+          }
+        ]
+      },
+      "bR": {
+        "value": 936,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R11"
+          }
+        ]
+      },
+      "bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S11"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 4205.6,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "orders_two",
+    "expression": "((base+retain*(cand-base))-base)*pool/uv",
+    "variables": {
+      "pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "price": {
+        "value": 42,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          }
+        ]
+      },
+      "coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J12"
+          }
+        ]
+      },
+      "food": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          }
+        ]
+      },
+      "pack": {
+        "value": 1.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          }
+        ]
+      },
+      "fee": {
+        "value": 3.36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          }
+        ]
+      },
+      "delivery": {
+        "value": 3.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          }
+        ]
+      },
+      "ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S12"
+          }
+        ]
+      },
+      "bN": {
+        "value": 9360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N11"
+          }
+        ]
+      },
+      "bO": {
+        "value": 3120,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O11"
+          }
+        ]
+      },
+      "bP": {
+        "value": 364,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P11"
+          }
+        ]
+      },
+      "bQ": {
+        "value": 728,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q11"
+          }
+        ]
+      },
+      "bR": {
+        "value": 936,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R11"
+          }
+        ]
+      },
+      "bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S11"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 420,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "plan_high",
+    "expression": "((high*(price-coupon-sum(food,pack,fee,delivery))-ad)-(bN-sum(bO,bP,bQ,bR,bS)))*pool/uv",
+    "variables": {
+      "pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          }
+        ]
+      },
+      "uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          }
+        ]
+      },
+      "base": {
+        "value": 470,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H14"
+          }
+        ]
+      },
+      "cand": {
+        "value": 450,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H13"
+          }
+        ]
+      },
+      "retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "coupon": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J13"
+          }
+        ]
+      },
+      "food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S13"
+          }
+        ]
+      },
+      "bN": {
+        "value": 14570,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N14"
+          }
+        ]
+      },
+      "bO": {
+        "value": 5640,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O14"
+          }
+        ]
+      },
+      "bP": {
+        "value": 658,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P14"
+          }
+        ]
+      },
+      "bQ": {
+        "value": 1316,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q14"
+          }
+        ]
+      },
+      "bR": {
+        "value": 1692,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R14"
+          }
+        ]
+      },
+      "bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S14"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 9240,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "orders_high",
+    "expression": "(high-base)*pool/uv",
+    "variables": {
+      "pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          }
+        ]
+      },
+      "uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          }
+        ]
+      },
+      "base": {
+        "value": 470,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H14"
+          }
+        ]
+      },
+      "cand": {
+        "value": 450,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H13"
+          }
+        ]
+      },
+      "retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "coupon": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J13"
+          }
+        ]
+      },
+      "food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S13"
+          }
+        ]
+      },
+      "bN": {
+        "value": 14570,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N14"
+          }
+        ]
+      },
+      "bO": {
+        "value": 5640,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O14"
+          }
+        ]
+      },
+      "bP": {
+        "value": 658,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P14"
+          }
+        ]
+      },
+      "bQ": {
+        "value": 1316,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q14"
+          }
+        ]
+      },
+      "bR": {
+        "value": 1692,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R14"
+          }
+        ]
+      },
+      "bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S14"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": -300,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "plan_total",
+    "expression": "sum((((new_base+new_retain*(new_cand-new_base))*(new_price-new_coupon-sum(new_food,new_pack,new_fee,new_delivery))-new_ad)-(new_bN-sum(new_bO,new_bP,new_bQ,new_bR,new_bS)))*new_pool/new_uv,(((one_base+one_retain*(one_cand-one_base))*(one_price-one_coupon-sum(one_food,one_pack,one_fee,one_delivery))-one_ad)-(one_bN-sum(one_bO,one_bP,one_bQ,one_bR,one_bS)))*one_pool/one_uv,(((two_base+two_retain*(two_cand-two_base))*(two_price-two_coupon-sum(two_food,two_pack,two_fee,two_delivery))-two_ad)-(two_bN-sum(two_bO,two_bP,two_bQ,two_bR,two_bS)))*two_pool/two_uv,((high_high*(high_price-high_coupon-sum(high_food,high_pack,high_fee,high_delivery))-high_ad)-(high_bN-sum(high_bO,high_bP,high_bQ,high_bR,high_bS)))*high_pool/high_uv)-execution",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "new_price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "new_coupon": {
+        "value": 2,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J8"
+          }
+        ]
+      },
+      "new_food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "new_pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "new_fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "new_delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "new_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S8"
+          }
+        ]
+      },
+      "new_bN": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N7"
+          }
+        ]
+      },
+      "new_bO": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O7"
+          }
+        ]
+      },
+      "new_bP": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P7"
+          }
+        ]
+      },
+      "new_bQ": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q7"
+          }
+        ]
+      },
+      "new_bR": {
+        "value": 540,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R7"
+          }
+        ]
+      },
+      "new_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S7"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_price": {
+        "value": 42,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          }
+        ]
+      },
+      "one_coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J10"
+          }
+        ]
+      },
+      "one_food": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          }
+        ]
+      },
+      "one_pack": {
+        "value": 1.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          }
+        ]
+      },
+      "one_fee": {
+        "value": 3.36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          }
+        ]
+      },
+      "one_delivery": {
+        "value": 3.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          }
+        ]
+      },
+      "one_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S10"
+          }
+        ]
+      },
+      "one_bN": {
+        "value": 6480,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N9"
+          }
+        ]
+      },
+      "one_bO": {
+        "value": 2160,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O9"
+          }
+        ]
+      },
+      "one_bP": {
+        "value": 252,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P9"
+          }
+        ]
+      },
+      "one_bQ": {
+        "value": 504,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q9"
+          }
+        ]
+      },
+      "one_bR": {
+        "value": 648,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R9"
+          }
+        ]
+      },
+      "one_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S9"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_price": {
+        "value": 42,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          }
+        ]
+      },
+      "two_coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J12"
+          }
+        ]
+      },
+      "two_food": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          }
+        ]
+      },
+      "two_pack": {
+        "value": 1.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          }
+        ]
+      },
+      "two_fee": {
+        "value": 3.36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          }
+        ]
+      },
+      "two_delivery": {
+        "value": 3.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          }
+        ]
+      },
+      "two_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S12"
+          }
+        ]
+      },
+      "two_bN": {
+        "value": 9360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N11"
+          }
+        ]
+      },
+      "two_bO": {
+        "value": 3120,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O11"
+          }
+        ]
+      },
+      "two_bP": {
+        "value": 364,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P11"
+          }
+        ]
+      },
+      "two_bQ": {
+        "value": 728,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q11"
+          }
+        ]
+      },
+      "two_bR": {
+        "value": 936,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R11"
+          }
+        ]
+      },
+      "two_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S11"
+          }
+        ]
+      },
+      "high_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          }
+        ]
+      },
+      "high_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          }
+        ]
+      },
+      "high_high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "high_price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "high_coupon": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J13"
+          }
+        ]
+      },
+      "high_food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "high_pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "high_fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "high_delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "high_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S13"
+          }
+        ]
+      },
+      "high_bN": {
+        "value": 14570,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N14"
+          }
+        ]
+      },
+      "high_bO": {
+        "value": 5640,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O14"
+          }
+        ]
+      },
+      "high_bP": {
+        "value": 658,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P14"
+          }
+        ]
+      },
+      "high_bQ": {
+        "value": 1316,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q14"
+          }
+        ]
+      },
+      "high_bR": {
+        "value": 1692,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R14"
+          }
+        ]
+      },
+      "high_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S14"
+          }
+        ]
+      },
+      "execution": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B13"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 20596.16,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "net_orders",
+    "expression": "sum(((new_base+new_retain*(new_cand-new_base))-new_base)*new_pool/new_uv,((one_base+one_retain*(one_cand-one_base))-one_base)*one_pool/one_uv,((two_base+two_retain*(two_cand-two_base))-two_base)*two_pool/two_uv,(high_high-high_base)*high_pool/high_uv)",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "high_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          }
+        ]
+      },
+      "high_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          }
+        ]
+      },
+      "high_base": {
+        "value": 470,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H14"
+          }
+        ]
+      },
+      "high_high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      }
+    },
+    "unit": "单",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 972,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "revenue_change",
+    "expression": "sum(((new_base+new_retain*(new_cand-new_base))*(new_price-new_coupon)-new_bN)*new_pool/new_uv,((one_base+one_retain*(one_cand-one_base))*(one_price-one_coupon)-one_bN)*one_pool/one_uv,((two_base+two_retain*(two_cand-two_base))*(two_price-two_coupon)-two_bN)*two_pool/two_uv,(high_high*(high_price-high_coupon)-high_bN)*high_pool/high_uv)",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "new_price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "new_coupon": {
+        "value": 2,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J8"
+          }
+        ]
+      },
+      "new_bN": {
+        "value": 5400,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N7"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_price": {
+        "value": 42,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          }
+        ]
+      },
+      "one_coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J10"
+          }
+        ]
+      },
+      "one_bN": {
+        "value": 6480,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N9"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_price": {
+        "value": 42,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B6"
+          }
+        ]
+      },
+      "two_coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J12"
+          }
+        ]
+      },
+      "two_bN": {
+        "value": 9360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N11"
+          }
+        ]
+      },
+      "high_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          }
+        ]
+      },
+      "high_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          }
+        ]
+      },
+      "high_high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "high_price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "high_coupon": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J13"
+          }
+        ]
+      },
+      "high_bN": {
+        "value": 14570,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N14"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 58548,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "cost_change",
+    "expression": "sum(((new_base+new_retain*(new_cand-new_base))*sum(new_food,new_pack,new_fee,new_delivery)-sum(new_bO,new_bP,new_bQ,new_bR))*new_pool/new_uv,((one_base+one_retain*(one_cand-one_base))*sum(one_food,one_pack,one_fee,one_delivery)-sum(one_bO,one_bP,one_bQ,one_bR))*one_pool/one_uv,((two_base+two_retain*(two_cand-two_base))*sum(two_food,two_pack,two_fee,two_delivery)-sum(two_bO,two_bP,two_bQ,two_bR))*two_pool/two_uv,(high_high*sum(high_food,high_pack,high_fee,high_delivery)-sum(high_bO,high_bP,high_bQ,high_bR))*high_pool/high_uv)",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "new_food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "new_pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "new_fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "new_delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "new_bO": {
+        "value": 1800,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O7"
+          }
+        ]
+      },
+      "new_bP": {
+        "value": 210,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P7"
+          }
+        ]
+      },
+      "new_bQ": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q7"
+          }
+        ]
+      },
+      "new_bR": {
+        "value": 540,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R7"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_food": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          }
+        ]
+      },
+      "one_pack": {
+        "value": 1.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          }
+        ]
+      },
+      "one_fee": {
+        "value": 3.36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          }
+        ]
+      },
+      "one_delivery": {
+        "value": 3.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          }
+        ]
+      },
+      "one_bO": {
+        "value": 2160,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O9"
+          }
+        ]
+      },
+      "one_bP": {
+        "value": 252,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P9"
+          }
+        ]
+      },
+      "one_bQ": {
+        "value": 504,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q9"
+          }
+        ]
+      },
+      "one_bR": {
+        "value": 648,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R9"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_food": {
+        "value": 15,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C6"
+          }
+        ]
+      },
+      "two_pack": {
+        "value": 1.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D6"
+          }
+        ]
+      },
+      "two_fee": {
+        "value": 3.36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E6"
+          }
+        ]
+      },
+      "two_delivery": {
+        "value": 3.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F6"
+          }
+        ]
+      },
+      "two_bO": {
+        "value": 3120,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O11"
+          }
+        ]
+      },
+      "two_bP": {
+        "value": 364,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P11"
+          }
+        ]
+      },
+      "two_bQ": {
+        "value": 728,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q11"
+          }
+        ]
+      },
+      "two_bR": {
+        "value": 936,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R11"
+          }
+        ]
+      },
+      "high_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          }
+        ]
+      },
+      "high_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          }
+        ]
+      },
+      "high_high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "high_food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "high_pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "high_fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "high_delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "high_bO": {
+        "value": 5640,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O14"
+          }
+        ]
+      },
+      "high_bP": {
+        "value": 658,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P14"
+          }
+        ]
+      },
+      "high_bQ": {
+        "value": 1316,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q14"
+          }
+        ]
+      },
+      "high_bR": {
+        "value": 1692,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R14"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 36151.84,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "ad_change",
+    "expression": "sum((new_ad-new_bS)*new_pool/new_uv,(one_ad-one_bS)*one_pool/one_uv,(two_ad-two_bS)*two_pool/two_uv,(high_ad-high_bS)*high_pool/high_uv)",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S8"
+          }
+        ]
+      },
+      "new_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S7"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S10"
+          }
+        ]
+      },
+      "one_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S9"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S12"
+          }
+        ]
+      },
+      "two_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S11"
+          }
+        ]
+      },
+      "high_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          }
+        ]
+      },
+      "high_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          }
+        ]
+      },
+      "high_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S13"
+          }
+        ]
+      },
+      "high_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S14"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 0,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "coupon_total",
+    "expression": "sum((new_base+new_retain*(new_cand-new_base))*new_coupon*new_pool/new_uv,(one_base+one_retain*(one_cand-one_base))*one_coupon*one_pool/one_uv,(two_base+two_retain*(two_cand-two_base))*two_coupon*two_pool/two_uv,high_high*high_coupon*high_pool/high_uv)",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "new_coupon": {
+        "value": 2,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J8"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J10"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_coupon": {
+        "value": 3,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J12"
+          }
+        ]
+      },
+      "high_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C9"
+          }
+        ]
+      },
+      "high_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C14"
+          }
+        ]
+      },
+      "high_high": {
+        "value": 420,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B12"
+          }
+        ]
+      },
+      "high_coupon": {
+        "value": 0,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!J13"
+          }
+        ]
+      }
+    },
+    "unit": "元",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 14928,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "guomao_lunch",
+    "expression": "sum(((new_base+new_retain*(new_cand-new_base))-new_base)*new_pool/new_uv,((one_base+one_retain*(one_cand-one_base))-one_base)*one_pool/one_uv,((two_base+two_retain*(two_cand-two_base))-two_base)*two_pool/two_uv)*share*lunch/days",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B14"
+          }
+        ]
+      },
+      "share": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B15"
+          }
+        ]
+      },
+      "lunch": {
+        "value": 0.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B16"
+          }
+        ]
+      }
+    },
+    "unit": "单/日",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 10.176,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "guomao_dinner",
+    "expression": "sum(((new_base+new_retain*(new_cand-new_base))-new_base)*new_pool/new_uv,((one_base+one_retain*(one_cand-one_base))-one_base)*one_pool/one_uv,((two_base+two_retain*(two_cand-two_base))-two_base)*two_pool/two_uv)*share*(1-lunch)/days",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B14"
+          }
+        ]
+      },
+      "share": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B15"
+          }
+        ]
+      },
+      "lunch": {
+        "value": 0.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B16"
+          }
+        ]
+      }
+    },
+    "unit": "单/日",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 15.264,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "kechuang_lunch",
+    "expression": "sum(((new_base+new_retain*(new_cand-new_base))-new_base)*new_pool/new_uv,((one_base+one_retain*(one_cand-one_base))-one_base)*one_pool/one_uv,((two_base+two_retain*(two_cand-two_base))-two_base)*two_pool/two_uv)*(1-share)*lunch/days",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B14"
+          }
+        ]
+      },
+      "share": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B15"
+          }
+        ]
+      },
+      "lunch": {
+        "value": 0.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B16"
+          }
+        ]
+      }
+    },
+    "unit": "单/日",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 6.784,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "kechuang_dinner",
+    "expression": "sum(((new_base+new_retain*(new_cand-new_base))-new_base)*new_pool/new_uv,((one_base+one_retain*(one_cand-one_base))-one_base)*one_pool/one_uv,((two_base+two_retain*(two_cand-two_base))-two_base)*two_pool/two_uv)*(1-share)*(1-lunch)/days",
+    "variables": {
+      "new_pool": {
+        "value": 6000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C6"
+          }
+        ]
+      },
+      "new_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C7"
+          }
+        ]
+      },
+      "new_base": {
+        "value": 150,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H7"
+          }
+        ]
+      },
+      "new_cand": {
+        "value": 280,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H8"
+          }
+        ]
+      },
+      "new_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "one_pool": {
+        "value": 8000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C7"
+          }
+        ]
+      },
+      "one_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C9"
+          }
+        ]
+      },
+      "one_base": {
+        "value": 180,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H9"
+          }
+        ]
+      },
+      "one_cand": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H10"
+          }
+        ]
+      },
+      "one_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "two_pool": {
+        "value": 7000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:人群包11月8日!C8"
+          }
+        ]
+      },
+      "two_uv": {
+        "value": 1000,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!C11"
+          }
+        ]
+      },
+      "two_base": {
+        "value": 260,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H11"
+          }
+        ]
+      },
+      "two_cand": {
+        "value": 360,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!H12"
+          }
+        ]
+      },
+      "two_retain": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B11"
+          }
+        ]
+      },
+      "days": {
+        "value": 30,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B14"
+          }
+        ]
+      },
+      "share": {
+        "value": 0.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B15"
+          }
+        ]
+      },
+      "lunch": {
+        "value": 0.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B16"
+          }
+        ]
+      }
+    },
+    "unit": "单/日",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 10.176,
+    "missing_variables": [],
+    "assumptions": []
+  },
+  {
+    "id": "high_break_even",
+    "expression": "(high_bN-sum(high_bO,high_bP,high_bQ,high_bR,high_bS)+high_ad)/(high_price-sum(high_food,high_pack,high_fee,high_delivery))",
+    "variables": {
+      "high_price": {
+        "value": 36,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!B5"
+          }
+        ]
+      },
+      "high_food": {
+        "value": 12,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!C5"
+          }
+        ]
+      },
+      "high_pack": {
+        "value": 1.4,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!D5"
+          }
+        ]
+      },
+      "high_fee": {
+        "value": 2.8,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!E5"
+          }
+        ]
+      },
+      "high_delivery": {
+        "value": 3.6,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:商品与计划参数!F5"
+          }
+        ]
+      },
+      "high_ad": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S13"
+          }
+        ]
+      },
+      "high_bN": {
+        "value": 14570,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!N14"
+          }
+        ]
+      },
+      "high_bO": {
+        "value": 5640,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!O14"
+          }
+        ]
+      },
+      "high_bP": {
+        "value": 658,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!P14"
+          }
+        ]
+      },
+      "high_bQ": {
+        "value": 1316,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!Q14"
+          }
+        ]
+      },
+      "high_bR": {
+        "value": 1692,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!R14"
+          }
+        ]
+      },
+      "high_bS": {
+        "value": 300,
+        "evidence": [
+          {
+            "material": "禾序饭盒_混排周报与人群观察.xlsx",
+            "locator": "sheet:同窗观察_模拟!S14"
+          }
+        ]
+      }
+    },
+    "unit": "单/千人",
+    "purpose": "经营贡献核算",
+    "status": "ok",
+    "value": 324.9382716049383,
+    "missing_variables": [],
+    "assumptions": []
+  }
+]

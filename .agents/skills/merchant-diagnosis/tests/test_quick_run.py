@@ -28,6 +28,13 @@ def review(approved=True, issues=None):
         {'kind': 'review', 'approved': approved, 'issues': issues or []})})
 
 
+def native_calculation(item, call_id='call_1'):
+    arguments = item if isinstance(item, str) else json.dumps({'requests': [item]})
+    return envelope({'role': 'assistant', 'content': None,
+        'tool_calls': [{'id': call_id, 'type': 'function', 'function': {
+            'name': 'calculate', 'arguments': arguments}}]}, 'tool_calls')
+
+
 def report():
     value = legacy_report()
     value['method_usage'] = method_records()
@@ -35,6 +42,235 @@ def report():
 
 
 class QuickRunTests(unittest.TestCase):
+    def test_two_format_corrections_recover_constant_candidate_then_reused_calculation_id(self):
+        original = request()
+        original['expression'] = '100-40'
+        corrected = report()
+        corrected['money']['calc_id'] = 'c2'
+        corrected['charts'][0]['series'][0]['calc_id'] = 'c2'
+        replies = [native_calculation(original),
+                   envelope({'role': 'assistant', 'content': json.dumps({'kind': 'final', 'report': report()})}),
+                   native_calculation(request(), 'call_2'),
+                   native_calculation(request('c2'), 'call_3'),
+                   envelope({'role': 'assistant', 'content': json.dumps({'kind': 'final', 'report': corrected})}),
+                   review()]
+        payloads = []
+        frozen_batch = {}
+        def transport(url, payload, *args):
+            payloads.append(json.loads(payload))
+            self.assertFalse((self.run / 'report.html').exists())
+            if len(payloads) == 3:
+                frozen_batch.update({name: (self.run / name).read_bytes() for name in
+                    ('calculation-001.requests.json', 'calculation-001.results.json')})
+            if len(payloads) >= 4:
+                for name, original_bytes in frozen_batch.items():
+                    self.assertEqual(original_bytes, (self.run / name).read_bytes())
+            return replies.pop(0)
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+        with self.renderer():
+            self.runner().run_api([self.source], self.run, client=client, merchant='测试店',
+                                 scope='单店', period='本周', synthetic=True)
+        self.assertEqual(6, len(payloads))
+        state = json.loads((self.run / 'execution.json').read_text())
+        self.assertEqual(2, state['corrections'])
+        self.assertEqual(2, state['initial_calculation_batches'])
+        self.assertEqual(0, state['revision_calculation_batches'])
+        self.assertEqual(1, state['review_calls'])
+        self.assertEqual(8, state['max_calls'])
+        self.assertEqual('approved', state['business_review']['status'])
+        self.assertEqual(60, json.loads((self.run / 'report.json').read_text())['money']['value'])
+        calculations = json.loads((self.run / 'calculations.json').read_text())
+        self.assertEqual(['c1', 'c2'], [item['id'] for item in calculations])
+        self.assertEqual(['100-40', 'income-cost'], [item['expression'] for item in calculations])
+        candidate_feedback = json.loads(payloads[2]['messages'][-1]['content'])
+        self.assertIn('裸常数', candidate_feedback['correction_required'])
+        self.assertIn('新calc_id', candidate_feedback['instruction'])
+        self.assertIn('实际引用', candidate_feedback['instruction'])
+        tool_feedback = json.loads(payloads[3]['messages'][-1]['content'])
+        self.assertIn('编号已使用', tool_feedback['tool_error'])
+        self.assertIn('新calc_id', tool_feedback['instruction'])
+        self.assertEqual(1, tool_feedback['runtime_limits']['calculation_batches_remaining'])
+        stored_error = json.loads((self.run / 'calculation-error-003.json').read_text())
+        self.assertEqual(tool_feedback['tool_error'], stored_error['error'])
+
+    def test_third_calculation_format_error_keeps_original_batch_and_stops(self):
+        original = request()
+        original['expression'] = '100-40'
+        replies = [native_calculation(original),
+                   envelope({'role': 'assistant', 'content': json.dumps({'kind': 'final', 'report': report()})}),
+                   native_calculation(request(), 'call_2'), native_calculation(request(), 'call_3')]
+        calls = []
+        def transport(*args):
+            calls.append(1)
+            return replies.pop(0)
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+        with self.renderer(), self.assertRaisesRegex(ValueError, '编号已使用'):
+            self.runner().run_api([self.source], self.run, client=client, merchant='测试店',
+                                 scope='单店', period='本周', synthetic=True)
+        self.assertEqual(4, len(calls))
+        state = json.loads((self.run / 'execution.json').read_text())
+        self.assertEqual(2, state['corrections'])
+        self.assertEqual(1, state['initial_calculation_batches'])
+        self.assertEqual(0, state['review_calls'])
+        self.assertEqual('failed', state['status'])
+        self.assertEqual([original], json.loads((self.run / 'calculation-001.requests.json').read_text()))
+        self.assertFalse((self.run / 'calculation-002.results.json').exists())
+        self.assertFalse((self.run / 'report.html').exists())
+        self.assertIn('编号已使用', json.loads((self.run / 'calculation-error-004.json').read_text())['error'])
+
+    def test_two_complete_native_argument_syntax_errors_can_be_resent_without_execution(self):
+        invalid = native_calculation('{PRIVATE_ARGUMENT_BODY')
+        replies = [invalid, invalid, native_calculation(request()),
+                   envelope({'role': 'assistant', 'content': json.dumps({'kind': 'final', 'report': report()})}),
+                   review()]
+        payloads = []
+        def transport(url, payload, *args):
+            payloads.append(json.loads(payload))
+            return replies.pop(0)
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+        with self.renderer():
+            self.runner().run_api([self.source], self.run, client=client, merchant='测试店',
+                                 scope='单店', period='本周', synthetic=True)
+        self.assertEqual(5, len(payloads))
+        state = json.loads((self.run / 'execution.json').read_text())
+        self.assertEqual(2, state['corrections'])
+        self.assertEqual(1, state['initial_calculation_batches'])
+        self.assertEqual(1, len(json.loads((self.run / 'calculations.json').read_text())))
+        for number in (1, 2):
+            error = json.loads((self.run / f'error-{number:03d}.json').read_text())
+            self.assertEqual('arguments_json', error['diagnostics']['tool_error'])
+            self.assertEqual('syntax', error['diagnostics']['json_error'])
+            feedback = json.loads(payloads[number]['messages'][-1]['content'])
+            self.assertIn('未被接收或执行', feedback['instruction'])
+        saved = ''.join(path.read_text() for path in self.run.glob('*.json'))
+        self.assertNotIn('PRIVATE_ARGUMENT_BODY', saved)
+        self.assertNotIn('test-secret', saved)
+
+    def test_third_format_error_stops_shared_correction_budget_without_export(self):
+        bad = report()
+        bad['money'].pop('calc_id')
+        bad['money']['value'] = None
+        bad['charts'] = []
+        bad['actions'][0]['stop'] = ''
+        candidate = envelope({'role': 'assistant', 'content': json.dumps({'kind': 'final', 'report': bad})})
+        invalid = native_calculation('{PRIVATE_ARGUMENT_BODY')
+        cases = ((candidate, candidate, candidate), (invalid, candidate, invalid))
+        for index, replies in enumerate(cases):
+            with self.subTest(case=index):
+                self.run = self.base / f'case-{index}'
+                pending, calls = list(replies), []
+                def transport(*args):
+                    calls.append(1)
+                    return pending.pop(0)
+                client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+                with self.renderer(), self.assertRaises(ValueError):
+                    self.runner().run_api([self.source], self.run, client=client, merchant='测试店',
+                                         scope='单店', period='本周', synthetic=True)
+                self.assertEqual(3, len(calls))
+                state = json.loads((self.run / 'execution.json').read_text())
+                self.assertEqual(2, state['corrections'])
+                self.assertEqual(0, state['review_calls'])
+                self.assertEqual('failed', state['status'])
+                self.assertFalse((self.run / 'report.html').exists())
+                self.assertEqual([], json.loads((self.run / 'calculations.json').read_text()))
+
+    def test_corrections_cannot_consume_the_reserved_final_and_review_calls(self):
+        calls = []
+        def transport(*args):
+            calls.append(1)
+            return native_calculation('{invalid')
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+        with self.renderer(), self.assertRaisesRegex(ValueError, '剩余调用不足'):
+            self.runner().run_api([self.source], self.run, client=client, merchant='测试店', max_calls=3)
+        self.assertEqual(2, len(calls))
+        self.assertFalse((self.run / 'report.html').exists())
+
+    def test_incomplete_or_transport_failure_does_not_use_format_retry(self):
+        for index, failure in enumerate(('length', 'network', 'duplicate_key')):
+            with self.subTest(failure=failure):
+                self.run = self.base / str(index)
+                calls = []
+                def transport(*args):
+                    calls.append(1)
+                    if failure == 'network':
+                        raise OSError('PRIVATE_NETWORK_BODY')
+                    if failure == 'duplicate_key':
+                        return native_calculation('{"requests":[],"requests":[]}')
+                    return envelope({'role': 'assistant', 'content': ''}, finish='length')
+                client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
+                with self.renderer(), self.assertRaises(ModelAPIError):
+                    self.runner().run_api([self.source], self.run, client=client, merchant='测试店')
+                self.assertEqual(1, len(calls))
+                state = json.loads((self.run / 'execution.json').read_text())
+                self.assertEqual(0, state['corrections'])
+                self.assertFalse((self.run / 'report.html').exists())
+
+    def test_review_truncation_still_stops_without_retry_or_export(self):
+        value = report()
+        value['money'].pop('calc_id')
+        value['money']['value'] = None
+        value['charts'] = []
+        replies = [envelope({'role': 'assistant', 'content': json.dumps({'kind': 'final', 'report': value})}),
+                   envelope({'role': 'assistant', 'content': ''}, finish='length')]
+        payloads = []
+        def transport(url, payload, *args):
+            payloads.append(json.loads(payload))
+            return replies.pop(0)
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport,
+                             thinking='enabled', max_tokens=24576)
+        with self.renderer(), self.assertRaises(ModelAPIError) as error:
+            self.runner().run_api([self.source], self.run, client=client, merchant='测试店',
+                                  scope='单店', period='本周', synthetic=True)
+        self.assertEqual('output_truncated', error.exception.code)
+        self.assertEqual(2, len(payloads))
+        self.assertEqual([24576, 8192], [p['max_tokens'] for p in payloads])
+        self.assertEqual(['enabled', 'disabled'], [p['thinking']['type'] for p in payloads])
+        self.assertFalse((self.run / 'report.html').exists())
+        state = json.loads((self.run / 'execution.json').read_text())
+        self.assertEqual('failed', state['status'])
+        self.assertEqual('error', state['business_review']['status'])
+        self.assertEqual(8, state['max_calls'])
+        self.assertEqual(1, state['review_calls'])
+        self.assertEqual(24576, state['client_settings']['max_tokens'])
+        self.assertEqual('enabled', state['client_settings']['thinking'])
+        self.assertEqual('output_truncated', json.loads((self.run / 'review-error-002.json').read_text())['code'])
+
+    def test_review_always_uses_frozen_workflow_and_separate_request_profile(self):
+        references = self.reference_fixture()
+        frozen = (references / 'quick-workflow.md').read_text()
+        replacement = 'global-workflow-must-not-enter-old-review'
+        payloads = []
+        def transport(url, payload, *args):
+            payloads.append(json.loads(payload))
+            return review()
+        client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport,
+                             thinking='enabled', max_tokens=24576)
+        with patch.object(self.runner(), 'REFERENCES', references):
+            for version in ('1.0', '1.1', '1.2', '1.3'):
+                with self.subTest(version=version):
+                    (references / 'quick-workflow.md').write_text(frozen)
+                    self.run = self.base / version
+                    self.prepare()
+                    if version != '1.3':
+                        self.as_legacy_snapshot(version)
+                    (references / 'quick-workflow.md').write_text(replacement)
+                    bundle = json.loads((self.run / 'materials.json').read_text())
+                    self.runner().semantic_review(client, bundle, [], report(), run_dir=self.run, call_number=1)
+                    payload = payloads[-1]
+                    self.assertIn(frozen, payload['messages'][1]['content'])
+                    self.assertNotIn(replacement, payload['messages'][1]['content'])
+                    self.assertEqual({'type': 'disabled'}, payload['thinking'])
+                    self.assertEqual(8192, payload['max_tokens'])
+                    self.assertNotIn('reasoning_effort', payload)
+                    saved = json.loads((self.run / 'review-request-001.json').read_text())['settings']
+                    self.assertEqual('disabled', saved['thinking'])
+                    self.assertEqual(8192, saved['max_tokens'])
+                    self.assertEqual('none', saved['tool_choice'])
+                    self.assertEqual(('enabled', 24576), (client.thinking, client.max_tokens))
+                    state = json.loads((self.run / 'execution.json').read_text())
+                    self.assertEqual('test_double', state['business_review']['mode'])
+                    self.assertFalse(state['inference_executed'])
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)

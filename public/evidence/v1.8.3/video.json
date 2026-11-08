@@ -1,0 +1,23 @@
+{
+  "source": "full-raw.webm (retained locally)",
+  "output": "first-run-v183.mp4",
+  "fps": 25,
+  "wait_start_frame": 163,
+  "wait_end_frame": 9015,
+  "wait_start_seconds": 6.52,
+  "wait_end_seconds": 360.6,
+  "original_frames": 11609,
+  "original_seconds": 464.36,
+  "actual_wait_video_seconds": 354.08,
+  "backend_elapsed_seconds": 353.8,
+  "compressed_wait_frames": 125,
+  "compressed_wait_seconds": 5,
+  "output_frames": 2882,
+  "output_seconds": 115.28,
+  "input_and_result_speed": 1,
+  "boundary_source": "encoded video corner markers",
+  "description": "完整原片保留；只压缩真实等待段至125帧，其他画面原速；全程标注实际耗时与剪辑。",
+  "original_sha256": "0b8b2df6472d4cd1cbd73e9267160d03734e6bc715ae22fb0973bc325d54d902",
+  "output_sha256": "3e852c11f84285f2c3527dc8cd055e87a9a0f33c73f8b396cfeb7c1585247228",
+  "sha256": "3e852c11f84285f2c3527dc8cd055e87a9a0f33c73f8b396cfeb7c1585247228"
+}

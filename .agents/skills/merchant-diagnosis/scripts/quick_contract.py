@@ -119,7 +119,7 @@ def _sources(materials):
 def _evidence(value, sources, path, required=False):
     if isinstance(value, dict):
         value = [value]
-    items = _objects(value or [], path, minimum=1 if required else 0)
+    items = _objects(value or [], path, minimum=1 if required else 0, maximum=1000)
     result = []
     for item in items:
         name = _text(item.get('material'), path + '.material')

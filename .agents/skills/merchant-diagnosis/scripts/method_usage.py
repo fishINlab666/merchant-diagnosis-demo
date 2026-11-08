@@ -31,8 +31,8 @@ def _text(value, path, *, optional=False):
 
 def _citation_shape(evidence, path):
     """For direct export only; source existence is checked by the run binder."""
-    if not isinstance(evidence, list) or len(evidence) > 100:
-        raise ValueError(path + ' 须为证据列表')
+    if not isinstance(evidence, list) or len(evidence) > 1000:
+        raise ValueError(path + ' 须为最多1000项的证据列表')
     result = []
     for item in evidence:
         if not isinstance(item, dict):
