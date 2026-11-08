@@ -14,11 +14,12 @@ from service_calculator import calculate_requests
 from service_store import project_lock, write_json
 
 REFERENCES = Path(__file__).resolve().parents[1] / 'references'
-RULE_FILES = ('quick-workflow.md', 'boss-output.md', 'ka-playbook.md')
+RULE_FILES = ('quick-workflow.md', 'boss-output.md', 'ali-ka-playbook.md', 'ka-playbook.md')
 SNAPSHOT_FILES = {
     '1.0': {'materials.json', 'prompt.md', 'quick-workflow.md', 'boss-output.md'},
-    '1.1': {'materials.json', 'prompt.md', *RULE_FILES},
-    '1.2': {'materials.json', 'prompt.md', *RULE_FILES},
+    '1.1': {'materials.json', 'prompt.md', 'quick-workflow.md', 'boss-output.md', 'ka-playbook.md'},
+    '1.2': {'materials.json', 'prompt.md', 'quick-workflow.md', 'boss-output.md', 'ka-playbook.md'},
+    '1.3': {'materials.json', 'prompt.md', *RULE_FILES},
 }
 DEFAULT_GOAL = '先看最值得改善的问题，给出可试行的动作'
 DEFAULT_SCOPE = '本次提供材料覆盖的门店'
@@ -124,7 +125,7 @@ def prepare_run(input_paths, output, *, merchant, goal=DEFAULT_GOAL,
               + '\n\n'.join(references.values()))
     payloads = {'materials.json': _json(bundle), 'prompt.md': prompt,
                 **{name: text for name, text in references.items()}}
-    manifest = {'schema_version': '1.2', 'created_at': _now(), 'runtime': runtime,
+    manifest = {'schema_version': '1.3', 'created_at': _now(), 'runtime': runtime,
                 'python_version': platform.python_version(), 'inference_executed': False,
                 'inputs': [{'name': item['name'], 'sha256': item['sha256']} for item in materials],
                 'files': {name: _sha(text.encode('utf-8')) for name, text in payloads.items()}}
@@ -163,7 +164,7 @@ def _load_run(root, *, allow_completed=False):
     if _sha((root / 'calculations.json').read_bytes()) != state.get('calculations_sha256'):
         raise ValueError('计算记录已变化；不能将改写的结果作为真实计算')
     method_fingerprint = state.get('method_usage_sha256')
-    if version == '1.2' and state.get('status') == 'completed' and not method_fingerprint:
+    if version in ('1.2', '1.3') and state.get('status') == 'completed' and not method_fingerprint:
         raise ValueError('已完成的新轮次缺少方法使用记录指纹')
     if method_fingerprint is not None:
         try:
@@ -176,7 +177,7 @@ def _load_run(root, *, allow_completed=False):
 
 
 def _require_method_usage(root):
-    return _read(Path(root) / 'manifest.json')['schema_version'] == '1.2'
+    return _read(Path(root) / 'manifest.json')['schema_version'] in ('1.2', '1.3')
 
 
 def _previous_history(report_path, identity):
@@ -302,12 +303,13 @@ def semantic_review(client, bundle, calculations, report, *, run_dir, call_numbe
     _load_run(root)
     review_prompt = REVIEW_PROMPT
     version = _read(root / 'manifest.json')['schema_version']
-    if version in ('1.1', '1.2'):
+    if version in ('1.1', '1.2', '1.3'):
+        method_files = ('ali-ka-playbook.md', 'ka-playbook.md') if version == '1.3' else ('ka-playbook.md',)
         review_prompt += ('\n\n## 本轮冻结的经营方法\n'
                           '只核对本轮材料实际触发的决策及适用边界，不要求展开所有分支。'
                           '缺少人群或JBP材料不应阻断普通商家诊断；不得补造材料来凑齐打法。\n\n'
-                          + (root / 'ka-playbook.md').read_text(encoding='utf-8'))
-    if version == '1.2':
+                          + '\n\n'.join((root / name).read_text(encoding='utf-8') for name in method_files))
+    if version in ('1.2', '1.3'):
         review_prompt += ('\n\n核对 method_usage 的四项适用判断：已采用/改写必须由其 evidence 支持，'
                           'targets 指向的实际结论或动作必须体现该决策；不适用/缺数据的原因要与材料相符。'
                           '有数据不能借缺数跳过，确实缺数据也不能为凑齐方法编造分群或权益。'

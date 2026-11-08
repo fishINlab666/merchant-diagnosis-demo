@@ -63,47 +63,63 @@ class QuickRunTests(unittest.TestCase):
         for name in ('quick-workflow.md', 'boss-output.md'):
             (directory / name).write_bytes((self.runner().REFERENCES / name).read_bytes())
         (directory / 'ka-playbook.md').write_text('test-method-original-53d9\n', encoding='utf-8')
+        (directory / 'ali-ka-playbook.md').write_text('test-ali-method-original-a37c\n', encoding='utf-8')
         return directory
 
-    def as_legacy_snapshot(self):
-        """Represent an already prepared 1.0 run, before the extra rule existed."""
+    def as_legacy_snapshot(self, version='1.0'):
+        """Represent a run prepared with the rule files available at that version."""
         path = self.run / 'manifest.json'
         manifest = json.loads(path.read_text())
-        manifest['schema_version'] = '1.0'
-        manifest['files'].pop('ka-playbook.md', None)
-        method = self.run / 'ka-playbook.md'
-        if method.exists():
-            prompt = self.run / 'prompt.md'
-            prompt.write_text(prompt.read_text().replace(method.read_text(), ''))
-            manifest['files']['prompt.md'] = hashlib.sha256(prompt.read_bytes()).hexdigest()
-            method.unlink()
+        manifest['schema_version'] = version
+        removed = ['ali-ka-playbook.md'] + (['ka-playbook.md'] if version == '1.0' else [])
+        for name in removed:
+            manifest['files'].pop(name, None)
+            method = self.run / name
+            if method.exists():
+                prompt = self.run / 'prompt.md'
+                prompt.write_text(prompt.read_text().replace(method.read_text(), ''))
+                manifest['files']['prompt.md'] = hashlib.sha256(prompt.read_bytes()).hexdigest()
+                method.unlink()
         path.write_text(json.dumps(manifest))
+
+    def test_prepare_requires_ali_playbook_before_creating_run(self):
+        references = self.reference_fixture()
+        (references / 'ali-ka-playbook.md').unlink()
+        with patch.object(self.runner(), 'REFERENCES', references):
+            with self.assertRaises(FileNotFoundError):
+                self.prepare()
+        self.assertFalse(self.run.exists())
 
     def test_method_snapshot_survives_installed_rule_update(self):
         references = self.reference_fixture()
-        original = (references / 'ka-playbook.md').read_bytes()
+        originals = {name: (references / name).read_bytes()
+                     for name in ('ka-playbook.md', 'ali-ka-playbook.md')}
         with patch.object(self.runner(), 'REFERENCES', references):
             self.prepare()
             manifest = json.loads((self.run / 'manifest.json').read_text())
-            self.assertEqual('1.2', manifest['schema_version'])
+            self.assertEqual('1.3', manifest['schema_version'])
             self.assertEqual({'materials.json', 'prompt.md', 'quick-workflow.md',
-                              'boss-output.md', 'ka-playbook.md'}, set(manifest['files']))
-            self.assertEqual(hashlib.sha256(original).hexdigest(), manifest['files']['ka-playbook.md'])
-            self.assertEqual(original, (self.run / 'ka-playbook.md').read_bytes())
-            self.assertIn(original.decode(), (self.run / 'prompt.md').read_text())
-            (references / 'ka-playbook.md').write_text('test-method-replaced-b810\n')
+                              'boss-output.md', *originals}, set(manifest['files']))
+            for name, original in originals.items():
+                self.assertEqual(hashlib.sha256(original).hexdigest(), manifest['files'][name])
+                self.assertEqual(original, (self.run / name).read_bytes())
+                self.assertIn(original.decode(), (self.run / 'prompt.md').read_text())
+                (references / name).write_text('test-method-replaced-b810\n')
             result = self.runner().calculate_run(self.run, [request()])
         self.assertEqual(60, result[0]['value'])
-        self.assertEqual(original, (self.run / 'ka-playbook.md').read_bytes())
+        for name, original in originals.items():
+            self.assertEqual(original, (self.run / name).read_bytes())
 
     def test_method_snapshot_tampering_or_missing_file_stops_calculation(self):
         references = self.reference_fixture()
         with patch.object(self.runner(), 'REFERENCES', references):
-            for mutation in ('changed', 'deleted', 'unlisted', 'unknown_version'):
-                with self.subTest(mutation=mutation):
-                    self.run = self.base / mutation
+            for name, mutation in ((name, mutation)
+                    for name in ('ka-playbook.md', 'ali-ka-playbook.md')
+                    for mutation in ('changed', 'deleted', 'unlisted', 'unknown_version')):
+                with self.subTest(name=name, mutation=mutation):
+                    self.run = self.base / (name + mutation)
                     self.prepare()
-                    method = self.run / 'ka-playbook.md'
+                    method = self.run / name
                     self.assertTrue(method.is_file())
                     if mutation == 'changed':
                         method.write_text('changed frozen rule')
@@ -113,7 +129,7 @@ class QuickRunTests(unittest.TestCase):
                         path = self.run / 'manifest.json'
                         value = json.loads(path.read_text())
                         if mutation == 'unlisted':
-                            value['files'].pop('ka-playbook.md')
+                            value['files'].pop(name)
                         else:
                             value['schema_version'] = '9.9'
                         path.write_text(json.dumps(value))
@@ -123,7 +139,8 @@ class QuickRunTests(unittest.TestCase):
 
     def test_api_analysis_and_review_share_frozen_method_after_install_changes(self):
         references = self.reference_fixture()
-        original = (references / 'ka-playbook.md').read_text()
+        originals = {name: (references / name).read_text()
+                     for name in ('ka-playbook.md', 'ali-ka-playbook.md')}
         replacement = 'test-method-replaced-b810\n'
         payloads = []
         replies = [envelope({'role': 'assistant', 'content': json.dumps(
@@ -132,7 +149,8 @@ class QuickRunTests(unittest.TestCase):
                        {'kind': 'final', 'report': report()})}), review()]
         def transport(url, payload, *args):
             payloads.append(json.loads(payload))
-            (references / 'ka-playbook.md').write_text(replacement)
+            for name in originals:
+                (references / name).write_text(replacement)
             return replies.pop(0)
         client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
         with patch.object(self.runner(), 'REFERENCES', references), self.renderer():
@@ -140,7 +158,8 @@ class QuickRunTests(unittest.TestCase):
                                   scope='单店', period='本周', synthetic=True)
         for payload in (payloads[0], payloads[-1]):
             system = '\n'.join(item['content'] for item in payload['messages'] if item['role'] == 'system')
-            self.assertIn(original, system)
+            for original in originals.values():
+                self.assertIn(original, system)
             self.assertNotIn(replacement, system)
         self.assertEqual(['system', 'system', 'user'], [item['role'] for item in payloads[-1]['messages']])
         self.assertEqual(3, len(payloads))
@@ -158,7 +177,7 @@ class QuickRunTests(unittest.TestCase):
             current = self.base / 'new-version'
             self.runner().prepare_run([self.source], current, merchant='测试店', synthetic=True,
                                       previous_report=previous)
-        self.assertEqual('1.2', json.loads((current / 'manifest.json').read_text())['schema_version'])
+        self.assertEqual('1.3', json.loads((current / 'manifest.json').read_text())['schema_version'])
         self.assertEqual(60, json.loads((current / 'materials.json').read_text())['history']['report']['money']['value'])
         self.assertEqual(original, previous.read_bytes())
 
@@ -225,38 +244,55 @@ class QuickRunTests(unittest.TestCase):
 
     def test_schema_11_without_method_record_can_finish_and_feed_new_run(self):
         self.prepare()
-        path = self.run / 'manifest.json'
-        value = json.loads(path.read_text())
-        value['schema_version'] = '1.1'
-        path.write_text(json.dumps(value))
+        self.as_legacy_snapshot('1.1')
         self.runner().calculate_run(self.run, [request()])
         with self.renderer():
             self.runner().finish_run(self.run, legacy_report())
         self.assertFalse((self.run / 'method-usage.json').exists())
-        self.runner().prepare_run([self.source], self.base / 'next-12', merchant='测试店',
+        self.runner().prepare_run([self.source], self.base / 'next-13', merchant='测试店',
                                   synthetic=True, previous_report=self.run / 'report.json')
 
-    def test_schema_11_review_still_uses_frozen_methods_without_retroactive_record_requirement(self):
+    def test_legacy_method_review_uses_only_frozen_rules_and_versioned_record_requirement(self):
         references = self.reference_fixture()
         frozen = (references / 'ka-playbook.md').read_text()
+        new_rule = (references / 'ali-ka-playbook.md').read_text()
         payloads = []
         def transport(url, payload, *args):
             payloads.append(json.loads(payload))
             return review()
         client = ModelClient('deepseek', 'test-secret', 'test-model', transport=transport)
         with patch.object(self.runner(), 'REFERENCES', references):
-            self.prepare()
-            path = self.run / 'manifest.json'
-            manifest = json.loads(path.read_text())
-            manifest['schema_version'] = '1.1'
-            path.write_text(json.dumps(manifest))
-            values = self.runner().calculate_run(self.run, [request()])
-            bundle = json.loads((self.run / 'materials.json').read_text())
-            self.runner().semantic_review(client, bundle, values, legacy_report(),
-                                          run_dir=self.run, call_number=1)
-        system = payloads[-1]['messages'][1]['content']
-        self.assertIn(frozen, system)
-        self.assertNotIn('核对 method_usage 的四项适用判断', system)
+            for version in ('1.1', '1.2'):
+                with self.subTest(version=version):
+                    self.run = self.base / version
+                    self.prepare()
+                    self.as_legacy_snapshot(version)
+                    values = self.runner().calculate_run(self.run, [request()])
+                    bundle = json.loads((self.run / 'materials.json').read_text())
+                    self.runner().semantic_review(client, bundle, values, report(),
+                                                  run_dir=self.run, call_number=1)
+                    system = payloads[-1]['messages'][1]['content']
+                    self.assertIn(frozen, system)
+                    self.assertNotIn(new_rule, system)
+                    self.assertEqual(version == '1.2', '核对 method_usage 的四项适用判断' in system)
+
+    def test_schema_12_can_continue_and_feed_new_run_but_method_record_remains_required(self):
+        self.prepare()
+        self.as_legacy_snapshot('1.2')
+        self.runner().calculate_run(self.run, [request()])
+        with self.assertRaisesRegex(ValueError, 'method_usage'), self.renderer():
+            self.runner().finish_run(self.run, legacy_report())
+        with self.renderer():
+            self.runner().finish_run(self.run, report())
+        self.runner().prepare_run([self.source], self.base / 'next-13', merchant='测试店',
+                                  synthetic=True, previous_report=self.run / 'report.json')
+        state_path = self.run / 'execution.json'
+        state = json.loads(state_path.read_text())
+        state.pop('method_usage_sha256')
+        state_path.write_text(json.dumps(state))
+        with self.assertRaisesRegex(ValueError, '方法使用记录指纹'):
+            self.runner().prepare_run([self.source], self.base / 'missing-method-digest',
+                merchant='测试店', synthetic=True, previous_report=self.run / 'report.json')
 
     def test_api_missing_record_cannot_reach_review_until_corrected(self):
         old = legacy_report()

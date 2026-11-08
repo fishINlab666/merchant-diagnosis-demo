@@ -1,14 +1,16 @@
-# 商户经营诊断 Skill · 1.8
+# 商户经营诊断 Skill · 1.8.1
 
 把店铺资料和现有周报交给 Agent，得到一页「发现、钱账、先做什么」的老板看板。支持单店、连锁、有投放和无投放场景；老板已说明的口径直接采用，缺数只暂停受影响的测算。
 
-[打开老板看板](https://fishinlab666.github.io/merchant-diagnosis-demo/reports/audience-chain.html) · [打开产品讲解](https://fishinlab666.github.io/merchant-diagnosis-demo/reports/audience-chain.html?view=explain) · [下载 v1.8](releases/merchant-diagnosis-v1.8.zip) · [验收记录](ACCEPTANCE.md)
+[打开老板看板](https://fishinlab666.github.io/merchant-diagnosis-demo/reports/audience-chain.html) · [打开产品讲解](https://fishinlab666.github.io/merchant-diagnosis-demo/reports/audience-chain.html?view=explain) · [下载 v1.8.1](releases/merchant-diagnosis-v1.8.1.zip) · [验收记录](ACCEPTANCE.md)
 
 ![禾序饭盒合成案例的产品讲解与人群方案](public/media/audience-product.png)
 
 产品面向商户经营诊断、执行与复盘，展示模式统一称「老板看板／产品讲解」。老板看板先给发现、钱账和行动；切换产品讲解后，点击方案中的「看方法」，查看材料依据、经营判断、方法来源和对应执行。两种视图共用同一份报告和计算结果。
 
-本版新增禾序饭盒合成六店案例，人群观察与权益试行仅覆盖国贸／科创两店。六个互斥人群逐项对应商品、权益、选择理由和验收方式，包含不补贴的决定；金额按本轮计算呈现，不把部分门店观察外推整个品牌。所有原表、分组观察和计划测算均为合成材料，不是阿里历史业绩或已实现的商家收益。
+1.8.1 新增 [阿里 KA 打法一页纸](.agents/skills/merchant-diagnosis/references/ali-ka-playbook.md)：净GMV拆因子、工具预算、门店四象限、JBP/追加投入。连锁或有投放先读；建议阈值不冒充作者历史制度，默认运行会冻结全文。
+
+展示继续使用1.8的禾序饭盒合成六店案例，人群观察与权益试行仅覆盖国贸／科创两店。六个互斥人群逐项对应商品、权益、选择理由和验收方式，包含不补贴的决定；金额按对应运行的计算呈现，不把部分门店观察外推整个品牌。所有原表、分组观察和计划测算均为合成材料，不是阿里历史业绩或已实现的商家收益。
 
 ## 哪些是作者的 KA 经验
 
@@ -20,7 +22,7 @@
 
 ## 安装
 
-下载并解压 [v1.8 安装包](releases/merchant-diagnosis-v1.8.zip)，或使用仓库中的完整 `.agents/skills/merchant-diagnosis/`。将完整的 `merchant-diagnosis/` 放入项目目录：Codex 用 `.agents/skills/merchant-diagnosis/`；Claude Code 用 `.claude/skills/merchant-diagnosis/`。安装路径不等于宿主验收；本轮 Codex CLI 的场景结果见验收记录，Claude Code 本轮未测。
+下载并解压 [v1.8.1 安装包](releases/merchant-diagnosis-v1.8.1.zip)，或使用仓库中的完整 `.agents/skills/merchant-diagnosis/`。将完整的 `merchant-diagnosis/` 放入项目目录：Codex 用 `.agents/skills/merchant-diagnosis/`；Claude Code 用 `.claude/skills/merchant-diagnosis/`。安装路径不等于宿主验收；各轮 Codex CLI 的场景结果见验收记录，Claude Code 本轮未测。
 
 [v1.7.2 安装包](releases/merchant-diagnosis-v1.7.2.zip)保留为历史版本，不包含本版方法圈点与人群交互。
 
